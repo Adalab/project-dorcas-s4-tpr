@@ -5,5 +5,5 @@ import App from './Components/App';
 import PropTypes from 'prop-types';
 import { HashRouter } from 'react-router-dom';
 
-ReactDOM.render(<HashRouter> <App /> </HashRouter>, document.getElementById('react-root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
