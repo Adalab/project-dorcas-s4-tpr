@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './Main.js';
-<<<<<<< HEAD
-=======
 import Footer from './Footer.js';
->>>>>>> master
 import Header from './Header.js';
 
 
