@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './Main.js';
+<<<<<<< HEAD
+=======
+import Footer from './Footer.js';
+>>>>>>> master
 import Header from './Header.js';
 
 
@@ -10,6 +14,7 @@ class App extends Component {
       <div>
         <Header />
         <Main />
+        <Footer/>
       </div>
     );
   }
