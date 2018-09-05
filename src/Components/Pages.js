@@ -8,8 +8,35 @@ import Step5 from './Step5';
 
 class Pages extends Component {
   render() {
-    console.log('holi', this.props);
-    const { title1, title2, title3, title4, title5, step1,step2, step3, step4, step5, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep } = this.props.state;
+    console.log('PAGES', this.props);
+    const {
+      previousStep, 
+      followingStep,
+      titles,
+      dots,
+      steps
+    } = this.props.state;
+    const { 
+      title1, 
+      title2, 
+      title3, 
+      title4, 
+      title5
+    } = titles;
+    const {
+      step1,
+      step2, 
+      step3, 
+      step4, 
+      step5
+    } = steps;
+    const {
+      dot1, 
+      dot2, 
+      dot3, 
+      dot4, 
+      dot5
+    } = dots;
     const {handleClickPreviousStep, handleClickFollowingStep} = this.props;
     return (
       <Fragment>
