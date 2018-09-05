@@ -4,10 +4,16 @@ import logo from '../Images/img-logo-triporate.svg';
 class Header extends Component {
   render() {
     return (
-        <div>
-            <img src={logo}></img>
-            <img src='' ></img>
-        </div>
+      <div>
+        <p>
+          <FormattedMessage
+            id="Home.dayMessage"
+            defaultMessage="It's a beautiful day outside."
+          />
+        </p>
+        <img src={logo}></img>
+        <img src='' ></img>
+      </div>
     );
   }
 }

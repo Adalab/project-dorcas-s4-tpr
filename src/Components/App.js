@@ -9,6 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <p>It is a beautiful day outside.</p>
         <Header />
         <Main />
         <Footer/>
