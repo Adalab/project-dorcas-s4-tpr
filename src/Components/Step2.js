@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 
@@ -16,14 +16,13 @@ class Step2 extends Component {
             handleClickFollowingStep
         } = this.props;
         console.log('props STEP2', this.props);
-        return ( 
-            <Fragment>
+            return (
+            <div className='stepBox'>
             <Title 
                 title={title2} 
                 step={step2}
             />
-            <form>
-                    <fieldset>
+            <form className='form'>
 
                         <h2>Pasaporte</h2>
 
@@ -51,19 +50,19 @@ class Step2 extends Component {
 
                             </select>
 
-                            <label htmlFor='documentNumber'></label>
-                            <input id='documentNumber' type='text' name='documentNumber' placeholder='Número de documento' value='' />
+                            <label htmlFor='documentNumber'>Número de documento</label>
+                            <input id='documentNumber' type='text' name='documentNumber' value='' />
                         </div>
                         <div className='verticalDisplay'>
-                            <label htmlFor='dateIssue'></label>
-                            <input id='dateIssue' type='text' name='dateIssue' placeholder='F.emisión' value='' />
-                            <label htmlFor='expirationDate'></label>
-                            <input id='expirationDate' type='text' name='expirationDate' placeholder='F.expiración' value='' />
+                            <label htmlFor='dateIssue'>F.emisión</label>
+                            <input id='dateIssue' type='text' name='dateIssue' value='' />
+                            <label htmlFor='expirationDate'>F.expiración</label>
+                            <input id='expirationDate' type='text' name='expirationDate' value='' />
                         </div>
-                        <label htmlFor='birthDate'></label>
-                        <input id='birthDate' type='text' name='birthDate' placeholder='Lugar de nacimiento' value='' />
-                    </fieldset>
-                </form>
+                        <label htmlFor='birthDate'>Lugar de nacimiento</label>
+                        <input id='birthDate' type='text' name='birthDate' value='' />
+                
+                    </form>
             <Navigation 
                 title1={title1}
                 title2={title2}
@@ -74,7 +73,7 @@ class Step2 extends Component {
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
             />
-            </Fragment>
+            </div>
         );
     }
 }

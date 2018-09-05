@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Pages from './Pages';
 // import Footer from './Footer.js';
+import '../scss/Steps.css';
 
 
 class App extends Component {
