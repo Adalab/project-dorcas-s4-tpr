@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 
 class Step2 extends Component {
     render() { 
-        const {title2, step2, dot1, dot2, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
+        const {title2, step2, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
         return ( 
             <Fragment>
             <Title title={title2} step={step2}/>
@@ -53,6 +53,9 @@ class Step2 extends Component {
             <Navigation 
                 dot1={dot1} 
                 dot2={dot2}
+                dot3={dot3}
+                dot4={dot4}
+                dot5={dot5}
                 previousStep={previousStep} 
                 followingStep={followingStep}
                 handleClickPreviousStep={handleClickPreviousStep}

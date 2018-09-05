@@ -2,15 +2,15 @@ import React, { Component, Fragment } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 
-class Step3 extends Component {
+class Step5 extends Component {
     render() {
         console.log(this.props);
-        const {title3, step3, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
+        const {title5, step5, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
         return (
             <Fragment>
-                <Title title={title3} step={step3}/>
+                <Title title={title5} step={step5}/>
                 <form>
-                    <p>holi</p>
+                <p>holi</p>
                 </form>
                 <Navigation 
                     dot1={dot1} 
@@ -28,4 +28,4 @@ class Step3 extends Component {
     }
 }
 
-export default Step3;
+export default Step5;
