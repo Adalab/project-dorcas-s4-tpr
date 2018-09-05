@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Header';
 import Pages from './Pages';
 // import Footer from './Footer.js';
-import Header from './Header.js';
+
 
 class App extends Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class App extends Component {
 }
   
   render() {
-    console.log(this.state);
+    console.log('estado app', this.state);
     const {title1, title2, step1, step2, dot1, dot2, previousStep, followingStep} = this.state;
     return (
       <div className="App">
