@@ -19,6 +19,7 @@ class Pages extends Component {
             render={props =>
               <Step1
                 title1={title1}
+                title2={title2}
                 step1={step1}
                 dot1={dot1}
                 dot2={dot2}
@@ -35,6 +36,7 @@ class Pages extends Component {
             path='/step/2'
             render={props =>
               <Step2
+                title1={title1}
                 title2={title2}
                 step2={step2}
                 dot1={dot1}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Title extends Component {
     render() {
-        console.log(this.props);
+        console.log('props TITLE', this.props);
         const {title, step} = this.props;
       return (
         <div>
