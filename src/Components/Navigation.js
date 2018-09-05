@@ -8,8 +8,14 @@ class Navigation extends Component {
         const {
           title1,
           title2,
+          title3,
+          title4,
+          title5,
           dot1,
           dot2,
+          dot3, 
+          dot4,
+          dot5,
           previousStep,
           followingStep,
           handleClickPreviousStep,
@@ -28,16 +34,16 @@ class Navigation extends Component {
                   <p>{title2}</p>
                 </li>
                 <li>
-                  {/* <Icon /> */}
-                  <p></p>
+                  <Icon state={dot3}/>
+                  <p>{title3}</p>
                 </li>
                 <li>
-                  {/* <Icon /> */}
-                  <p></p>
+                  <Icon state={dot4}/>
+                  <p>{title4}</p>
                 </li>
                 <li>
-                  {/* <Icon /> */}
-                  <p></p>
+                  <Icon state={dot5}/>
+                  <p>{title5}</p>
                 </li>
               </ul>
             </nav>
