@@ -4,11 +4,24 @@ import Navigation from './Navigation';
 
 class Step1 extends Component {
     render() {
-        console.log(this.props);
-        const {title1, step1, dot1, dot2, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
+        console.log('props STEP1', this.props);
+        const {
+            title1,
+            title2,
+            step1,
+            dot1,
+            dot2,
+            previousStep,
+            followingStep,
+            handleClickPreviousStep,
+            handleClickFollowingStep
+        } = this.props;
         return (
             <Fragment>
-                <Title title={title1} step={step1}/>
+                <Title 
+                    title={title1} 
+                    step={step1}
+                />
                 <form>
                     <label htmlFor='surname'></label>
                     <input id='surname' type='text' name='surname' placeholder='Apellidos' value=''/>
@@ -23,7 +36,9 @@ class Step1 extends Component {
                 </form>
                 <Navigation 
                     dot1={dot1} 
-                    dot2={dot2} 
+                    dot2={dot2}
+                    title1={title1}
+                    title2={title2} 
                     previousStep={previousStep} 
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
