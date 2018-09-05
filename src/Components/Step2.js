@@ -1,16 +1,14 @@
 import React, { Component, Fragment } from 'react';
-class View2 extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        return (
-            <Fragment>
-                <h2>Paso 2</h2>
-                <h1>Documentos de viaje</h1>
+import Title from './Title';
+import Navigation from './Navigation';
 
-                <form>
+class Step2 extends Component {
+    render() { 
+        const {title2, step2, dot1, dot2, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
+        return ( 
+            <Fragment>
+            <Title title={title2} step={step2}/>
+            <form>
                     <fieldset>
 
                         <h2>Pasaporte</h2>
@@ -52,9 +50,17 @@ class View2 extends Component {
                         <input id='birthDate' type='text' name='birthDate' placeholder='Lugar de nacimiento' value='' />
                     </fieldset>
                 </form>
+            <Navigation 
+                dot1={dot1} 
+                dot2={dot2}
+                previousStep={previousStep} 
+                followingStep={followingStep}
+                handleClickPreviousStep={handleClickPreviousStep}
+                handleClickFollowingStep={handleClickFollowingStep}
+            />
             </Fragment>
-        );
+         );
     }
 }
-
-export default View2;
+ 
+export default Step2;

@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from 'react';
+import Title from './Title';
+import Navigation from './Navigation';
 
-class View1 extends Component {
-    render() { 
+class Step1 extends Component {
+    render() {
+        console.log(this.props);
+        const {title1, step1, dot1, dot2, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
         return (
-            <Fragment> 
-                <h2>Paso 1</h2>
-                <h1>Datos personales</h1>
+            <Fragment>
+                <Title title={title1} step={step1}/>
                 <form>
                     <label htmlFor='surname'></label>
                     <input id='surname' type='text' name='surname' placeholder='Apellidos' value=''/>
@@ -18,9 +21,17 @@ class View1 extends Component {
                     <label htmlFor='email'></label>
                     <input id='email' type='text' name='email' placeholder='me@aboutjunior.com' disabled/>
                 </form>
+                <Navigation 
+                    dot1={dot1} 
+                    dot2={dot2} 
+                    previousStep={previousStep} 
+                    followingStep={followingStep}
+                    handleClickPreviousStep={handleClickPreviousStep}
+                    handleClickFollowingStep={handleClickFollowingStep}
+                />
             </Fragment>
         );
     }
 }
- 
-export default View1;
+
+export default Step1;
