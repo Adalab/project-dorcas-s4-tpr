@@ -8,7 +8,7 @@ class Header extends Component {
       <div>
         <p>
           <FormattedMessage
-            id="Home.dayMessage"
+            id="Header.dayMessage"
             defaultMessage="It's a beautiful day outside."
           />
         </p>

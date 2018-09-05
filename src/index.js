@@ -9,7 +9,7 @@ import { IntlProvider, addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
 import es from "react-intl/locale-data/es";
 
-import localeData from "./../public/locales/data.json";
+import localeData from "./../build/locales/data.json";
 
 addLocaleData([...en, ...es]);
 
@@ -21,7 +21,7 @@ const language =
 const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 
 // Si no tiene el language locale por defecto será inglés
-const messages =
+const messages = 
     localeData[languageWithoutRegionCode] ||
     localeData[language] ||
     localeData.en;
