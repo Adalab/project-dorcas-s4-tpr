@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../Images/img-logo-triporate.svg';
+import { FormattedMessage } from 'react-intl';
 
 class Header extends Component {
   render() {
