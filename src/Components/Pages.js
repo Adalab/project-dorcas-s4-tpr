@@ -7,7 +7,7 @@ import Step2 from './Step2';
 class Pages extends Component {
   render() {
     console.log(this.props);
-    const { title1, title2, step1, step2, dot1, dot2, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep } = this.props;
+    const { props } = this.props;
     return (
       <Fragment>
         <Switch>
@@ -15,8 +15,15 @@ class Pages extends Component {
             path='/step/1'
             render={props =>
               <Step1
-                title1={title1}
-                step1={step1}
+                props={props}
+              />}
+          />
+          <Route
+            path='/step/2'
+            render={props =>
+              <Step2
+                title2={title2}
+                step2={step2}
                 dot1={dot1}
                 dot2={dot2}
                 previousStep={previousStep}
@@ -26,11 +33,11 @@ class Pages extends Component {
               />}
           />
           <Route
-            path='/step/2'
+            path='/step/1'
             render={props =>
-              <Step2
-                title2={title2}
-                step2={step2}
+              <Step1
+                title1={title1}
+                step1={step1}
                 dot1={dot1}
                 dot2={dot2}
                 previousStep={previousStep}
