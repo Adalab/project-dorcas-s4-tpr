@@ -7,9 +7,15 @@ class Step2 extends Component {
         const {
             title1,
             title2,
+            title3, 
+            title4,
+            title5,
             step2,
             dot1,
             dot2,
+            dot3, 
+            dot4, 
+            dot5,
             previousStep,
             followingStep,
             handleClickPreviousStep,
@@ -66,8 +72,14 @@ class Step2 extends Component {
             <Navigation 
                 title1={title1}
                 title2={title2}
+                title3={title3}
+                title4={title4}
+                title5={title5}
                 dot1={dot1} 
                 dot2={dot2}
+                dot3={dot3}
+                dot4={dot4}
+                dot5={dot5}
                 previousStep={previousStep} 
                 followingStep={followingStep}
                 handleClickPreviousStep={handleClickPreviousStep}

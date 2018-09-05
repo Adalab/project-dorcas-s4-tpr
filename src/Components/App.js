@@ -11,10 +11,19 @@ class App extends Component {
     this.state = {
       title1: 'Datos personales',
       title2: 'Documentos de viaje',
+      title3: '',
+      title4: '',
+      title5: 'Extras',
       step1: 'Paso 1',
       step2: 'Paso 2',
+      step3: 'Paso 3',
+      step4: 'Paso 4',
+      step5: 'Paso 5',
       dot1: 'active',
       dot2: '',
+      dot3: '',
+      dot4: '',
+      dot5: '',
       previousStep: 0,
       currentStep: 1,
       followingStep: 2,
@@ -28,7 +37,10 @@ class App extends Component {
     if (this.state.dot1 === 'active') {
       this.setState({
         dot1: '',
-        dot2: 'active',
+        dot2:'active',
+        dot3: '',
+        dot4: '',
+        dot5: '',
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
@@ -41,6 +53,9 @@ class App extends Component {
       this.setState({
         dot1: 'active',
         dot2: '',
+        dot3: '',
+        dot4: '',
+        dot5: '',
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
@@ -57,7 +72,10 @@ class App extends Component {
     if (this.state.dot1 === 'active') {
       this.setState({
         dot1: '',
-        dot2: 'active',
+        dot2:'active',
+        dot3: '',
+        dot4: '',
+        dot5: '',
         previousStep: this.state.previousStep + 1,
         currentStep: this.state.currentStep + 1,
         followingStep: this.state.followingStep + 1,
@@ -69,7 +87,10 @@ class App extends Component {
     } else if (this.state.dot1 === '') {
       this.setState({
         dot1: 'active',
-        dot2: '',
+        dot2:'',
+        dot3: '',
+        dot4: '',
+        dot5: '',
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
@@ -82,20 +103,13 @@ class App extends Component {
   }
 
   render() {
-    console.log('estado app', this.state);
-    const {title1, title2, step1, step2, dot1, dot2, previousStep, followingStep} = this.state;
+    console.log(this.state);
+    const {state} = this;
     return (
       <div className="App">
         <Header />
-        <Pages
-          title1={title1}
-          title2={title2}
-          step1={step1}
-          step2={step2}
-          dot1={dot1}
-          dot2={dot2}
-          previousStep={previousStep}
-          followingStep={followingStep}
+        <Pages 
+          state={state}
           handleClickPreviousStep={this.handleClickPreviousStep}
           handleClickFollowingStep={this.handleClickFollowingStep}
         />
