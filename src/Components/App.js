@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
 import Pages from './Pages';
+// import Footer from './Footer.js';
+import Header from './Header.js';
 
 class App extends Component {
   constructor(props) {

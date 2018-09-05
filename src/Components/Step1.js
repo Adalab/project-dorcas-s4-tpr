@@ -9,7 +9,18 @@ class Step1 extends Component {
         return (
             <Fragment>
                 <Title title={title1} step={step1}/>
-                <p> Formulario 1 </p>
+                <form>
+                    <label htmlFor='surname'></label>
+                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value=''/>
+                    <label htmlFor='name'></label>
+                    <input id='name' type="text" name='name' placeholder='Nombre' value=''/>
+                    <label htmlFor='mobilePhone'></label>
+                    <input id='mobilePhone' type='number' name='mobilePhone' placeholder='Teléfono móvil' value=''/>
+                    <label htmlFor='landlinePhone'></label>
+                    <input id='landlinePhone' type='number' name='landlinePhone' placeholder='Teléfono fijo' value=''/>
+                    <label htmlFor='email'></label>
+                    <input id='email' type='text' name='email' placeholder='me@aboutjunior.com' disabled/>
+                </form>
                 <Navigation 
                     dot1={dot1} 
                     dot2={dot2} 

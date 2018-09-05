@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import logo from '../Images/img-logo-triporate.svg';
 
 class Header extends Component {
-    render() {
-      return (
+  render() {
+    return (
         <div>
-            <h2>Header</h2>
+            <img src={logo}></img>
+            <img src='' ></img>
         </div>
-      );
-    }
+    );
   }
-  
-  export default Header;
+}
+
+export default Header;
