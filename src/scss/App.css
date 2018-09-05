@@ -9,3 +9,13 @@
 
 #landlinePhone {
   text-align: end; }
+
+.emergencyContact-step5 {
+  display: flex; }
+
+.emergencyContact-container {
+  display: flex;
+  flex-direction: column; }
+
+.select-step5 {
+  height: 20px; }
