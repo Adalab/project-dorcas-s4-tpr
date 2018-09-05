@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Pages from './Pages';
-import Footer from './Footer';
+// import Footer from './Footer.js';
+
 
 class App extends Component {
   constructor(props) {
@@ -80,8 +81,8 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
-    const { title1, title2, step1, step2, dot1, dot2, previousStep, followingStep } = this.state;
+    console.log('estado app', this.state);
+    const {title1, title2, step1, step2, dot1, dot2, previousStep, followingStep} = this.state;
     return (
       <div className="App">
         <Header />

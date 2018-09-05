@@ -4,12 +4,12 @@ import IconOff from './IconOff';
 
 class Icon extends Component {
     render() {
-        console.log(this.props);
-        const { state } = this.props;
-        if (state === 'active') {
-            return <IconOn />
-        } else if (state === '') {
-            return <IconOff />
+        console.log('props ICON',this.props);
+        const {state} = this.props;
+        if(state === 'active'){
+            return <IconOn/>
+        } else if(state === ''){
+            return <IconOff/>
         }
     }
 }
