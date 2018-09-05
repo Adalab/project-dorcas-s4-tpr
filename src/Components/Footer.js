@@ -6,7 +6,7 @@ class Footer extends Component {
   render() {
     return (
       <nav className='footer'>
-        <Button/>
+        <Button />
         <ul>
           <li>
             <span>1</span>
@@ -29,7 +29,7 @@ class Footer extends Component {
             <p>Extras</p>
           </li>
         </ul>
-        <Button/>
+        <Button />
       </nav>
     );
   }

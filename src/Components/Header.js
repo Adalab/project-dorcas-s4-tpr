@@ -4,10 +4,10 @@ import logo from '../Images/img-logo-triporate.svg';
 class Header extends Component {
   render() {
     return (
-        <div>
-            <img src={logo}></img>
-            <img src='' ></img>
-        </div>
+      <div>
+        <img src={logo}></img>
+        <img src='' ></img>
+      </div>
     );
   }
 }
