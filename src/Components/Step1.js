@@ -1,6 +1,28 @@
 import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
+import TypeEmailInput from './TypeEmailInput';
+import TypePhoneInput from './TypePhoneInput';
+
+const emailAdress = {
+    id: 'email',
+    name: 'email',
+    disable: true
+};
+
+const mobilePhoneNumber = {
+    labelContent: 'Teléfono móvil',
+    id: 'mobilePhone',
+    name: 'mobilePhone',
+    required: true
+};
+
+const landLineNumber = {
+    labelContent: 'Teléfono fijo',
+    id: 'landLinePhone',
+    name: 'landLinePhone',
+    required: false
+};
 
 class Step1 extends Component {
     render() {
@@ -9,7 +31,7 @@ class Step1 extends Component {
             title1,
             title2,
             title3,
-            title4, 
+            title4,
             title5,
             step1,
             dot1,
@@ -24,20 +46,20 @@ class Step1 extends Component {
         } = this.props;
         return (
             <div className='stepBox'>
-                <Title title={title1} step={step1} />
+                <Title
+                    title={title1}
+                    step={step1}
+                />
                 <form className='form'>
                     <label htmlFor='surname'>Apellidos</label>
                     <input id='surname' type='text' name='surname' value='' />
                     <label htmlFor='name'>Nombre</label>
                     <input id='name' type="text" name='name' value='' />
                     <div className='phones'>
-                        <label htmlFor='mobilePhone'>Teléfono móvil</label>
-                        <input id='mobilePhone' type='text' name='mobilePhone' value='' />
-                        <label htmlFor='landlinePhone'>Teléfono fijo</label>
-                        <input id='landlinePhone' type='text' name='landlinePhone' placeholder='opcional' value='' />
+                        <TypePhoneInput phoneNumber={mobilePhoneNumber} />
+                        <TypePhoneInput phoneNumber={landLineNumber} />
                     </div>
-                    <label htmlFor='email'>Email</label>
-                    <input id='email' type='text' name='email' placeholder='me@aboutjunior.com' disabled />
+                    <TypeEmailInput emailAdress={emailAdress} />
                 </form>
                 <Navigation
                     dot1={dot1}
@@ -50,7 +72,7 @@ class Step1 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    previousStep={previousStep} 
+                    previousStep={previousStep}
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
