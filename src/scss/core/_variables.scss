@@ -7,9 +7,18 @@ $font-size-s: 12px;
 
 // COLORES
 
-$color-primary: #06a790;
-$color-secondary: #77c7ad;
+$color-primary-dark: #06a790;
+$color-primary-light: #77c7ad;
+$color-primary: #05b09b;
 $color-secondary-light:#f8f9f8;
 $color-secondary-dark:#8d9293;
+$color-secondary-dark:#5b5b5b;
 $color-dark:#222222;
 
+/* TYPOGRAPHY WEIGHT */
+
+$regular: 400;
+$normal: 500;
+
+// Font-family:
+$font-family-primary: 'Fira Sans', sans-serif;
