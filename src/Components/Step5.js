@@ -44,13 +44,8 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form>
-<<<<<<< HEAD
-
-                <label class="switch">
-=======
                     
                 <label className="switch">
->>>>>>> c96fc9a2eb91d99d1784c97f4c849ccbac48da9a
                         <input type="checkbox" />
                         <span className="slider round"></span>
                         Familia numerosa</label>

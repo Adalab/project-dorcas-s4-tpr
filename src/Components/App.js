@@ -106,9 +106,9 @@ class App extends Component {
           dot4: '',
           dot5: '',
         },
-        previousStep: this.state.previousStep - 1,
-        currentStep: this.state.currentStep - 1,
-        followingStep: this.state.followingStep - 1,
+        previousStep: this.state.previousStep + 1,
+        currentStep: this.state.currentStep + 1,
+        followingStep: this.state.followingStep + 1,
       }, function(){
         console.log(this.state.previousStep);
         console.log(this.state.currentStep);

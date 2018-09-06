@@ -1,8 +1,10 @@
 {
   "en": {
-    "Header.dayMessage": "It's a beautiful day outside."
+    "Header.dayMessage": "It's a beautiful day outside.",
+    "Step2.passport": "Passport"
   },
   "es": {
-    "Header.dayMessage": "Un día maravilloso."
+    "Header.dayMessage": "Un día maravilloso.",
+    "Step2.passport": "Pasaporte"
   }
 }

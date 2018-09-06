@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
+import { FormattedMessage } from 'react-intl';
 
 class Step2 extends Component {
     render() { 
@@ -31,10 +32,20 @@ class Step2 extends Component {
             <form>
                     <fieldset>
 
-                        <h2>Pasaporte</h2>
+                        <h2>
+                            <FormattedMessage
+                                id="Step2.passport"
+                                defaultMessage="Passport"
+                            />
+                        </h2>
 
-                        <label htmlFor='numPassport'></label>
-                        <input id='numPassport' type='text' name='numPassport' placeholder='Número de pasaporte' value='' />
+                        <label htmlFor='numPassport'>
+                            <FormattedMessage
+                                id="Step2.userPassportNumber"
+                                defaultMessage="Passport number"
+                             />
+                        </label>
+                        <input id='numPassport' type='text' name='numPassport' value=''/>
                         <label htmlFor='countryIssue'></label>
                         <input id='countryIssue' type='text' name='countryIssue' placeholder='País de emisión' value='' />
                         <div className='verticalDisplay'>
