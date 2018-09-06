@@ -1,0 +1,10 @@
+[
+  {
+    "id": "Step1.userSurname",
+    "defaultMessage": "Surname"
+  },
+  {
+    "id": "Step1.userName",
+    "defaultMessage": "Name"
+  }
+]

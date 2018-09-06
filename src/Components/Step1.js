@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
@@ -6,13 +7,19 @@ import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
 
 const surnameInput = {
-    labelContent: 'Apellidos',
+    labelContent: <FormattedMessage
+                   id="Step1.userSurname"
+                   defaultMessage="Surname"
+                   />,
     id: 'surname',
     name: 'surname'
 };
 
 const nameInput = {
-    labelContent: 'Nombre',
+    labelContent: <FormattedMessage
+                   id="Step1.userName"
+                   defaultMessage="Name"
+                   />,
     id: 'name',
     name: 'name'
 };
@@ -23,8 +30,7 @@ const emailAdress = {
     disable: true
 };
 
-const mobilePhoneNumber = {
-    labelContent: 'Teléfono móvil',
+const mobilePhoneNumber = {labelContent: 'Teléfono móvil',
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true

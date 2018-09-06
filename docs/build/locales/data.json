@@ -1,0 +1,13 @@
+{
+  "en": {
+    "Header.dayMessage": "It's a beautiful day outside.",
+    "Step2.passport": "Passport",
+    "Step2.userPassportNumber": "Passport number",
+    "Step5.numerousFamily": "Numerous Family",
+    "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
+  },
+  "es": {
+    "Header.dayMessage": "Un día maravilloso.",
+    "Step2.passport": "Pasaporte"
+  }
+}

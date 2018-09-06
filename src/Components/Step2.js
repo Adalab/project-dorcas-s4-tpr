@@ -5,22 +5,28 @@ import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
 
 const countryIssueInput = {
-    labelContent: 'País de emisión',
+    labelContent: <FormattedMessage
+                   id="Step2.userPassCountryIssue"
+                   defaultMessage="Country of issue"
+                   />,
     id: 'countryIssue',
     name: 'countryIssue'
 };
 
 const birthPlaceInput = {
-    labelContent: 'Lugar de nacimiento',
+    labelContent: <FormattedMessage
+                   id="Step2.userBirthPlace"
+                   defaultMessage="Place of birth"
+                   />,
     id: 'birthPlace',
     name: 'birthPlace'
 };
 
 const numPassportInput = {
     labelContent: <FormattedMessage
-                    id="Step2.userPassportNumber"
-                    defaultMessage="Passport number"
-                    />,
+                   id="Step2.userPassportNumber"
+                   defaultMessage="Passport number"
+                   />,
     id: 'numPassport',
     name: 'numPassport'
 };
@@ -63,32 +69,79 @@ class Step2 extends Component {
                         <TypeTextInput inputText={numPassportInput} />
                         <TypeTextInput inputText={countryIssueInput} />
                         <div className='verticalDisplay'>
-                            <label htmlFor='dateIssue'>F.emisión</label>
+                            <label htmlFor='dateIssue'>
+                            <FormattedMessage
+                                    id="Step2.userPassDateIssue"
+                                    defaultMessage="Date of issue"
+                                />
+                            </label>
                             <input id='dateIssue' type='number' name='dateIssue' value='' />
-                            <label htmlFor='expirationDate'>F.expiración</label>
+                            <label htmlFor='expirationDate'>
+                            <FormattedMessage
+                                    id="Step2.userPassExpirationDate"
+                                    defaultMessage="Expiration date"
+                                />
+                            </label>
                             <input id='expirationDate' type='number' name='expirationDate' value='' />
                         </div>
 
-                        <h2>Visado (opcional)</h2>
+                        <h2>
+                            <FormattedMessage
+                                id="Step2.visa"
+                                defaultMessage="Visa (optional)"
+                            />
+                        </h2>
 
-                        <div>Agregar detalles del visado</div>
+                        <div>
+                            <FormattedMessage
+                                id="Step2.addVisaDetails"
+                                defaultMessage="Add visa details"
+                            />
+                        </div>
 
-                        <h2>Dni/Nie</h2>
+                        <h2>
+                            <FormattedMessage
+                                id="Step2.dniNie"
+                                defaultMessage="Id"
+                            />
+                        </h2>
 
                         <div className='verticalDisplay'>
-                            <label htmlFor='documentType'>Número de pasaporte</label>
+                            <label htmlFor='documentType'>
+                            </label>
                             <select id='documentType' name='documentType' value=''>
-                                <option value="">Tipo</option>
+                                <option value="">
+                                    <FormattedMessage
+                                        id="Step2.type"
+                                        defaultMessage="Type"
+                                    />
+                                </option>
 
                             </select>
 
-                            <label htmlFor='documentNumber'>Número de documento</label>
+                            <label htmlFor='documentNumber'>
+                                <FormattedMessage
+                                    id="Step2.userDocumentNumber"
+                                    defaultMessage="Document number"
+                                />
+                            </label>
+
                             <input id='documentNumber' type='text' name='documentNumber' value='' />
                         </div>
                         <div className='verticalDisplay'>
-                            <label htmlFor='dateIssue'>F.emisión</label>
+                            <label htmlFor='dateIssue'>
+                            <FormattedMessage
+                                    id="Step2.userDocDateIssue"
+                                    defaultMessage="Date of issue"
+                                />
+                            </label>
                             <input id='dateIssue' type='number' name='dateIssue' value='' />
-                            <label htmlFor='expirationDate'>F.expiración</label>
+                            <label htmlFor='expirationDate'>
+                            <FormattedMessage
+                                    id="Step2.userDocExpirationDate"
+                                    defaultMessage="Expiration date"
+                                />
+                            </label>
                             <input id='expirationDate' type='number' name='expirationDate' value='' />
                         </div>
                         <TypeTextInput inputText={birthPlaceInput} />

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "Step2.passport",
+    "defaultMessage": "Passport"
+  },
+  {
+    "id": "Step2.userPassportNumber",
+    "defaultMessage": "Passport number"
+  }
+]
