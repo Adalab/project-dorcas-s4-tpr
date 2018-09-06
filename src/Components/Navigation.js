@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from './Icon';
+import '../scss/Navigation.css';
 
 class Navigation extends Component {
     render() {
@@ -23,8 +24,9 @@ class Navigation extends Component {
         } = this.props;
       return (
         <div>
-            <nav>
-              <ul>
+            <nav className='navigation-container'>
+            <Link to={`/step/${previousStep}`}><button onClick={handleClickPreviousStep}>Anterior</button></Link>
+              <ul className='list-steps'>
                 <li>
                   <Icon state={dot1}/>
                   <p>{title1}</p>
@@ -46,14 +48,15 @@ class Navigation extends Component {
                   <p>{title5}</p>
                 </li>
               </ul>
+              <Link to={`/step/${followingStep}`}><button onClick={handleClickFollowingStep}>Siguiente</button></Link>
             </nav>
             
             
-            <Link to={`/step/${previousStep}`}><button onClick={handleClickPreviousStep}>Anterior</button></Link>
-            <Link to={`/step/${followingStep}`}><button onClick={handleClickFollowingStep}>Siguiente</button></Link>
+            
+            
         </div>
       );
     }
   }
-  
-  export default Navigation;
+
+export default Navigation;
