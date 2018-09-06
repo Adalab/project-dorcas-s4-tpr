@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
@@ -50,10 +51,20 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <label htmlFor='surname'>Apellidos</label>
-                    <input id='surname' type='text' name='surname' value='' />
-                    <label htmlFor='name'>Nombre</label>
-                    <input id='name' type="text" name='name' value='' />
+                    <label htmlFor='surname'>
+                        <FormattedMessage
+                            id="Step1.userSurname"
+                            defaultMessage="Surname"
+                        />
+                    </label>
+                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value='' />
+                    <label htmlFor='name'>
+                        <FormattedMessage
+                            id="Step1.userName"
+                            defaultMessage="Name"
+                        />
+                    </label>
+                    <input id='name' type="text" name='name' placeholder='Nombre' value='' />
                     <div className='phones'>
                         <TypePhoneInput phoneNumber={mobilePhoneNumber} />
                         <TypePhoneInput phoneNumber={landLineNumber} />
