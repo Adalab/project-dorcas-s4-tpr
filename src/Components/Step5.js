@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
@@ -22,33 +22,34 @@ class Step5 extends Component {
     render() {
         console.log('STEP5', this.props);
         const {
-            title1, 
-            title2, 
-            title3, 
-            title4, 
-            title5, 
-            step5, 
-            dot1, 
-            dot2, 
-            dot3, 
-            dot4, 
-            dot5, 
-            previousStep, 
-            followingStep, 
-            handleClickPreviousStep, 
+            title1,
+            title2,
+            title3,
+            title4,
+            title5,
+            step5,
+            dot1,
+            dot2,
+            dot3,
+            dot4,
+            dot5,
+            previousStep,
+            followingStep,
+            handleClickPreviousStep,
             handleClickFollowingStep
         } = this.props;
         return (
-            <Fragment>
-                <Title 
-                    title={title5} 
+            <div className='stepBox'>
+                <Title
+                    title={title5}
                     step={step5}
                 />
-                <form>
-                    
-                <label className="switch">
+                <form className='form'>
+
+                    <label className="switch">
                         <input type="checkbox" />
                         <span className="slider round"></span>
+<<<<<<< HEAD
                         <FormattedMessage
                             id="Step5.numerousFamily"
                             defaultMessage="Numerous Family"
@@ -66,41 +67,55 @@ class Step5 extends Component {
                             />
                             Residente fuera de la península
                         </label>
+=======
+                        Familia numerosa</label>
+                    <label htmlFor='familyNumber'></label>
+                    <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
 
-                        <select>
-                            <option>Selecciona lugar de residencia</option>
+                    <label className="switch">
+                        <input type="checkbox" />
+                        <span className="slider round"></span>
+                        Residente fuera de la península</label>
+>>>>>>> 74ed98cd63459c2f9e92ad05cb4149f3249e61ae
+
+                    <select>
+                        <option>Selecciona lugar de residencia</option>
+                    </select>
+
+                    <h2>Contacto en caso de emergencia</h2>
+                    <div className='emergencyContact-step5'>
+                        <select className='select-step5'>
+                            <option>Parentesco</option>
+                            <option>Padre/Madre</option>
+                            <option>Hermano</option>
+                            <option>Pareja</option>
+                            <option>Otro</option>
                         </select>
-
-                        <h2>Contacto en caso de emergencia</h2>
-                            <select>
-                                <option>Parentesco</option>
-                                <option>Padre/Madre</option>
-                                <option>Hermano</option>
-                                <option>Pareja</option>
-                                <option>Otro</option>
-                            </select>
+                        <div className='emergencyContact-container'>
                             <label htmlFor='emergencyContactName'></label>
                             <input id='emergencyContactName' type='text' name='emergencyContactName' placeholder='Nombre y Apellidos' value='' />
-                            <TypeEmailInput emailAdress={emailAdress}/>
-                            <TypePhoneInput phoneNumber={emergencyContactPhone}/>
+                            <TypeEmailInput emailAdress={emailAdress} />
+                            <TypePhoneInput phoneNumber={emergencyContactPhone} />
+                        </div>
+                    </div>
                 </form>
-                <Navigation 
+                <Navigation
                     title1={title1}
                     title2={title2}
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    dot1={dot1} 
+                    dot1={dot1}
                     dot2={dot2}
                     dot3={dot3}
                     dot4={dot4}
                     dot5={dot5}
-                    previousStep={previousStep} 
+                    previousStep={previousStep}
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
                 />
-            </Fragment>
+            </div>
         );
     }
 }
