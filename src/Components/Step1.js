@@ -3,6 +3,19 @@ import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
+import TypeTextInput from './TypeTextInput';
+
+const surnameInput = {
+    labelContent: 'Apellidos',
+    id: 'surname',
+    name: 'surname'
+};
+
+const nameInput = {
+    labelContent: 'Nombre',
+    id: 'name',
+    name: 'name'
+};
 
 const emailAdress = {
     id: 'email',
@@ -51,10 +64,8 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <label htmlFor='surname'>Apellidos</label>
-                    <input id='surname' type='text' name='surname' value='' />
-                    <label htmlFor='name'>Nombre</label>
-                    <input id='name' type="text" name='name' value='' />
+                    <TypeTextInput inputText={surnameInput} />
+                    <TypeTextInput inputText={nameInput} />
                     <div className='phones'>
                         <TypePhoneInput phoneNumber={mobilePhoneNumber} />
                         <TypePhoneInput phoneNumber={landLineNumber} />

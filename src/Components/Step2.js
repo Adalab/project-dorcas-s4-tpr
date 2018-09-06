@@ -2,6 +2,28 @@ import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 import { FormattedMessage } from 'react-intl';
+import TypeTextInput from './TypeTextInput';
+
+const countryIssueInput = {
+    labelContent: 'País de emisión',
+    id: 'countryIssue',
+    name: 'countryIssue'
+};
+
+const birthPlaceInput = {
+    labelContent: 'Lugar de nacimiento',
+    id: 'birthPlace',
+    name: 'birthPlace'
+};
+
+const numPassportInput = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassportNumber"
+                    defaultMessage="Passport number"
+                    />,
+    id: 'numPassport',
+    name: 'numPassport'
+};
 
 class Step2 extends Component {
     render() { 
@@ -38,20 +60,13 @@ class Step2 extends Component {
                             />
                         </h2>
 
-                        <label htmlFor='numPassport'>
-                            <FormattedMessage
-                                id="Step2.userPassportNumber"
-                                defaultMessage="Passport number"
-                             />
-                        </label>
-                        <input id='numPassport' type='text' name='numPassport' value=''/>
-                        <label htmlFor='countryIssue'>País de emisión</label>
-                        <input id='countryIssue' type='text' name='countryIssue' value='' />
+                        <TypeTextInput inputText={numPassportInput} />
+                        <TypeTextInput inputText={countryIssueInput} />
                         <div className='verticalDisplay'>
                             <label htmlFor='dateIssue'>F.emisión</label>
-                            <input id='dateIssue' type='text' name='dateIssue' value='' />
+                            <input id='dateIssue' type='number' name='dateIssue' value='' />
                             <label htmlFor='expirationDate'>F.expiración</label>
-                            <input id='expirationDate' type='text' name='expirationDate' value='' />
+                            <input id='expirationDate' type='number' name='expirationDate' value='' />
                         </div>
 
                         <h2>Visado (opcional)</h2>
@@ -72,12 +87,11 @@ class Step2 extends Component {
                         </div>
                         <div className='verticalDisplay'>
                             <label htmlFor='dateIssue'>F.emisión</label>
-                            <input id='dateIssue' type='text' name='dateIssue' value='' />
+                            <input id='dateIssue' type='number' name='dateIssue' value='' />
                             <label htmlFor='expirationDate'>F.expiración</label>
-                            <input id='expirationDate' type='text' name='expirationDate' value='' />
+                            <input id='expirationDate' type='number' name='expirationDate' value='' />
                         </div>
-                        <label htmlFor='birthDate'>Lugar de nacimiento</label>
-                        <input id='birthDate' type='text' name='birthDate' value='' />
+                        <TypeTextInput inputText={birthPlaceInput} />
                 
                     </form>
             <Navigation 

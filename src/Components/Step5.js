@@ -50,7 +50,7 @@ class Step5 extends Component {
                         <span className="slider round"></span>
                         Familia numerosa</label>
                     <label htmlFor='familyNumber'></label>
-                    <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
+                    <input id='familyNumber' type='number' name='familyNumber' placeholder='Número de integrantes' value='' />
 
                     <label className="switch">
                         <input type="checkbox" />
