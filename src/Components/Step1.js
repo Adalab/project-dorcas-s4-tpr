@@ -2,12 +2,25 @@ import React, { Component, Fragment } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
+import TypePhoneInput from './TypePhoneInput';
 
 const emailAdress = {
     id: 'email',
     name: 'email',
     disable: true
 };
+
+const mobilePhoneNumber = {
+    labelContent: 'Teléfono móvil',
+    id: 'mobilePhone',
+    name: 'mobilePhone'
+};
+
+const landLineNumber = {
+    labelContent: 'Teléfono fijo',
+    id: 'landLinePhone',
+    name: 'landLinePhone'
+}
 
 class Step1 extends Component {
     render() {
@@ -40,10 +53,8 @@ class Step1 extends Component {
                     <input id='surname' type='text' name='surname' placeholder='Apellidos' value=''/>
                     <label htmlFor='name'></label>
                     <input id='name' type="text" name='name' placeholder='Nombre' value=''/>
-                    <label htmlFor='mobilePhone'></label>
-                    <input id='mobilePhone' type='number' name='mobilePhone' placeholder='Teléfono móvil' value=''/>
-                    <label htmlFor='landlinePhone'></label>
-                    <input id='landlinePhone' type='number' name='landlinePhone' placeholder='Teléfono fijo' value=''/>
+                    <TypePhoneInput phoneNumber={mobilePhoneNumber}/>
+                    <TypePhoneInput phoneNumber={landLineNumber}/>
                     <TypeEmailInput emailAdress={emailAdress}/>
                 </form>
                 <Navigation 

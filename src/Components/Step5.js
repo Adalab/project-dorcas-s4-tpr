@@ -2,11 +2,18 @@ import React, { Component, Fragment } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
+import TypePhoneInput from './TypePhoneInput';
 
 const emailAdress = {
     id: 'emergencyContactEmail',
     name: 'emergencyContactName',
     disable: false
+};
+
+const emergencyContactPhone = {
+    labelContent: 'Número de teléfono',
+    id: 'emergencyContactPhone',
+    name: 'emergencyContactPhone'
 };
 
 class Step5 extends Component {
@@ -64,9 +71,7 @@ class Step5 extends Component {
                             <label htmlFor='emergencyContactName'></label>
                             <input id='emergencyContactName' type='text' name='emergencyContactName' placeholder='Nombre y Apellidos' value='' />
                             <TypeEmailInput emailAdress={emailAdress}/>
-                            <label htmlFor='emergencyContactPhone'></label>
-                            <input id='emergencyContactPhone' type='text' name='emergencyContactPhone' placeholder='Número de teléfono' value='' />
-
+                            <TypePhoneInput phoneNumber={emergencyContactPhone}/>
                 </form>
                 <Navigation 
                     title1={title1}
