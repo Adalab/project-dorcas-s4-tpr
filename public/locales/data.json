@@ -13,7 +13,9 @@
     "Step2.userDocumentNumber": "Document number",
     "Step2.userDocDateIssue": "Date of issue",
     "Step2.userDocExpirationDate": "Expiration date",
-    "Step2.userBirthPlace": "Place of birth"
+    "Step2.userBirthPlace": "Place of birth",
+    "Step5.numerousFamily": "Numerous Family",
+    "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
   },
   "es": {
     "Header.dayMessage": "Un día maravilloso.",

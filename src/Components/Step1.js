@@ -10,8 +10,7 @@ const emailAdress = {
     disable: true
 };
 
-const mobilePhoneNumber = {
-    labelContent: 'Teléfono móvil',
+const mobilePhoneNumber = {labelContent: 'Teléfono móvil',
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true
