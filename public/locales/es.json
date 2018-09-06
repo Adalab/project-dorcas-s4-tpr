@@ -1,5 +1,5 @@
 {
-    "Header.dayMessage": "Un día maravilloso.",
     "Step1.userSurname": "Apellido",
-    "Step1.userName": "Nombre"
+    "Step1.userName": "Nombre",
+    "Step2.passport": "Pasaporte"
   }

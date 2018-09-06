@@ -7,9 +7,9 @@ class Step3 extends Component {
         console.log(this.props);
         const {title1, title2, title3, title4, title5, step3, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
         return (
-            <Fragment>
+            <div className='stepBox'>
                 <Title title={title3} step={step3}/>
-                <form>
+                <form className='form'>
                     <p>holi</p>
                 </form>
                 <Navigation 
@@ -28,7 +28,7 @@ class Step3 extends Component {
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
                 />
-            </Fragment>
+            </div>
         );
     }
 }

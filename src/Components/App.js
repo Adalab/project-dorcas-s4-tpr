@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './Header';
 import Pages from './Pages';
+import '../scss/App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class App extends Component {
     this.handleClickFollowingStep = this.handleClickFollowingStep.bind(this);
   }
 
-  handleClickPreviousStep(){
+  handleClickPreviousStep() {
     console.log(this.state.currentStep);
     const {dot1} = this.state.dots;
     if(dot1 === 'active'){
@@ -51,7 +52,7 @@ class App extends Component {
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
-      }, function(){
+      }, function () {
         console.log(this.state.previousStep);
         console.log(this.state.currentStep);
         console.log(this.state.followingStep);
@@ -68,15 +69,15 @@ class App extends Component {
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
-      }, function(){
+      }, function () {
         console.log(this.state.previousStep);
         console.log(this.state.currentStep);
         console.log(this.state.followingStep);
-    })
+      })
+    }
   }
-}
 
-  handleClickFollowingStep(){
+  handleClickFollowingStep() {
     console.log(this.state.currentStep);
     const {dot1} = this.state.dots;
     console.log('dot1',dot1);
@@ -92,7 +93,7 @@ class App extends Component {
         previousStep: this.state.previousStep + 1,
         currentStep: this.state.currentStep + 1,
         followingStep: this.state.followingStep + 1,
-      }, function(){
+      }, function () {
         console.log(this.state.previousStep);
         console.log(this.state.currentStep);
         console.log(this.state.followingStep);
@@ -106,17 +107,17 @@ class App extends Component {
           dot4: '',
           dot5: '',
         },
-        previousStep: this.state.previousStep - 1,
-        currentStep: this.state.currentStep - 1,
-        followingStep: this.state.followingStep - 1,
+        previousStep: this.state.previousStep + 1,
+        currentStep: this.state.currentStep + 1,
+        followingStep: this.state.followingStep + 1,
       }, function(){
         console.log(this.state.previousStep);
         console.log(this.state.currentStep);
         console.log(this.state.followingStep);
-    })
+      })
+    }
   }
-}
-  
+
   render() {
     console.log('ESTADO',this.state);
     const {state} = this;

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 import Navigation from './Navigation';
@@ -11,8 +11,7 @@ const emailAdress = {
     disable: true
 };
 
-const mobilePhoneNumber = {
-    labelContent: 'Teléfono móvil',
+const mobilePhoneNumber = {labelContent: 'Teléfono móvil',
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true
@@ -46,12 +45,12 @@ class Step1 extends Component {
             handleClickFollowingStep
         } = this.props;
         return (
-            <Fragment>
+            <div className='stepBox'>
                 <Title
                     title={title1}
                     step={step1}
                 />
-                <form>
+                <form className='form'>
                     <label htmlFor='surname'>
                         <FormattedMessage
                             id="Step1.userSurname"
@@ -66,8 +65,10 @@ class Step1 extends Component {
                         />
                     </label>
                     <input id='name' type="text" name='name' placeholder='Nombre' value='' />
-                    <TypePhoneInput phoneNumber={mobilePhoneNumber} />
-                    <TypePhoneInput phoneNumber={landLineNumber} />
+                    <div className='phones'>
+                        <TypePhoneInput phoneNumber={mobilePhoneNumber} />
+                        <TypePhoneInput phoneNumber={landLineNumber} />
+                    </div>
                     <TypeEmailInput emailAdress={emailAdress} />
                 </form>
                 <Navigation
@@ -86,7 +87,7 @@ class Step1 extends Component {
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
                 />
-            </Fragment>
+            </div>
         );
     }
 }

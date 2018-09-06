@@ -1,15 +1,13 @@
 {
   "en": {
-    "Step1.userSurname": "Surname",
-    "Step1.userName": "Name",
+    "Header.dayMessage": "It's a beautiful day outside.",
     "Step2.passport": "Passport",
     "Step2.userPassportNumber": "Passport number",
     "Step5.numerousFamily": "Numerous Family",
     "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
   },
   "es": {
-    "Step1.userSurname": "Apellido",
-    "Step1.userName": "Nombre",
+    "Header.dayMessage": "Un día maravilloso.",
     "Step2.passport": "Pasaporte"
   }
 }
