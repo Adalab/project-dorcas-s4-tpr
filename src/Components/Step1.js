@@ -1,6 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
+import TypeEmailInput from './TypeEmailInput';
+
+const emailAdress = {
+    id: 'email',
+    name: 'email',
+    disable: true
+};
 
 class Step1 extends Component {
     render() {
@@ -37,8 +44,7 @@ class Step1 extends Component {
                     <input id='mobilePhone' type='number' name='mobilePhone' placeholder='Teléfono móvil' value=''/>
                     <label htmlFor='landlinePhone'></label>
                     <input id='landlinePhone' type='number' name='landlinePhone' placeholder='Teléfono fijo' value=''/>
-                    <label htmlFor='email'></label>
-                    <input id='email' type='text' name='email' placeholder='me@aboutjunior.com' disabled/>
+                    <TypeEmailInput emailAdress={emailAdress}/>
                 </form>
                 <Navigation 
                     dot1={dot1} 
