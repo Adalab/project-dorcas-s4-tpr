@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { FormattedMessage } from 'react-intl';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
@@ -31,7 +32,7 @@ class Step1 extends Component {
             title1,
             title2,
             title3,
-            title4, 
+            title4,
             title5,
             step1,
             dot1,
@@ -46,21 +47,31 @@ class Step1 extends Component {
         } = this.props;
         return (
             <Fragment>
-                <Title 
-                    title={title1} 
+                <Title
+                    title={title1}
                     step={step1}
                 />
                 <form>
-                    <label htmlFor='surname'></label>
-                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value=''/>
-                    <label htmlFor='name'></label>
-                    <input id='name' type="text" name='name' placeholder='Nombre' value=''/>
-                    <TypePhoneInput phoneNumber={mobilePhoneNumber}/>
-                    <TypePhoneInput phoneNumber={landLineNumber}/>
-                    <TypeEmailInput emailAdress={emailAdress}/>
+                    <label htmlFor='surname'>
+                        <FormattedMessage
+                            id="Step1.userSurname"
+                            defaultMessage="Surname"
+                        />
+                    </label>
+                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value='' />
+                    <label htmlFor='name'>
+                        <FormattedMessage
+                            id="Step1.userName"
+                            defaultMessage="Name"
+                        />
+                    </label>
+                    <input id='name' type="text" name='name' placeholder='Nombre' value='' />
+                    <TypePhoneInput phoneNumber={mobilePhoneNumber} />
+                    <TypePhoneInput phoneNumber={landLineNumber} />
+                    <TypeEmailInput emailAdress={emailAdress} />
                 </form>
-                <Navigation 
-                    dot1={dot1} 
+                <Navigation
+                    dot1={dot1}
                     dot2={dot2}
                     dot3={dot3}
                     dot4={dot4}
@@ -70,7 +81,7 @@ class Step1 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    previousStep={previousStep} 
+                    previousStep={previousStep}
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
