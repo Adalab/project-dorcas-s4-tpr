@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
@@ -31,7 +31,7 @@ class Step1 extends Component {
             title1,
             title2,
             title3,
-            title4, 
+            title4,
             title5,
             step1,
             dot1,
@@ -45,22 +45,24 @@ class Step1 extends Component {
             handleClickFollowingStep
         } = this.props;
         return (
-            <Fragment>
-                <Title 
-                    title={title1} 
+            <div className='stepBox'>
+                <Title
+                    title={title1}
                     step={step1}
                 />
-                <form>
-                    <label htmlFor='surname'></label>
-                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value=''/>
-                    <label htmlFor='name'></label>
-                    <input id='name' type="text" name='name' placeholder='Nombre' value=''/>
-                    <TypePhoneInput phoneNumber={mobilePhoneNumber}/>
-                    <TypePhoneInput phoneNumber={landLineNumber}/>
-                    <TypeEmailInput emailAdress={emailAdress}/>
+                <form className='form'>
+                    <label htmlFor='surname'>Apellidos</label>
+                    <input id='surname' type='text' name='surname' value='' />
+                    <label htmlFor='name'>Nombre</label>
+                    <input id='name' type="text" name='name' value='' />
+                    <div className='phones'>
+                        <TypePhoneInput phoneNumber={mobilePhoneNumber} />
+                        <TypePhoneInput phoneNumber={landLineNumber} />
+                    </div>
+                    <TypeEmailInput emailAdress={emailAdress} />
                 </form>
-                <Navigation 
-                    dot1={dot1} 
+                <Navigation
+                    dot1={dot1}
                     dot2={dot2}
                     dot3={dot3}
                     dot4={dot4}
@@ -70,12 +72,12 @@ class Step1 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    previousStep={previousStep} 
+                    previousStep={previousStep}
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
                 />
-            </Fragment>
+            </div>
         );
     }
 }
