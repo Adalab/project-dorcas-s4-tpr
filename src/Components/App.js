@@ -7,21 +7,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title1: 'Datos personales',
-      title2: 'Documentos de viaje',
-      title3: '',
-      title4: '',
-      title5: 'Extras',
-      step1: 'Paso 1',
-      step2: 'Paso 2',
-      step3: 'Paso 3',
-      step4: 'Paso 4',
-      step5: 'Paso 5',
-      dot1: 'active',
-      dot2: '',
-      dot3: '',
-      dot4: '',
-      dot5: '',
+      titles : {
+        title1: 'Datos personales',
+        title2: 'Documentos de viaje',
+        title3: '',
+        title4: '',
+        title5: 'Extras',
+      },
+      steps : {
+        step1: 'Paso 1',
+        step2: 'Paso 2',
+        step3: 'Paso 3',
+        step4: 'Paso 4',
+        step5: 'Paso 5',
+      },
+      dots : {
+        dot1: 'active',
+        dot2: '',
+        dot3: '',
+        dot4: '',
+        dot5: '',
+      },
       previousStep: 0,
       currentStep: 1,
       followingStep: 2,
@@ -32,13 +38,16 @@ class App extends Component {
 
   handleClickPreviousStep(){
     console.log(this.state.currentStep);
-    if(this.state.dot1 === 'active'){
+    const {dot1} = this.state.dots;
+    if(dot1 === 'active'){
       this.setState({
-        dot1: '',
-        dot2:'active',
-        dot3: '',
-        dot4: '',
-        dot5: '',
+        dots: {
+          dot1: '',
+          dot2:'active',
+          dot3: '',
+          dot4: '',
+          dot5: '',
+        },
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
@@ -47,13 +56,15 @@ class App extends Component {
         console.log(this.state.currentStep);
         console.log(this.state.followingStep);
     })
-  } else if(this.state.dot1 === ''){
+  } else if(dot1 === ''){
       this.setState({
-        dot1: 'active',
-        dot2: '',
-        dot3: '',
-        dot4: '',
-        dot5: '',
+        dots:{
+          dot1: 'active',
+          dot2: '',
+          dot3: '',
+          dot4: '',
+          dot5: '',
+        },
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
@@ -67,13 +78,17 @@ class App extends Component {
 
   handleClickFollowingStep(){
     console.log(this.state.currentStep);
-    if(this.state.dot1 === 'active'){
+    const {dot1} = this.state.dots;
+    console.log('dot1',dot1);
+    if(dot1 === 'active'){
       this.setState({
-        dot1: '',
-        dot2:'active',
-        dot3: '',
-        dot4: '',
-        dot5: '',
+        dots:{
+          dot1: '',
+          dot2:'active',
+          dot3: '',
+          dot4: '',
+          dot5: ''
+        },
         previousStep: this.state.previousStep + 1,
         currentStep: this.state.currentStep + 1,
         followingStep: this.state.followingStep + 1,
@@ -82,13 +97,15 @@ class App extends Component {
         console.log(this.state.currentStep);
         console.log(this.state.followingStep);
     })
-  } else if(this.state.dot1 === ''){
+  } else if(dot1 === ''){
       this.setState({
-        dot1: 'active',
-        dot2:'',
-        dot3: '',
-        dot4: '',
-        dot5: '',
+        dots:{
+          dot1: 'active',
+          dot2: '',
+          dot3: '',
+          dot4: '',
+          dot5: '',
+        },
         previousStep: this.state.previousStep - 1,
         currentStep: this.state.currentStep - 1,
         followingStep: this.state.followingStep - 1,
@@ -101,7 +118,7 @@ class App extends Component {
 }
   
   render() {
-    console.log(this.state);
+    console.log('ESTADO',this.state);
     const {state} = this;
     return (
       <div className="App">
