@@ -14,7 +14,15 @@ class TypePhoneInput extends Component {
               <label htmlFor="">
                 {labelContent}
               </label>
-              <input type="tel" name="" id=""/>
+              <input 
+                id={id}
+                type="tel" 
+                name={name} 
+                pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"
+                maxLength="15"
+                placeholder='+34 789 987 781'
+                required
+              />
             </Fragment>
         );
     }

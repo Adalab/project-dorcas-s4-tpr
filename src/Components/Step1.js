@@ -13,14 +13,16 @@ const emailAdress = {
 const mobilePhoneNumber = {
     labelContent: 'Teléfono móvil',
     id: 'mobilePhone',
-    name: 'mobilePhone'
+    name: 'mobilePhone',
+    required: true
 };
 
 const landLineNumber = {
     labelContent: 'Teléfono fijo',
     id: 'landLinePhone',
-    name: 'landLinePhone'
-}
+    name: 'landLinePhone',
+    required: false
+};
 
 class Step1 extends Component {
     render() {

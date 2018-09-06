@@ -13,7 +13,8 @@ const emailAdress = {
 const emergencyContactPhone = {
     labelContent: 'Número de teléfono',
     id: 'emergencyContactPhone',
-    name: 'emergencyContactPhone'
+    name: 'emergencyContactPhone',
+    required: true
 };
 
 class Step5 extends Component {
