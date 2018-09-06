@@ -3,6 +3,7 @@ import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
+import { FormattedMessage } from 'react-intl';
 
 const emailAdress = {
     id: 'emergencyContactEmail',
@@ -48,14 +49,23 @@ class Step5 extends Component {
                 <label className="switch">
                         <input type="checkbox" />
                         <span className="slider round"></span>
-                        Familia numerosa</label>
+                        <FormattedMessage
+                            id="Step5.numerousFamily"
+                            defaultMessage="Numerous Family"
+                        />
+                        </label>
                         <label htmlFor='familyNumber'></label>
                         <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
 
                         <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        Residente fuera de la península</label>
+                            <input type="checkbox" />
+                            <span className="slider round"></span>
+                            <FormattedMessage
+                            id="Step5.residentOutsidePeninsula"
+                            defaultMessage="Resident outside Iberian Peninsula"
+                            />
+                            Residente fuera de la península
+                        </label>
 
                         <select>
                             <option>Selecciona lugar de residencia</option>
