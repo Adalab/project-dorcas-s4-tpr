@@ -10,7 +10,7 @@ class Step5 extends Component {
             <Fragment>
                 <Title title={title5} step={step5}/>
                 <form>
-                    
+
                 <label class="switch">
                         <input type="checkbox" />
                         <span class="slider round"></span>
