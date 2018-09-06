@@ -4,12 +4,35 @@
     "Step1.userName": "Name",
     "Step2.passport": "Passport",
     "Step2.userPassportNumber": "Passport number",
+    "Step2.userPassCountryIssue": "Country of issue",
+    "Step2.userPassDateIssue": "Date of issue",
+    "Step2.userPassExpirationDate": "Expiration date",
+    "Step2.visa": "Visa (optional)",
+    "Step2.addVisaDetails": "Add visa details",
+    "Step2.dniNie": "Id",
+    "Step2.type": "Type",
+    "Step2.userDocumentNumber": "Document number",
+    "Step2.userDocDateIssue": "Date of issue",
+    "Step2.userDocExpirationDate": "Expiration date",
+    "Step2.userBirthPlace": "Place of birth",
     "Step5.numerousFamily": "Numerous Family",
     "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
   },
   "es": {
-    "Step1.userSurname": "Apellido",
-    "Step1.userName": "Nombre",
-    "Step2.passport": "Pasaporte"
+"Step1.userSurname": "Apellido",
+"Step1.userName": "Nombre",
+    "Step2.passport": "Pasaporte",
+    "Step2.userPassportNumber": "Número de pasaporte",
+    "Step2.userPassCountryIssue": "País de emisión",
+    "Step2.userPassDateIssue": "F.emisión",
+    "Step2.userPassExpirationDate": "F.expiración",
+    "Step2.visa": "Visado (opcional)",
+    "Step2.addVisaDetails": "Agregar detalles del visado",
+    "Step2.dniNie": "Dni/Nie",
+    "Step2.type": "Tipo",
+    "Step2.userDocumentNumber": "Número de documento",
+    "Step2.userDocDateIssue": "F.emisión",
+    "Step2.userDocExpirationDate": "F.expiración",
+    "Step2.userBirthPlace": "Lugar de nacimiento"
   }
 }
