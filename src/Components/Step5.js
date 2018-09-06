@@ -1,26 +1,65 @@
 import React, { Component, Fragment } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
+import TypeEmailInput from './TypeEmailInput';
+import TypePhoneInput from './TypePhoneInput';
+
+const emailAdress = {
+    id: 'emergencyContactEmail',
+    name: 'emergencyContactName',
+    disable: false
+};
+
+const emergencyContactPhone = {
+    labelContent: 'Número de teléfono',
+    id: 'emergencyContactPhone',
+    name: 'emergencyContactPhone',
+    required: true
+};
 
 class Step5 extends Component {
     render() {
-        console.log(this.props);
-        const {title1, title2, title3, title4, title5, step5, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
+        console.log('STEP5', this.props);
+        const {
+            title1, 
+            title2, 
+            title3, 
+            title4, 
+            title5, 
+            step5, 
+            dot1, 
+            dot2, 
+            dot3, 
+            dot4, 
+            dot5, 
+            previousStep, 
+            followingStep, 
+            handleClickPreviousStep, 
+            handleClickFollowingStep
+        } = this.props;
         return (
             <Fragment>
-                <Title title={title5} step={step5}/>
+                <Title 
+                    title={title5} 
+                    step={step5}
+                />
                 <form>
+<<<<<<< HEAD
 
                 <label class="switch">
+=======
+                    
+                <label className="switch">
+>>>>>>> c96fc9a2eb91d99d1784c97f4c849ccbac48da9a
                         <input type="checkbox" />
-                        <span class="slider round"></span>
+                        <span className="slider round"></span>
                         Familia numerosa</label>
                         <label htmlFor='familyNumber'></label>
                         <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
 
-                        <label class="switch">
+                        <label className="switch">
                         <input type="checkbox" />
-                        <span class="slider round"></span>
+                        <span className="slider round"></span>
                         Residente fuera de la península</label>
 
                         <select>
@@ -37,11 +76,8 @@ class Step5 extends Component {
                             </select>
                             <label htmlFor='emergencyContactName'></label>
                             <input id='emergencyContactName' type='text' name='emergencyContactName' placeholder='Nombre y Apellidos' value='' />
-                            <label htmlFor='emergencyContactEmail'></label>
-                            <input id='emergencyContactEmail' type='text' name='emergencyContactEmail' placeholder='Email' value='' />
-                            <label htmlFor='emergencyContactPhone'></label>
-                            <input id='emergencyContactPhone' type='text' name='emergencyContactPhone' placeholder='Número de teléfono' value='' />
-
+                            <TypeEmailInput emailAdress={emailAdress}/>
+                            <TypePhoneInput phoneNumber={emergencyContactPhone}/>
                 </form>
                 <Navigation 
                     title1={title1}
