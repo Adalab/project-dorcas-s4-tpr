@@ -12,8 +12,7 @@ class Header extends Component {
             defaultMessage="It's a beautiful day outside."
           />
         </p>
-        <img src={logo}></img>
-        <img src='' ></img>
+        <img alt ='logo' src={logo}/>
       </div>
     );
   }
