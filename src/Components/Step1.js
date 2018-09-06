@@ -7,7 +7,7 @@ import TypePhoneInput from './TypePhoneInput';
 const emailAdress = {
     id: 'email',
     name: 'email',
-    disable: true
+    disabled: true
 };
 
 const mobilePhoneNumber = {

@@ -7,7 +7,7 @@ import TypePhoneInput from './TypePhoneInput';
 const emailAdress = {
     id: 'emergencyContactEmail',
     name: 'emergencyContactName',
-    disable: false
+    disabled: false
 };
 
 const emergencyContactPhone = {
