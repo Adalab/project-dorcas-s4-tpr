@@ -5,6 +5,8 @@
     "Step1.userName": "Name"
   },
   "es": {
-    "Header.dayMessage": "Un día maravilloso."
+    "Header.dayMessage": "Un día maravilloso.",
+    "Step1.userSurname": "Apellido",
+    "Step1.userName": "Nombre"
   }
 }
