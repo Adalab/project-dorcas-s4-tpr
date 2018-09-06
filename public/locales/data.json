@@ -1,5 +1,6 @@
 {
   "en": {
+    "Header.dayMessage": "It's a beautiful day outside.",
     "Step1.userSurname": "Surname",
     "Step1.userName": "Name",
     "Step2.passport": "Passport",
