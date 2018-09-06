@@ -45,38 +45,97 @@ class Step2 extends Component {
                              />
                         </label>
                         <input id='numPassport' type='text' name='numPassport' value=''/>
-                        <label htmlFor='countryIssue'>País de emisión</label>
+
+                        <label htmlFor='countryIssue'>
+                            <FormattedMessage
+                                id="Step2.userPassCountryIssue"
+                                defaultMessage="Country of issue"
+                             />
+                        </label>
                         <input id='countryIssue' type='text' name='countryIssue' value='' />
                         <div className='verticalDisplay'>
-                            <label htmlFor='dateIssue'>F.emisión</label>
+                            <label htmlFor='dateIssue'>
+                                <FormattedMessage
+                                    id="Step2.userPassDateIssue"
+                                    defaultMessage="Date of issue"
+                                />
+                            </label>
                             <input id='dateIssue' type='text' name='dateIssue' value='' />
-                            <label htmlFor='expirationDate'>F.expiración</label>
+
+                            <label htmlFor='expirationDate'>
+                                <FormattedMessage
+                                    id="Step2.userPassExpirationDate"
+                                    defaultMessage="Expiration date"
+                                />
+                            </label>
                             <input id='expirationDate' type='text' name='expirationDate' value='' />
                         </div>
 
-                        <h2>Visado (opcional)</h2>
+                        <h2>
+                            <FormattedMessage
+                                id="Step2.visa"
+                                defaultMessage="Visa (optional)"
+                            />
+                        </h2>
 
-                        <div>Agregar detalles del visado</div>
+                        <div>
+                            <FormattedMessage
+                                id="Step2.addVisaDetails"
+                                defaultMessage="Add visa details"
+                            />
+                        </div>
 
-                        <h2>Dni/Nie</h2>
+                        <h2>
+                            <FormattedMessage
+                                id="Step2.dniNie"
+                                defaultMessage="Id"
+                            />
+                        </h2>
 
                         <div className='verticalDisplay'>
-                            <label htmlFor='documentType'>Número de pasaporte</label>
+                            <label htmlFor='documentType'>
+                            </label>
                             <select id='documentType' name='documentType' value=''>
-                                <option value="">Tipo</option>
+                                <option value="">
+                                    <FormattedMessage
+                                        id="Step2.type"
+                                        defaultMessage="Type"
+                                    />
+                                </option>
 
                             </select>
 
-                            <label htmlFor='documentNumber'>Número de documento</label>
+                            <label htmlFor='documentNumber'>
+                                <FormattedMessage
+                                    id="Step2.userDocumentNumber"
+                                    defaultMessage="Document number"
+                                />
+                            </label>
+
                             <input id='documentNumber' type='text' name='documentNumber' value='' />
                         </div>
                         <div className='verticalDisplay'>
-                            <label htmlFor='dateIssue'>F.emisión</label>
+                            <label htmlFor='dateIssue'>
+                                <FormattedMessage
+                                    id="Step2.userDocDateIssue"
+                                    defaultMessage="Date of issue"
+                                />
+                            </label>
                             <input id='dateIssue' type='text' name='dateIssue' value='' />
-                            <label htmlFor='expirationDate'>F.expiración</label>
+                            <label htmlFor='expirationDate'>
+                                <FormattedMessage
+                                    id="Step2.userDocExpirationDate"
+                                    defaultMessage="Expiration date"
+                                />
+                            </label>
                             <input id='expirationDate' type='text' name='expirationDate' value='' />
                         </div>
-                        <label htmlFor='birthDate'>Lugar de nacimiento</label>
+                        <label htmlFor='birthDate'>
+                            <FormattedMessage
+                                id="Step2.userBirthPlace"
+                                defaultMessage="Place of birth"
+                            />
+                        </label>
                         <input id='birthDate' type='text' name='birthDate' value='' />
                 
                     </form>
