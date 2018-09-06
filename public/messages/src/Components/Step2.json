@@ -12,6 +12,10 @@
     "defaultMessage": "Passport number"
   },
   {
+    "id": "Step2.userDocumentNumber",
+    "defaultMessage": "Document number"
+  },
+  {
     "id": "Step2.passport",
     "defaultMessage": "Passport"
   },
@@ -38,10 +42,6 @@
   {
     "id": "Step2.type",
     "defaultMessage": "Type"
-  },
-  {
-    "id": "Step2.userDocumentNumber",
-    "defaultMessage": "Document number"
   },
   {
     "id": "Step2.userDocDateIssue",
