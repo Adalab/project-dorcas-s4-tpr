@@ -49,7 +49,6 @@ class Step5 extends Component {
                     <label className="switch">
                         <input type="checkbox" />
                         <span className="slider round"></span>
-<<<<<<< HEAD
                         <FormattedMessage
                             id="Step5.numerousFamily"
                             defaultMessage="Numerous Family"
@@ -67,16 +66,6 @@ class Step5 extends Component {
                             />
                             Residente fuera de la península
                         </label>
-=======
-                        Familia numerosa</label>
-                    <label htmlFor='familyNumber'></label>
-                    <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
-
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        Residente fuera de la península</label>
->>>>>>> 74ed98cd63459c2f9e92ad05cb4149f3249e61ae
 
                     <select>
                         <option>Selecciona lugar de residencia</option>
