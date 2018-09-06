@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
-import PropTypes from 'prop-types';
-import { HashRouter } from 'react-router-dom';
 import { BrowserRouter } from "react-router-dom";
 import { IntlProvider, addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
@@ -20,7 +18,7 @@ const language =
 
 const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 
-// Si no tiene el language locale por defecto será inglés
+// Englih by default
 const messages = 
     localeData[languageWithoutRegionCode] ||
     localeData[language] ||
