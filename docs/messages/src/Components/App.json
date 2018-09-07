@@ -1,0 +1,22 @@
+[
+  {
+    "id": "App.personalInfo",
+    "defaultMessage": "Personal information"
+  },
+  {
+    "id": "App.travelDocuments",
+    "defaultMessage": "Travel documents"
+  },
+  {
+    "id": "App.paymentMethod",
+    "defaultMessage": "Payment method"
+  },
+  {
+    "id": "App.tripPreferences",
+    "defaultMessage": "Trip preferences"
+  },
+  {
+    "id": "App.extraInfo",
+    "defaultMessage": "Extra information"
+  }
+]
