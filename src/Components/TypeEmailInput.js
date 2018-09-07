@@ -1,17 +1,17 @@
 import React, { Component, Fragment } from 'react';
 
-
 class TypeEmailInput extends Component {
     render() {
         console.log('inputMAIL', this.props);
         const {
+          labelContent,
           id,
           name
         } = this.props.emailAdress;  
         return (
             <Fragment>
               <label htmlFor="">
-                Email
+                {labelContent}
               </label>
               <input 
                 id={id} 

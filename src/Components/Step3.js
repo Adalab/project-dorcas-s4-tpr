@@ -10,7 +10,7 @@ class Step3 extends Component {
             <div className='stepBox'>
                 <Title title={title3} step={step3}/>
                 <form className='form'>
-                    <p>holi</p>
+                    <p>Paso 3</p>
                 </form>
                 <Navigation 
                     title1={title1}

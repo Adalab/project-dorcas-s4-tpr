@@ -49,24 +49,27 @@ class Step5 extends Component {
                     <label className="switch">
                         <input type="checkbox" />
                         <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.numerousFamily"
-                            defaultMessage="Numerous Family"
-                        />
+                            <FormattedMessage
+                                id="Step5.numerousFamily"
+                                defaultMessage="Numerous Family"
+                            />
                         </label>
-                        <label htmlFor='familyNumber'></label>
-                        <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
+                        <label htmlFor='familyNumber'>
+                            <FormattedMessage
+                                id="Step5.numberMembers"
+                                defaultMessage="Number of members"
+                            />
+                        </label>
+                        <input id='familyNumber' type='text' name='familyNumber' value='' />
 
                         <label className="switch">
                             <input type="checkbox" />
                             <span className="slider round"></span>
-                            <FormattedMessage
-                            id="Step5.residentOutsidePeninsula"
-                            defaultMessage="Resident outside Iberian Peninsula"
-                            />
-                            Residente fuera de la península
+                                <FormattedMessage
+                                    id="Step5.residentOutsidePeninsula"
+                                    defaultMessage="Resident outside Iberian Peninsula"
+                                />
                         </label>
-
                     <select>
                         <option>Selecciona lugar de residencia</option>
                     </select>

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "Step1.email",
+    "defaultMessage": "Email"
+  },
+  {
+    "id": "Step1.mobilePhone",
+    "defaultMessage": "Mobile Phone"
+  },
+  {
+    "id": "Step1.landLinePhoneNumber",
+    "defaultMessage": "Landline phone number"
+  }
+]
