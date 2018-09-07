@@ -5,6 +5,7 @@ import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
 import { FormattedMessage } from 'react-intl';
+import TypeSelect from './TypeSelect';
 
 const familyNumberInput = {
     labelContent: 'MESSAGE TRANSLATE FAMILY',
@@ -30,6 +31,8 @@ const emergencyContactPhone = {
     name: 'emergencyContactPhone',
     required: true
 };
+
+const options = ['Canarias', 'Baleares', 'Ceuta', 'Melilla']
 
 class Step5 extends Component {
     render() {
@@ -79,9 +82,8 @@ class Step5 extends Component {
                         />
                     </label>
 
-                    <select>
-                        <option>Selecciona lugar de residencia</option>
-                    </select>
+
+                   <TypeSelect options={options} />
 
                     <h2>Contacto en caso de emergencia</h2>
                     <div className='emergencyContact-step5'>
