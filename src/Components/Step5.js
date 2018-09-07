@@ -79,27 +79,9 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.numerousFamily"
-                            defaultMessage="Numerous Family"
-                        />
-                    </label>
                     <TypeCheckboxInput contentCheckbox={largeFamily}/>
                     <TypeTextInput inputText={familyNumberInput} />
                     <TypeCheckboxInput contentCheckbox={residentOutside}/>
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.residentOutsidePeninsula"
-                            defaultMessage="Resident outside Iberian Peninsula"
-                        />
-                    </label>
-
                     <select>
                         <option>Selecciona lugar de residencia</option>
                     </select>

@@ -3,18 +3,24 @@ import React, { Component, Fragment } from 'react';
 
 class TypeCheckboxInput extends Component {
     render() {
-        console.log('inputMAIL', this.props);
+        console.log('inputCHECKBOX', this.props);
         const {
-          labelContent
+          labelContent,
           id,
           name,
-          
+          required
         } = this.props.contentCheckbox;  
         return (
             <Fragment>
-              <label htmlFor="">
-                <input type="checkbox" name="" id=""/>
+              <label htmlFor={id}>
+                <input 
+                  type="checkbox" 
+                  name={name} 
+                  id={id}
+                  required={required}
+                />
                 <span className="slider round"></span>
+                {labelContent}
               </label>
             </Fragment>
         );
