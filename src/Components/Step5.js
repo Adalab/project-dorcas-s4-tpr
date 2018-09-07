@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
+import TypeSelect from './TypeSelect';
 import { FormattedMessage } from 'react-intl';
 import TypeSelect from './TypeSelect';
 
@@ -32,7 +33,11 @@ const emergencyContactPhone = {
     required: true
 };
 
+<<<<<<< HEAD
 const options = ['Canarias', 'Baleares', 'Ceuta', 'Melilla']
+=======
+const placeOfResidence= [];
+>>>>>>> bf8e7b74931a25e861132d29339223316009cc8b
 
 class Step5 extends Component {
     render() {
@@ -82,8 +87,12 @@ class Step5 extends Component {
                         />
                     </label>
 
+<<<<<<< HEAD
 
                    <TypeSelect options={options} />
+=======
+                    <TypeSelect options={placeOfResidence}/>
+>>>>>>> bf8e7b74931a25e861132d29339223316009cc8b
 
                     <h2>Contacto en caso de emergencia</h2>
                     <div className='emergencyContact-step5'>
