@@ -1,6 +1,14 @@
 {
   "en": {
+    "App.personalInfo": "Personal information",
+    "App.travelDocuments": "Travel documents",
+    "App.paymentMethod": "Payment method",
+    "App.tripPreferences": "Trip preferences",
+    "App.extraInfo": "Extra information",
     "Header.dayMessage": "It's a beautiful day outside.",
+    "Step1.email": "Email",
+    "Step1.mobilePhone": "Mobile Phone",
+    "Step1.landLinePhoneNumber": "Landline phone number",
     "Step1.userSurname": "Surname",
     "Step1.userName": "Name",
     "Step2.passport": "Passport",
@@ -17,6 +25,7 @@
     "Step2.userDocExpirationDate": "Expiration date",
     "Step2.userBirthPlace": "Place of birth",
     "Step5.numerousFamily": "Numerous Family",
+    "Step5.numberMembers": "Number of members",
     "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
   },
   "es": {
@@ -34,6 +43,17 @@
     "Step2.userDocumentNumber": "Número de documento",
     "Step2.userDocDateIssue": "F.emisión",
     "Step2.userDocExpirationDate": "F.expiración",
-    "Step2.userBirthPlace": "Lugar de nacimiento"
+    "Step2.userBirthPlace": "Lugar de nacimiento",
+    "Step5.numerousFamily": "Familia Numerosa",
+    "Step5.numberMembers": "Número de integrantes",
+    "Step5.residentOutsidePeninsula": "Residente fuera de la península",
+    "Step1.mobilePhone": "Teléfono móvil",
+    "Step1.landLinePhoneNumber": "Teléfono fijo",
+    "Step1.email": "Email",
+    "App.personalInfo": "Datos personales",
+    "App.travelDocuments": "Documentos de viaje",
+    "App.paymentMethod": "Métodos de pago",
+    "App.tripPreferences": "Preferencias de viaje",
+    "App.extraInfo": "Extras"
   }
 }

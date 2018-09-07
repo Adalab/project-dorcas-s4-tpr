@@ -25,19 +25,30 @@ const nameInput = {
 };
 
 const emailAdress = {
+    labelContent: <FormattedMessage
+                    id="Step1.email"
+                    defaultMessage="Email"
+                  />,
     id: 'email',
     name: 'email',
     disabled: true
 };
 
-const mobilePhoneNumber = {labelContent: 'Teléfono móvil',
+const mobilePhoneNumber = {
+    labelContent: <FormattedMessage
+                    id="Step1.mobilePhone"
+                    defaultMessage="Mobile Phone"
+                  />,
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true
 };
 
 const landLineNumber = {
-    labelContent: 'Teléfono fijo',
+    labelContent: <FormattedMessage
+                    id="Step1.landLinePhoneNumber"
+                    defaultMessage="Landline phone number"
+                  />,
     id: 'landLinePhone',
     name: 'landLinePhone',
     required: false
