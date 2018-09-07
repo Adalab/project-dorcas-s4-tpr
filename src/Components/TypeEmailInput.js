@@ -10,7 +10,7 @@ class TypeEmailInput extends Component {
         } = this.props.emailAdress;  
         return (
             <Fragment>
-              <label htmlFor="">
+              <label htmlFor={id}>
                 Email
               </label>
               <input 

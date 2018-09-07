@@ -11,7 +11,7 @@ class TypePhoneInput extends Component {
         } = this.props.phoneNumber;  
         return (
             <Fragment>
-              <label htmlFor="">
+              <label htmlFor={id}>
                 {labelContent}
               </label>
               <input 
