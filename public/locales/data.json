@@ -29,6 +29,11 @@
     "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
   },
   "es": {
+<<<<<<< HEAD
+    "Step1.userSurname": "Apellido",
+    "Step1.userName": "Nombre",
+=======
+>>>>>>> 633cb1127f41b671a7dd5e05171ced9dc69aeb63
     "Step2.passport": "Pasaporte",
     "Step2.userPassportNumber": "Número de pasaporte",
     "Step2.userPassCountryIssue": "País de emisión",
