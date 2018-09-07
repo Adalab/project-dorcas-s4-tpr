@@ -1,13 +1,10 @@
 {
   "en": {
-<<<<<<< HEAD
-=======
     "App.personalInfo": "Personal information",
     "App.travelDocuments": "Travel documents",
     "App.paymentMethod": "Payment method",
     "App.tripPreferences": "Trip preferences",
     "App.extraInfo": "Extra information",
->>>>>>> 633cb1127f41b671a7dd5e05171ced9dc69aeb63
     "Header.dayMessage": "It's a beautiful day outside.",
     "Step1.userSurname": "Surname",
     "Step1.userName": "Name",
