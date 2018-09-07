@@ -4,21 +4,51 @@ import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
+import TypeTextInput from './TypeTextInput';
 
-const emailAdress = {
-    id: 'email',
-    name: 'email',
-    disable: true
+const surnameInput = {
+    labelContent: <FormattedMessage
+                   id="Step1.userSurname"
+                   defaultMessage="Surname"
+                   />,
+    id: 'surname',
+    name: 'surname'
 };
 
-const mobilePhoneNumber = {labelContent: 'Teléfono móvil',
+const nameInput = {
+    labelContent: <FormattedMessage
+                   id="Step1.userName"
+                   defaultMessage="Name"
+                   />,
+    id: 'name',
+    name: 'name'
+};
+
+const emailAdress = {
+    labelContent: <FormattedMessage
+                    id="Step1.email"
+                    defaultMessage="Email"
+                  />,
+    id: 'email',
+    name: 'email',
+    disabled: true
+};
+
+const mobilePhoneNumber = {
+    labelContent: <FormattedMessage
+                    id="Step1.mobilePhone"
+                    defaultMessage="Mobile Phone"
+                  />,
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true
 };
 
 const landLineNumber = {
-    labelContent: 'Teléfono fijo',
+    labelContent: <FormattedMessage
+                    id="Step1.landLinePhoneNumber"
+                    defaultMessage="Landline phone number"
+                  />,
     id: 'landLinePhone',
     name: 'landLinePhone',
     required: false
@@ -51,20 +81,8 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <label htmlFor='surname'>
-                        <FormattedMessage
-                            id="Step1.userSurname"
-                            defaultMessage="Surname"
-                        />
-                    </label>
-                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value='' />
-                    <label htmlFor='name'>
-                        <FormattedMessage
-                            id="Step1.userName"
-                            defaultMessage="Name"
-                        />
-                    </label>
-                    <input id='name' type="text" name='name' placeholder='Nombre' value='' />
+                    <TypeTextInput inputText={surnameInput} />
+                    <TypeTextInput inputText={nameInput} />
                     <div className='phones'>
                         <TypePhoneInput phoneNumber={mobilePhoneNumber} />
                         <TypePhoneInput phoneNumber={landLineNumber} />

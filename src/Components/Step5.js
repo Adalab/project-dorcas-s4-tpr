@@ -3,11 +3,24 @@ import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
+import TypeTextInput from './TypeTextInput';
 import { FormattedMessage } from 'react-intl';
+
+const familyNumberInput = {
+    labelContent: 'MESSAGE TRANSLATE FAMILY',
+    id: 'familyNumber',
+    name: 'familyNumber'
+};
+
+const emergencyContactInput = {
+    labelContent: 'MESSAGE TRANSLATE EMERGENCY CONTACT',
+    id: 'emergencyContactName',
+    name: 'emergencyContactName'
+};
 
 const emailAdress = {
     id: 'emergencyContactEmail',
-    name: 'emergencyContactName',
+    name: 'emergencyContactEmail',
     disable: false
 };
 
@@ -53,19 +66,18 @@ class Step5 extends Component {
                             id="Step5.numerousFamily"
                             defaultMessage="Numerous Family"
                         />
-                        </label>
-                        <label htmlFor='familyNumber'></label>
-                        <input id='familyNumber' type='text' name='familyNumber' placeholder='Número de integrantes' value='' />
+                    </label>
 
-                        <label className="switch">
-                            <input type="checkbox" />
-                            <span className="slider round"></span>
-                            <FormattedMessage
+                    <TypeTextInput inputText={familyNumberInput} />
+
+                    <label className="switch">
+                        <input type="checkbox" />
+                        <span className="slider round"></span>
+                        <FormattedMessage
                             id="Step5.residentOutsidePeninsula"
                             defaultMessage="Resident outside Iberian Peninsula"
-                            />
-                            Residente fuera de la península
-                        </label>
+                        />
+                    </label>
 
                     <select>
                         <option>Selecciona lugar de residencia</option>
@@ -81,8 +93,7 @@ class Step5 extends Component {
                             <option>Otro</option>
                         </select>
                         <div className='emergencyContact-container'>
-                            <label htmlFor='emergencyContactName'></label>
-                            <input id='emergencyContactName' type='text' name='emergencyContactName' placeholder='Nombre y Apellidos' value='' />
+                            <TypeTextInput inputText={emergencyContactInput} />
                             <TypeEmailInput emailAdress={emailAdress} />
                             <TypePhoneInput phoneNumber={emergencyContactPhone} />
                         </div>

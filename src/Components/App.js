@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Pages from './Pages';
 import '../scss/App.css';
+import { FormattedMessage } from 'react-intl';
 
 
 class App extends Component {
@@ -9,11 +10,26 @@ class App extends Component {
     super(props);
     this.state = {
       titles : {
-        title1: 'Datos personales',
-        title2: 'Documentos de viaje',
-        title3: '',
-        title4: '',
-        title5: 'Extras',
+        title1: <FormattedMessage
+                  id="App.personalInfo"
+                  defaultMessage="Personal information"
+                />,
+        title2: <FormattedMessage
+                  id="App.travelDocuments"
+                  defaultMessage="Travel documents"
+                />,
+        title3: <FormattedMessage
+                  id="App.paymentMethod"
+                  defaultMessage="Payment method"
+                />,
+        title4: <FormattedMessage
+                  id="App.tripPreferences"
+                  defaultMessage="Trip preferences"
+                />,
+        title5: <FormattedMessage
+                  id="App.extraInfo"
+                  defaultMessage="Extra information"
+                />,
       },
       steps : {
         step1: 'Paso 1',

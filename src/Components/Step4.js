@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 
@@ -10,7 +10,7 @@ class Step4 extends Component {
             <div className='stepBox'>
                 <Title title={title4} step={step4}/>
                 <form className='form'>
-                <p>holi</p>
+                <p>Paso 4</p>
                 </form>
                 <Navigation 
                     title1={title1}
