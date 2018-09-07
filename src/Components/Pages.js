@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { DefaultRoute} from 'react-router';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -42,11 +41,16 @@ class Pages extends Component {
     return (
       <Fragment>
         <Switch>
-          {/* <DefaultRoute handler={step1} /> */}
+          <Route
+            exact
+            path='/'
+            render={() => (<Redirect to='/step/1' />)}
+          />
           <Route
             name='step1'
             handler={step1}
-            exact path='/step/1'
+            exact
+            path='/step/1'
             render={props =>
               <Step1
                 title1={title1}
