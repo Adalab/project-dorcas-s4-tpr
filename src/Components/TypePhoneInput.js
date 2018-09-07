@@ -7,11 +7,12 @@ class TypePhoneInput extends Component {
         const {
           labelContent,
           id,
-          name
+          name,
+          required
         } = this.props.phoneNumber;  
         return (
             <Fragment>
-              <label htmlFor="">
+              <label htmlFor={id}>
                 {labelContent}
               </label>
               <input 
@@ -21,7 +22,7 @@ class TypePhoneInput extends Component {
                 pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"
                 maxLength="15"
                 placeholder='+34 789 987 781'
-                required
+                required={required}
               />
             </Fragment>
         );
