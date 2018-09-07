@@ -27,7 +27,7 @@ const nameInput = {
 const emailAdress = {
     id: 'email',
     name: 'email',
-    disable: true
+    disabled: true
 };
 
 const mobilePhoneNumber = {labelContent: 'Teléfono móvil',
