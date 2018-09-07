@@ -32,11 +32,26 @@ class App extends Component {
                 />,
       },
       steps : {
-        step1: 'Paso 1',
-        step2: 'Paso 2',
-        step3: 'Paso 3',
-        step4: 'Paso 4',
-        step5: 'Paso 5',
+        step1: <FormattedMessage
+                id="App.step1"
+                defaultMessage="Step 1"
+              />,
+        step2: <FormattedMessage
+                id="App.step2"
+                defaultMessage="Step 2"
+              />,
+        step3: <FormattedMessage
+                id="App.step3"
+                defaultMessage="Step 3"
+              />,
+        step4: <FormattedMessage
+                id="App.step4"
+                defaultMessage="Step 4"
+              />,
+        step5: <FormattedMessage
+                id="App.step5"
+                defaultMessage="Step 5"
+              />,
       },
       dots : {
         dot1: 'active',

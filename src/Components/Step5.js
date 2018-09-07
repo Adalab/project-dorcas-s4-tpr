@@ -9,43 +9,69 @@ import TypeCheckboxInput from './TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
-    labelContent: 'MESSAGE TRANSLATE FAMILY',
+    labelContent: <FormattedMessage
+        id="Step5.numberMembers"
+        defaultMessage="Number of members"
+    />,
     id: 'familyNumber',
     name: 'familyNumber'
 };
 
 const emergencyContactInput = {
-    labelContent: 'MESSAGE TRANSLATE EMERGENCY CONTACT',
+    labelContent: <FormattedMessage
+        id="Step5.nameAndSurname"
+        defaultMessage="Name and Surname"
+    />,
     id: 'emergencyContactName',
     name: 'emergencyContactName'
 };
 
-const emailAdress = {
+const emailAddress = {
+    labelContent: <FormattedMessage
+        id="Step5.email"
+        defaultMessage="Email"
+    />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
     disable: false
 };
 
 const emergencyContactPhone = {
-    labelContent: 'Número de teléfono',
+    labelContent: <FormattedMessage
+        id="Step5.phoneNumber"
+        defaultMessage="Phone number"
+    />,
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
     required: true
 };
 const locality = {
-    labelContent: 'Locality',
+    labelContent: <FormattedMessage
+        id="Step5.locality"
+        defaultMessage="Locality"
+    />,
     id: 'Locality',
     name: 'Locality',
     required: true
 };
 
-const region = ['Canarias', 'Baleares', 'Ceuta', 'Melilla']
+const region = [
+    <FormattedMessage
+        id="Step5.canaryIslands"
+        defaultMessage="Canary Islands"
+    />, 
+    <FormattedMessage
+        id="Step5.balearicIslands"
+        defaultMessage="Balearic Islands"
+    />,
+    'Ceuta', 
+    'Melilla']
 
 const largeFamily = {
     labelContent: <FormattedMessage
-                    id="Step5.numerousFamily"
-                    defaultMessage="Numerous Family"
-                    />,
+        id="Step5.numerousFamily"
+        defaultMessage="Numerous Family"
+    />,
     id: 'largeFamily',
     name: 'largeFamily',
     required: true
@@ -53,9 +79,9 @@ const largeFamily = {
 
 const residentOutside = {
     labelContent: <FormattedMessage
-                    id="Step5.residentOutsidePeninsula"
-                    defaultMessage="Resident outside Iberian Peninsula"
-                />,
+        id="Step5.residentOutsidePeninsula"
+        defaultMessage="Resident outside Iberian Peninsula"
+    />,
     id: 'residentOutside',
     name: 'residentOutside',
     required: true
@@ -88,29 +114,22 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-                    <TypeCheckboxInput contentCheckbox={largeFamily}/>
+                    <TypeCheckboxInput contentCheckbox={largeFamily} />
                     <TypeTextInput inputText={familyNumberInput} />
 
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.residentOutsidePeninsula"
-                            defaultMessage="Resident outside Iberian Peninsula"
-                        />
-                    </label>
+                    <TypeCheckboxInput contentCheckbox={residentOutside} />
+                    <TypeSelect options={region} />
+                    <TypeTextInput inputText={locality} />
 
-                    <TypeCheckboxInput contentCheckbox={residentOutside}/>
-                   <TypeSelect options={region} />
-                   <TypeTextInput inputText={locality} />
-
-                    <h2>Contacto en caso de emergencia</h2>
-                    <div className='emergencyContact-step5'>
-                        <div className='emergencyContact-container'>
-                            <TypeTextInput inputText={emergencyContactInput} />
-                            <TypeEmailInput emailAdress={emailAdress} />
-                            <TypePhoneInput phoneNumber={emergencyContactPhone} />
-                        </div>
+                    <h2><FormattedMessage
+                        id="Step5.emergencyContact"
+                        defaultMessage="Emergency contact"
+                    />
+                    </h2>
+                    <div className='emergencyContact-container'>
+                        <TypeTextInput inputText={emergencyContactInput} />
+                        <TypeEmailInput emailAdress={emailAddress} />
+                        <TypePhoneInput phoneNumber={emergencyContactPhone} />
                     </div>
                 </form>
                 <Navigation

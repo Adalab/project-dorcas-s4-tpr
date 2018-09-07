@@ -55,6 +55,9 @@ class Pages extends Component {
               <Step1
                 title1={title1}
                 title2={title2}
+                title3={title3}
+                title4={title4}
+                title5={title5}
                 step1={step1}
                 dot1={dot1}
                 dot2={dot2}
@@ -73,6 +76,9 @@ class Pages extends Component {
               <Step2
                 title1={title1}
                 title2={title2}
+                title3={title3}
+                title4={title4}
+                title5={title5}
                 step2={step2}
                 dot1={dot1}
                 dot2={dot2}
@@ -89,7 +95,11 @@ class Pages extends Component {
             path='/step/3'
             render={props =>
               <Step3
+                title1={title1}
+                title2={title2}
                 title3={title3}
+                title4={title4}
+                title5={title5}
                 step3={step3}
                 dot1={dot1}
                 dot2={dot2}
@@ -106,7 +116,11 @@ class Pages extends Component {
             path='/step/4'
             render={props =>
               <Step4
+                title1={title1}
+                title2={title2}
+                title3={title3}
                 title4={title4}
+                title5={title5}
                 step4={step4}
                 dot1={dot1}
                 dot2={dot2}
@@ -123,6 +137,10 @@ class Pages extends Component {
             path='/step/5'
             render={props =>
               <Step5
+                title1={title1}
+                title2={title2}
+                title3={title3}
+                title4={title4}
                 title5={title5}
                 step5={step5}
                 dot1={dot1}

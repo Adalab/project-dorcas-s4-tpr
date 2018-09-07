@@ -15,7 +15,14 @@
     "Step5.numerousFamily": "Familia Numerosa",
     "Step5.numberMembers": "Número de integrantes",
     "Step5.residentOutsidePeninsula": "Residente fuera de la península",
-    "Step1.userSurname": "Apellido",
+    "Step5.nameAndSurname": "Nombre y apellidos",
+    "Step5.email": "Email",
+    "Step5.phoneNumber": "Número telefónico",
+    "Step5.emergencyContact": "Contacto en caso de emergencia",
+    "Step5.locality": "Localidad",
+    "Step5.canaryIslands": "Islas Canarias",
+    "Step5.balearicIslands": "Islas Baleares",
+    "Step1.userSurname": "Apellidos",
     "Step1.userName": "Nombre",
     "Step1.mobilePhone": "Teléfono móvil",
     "Step1.landLinePhoneNumber": "Teléfono fijo",
@@ -24,6 +31,13 @@
     "App.travelDocuments": "Documentos de viaje",
     "App.paymentMethod": "Métodos de pago",
     "App.tripPreferences": "Preferencias de viaje",
-    "App.extraInfo": "Extras"
+    "App.extraInfo": "Extras",
+    "App.step1": "Paso 1",
+    "App.step2": "Paso 2",
+    "App.step3": "Paso 3",
+    "App.step4": "Paso 4",
+    "App.step5": "Paso 5",
+    "Navigation.back": "Anterior",
+    "Navigation.next": "Siguiente"
   }
 

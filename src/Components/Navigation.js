@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from './Icon';
 import '../scss/Navigation.css';
+import { FormattedMessage } from 'react-intl';
 
 class Navigation extends Component {
     render() {
@@ -25,7 +26,12 @@ class Navigation extends Component {
       return (
         <div>
             <nav className='navigation-container'>
-            <Link to={`/step/${previousStep}`}><button onClick={handleClickPreviousStep}>Anterior</button></Link>
+            <Link to={`/step/${previousStep}`}><button onClick={handleClickPreviousStep}>
+            <FormattedMessage
+              id="Navigation.back"
+              defaultMessage="Back"
+            />,
+            </button></Link>
               <ul className='list-steps'>
                 <li>
                   <Icon state={dot1}/>
@@ -48,7 +54,12 @@ class Navigation extends Component {
                   <p>{title5}</p>
                 </li>
               </ul>
-              <Link to={`/step/${followingStep}`}><button onClick={handleClickFollowingStep}>Siguiente</button></Link>
+              <Link to={`/step/${followingStep}`}><button onClick={handleClickFollowingStep}>
+              <FormattedMessage
+                id="Navigation.next"
+                defaultMessage="Next"
+              />,
+              </button></Link>
             </nav>
             
             
