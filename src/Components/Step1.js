@@ -4,6 +4,25 @@ import Title from './Title';
 import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
+import TypeTextInput from './TypeTextInput';
+
+const surnameInput = {
+    labelContent: <FormattedMessage
+                   id="Step1.userSurname"
+                   defaultMessage="Surname"
+                   />,
+    id: 'surname',
+    name: 'surname'
+};
+
+const nameInput = {
+    labelContent: <FormattedMessage
+                   id="Step1.userName"
+                   defaultMessage="Name"
+                   />,
+    id: 'name',
+    name: 'name'
+};
 
 const emailAdress = {
     id: 'email',
@@ -51,20 +70,8 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <label htmlFor='surname'>
-                        <FormattedMessage
-                            id="Step1.userSurname"
-                            defaultMessage="Surname"
-                        />
-                    </label>
-                    <input id='surname' type='text' name='surname' placeholder='Apellidos' value='' />
-                    <label htmlFor='name'>
-                        <FormattedMessage
-                            id="Step1.userName"
-                            defaultMessage="Name"
-                        />
-                    </label>
-                    <input id='name' type="text" name='name' placeholder='Nombre' value='' />
+                    <TypeTextInput inputText={surnameInput} />
+                    <TypeTextInput inputText={nameInput} />
                     <div className='phones'>
                         <TypePhoneInput phoneNumber={mobilePhoneNumber} />
                         <TypePhoneInput phoneNumber={landLineNumber} />
