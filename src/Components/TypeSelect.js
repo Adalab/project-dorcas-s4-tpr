@@ -2,14 +2,19 @@ import React, { Component, Fragment } from 'react';
 
 class TypeSelect extends Component {
     render() {
+        console.log ('typeselect', this.props)
         const {
-          labelContent,  
-          id,
-          name,
-        } = this.props.inputText;  
+            options
+        } = this.props;  
         return (
              <select>
-                <option>Selecciona lugar de residencia</option>
+                {
+                    options.map((option, index) =>
+                {return(
+                     <option>{option}</option>
+                        )  
+                   })
+                }
             </select>
         );
     }

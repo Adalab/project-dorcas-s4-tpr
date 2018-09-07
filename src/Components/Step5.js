@@ -87,13 +87,6 @@ class Step5 extends Component {
 
                     <h2>Contacto en caso de emergencia</h2>
                     <div className='emergencyContact-step5'>
-                        <select className='select-step5'>
-                            <option>Parentesco</option>
-                            <option>Padre/Madre</option>
-                            <option>Hermano</option>
-                            <option>Pareja</option>
-                            <option>Otro</option>
-                        </select>
                         <div className='emergencyContact-container'>
                             <TypeTextInput inputText={emergencyContactInput} />
                             <TypeEmailInput emailAdress={emailAdress} />
