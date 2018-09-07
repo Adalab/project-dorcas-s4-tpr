@@ -1,0 +1,10 @@
+[
+  {
+    "id": "Navigation.back",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "Navigation.next",
+    "defaultMessage": "Next"
+  }
+]

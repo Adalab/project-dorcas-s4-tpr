@@ -4,31 +4,33 @@ import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
+import TypeSelect from './TypeSelect';
+import TypeCheckboxInput from './TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
     labelContent: <FormattedMessage
-                    id="Step5.numberMembers"
-                    defaultMessage="Number of members"
-                    />,
+        id="Step5.numberMembers"
+        defaultMessage="Number of members"
+    />,
     id: 'familyNumber',
     name: 'familyNumber'
 };
 
 const emergencyContactInput = {
     labelContent: <FormattedMessage
-                    id="Step5.nameAndSurname"
-                    defaultMessage="Name and Surname"
-                    />,
+        id="Step5.nameAndSurname"
+        defaultMessage="Name and Surname"
+    />,
     id: 'emergencyContactName',
     name: 'emergencyContactName'
 };
 
 const emailAddress = {
     labelContent: <FormattedMessage
-                    id="Step5.email"
-                    defaultMessage="Email"
-                    />,
+        id="Step5.email"
+        defaultMessage="Email"
+    />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
     disable: false
@@ -36,11 +38,52 @@ const emailAddress = {
 
 const emergencyContactPhone = {
     labelContent: <FormattedMessage
-                    id="Step5.phoneNumber"
-                    defaultMessage="Phone number"
-                    />,
+        id="Step5.phoneNumber"
+        defaultMessage="Phone number"
+    />,
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
+    required: true
+};
+const locality = {
+    labelContent: <FormattedMessage
+        id="Step5.locality"
+        defaultMessage="Locality"
+    />,
+    id: 'Locality',
+    name: 'Locality',
+    required: true
+};
+
+const region = [
+    <FormattedMessage
+        id="Step5.canaryIslands"
+        defaultMessage="Canary Islands"
+    />, 
+    <FormattedMessage
+        id="Step5.balearicIslands"
+        defaultMessage="Balearic Islands"
+    />,
+    'Ceuta', 
+    'Melilla']
+
+const largeFamily = {
+    labelContent: <FormattedMessage
+        id="Step5.numerousFamily"
+        defaultMessage="Numerous Family"
+    />,
+    id: 'largeFamily',
+    name: 'largeFamily',
+    required: true
+};
+
+const residentOutside = {
+    labelContent: <FormattedMessage
+        id="Step5.residentOutsidePeninsula"
+        defaultMessage="Resident outside Iberian Peninsula"
+    />,
+    id: 'residentOutside',
+    name: 'residentOutside',
     required: true
 };
 
@@ -71,51 +114,23 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.numerousFamily"
-                            defaultMessage="Numerous Family"
-                        />
-                    </label>
-
+                    <TypeCheckboxInput contentCheckbox={largeFamily} />
                     <TypeTextInput inputText={familyNumberInput} />
 
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.residentOutsidePeninsula"
-                            defaultMessage="Resident outside Iberian Peninsula"
-                        />
-                    </label>
-
-        {/*Falta por traducir*/}
-
-                    <select>
-                        <option>
-                        <FormattedMessage
-                            id="Step5.selectPlaceResidence"
-                            defaultMessage="Select place of residence"
-                        />
-                        Selecciona lugar de residencia
-                        </option>
-                    </select>
-
-        {/*Falta por traducir*/}
+                    <TypeCheckboxInput contentCheckbox={residentOutside} />
+                    <TypeSelect options={region} />
+                    <TypeTextInput inputText={locality} />
 
                     <h2><FormattedMessage
-                            id="Step5.emergencyContact"
-                            defaultMessage="Emergency contact"
-                        />
-                        Contacto en caso de emergencia</h2>
-                        <div className='emergencyContact-container'>
-                            <TypeTextInput inputText={emergencyContactInput} />
-                            <TypeEmailInput emailAdress={emailAddress} />
-                            <TypePhoneInput phoneNumber={emergencyContactPhone} />
-                        </div>
+                        id="Step5.emergencyContact"
+                        defaultMessage="Emergency contact"
+                    />
+                    </h2>
+                    <div className='emergencyContact-container'>
+                        <TypeTextInput inputText={emergencyContactInput} />
+                        <TypeEmailInput emailAdress={emailAddress} />
+                        <TypePhoneInput phoneNumber={emergencyContactPhone} />
+                    </div>
                 </form>
                 <Navigation
                     title1={title1}

@@ -11,11 +11,13 @@
     "App.step4": "Step 4",
     "App.step5": "Step 5",
     "Header.dayMessage": "It's a beautiful day outside.",
+    "Navigation.back": "Back",
+    "Navigation.next": "Next",
     "Step1.userSurname": "Surname",
     "Step1.userName": "Name",
-    "Step1.userEmail": "Email",
-    "Step1.userMobilePhone": "Mobile Phone",
-    "Step1.userLandLinePhoneNumber": "Landline phone number",
+    "Step1.email": "Email",
+    "Step1.mobilePhone": "Mobile Phone",
+    "Step1.landLinePhoneNumber": "Landline phone number",
     "Step2.userPassCountryIssue": "Country of issue",
     "Step2.userBirthPlace": "Place of birth",
     "Step2.userPassportNumber": "Passport number",
@@ -29,11 +31,16 @@
     "Step2.type": "Type",
     "Step2.userDocDateIssue": "Date of issue",
     "Step2.userDocExpirationDate": "Expiration date",
+    "Step5.numberMembers": "Number of members",
+    "Step5.nameAndSurname": "Name and Surname",
+    "Step5.email": "Email",
+    "Step5.phoneNumber": "Phone number",
+    "Step5.locality": "Locality",
+    "Step5.canaryIslands": "Canary Islands",
+    "Step5.balearicIslands": "Balearic Islands",
     "Step5.numerousFamily": "Numerous Family",
     "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula",
-    "Step5.nameAndSurname": "Name and surname",
-    "Step5.email": "Email",
-    "Step5.phoneNumber": "Phone number"
+    "Step5.emergencyContact": "Emergency contact"
   },
   "es": {
     "Step2.passport": "Pasaporte",
@@ -55,6 +62,10 @@
     "Step5.nameAndSurname": "Nombre y apellidos",
     "Step5.email": "Email",
     "Step5.phoneNumber": "Número telefónico",
+    "Step5.emergencyContact": "Contacto en caso de emergencia",
+    "Step5.locality": "Localidad",
+    "Step5.canaryIslands": "Islas Canarias",
+    "Step5.balearicIslands": "Islas Baleares",
     "Step1.userSurname": "Apellidos",
     "Step1.userName": "Nombre",
     "Step1.mobilePhone": "Teléfono móvil",
@@ -69,6 +80,8 @@
     "App.step2": "Paso 2",
     "App.step3": "Paso 3",
     "App.step4": "Paso 4",
-    "App.step5": "Paso 5"
+    "App.step5": "Paso 5",
+    "Navigation.back": "Anterior",
+    "Navigation.next": "Siguiente"
   }
 }

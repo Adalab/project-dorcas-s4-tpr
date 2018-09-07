@@ -1,4 +1,29 @@
 {
-    "Header.dayMessage": "Un día maravilloso.",
-    "Step2.passport": "Pasaporte"
+    "Step2.passport": "Pasaporte",
+    "Step2.userPassportNumber": "Número de pasaporte",
+    "Step2.userPassCountryIssue": "País de emisión",
+    "Step2.userPassDateIssue": "F.emisión",
+    "Step2.userPassExpirationDate": "F.expiración",
+    "Step2.visa": "Visado (opcional)",
+    "Step2.addVisaDetails": "Agregar detalles del visado",
+    "Step2.dniNie": "Dni/Nie",
+    "Step2.type": "Tipo",
+    "Step2.userDocumentNumber": "Número de documento",
+    "Step2.userDocDateIssue": "F.emisión",
+    "Step2.userDocExpirationDate": "F.expiración",
+    "Step2.userBirthPlace": "Lugar de nacimiento",
+    "Step5.numerousFamily": "Familia Numerosa",
+    "Step5.numberMembers": "Número de integrantes",
+    "Step5.residentOutsidePeninsula": "Residente fuera de la península",
+    "Step1.userSurname": "Apellido",
+    "Step1.userName": "Nombre",
+    "Step1.mobilePhone": "Teléfono móvil",
+    "Step1.landLinePhoneNumber": "Teléfono fijo",
+    "Step1.email": "Email",
+    "App.personalInfo": "Datos personales",
+    "App.travelDocuments": "Documentos de viaje",
+    "App.paymentMethod": "Métodos de pago",
+    "App.tripPreferences": "Preferencias de viaje",
+    "App.extraInfo": "Extras"
   }
+

@@ -16,16 +16,24 @@
     "defaultMessage": "Phone number"
   },
   {
+    "id": "Step5.locality",
+    "defaultMessage": "Locality"
+  },
+  {
+    "id": "Step5.canaryIslands",
+    "defaultMessage": "Canary Islands"
+  },
+  {
+    "id": "Step5.balearicIslands",
+    "defaultMessage": "Balearic Islands"
+  },
+  {
     "id": "Step5.numerousFamily",
     "defaultMessage": "Numerous Family"
   },
   {
     "id": "Step5.residentOutsidePeninsula",
     "defaultMessage": "Resident outside Iberian Peninsula"
-  },
-  {
-    "id": "Step5.selectPlaceResidence",
-    "defaultMessage": "Select place of residence"
   },
   {
     "id": "Step5.emergencyContact",

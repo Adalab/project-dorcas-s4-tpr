@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -10,38 +10,46 @@ class Pages extends Component {
   render() {
     console.log('PAGES', this.props);
     const {
-      previousStep, 
+      previousStep,
       followingStep,
       titles,
       dots,
       steps
     } = this.props.state;
-    const { 
-      title1, 
-      title2, 
-      title3, 
-      title4, 
+    const {
+      title1,
+      title2,
+      title3,
+      title4,
       title5
     } = titles;
     const {
       step1,
-      step2, 
-      step3, 
-      step4, 
+      step2,
+      step3,
+      step4,
       step5
     } = steps;
     const {
-      dot1, 
-      dot2, 
-      dot3, 
-      dot4, 
+      dot1,
+      dot2,
+      dot3,
+      dot4,
       dot5
     } = dots;
-    const {handleClickPreviousStep, handleClickFollowingStep} = this.props;
+    const { handleClickPreviousStep, handleClickFollowingStep } = this.props;
     return (
       <Fragment>
         <Switch>
           <Route
+            exact
+            path='/'
+            render={() => (<Redirect to='/step/1' />)}
+          />
+          <Route
+            name='step1'
+            handler={step1}
+            exact
             path='/step/1'
             render={props =>
               <Step1

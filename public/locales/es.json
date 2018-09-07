@@ -18,6 +18,10 @@
     "Step5.nameAndSurname": "Nombre y apellidos",
     "Step5.email": "Email",
     "Step5.phoneNumber": "Número telefónico",
+    "Step5.emergencyContact": "Contacto en caso de emergencia",
+    "Step5.locality": "Localidad",
+    "Step5.canaryIslands": "Islas Canarias",
+    "Step5.balearicIslands": "Islas Baleares",
     "Step1.userSurname": "Apellidos",
     "Step1.userName": "Nombre",
     "Step1.mobilePhone": "Teléfono móvil",
@@ -32,6 +36,8 @@
     "App.step2": "Paso 2",
     "App.step3": "Paso 3",
     "App.step4": "Paso 4",
-    "App.step5": "Paso 5"
+    "App.step5": "Paso 5",
+    "Navigation.back": "Anterior",
+    "Navigation.next": "Siguiente"
   }
 
