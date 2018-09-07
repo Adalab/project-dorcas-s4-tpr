@@ -7,25 +7,38 @@ import TypeTextInput from './TypeTextInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
-    labelContent: 'MESSAGE TRANSLATE FAMILY',
+    labelContent: <FormattedMessage
+                    id="Step5.numberMembers"
+                    defaultMessage="Number of members"
+                    />,
     id: 'familyNumber',
     name: 'familyNumber'
 };
 
 const emergencyContactInput = {
-    labelContent: 'MESSAGE TRANSLATE EMERGENCY CONTACT',
+    labelContent: <FormattedMessage
+                    id="Step5.nameAndSurname"
+                    defaultMessage="Name and Surname"
+                    />,
     id: 'emergencyContactName',
     name: 'emergencyContactName'
 };
 
-const emailAdress = {
+const emailAddress = {
+    labelContent: <FormattedMessage
+                    id="Step5.email"
+                    defaultMessage="Email"
+                    />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
     disable: false
 };
 
 const emergencyContactPhone = {
-    labelContent: 'Número de teléfono',
+    labelContent: <FormattedMessage
+                    id="Step5.phoneNumber"
+                    defaultMessage="Phone number"
+                    />,
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
     required: true
@@ -79,25 +92,30 @@ class Step5 extends Component {
                         />
                     </label>
 
+        {/*Falta por traducir*/}
+
                     <select>
-                        <option>Selecciona lugar de residencia</option>
+                        <option>
+                        <FormattedMessage
+                            id="Step5.selectPlaceResidence"
+                            defaultMessage="Select place of residence"
+                        />
+                        Selecciona lugar de residencia
+                        </option>
                     </select>
 
-                    <h2>Contacto en caso de emergencia</h2>
-                    <div className='emergencyContact-step5'>
-                        <select className='select-step5'>
-                            <option>Parentesco</option>
-                            <option>Padre/Madre</option>
-                            <option>Hermano</option>
-                            <option>Pareja</option>
-                            <option>Otro</option>
-                        </select>
+        {/*Falta por traducir*/}
+
+                    <h2><FormattedMessage
+                            id="Step5.emergencyContact"
+                            defaultMessage="Emergency contact"
+                        />
+                        Contacto en caso de emergencia</h2>
                         <div className='emergencyContact-container'>
                             <TypeTextInput inputText={emergencyContactInput} />
-                            <TypeEmailInput emailAdress={emailAdress} />
+                            <TypeEmailInput emailAdress={emailAddress} />
                             <TypePhoneInput phoneNumber={emergencyContactPhone} />
                         </div>
-                    </div>
                 </form>
                 <Navigation
                     title1={title1}

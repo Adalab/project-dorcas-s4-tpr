@@ -1,10 +1,34 @@
 [
   {
+    "id": "Step5.numberMembers",
+    "defaultMessage": "Number of members"
+  },
+  {
+    "id": "Step5.nameAndSurname",
+    "defaultMessage": "Name and Surname"
+  },
+  {
+    "id": "Step5.email",
+    "defaultMessage": "Email"
+  },
+  {
+    "id": "Step5.phoneNumber",
+    "defaultMessage": "Phone number"
+  },
+  {
     "id": "Step5.numerousFamily",
     "defaultMessage": "Numerous Family"
   },
   {
     "id": "Step5.residentOutsidePeninsula",
     "defaultMessage": "Resident outside Iberian Peninsula"
+  },
+  {
+    "id": "Step5.selectPlaceResidence",
+    "defaultMessage": "Select place of residence"
+  },
+  {
+    "id": "Step5.emergencyContact",
+    "defaultMessage": "Emergency contact"
   }
 ]
