@@ -24,6 +24,11 @@
     "App.travelDocuments": "Documentos de viaje",
     "App.paymentMethod": "Métodos de pago",
     "App.tripPreferences": "Preferencias de viaje",
-    "App.extraInfo": "Extras"
+    "App.extraInfo": "Extras",
+    "App.step1": "Paso 1",
+    "App.step2": "Paso 2",
+    "App.step3": "Paso 3",
+    "App.step4": "Paso 4",
+    "App.step5": "Paso 5"
   }
 
