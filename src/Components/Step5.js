@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
+import TypeCheckboxInput from './TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
@@ -28,6 +29,26 @@ const emergencyContactPhone = {
     labelContent: 'Número de teléfono',
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
+    required: true
+};
+
+const largeFamily = {
+    labelContent: <FormattedMessage
+                    id="Step5.numerousFamily"
+                    defaultMessage="Numerous Family"
+                    />,
+    id: 'largeFamily',
+    name: 'largeFamily',
+    required: true
+};
+
+const residentOutside = {
+    labelContent: <FormattedMessage
+                    id="Step5.residentOutsidePeninsula"
+                    defaultMessage="Resident outside Iberian Peninsula"
+                />,
+    id: 'residentOutside',
+    name: 'residentOutside',
     required: true
 };
 
@@ -67,9 +88,9 @@ class Step5 extends Component {
                             defaultMessage="Numerous Family"
                         />
                     </label>
-
+                    <TypeCheckboxInput contentCheckbox={largeFamily}/>
                     <TypeTextInput inputText={familyNumberInput} />
-
+                    <TypeCheckboxInput contentCheckbox={residentOutside}/>
                     <label className="switch">
                         <input type="checkbox" />
                         <span className="slider round"></span>
