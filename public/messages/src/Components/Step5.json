@@ -4,10 +4,6 @@
     "defaultMessage": "Numerous Family"
   },
   {
-    "id": "Step5.numberMembers",
-    "defaultMessage": "Number of members"
-  },
-  {
     "id": "Step5.residentOutsidePeninsula",
     "defaultMessage": "Resident outside Iberian Peninsula"
   }
