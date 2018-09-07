@@ -6,9 +6,14 @@
     "App.tripPreferences": "Trip preferences",
     "App.extraInfo": "Extra information",
     "Header.dayMessage": "It's a beautiful day outside.",
+<<<<<<< HEAD
     "Step1.email": "Email",
     "Step1.mobilePhone": "Mobile Phone",
     "Step1.landLinePhoneNumber": "Landline phone number",
+=======
+    "Step1.userSurname": "Surname",
+    "Step1.userName": "Name",
+>>>>>>> master
     "Step2.passport": "Passport",
     "Step2.userPassportNumber": "Passport number",
     "Step2.userPassCountryIssue": "Country of issue",
@@ -27,6 +32,11 @@
     "Step5.residentOutsidePeninsula": "Resident outside Iberian Peninsula"
   },
   "es": {
+<<<<<<< HEAD
+=======
+    "Step1.userSurname": "Apellido",
+    "Step1.userName": "Nombre",
+>>>>>>> master
     "Step2.passport": "Pasaporte",
     "Step2.userPassportNumber": "Número de pasaporte",
     "Step2.userPassCountryIssue": "País de emisión",

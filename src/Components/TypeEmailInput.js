@@ -6,7 +6,8 @@ class TypeEmailInput extends Component {
         const {
           labelContent,
           id,
-          name
+          name,
+          disabled
         } = this.props.emailAdress;  
         return (
             <Fragment>
@@ -18,6 +19,7 @@ class TypeEmailInput extends Component {
                 type="email" 
                 name={name}               
                 placeholder='me@aboutjunior.com'
+                disabled={disabled}
               />
             </Fragment>
         );
