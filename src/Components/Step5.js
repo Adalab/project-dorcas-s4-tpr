@@ -4,11 +4,8 @@ import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
-<<<<<<< HEAD
 import TypeSelect from './TypeSelect';
-=======
 import TypeCheckboxInput from './TypeCheckboxInput';
->>>>>>> master
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
@@ -93,7 +90,6 @@ class Step5 extends Component {
                 <form className='form'>
                     <TypeCheckboxInput contentCheckbox={largeFamily}/>
                     <TypeTextInput inputText={familyNumberInput} />
-<<<<<<< HEAD
 
                     <label className="switch">
                         <input type="checkbox" />
@@ -104,15 +100,9 @@ class Step5 extends Component {
                         />
                     </label>
 
-
+                    <TypeCheckboxInput contentCheckbox={residentOutside}/>
                    <TypeSelect options={region} />
                    <TypeTextInput inputText={locality} />
-=======
-                    <TypeCheckboxInput contentCheckbox={residentOutside}/>
-                    <select>
-                        <option>Selecciona lugar de residencia</option>
-                    </select>
->>>>>>> master
 
                     <h2>Contacto en caso de emergencia</h2>
                     <div className='emergencyContact-step5'>
