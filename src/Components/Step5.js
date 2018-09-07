@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
+import TypeSelect from './TypeSelect';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
@@ -30,6 +31,8 @@ const emergencyContactPhone = {
     name: 'emergencyContactPhone',
     required: true
 };
+
+const placeOfResidence= [];
 
 class Step5 extends Component {
     render() {
@@ -79,9 +82,7 @@ class Step5 extends Component {
                         />
                     </label>
 
-                    <select>
-                        <option>Selecciona lugar de residencia</option>
-                    </select>
+                    <TypeSelect options={placeOfResidence}/>
 
                     <h2>Contacto en caso de emergencia</h2>
                     <div className='emergencyContact-step5'>
