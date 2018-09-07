@@ -4,7 +4,11 @@ import Navigation from './Navigation';
 import TypeEmailInput from './TypeEmailInput';
 import TypePhoneInput from './TypePhoneInput';
 import TypeTextInput from './TypeTextInput';
+<<<<<<< HEAD
 import TypeSelect from './TypeSelect';
+=======
+import TypeCheckboxInput from './TypeCheckboxInput';
+>>>>>>> master
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
@@ -40,6 +44,26 @@ const locality = {
 
 const region = ['Canarias', 'Baleares', 'Ceuta', 'Melilla']
 
+const largeFamily = {
+    labelContent: <FormattedMessage
+                    id="Step5.numerousFamily"
+                    defaultMessage="Numerous Family"
+                    />,
+    id: 'largeFamily',
+    name: 'largeFamily',
+    required: true
+};
+
+const residentOutside = {
+    labelContent: <FormattedMessage
+                    id="Step5.residentOutsidePeninsula"
+                    defaultMessage="Resident outside Iberian Peninsula"
+                />,
+    id: 'residentOutside',
+    name: 'residentOutside',
+    required: true
+};
+
 class Step5 extends Component {
     render() {
         console.log('STEP5', this.props);
@@ -67,17 +91,9 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                        <FormattedMessage
-                            id="Step5.numerousFamily"
-                            defaultMessage="Numerous Family"
-                        />
-                    </label>
-
+                    <TypeCheckboxInput contentCheckbox={largeFamily}/>
                     <TypeTextInput inputText={familyNumberInput} />
+<<<<<<< HEAD
 
                     <label className="switch">
                         <input type="checkbox" />
@@ -91,6 +107,12 @@ class Step5 extends Component {
 
                    <TypeSelect options={region} />
                    <TypeTextInput inputText={locality} />
+=======
+                    <TypeCheckboxInput contentCheckbox={residentOutside}/>
+                    <select>
+                        <option>Selecciona lugar de residencia</option>
+                    </select>
+>>>>>>> master
 
                     <h2>Contacto en caso de emergencia</h2>
                     <div className='emergencyContact-step5'>
