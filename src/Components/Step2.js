@@ -41,6 +41,12 @@ const documentNumberInput = {
 };
 
 class Step2 extends Component {
+    handleNextStepClass(){
+        if(this.props.followingStep===3){
+            return 'hidden'
+        }
+    }
+
     render() {
         const {
             title1,
@@ -168,6 +174,7 @@ class Step2 extends Component {
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
+                    handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>
         );
