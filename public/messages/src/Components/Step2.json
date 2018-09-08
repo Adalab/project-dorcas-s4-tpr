@@ -16,16 +16,16 @@
     "defaultMessage": "Document number"
   },
   {
-    "id": "Step2.passport",
-    "defaultMessage": "Passport"
-  },
-  {
     "id": "Step2.userPassDateIssue",
     "defaultMessage": "Date of issue"
   },
   {
     "id": "Step2.userPassExpirationDate",
     "defaultMessage": "Expiration date"
+  },
+  {
+    "id": "Step2.passport",
+    "defaultMessage": "Passport"
   },
   {
     "id": "Step2.visa",

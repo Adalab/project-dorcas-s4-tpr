@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
+import Calendar from './Calendar';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+
 
 const countryIssueInput = {
     labelContent: <FormattedMessage
@@ -41,23 +42,61 @@ const documentNumberInput = {
     name: 'documentNumber'
 };
 
+const passIssueDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassDateIssue"
+                    defaultMessage="Date of issue"
+                />,
+    id: "issueDate",
+    numberOfMonths: 1,
+    small: true
+}
+
+const passExpDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
+    id: "expirationDate",
+    numberOfMonths: 1,
+    small: true,
+}
+
 class Step2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
             passIssueDateCal: {
-                passIssueDate:"",
-                focused:"",
+                passIssueDate: "",
+                focused: "",
             },
             passExpDateCal: {
-                passExpDate:"",
-                focused:"",
+                passExpDate: "",
+                focused: "",
             },
-            // passExpirationDate:"",
-            // passExpirationDateFocused:"",
-            
         }
+
+        this.onDateChangePassExpDate = this.onDateChangePassExpDate.bind(this);
+        this.onDateChangePassIssueDate = this.onDateChangePassIssueDate.bind(this);
+        this.onFocusChangePassExpDate = this.onFocusChangePassExpDate.bind(this);
+        this.onFocusChangePassIssueDate = this.onFocusChangePassIssueDate.bind(this);
     }
+
+    onDateChangePassIssueDate() {
+        this.setState({ passIssueDateCal: {passIssueDate: "holi"}});
+    }
+
+    onDateChangePassExpDate() {
+        this.setState({ passExpDateCal: { passExpDate:"holi" } });
+    }
+
+    onFocusChangePassExpDate() {
+        this.setState({ passExpDateCal: { focused: "true" } })
+    }
+    onFocusChangePassIssueDate() {
+        this.setState({ passIssueDateCal: { focused: "true" } })
+    }
+
     render() {
         const {
             title1,
@@ -96,39 +135,26 @@ class Step2 extends Component {
                     <TypeTextInput inputText={countryIssueInput} />
 
                     <div className='verticalDisplay'>
-                        <label htmlFor='dateIssue'>
-                            <FormattedMessage
-                                id="Step2.userPassDateIssue"
-                                defaultMessage="Date of issue"
-                            />
-                        </label>
-                    <SingleDatePicker
-                    date={this.state.passIssueDateCal.passIssueDate} // momentPropTypes.momentObj or null
-                    onDateChange={passIssueDate => this.setState({ passIssueDateCal: {passIssueDate}})} // PropTypes.func.isRequired
-                    focused={this.state.passIssueDateCal.focused} // PropTypes.bool
-                    onFocusChange={({ focused }) => this.setState({ passIssueDateCal:{focused }})} // PropTypes.func.isRequired
-                    id="issueDate" // PropTypes.string.isRequired,
-                    placeholder= "F.emisión"
-                    numberOfMonths= {1}
-                    small= {true}
-                    />
-
-                        <label htmlFor='expirationDate'>
-                            <FormattedMessage
-                                id="Step2.userPassExpirationDate"
-                                defaultMessage="Expiration date"
-                            />
-                        </label>
-                        <SingleDatePicker
-                        date={this.state.passExpDateCal.passExpDate} // momentPropTypes.momentObj or null
-                        onDateChange={passExpDate => this.setState({ passExpDateCal: {passExpDate}})} // PropTypes.func.isRequired
-                        focused={this.state.passExpDateCal.focused} // PropTypes.bool
-                        onFocusChange={({ focused }) => this.setState({ passExpDateCal:{focused}})} // PropTypes.func.isRequired
-                        id="expirationDate" // PropTypes.string.isRequired,
-                        placeholder= "F.expiración"
-                        numberOfMonths= {1}
-                        small= {true}
-                    />
+                        <Calendar
+                            date={this.state.passIssueDateCal.passIssueDate}
+                            onDateChange={this.onDateChangePassIssueDate}
+                            focused={this.state.passIssueDateCal.focused}
+                            onFocusChange={this.onFocusChangePassIssueDate}
+                            labelContent={passIssueDateCal.labelContent}
+                            id={passIssueDateCal.id}
+                            numberOfMonths={passIssueDateCal.numberOfMonths}
+                            small={passIssueDateCal.small}
+                        />
+                        <Calendar
+                            date={this.state.passExpDateCal.passExpDate}
+                            onDateChange={this.onDateChangePassExpDate}
+                            focused={this.state.passExpDateCal.focused}
+                            onFocusChange={this.onFocusChangePassExpDate}
+                            labelContent={passExpDateCal.labelContent}
+                            id={passExpDateCal.id}
+                            numberOfMonths={passExpDateCal.numberOfMonths}
+                            small={passExpDateCal.small}
+                        />
                     </div>
 
                     <h2>
@@ -187,7 +213,7 @@ class Step2 extends Component {
 
                     <TypeTextInput inputText={birthPlaceInput} />
                 </form>
-                
+
                 <Navigation
                     title1={title1}
                     title2={title2}
@@ -208,5 +234,6 @@ class Step2 extends Component {
         );
     }
 }
+
 
 export default Step2;
