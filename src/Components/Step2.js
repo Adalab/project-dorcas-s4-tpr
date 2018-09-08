@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
+import Calendar from './Calendar';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
+import moment from 'moment';
+
+    let locale = window.navigator.userLanguage || window.navigator.language;
+    console.log(locale);
+    
+    if(locale === "es-ES"){
+        moment.locale('es', {
+            months : 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
+            monthsShort : 'En_Feb_Mar_Abr_May_Jun_Jul_Ag_Sept_Oct_Nov_Dic'.split('_'),
+            monthsParseExact : true,
+            weekdays : 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado_Domingo'.split('_'),
+            weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+            weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
+            weekdaysParseExact : true,
+            longDateFormat : {
+                L : 'DD/MM/YYYY',
+            }});
+    } else {
+        moment.locale(locale);
+    }
 
 const countryIssueInput = {
     labelContent: <FormattedMessage
@@ -40,12 +61,55 @@ const documentNumberInput = {
     name: 'documentNumber'
 };
 
+const passIssueDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassDateIssue"
+                    defaultMessage="Date of issue"
+                />,
+    id: "passIssueDate",
+    numberOfMonths: 1,
+    small: true,
+}
+
+const passExpDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
+    id: "passExpirationDate",
+    numberOfMonths: 1,
+    small: true,
+}
+
+const idIssueDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userDocDateIssue"
+                    defaultMessage="Date of issue"
+                    />,
+    id: "idIssueDate",
+    numberOfMonths: 1,
+    small: true,
+}
+
+const idExpDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
+    id: "expirationDate",
+    numberOfMonths: 1,
+    small: true,
+}
+
 class Step2 extends Component {
+<<<<<<< HEAD
+=======
     handleNextStepClass(){
         if(this.props.followingStep===3){
             return 'hidden'
         }
     }
+>>>>>>> master
 
     render() {
         const {
@@ -63,7 +127,7 @@ class Step2 extends Component {
             previousStep,
             followingStep,
             handleClickPreviousStep,
-            handleClickFollowingStep
+            handleClickFollowingStep,
         } = this.props;
         console.log('props STEP2', this.props);
         return (
@@ -85,21 +149,18 @@ class Step2 extends Component {
                     <TypeTextInput inputText={countryIssueInput} />
 
                     <div className='verticalDisplay'>
-                        <label htmlFor='dateIssue'>
-                            <FormattedMessage
-                                id="Step2.userPassDateIssue"
-                                defaultMessage="Date of issue"
-                            />
-                        </label>
-                        <input id='dateIssue' type='number' name='dateIssue' value='' />
-
-                        <label htmlFor='expirationDate'>
-                            <FormattedMessage
-                                id="Step2.userPassExpirationDate"
-                                defaultMessage="Expiration date"
-                            />
-                        </label>
-                        <input id='expirationDate' type='number' name='expirationDate' value='' />
+                        <Calendar
+                            labelContent={passIssueDateCal.labelContent}
+                            id={passIssueDateCal.id}
+                            numberOfMonths={passIssueDateCal.numberOfMonths}
+                            small={passIssueDateCal.small}
+                        />
+                        <Calendar
+                            labelContent={passExpDateCal.labelContent}
+                            id={passExpDateCal.id}
+                            numberOfMonths={passExpDateCal.numberOfMonths}
+                            small={passExpDateCal.small}
+                        />
                     </div>
 
                     <h2>
@@ -139,26 +200,24 @@ class Step2 extends Component {
                     </div>
 
                     <div className='verticalDisplay'>
-                        <label htmlFor='dateIssue'>
-                            <FormattedMessage
-                                id="Step2.userDocDateIssue"
-                                defaultMessage="Date of issue"
-                            />
-                        </label>
-                        <input id='dateIssue' type='number' name='dateIssue' value='' />
+                    <Calendar
+                            labelContent={idIssueDateCal.labelContent}
+                            id={idIssueDateCal.id}
+                            numberOfMonths={idIssueDateCal.numberOfMonths}
+                            small={idIssueDateCal.small}
+                        />
 
-                        <label htmlFor='expirationDate'>
-                            <FormattedMessage
-                                id="Step2.userDocExpirationDate"
-                                defaultMessage="Expiration date"
-                            />
-                        </label>
-                        <input id='expirationDate' type='number' name='expirationDate' value='' />
-                    </div>
+                        <Calendar
+                            labelContent={idExpDateCal.labelContent}
+                            id={idExpDateCal.id}
+                            numberOfMonths={idExpDateCal.numberOfMonths}
+                            small={idExpDateCal.small}
+                        />
 
                     <TypeTextInput inputText={birthPlaceInput} />
+                    </div>
                 </form>
-                
+
                 <Navigation
                     title1={title1}
                     title2={title2}
@@ -180,5 +239,6 @@ class Step2 extends Component {
         );
     }
 }
+
 
 export default Step2;
