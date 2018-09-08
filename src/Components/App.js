@@ -9,6 +9,49 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: {
+        personalInformation: {
+          lastName: '',
+          firstName: '',
+        },
+        contactInformation: {
+          phoneNumbers: [],
+          emails: [],
+        },
+        extras: {
+          familyNumber: 0,
+          islandResident: {
+            region: '',
+            locality: ''
+          },
+        },
+        emergencyContact: [
+          {
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+          }
+        ],
+        travelDocuments: {
+          idCard: [
+            {
+              placeOfBirth: '',
+              issueDate: '',
+              expiryDate: '',
+              dniNumber: '',
+            },
+          ],
+          passport: [
+            {
+              issueCountry: '',
+              issueDate: '',
+              expiryDate: '',
+              passportNumber: '',
+              },
+          ],
+        }
+      },
       titles : {
         title1: <FormattedMessage
                   id="App.personalInfo"
