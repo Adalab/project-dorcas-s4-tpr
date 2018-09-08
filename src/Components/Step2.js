@@ -4,6 +4,8 @@ import Navigation from './Navigation';
 import Calendar from './Calendar';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
+import moment from 'moment';
+moment.locale('es');
 
 
 const countryIssueInput = {
@@ -49,7 +51,8 @@ const passIssueDateCal = {
                 />,
     id: "passIssueDate",
     numberOfMonths: 1,
-    small: true
+    small: true,
+    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 const passExpDateCal = {
@@ -60,6 +63,7 @@ const passExpDateCal = {
     id: "passExpirationDate",
     numberOfMonths: 1,
     small: true,
+    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 const idIssueDateCal = {
@@ -69,7 +73,8 @@ const idIssueDateCal = {
                     />,
     id: "idIssueDate",
     numberOfMonths: 1,
-    small: true
+    small: true,
+    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 const idExpDateCal = {
@@ -80,72 +85,10 @@ const idExpDateCal = {
     id: "expirationDate",
     numberOfMonths: 1,
     small: true,
+    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 class Step2 extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            passIssueDateCal: {
-                passIssueDate: "",
-                focused: false,
-            },
-            passExpDateCal: {
-                passExpDate: "",
-                focused: false,
-            },
-            idIssueDateCal: {
-                idIssueDate: "",
-                focused: false,
-            },
-            idExpDateCal: {
-                idExpDate: "",
-                focused: false,
-            },
-        }
-
-        this.onDateChangePassExpDate = this.onDateChangePassExpDate.bind(this);
-        this.onDateChangePassIssueDate = this.onDateChangePassIssueDate.bind(this);
-        this.onFocusChangePassExpDate = this.onFocusChangePassExpDate.bind(this);
-        this.onFocusChangePassIssueDate = this.onFocusChangePassIssueDate.bind(this);
-        this.onDateChangeIdExpDate = this.onDateChangeIdExpDate.bind(this);
-        this.onDateChangeIdIssueDate = this.onDateChangeIdIssueDate.bind(this);
-        this.onFocusChangeIdExpDate = this.onFocusChangeIdExpDate.bind(this);
-        this.onFocusChangeIdIssueDate = this.onFocusChangeIdIssueDate.bind(this);
-    }
-    onDateChangePassIssueDate() {
-       
-        this.setState({ passIssueDateCal: {passIssueDate: "holi"}});
-    }
-
-    onDateChangePassExpDate() {
-        this.setState({ passExpDateCal: { passExpDate:"holi" } });
-    }
-
-    onFocusChangePassExpDate(e) {
-        const inputState = !this.state.passExpDateCal.focused;
-        this.setState({ passExpDateCal: { focused: inputState} })
-    }
-    onFocusChangePassIssueDate() {
-        const inputState = !this.state.passIssueDateCal.focused;
-        this.setState({ passIssueDateCal: { focused: inputState} })
-    }
-    onDateChangeIdIssueDate() {
-        this.setState({ idIssueDateCal: {passIssueDate: "holi"}});
-    }
-
-    onDateChangeIdExpDate() {
-        this.setState({ idExpDateCal: { passExpDate:"holi" } });
-    }
-
-    onFocusChangeIdExpDate() {
-        const inputState = !this.state.idExpDateCal.focused;
-        this.setState({ idExpDateCal: { focused: inputState} })
-    }
-    onFocusChangeIdIssueDate() {
-        const inputState = !this.state.idIssueDateCal.focused;
-        this.setState({ idIssueDateCal: { focused: inputState} })
-    }
 
     render() {
         const {
@@ -186,20 +129,12 @@ class Step2 extends Component {
 
                     <div className='verticalDisplay'>
                         <Calendar
-                            date={this.state.passIssueDateCal.passIssueDate}
-                            onDateChange={this.onDateChangePassIssueDate}
-                            focused={this.state.passIssueDateCal.focused}
-                            onFocusChange={this.onFocusChangePassIssueDate}
                             labelContent={passIssueDateCal.labelContent}
                             id={passIssueDateCal.id}
                             numberOfMonths={passIssueDateCal.numberOfMonths}
                             small={passIssueDateCal.small}
                         />
                         <Calendar
-                            date={this.state.passExpDateCal.passExpDate}
-                            onDateChange={this.onDateChangePassExpDate}
-                            focused={this.state.passExpDateCal.focused}
-                            onFocusChange={this.onFocusChangePassExpDate}
                             labelContent={passExpDateCal.labelContent}
                             id={passExpDateCal.id}
                             numberOfMonths={passExpDateCal.numberOfMonths}
@@ -245,10 +180,6 @@ class Step2 extends Component {
 
                     <div className='verticalDisplay'>
                     <Calendar
-                            date={this.state.idIssueDateCal.idIssueDate}
-                            onDateChange={this.onDateChangeIdIssueDate}
-                            focused={this.state.idIssueDateCal.focused}
-                            onFocusChange={this.onFocusChangeIdIssueDate}
                             labelContent={idIssueDateCal.labelContent}
                             id={idIssueDateCal.id}
                             numberOfMonths={idIssueDateCal.numberOfMonths}
@@ -256,10 +187,6 @@ class Step2 extends Component {
                         />
 
                         <Calendar
-                            date={this.state.idExpDateCal.idExpDate}
-                            onDateChange={this.onDateChangeIdExpDate}
-                            focused={this.state.idExpDateCal.focused}
-                            onFocusChange={this.onFocusChangeIdExpDate}
                             labelContent={idExpDateCal.labelContent}
                             id={idExpDateCal.id}
                             numberOfMonths={idExpDateCal.numberOfMonths}
