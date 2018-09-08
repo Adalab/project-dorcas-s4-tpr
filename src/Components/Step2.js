@@ -5,17 +5,26 @@ import Calendar from './Calendar';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
 import moment from 'moment';
-moment.locale('es', {
-    months : 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
-    monthsShort : 'En_Feb_Mar_Abr_May_Jun_Jul_Ag_Sept_Oct_Nov_Dic'.split('_'),
-    monthsParseExact : true,
-    weekdays : 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado_Domingo'.split('_'),
-    weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
-    weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
-    weekdaysParseExact : true,
-    longDateFormat : {
-        L : 'DD/MM/YYYY',
-    }});
+
+//Poniedo esto, el calendario sale siempre en español. Ahora falta cambiar a inglés o español dependiendo del local
+    let locale = window.navigator.userLanguage || window.navigator.language;
+    console.log(locale);
+    
+    if(locale === "es-ES"){
+        moment.locale('es', {
+            months : 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
+            monthsShort : 'En_Feb_Mar_Abr_May_Jun_Jul_Ag_Sept_Oct_Nov_Dic'.split('_'),
+            monthsParseExact : true,
+            weekdays : 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado_Domingo'.split('_'),
+            weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+            weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
+            weekdaysParseExact : true,
+            longDateFormat : {
+                L : 'DD/MM/YYYY',
+            }});
+    } else {
+        moment.locale(locale);
+    }
 
 
 const countryIssueInput = {
