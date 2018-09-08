@@ -9,34 +9,35 @@ class AccommodationPref extends Component {
           option1,
           option2,
           option3,
-          option4
+          option4,
+          name
         }=this.props.prefContent;
-
+        
         const checkboxOption1 = {
           labelContent: option1,
-          id: 'residentOutside',
-          name: 'residentOutside',
+          id: name+'1',
+          name: name+'1',
           required: true
         };
         
         const checkboxOption2 = {
           labelContent: option2,
-          id: 'residentOutside',
-          name: 'residentOutside',
+          id: name+'2',
+          name: name+'2',
           required: true
         };
         
         const checkboxOption3 = {
           labelContent: option3,
-          id: 'residentOutside',
-          name: 'residentOutside',
+          id: name+'3',
+          name: name+'3',
           required: true
         };
         
         const checkboxOption4 = {
           labelContent: option4,
-          id: 'residentOutside',
-          name: 'residentOutside',
+          id: name+'4',
+          name: name+'4',
           required: true
         };
 

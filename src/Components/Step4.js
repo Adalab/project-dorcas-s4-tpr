@@ -8,7 +8,8 @@ const prefContent1 = {
     option1: 'Siempre',
     option2: 'Algunas veces',
     option3: 'Solo si está incluido',
-    option4: 'Nunca'
+    option4: 'Nunca',
+    name: 'breakfastPreference'
 };
 
 const prefContent2 = {
@@ -16,7 +17,8 @@ const prefContent2 = {
     option1: '5 estrellas',
     option2: 'Desde 4 estrellas',
     option3: 'Desde 3 estrellas',
-    option4: 'Desde 2 estrellas'
+    option4: 'Desde 2 estrellas',
+    name: 'qualityPreference'
 };
 
 const prefContent3 = {
@@ -24,7 +26,8 @@ const prefContent3 = {
     option1: 'Irrelevante',
     option2: 'Clásica',
     option3: 'Moderno',
-    option4: 'Nicho'
+    option4: 'Nicho',
+    name: 'typeAccommodation'
 };
 
 class Step4 extends Component {
