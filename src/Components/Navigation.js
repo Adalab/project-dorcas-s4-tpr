@@ -30,7 +30,7 @@ class Navigation extends Component {
             <FormattedMessage
               id="Navigation.back"
               defaultMessage="Back"
-            />,
+            />
             </button></Link>
               <ul className='list-steps'>
                 <li>
@@ -58,7 +58,7 @@ class Navigation extends Component {
               <FormattedMessage
                 id="Navigation.next"
                 defaultMessage="Next"
-              />,
+              />
               </button></Link>
             </nav>
             
