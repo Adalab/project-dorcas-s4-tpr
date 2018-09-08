@@ -47,12 +47,32 @@ const passIssueDateCal = {
                     id="Step2.userPassDateIssue"
                     defaultMessage="Date of issue"
                 />,
-    id: "issueDate",
+    id: "passIssueDate",
     numberOfMonths: 1,
     small: true
 }
 
 const passExpDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
+    id: "passExpirationDate",
+    numberOfMonths: 1,
+    small: true,
+}
+
+const idIssueDateCal = {
+    labelContent: <FormattedMessage
+                    id="Step2.userDocDateIssue"
+                    defaultMessage="Date of issue"
+                    />,
+    id: "idIssueDate",
+    numberOfMonths: 1,
+    small: true
+}
+
+const idExpDateCal = {
     labelContent: <FormattedMessage
                     id="Step2.userPassExpirationDate"
                     defaultMessage="Expiration date"
@@ -74,12 +94,24 @@ class Step2 extends Component {
                 passExpDate: "",
                 focused: "",
             },
+            idIssueDateCal: {
+                idIssueDate: "",
+                focused: "",
+            },
+            idExpDateCal: {
+                idExpDate: "",
+                focused: "",
+            },
         }
 
         this.onDateChangePassExpDate = this.onDateChangePassExpDate.bind(this);
         this.onDateChangePassIssueDate = this.onDateChangePassIssueDate.bind(this);
         this.onFocusChangePassExpDate = this.onFocusChangePassExpDate.bind(this);
         this.onFocusChangePassIssueDate = this.onFocusChangePassIssueDate.bind(this);
+        this.onDateChangeIdExpDate = this.onDateChangeIdExpDate.bind(this);
+        this.onDateChangeIdIssueDate = this.onDateChangeIdIssueDate.bind(this);
+        this.onFocusChangeIdExpDate = this.onFocusChangeIdExpDate.bind(this);
+        this.onFocusChangeIdIssueDate = this.onFocusChangeIdIssueDate.bind(this);
     }
 
     onDateChangePassIssueDate() {
@@ -95,6 +127,20 @@ class Step2 extends Component {
     }
     onFocusChangePassIssueDate() {
         this.setState({ passIssueDateCal: { focused: "true" } })
+    }
+    onDateChangeIdIssueDate() {
+        this.setState({ idIssueDateCal: {passIssueDate: "holi"}});
+    }
+
+    onDateChangeIdExpDate() {
+        this.setState({ idExpDateCal: { passExpDate:"holi" } });
+    }
+
+    onFocusChangeIdExpDate() {
+        this.setState({ idExpDateCal: { focused: "true" } })
+    }
+    onFocusChangeIdIssueDate() {
+        this.setState({ idIssueDateCal: { focused: "true" } })
     }
 
     render() {
@@ -194,13 +240,28 @@ class Step2 extends Component {
                     </div>
 
                     <div className='verticalDisplay'>
-                        <label htmlFor='dateIssue'>
-                            <FormattedMessage
-                                id="Step2.userDocDateIssue"
-                                defaultMessage="Date of issue"
-                            />
-                        </label>
-                        <input id='dateIssue' type='number' name='dateIssue' value='' />
+                    <Calendar
+                            date={this.state.idIssueDateCal.idIssueDate}
+                            onDateChange={this.onDateChangeIdIssueDate}
+                            focused={this.state.idIssueDateCal.focused}
+                            onFocusChange={this.onFocusChangeIdIssueDate}
+                            labelContent={idIssueDateCal.labelContent}
+                            id={idIssueDateCal.id}
+                            numberOfMonths={idIssueDateCal.numberOfMonths}
+                            small={idIssueDateCal.small}
+                        />
+
+                        <Calendar
+                            date={this.state.idExpDateCal.idExpDate}
+                            onDateChange={this.onDateChangeIdExpDate}
+                            focused={this.state.idExpDateCal.focused}
+                            onFocusChange={this.onFocusChangeIdExpDate}
+                            labelContent={idExpDateCal.labelContent}
+                            id={idExpDateCal.id}
+                            numberOfMonths={idExpDateCal.numberOfMonths}
+                            small={idExpDateCal.small}
+                        />
+                       
 
                         <label htmlFor='expirationDate'>
                             <FormattedMessage

@@ -24,6 +24,10 @@
     "defaultMessage": "Expiration date"
   },
   {
+    "id": "Step2.userDocDateIssue",
+    "defaultMessage": "Date of issue"
+  },
+  {
     "id": "Step2.passport",
     "defaultMessage": "Passport"
   },
@@ -42,10 +46,6 @@
   {
     "id": "Step2.type",
     "defaultMessage": "Type"
-  },
-  {
-    "id": "Step2.userDocDateIssue",
-    "defaultMessage": "Date of issue"
   },
   {
     "id": "Step2.userDocExpirationDate",
