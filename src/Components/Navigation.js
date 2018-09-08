@@ -21,7 +21,8 @@ class Navigation extends Component {
           previousStep,
           followingStep,
           handleClickPreviousStep,
-          handleClickFollowingStep
+          handleClickFollowingStep,
+          handleNextStepClass
         } = this.props;
       return (
         <div>
@@ -30,7 +31,7 @@ class Navigation extends Component {
             <FormattedMessage
               id="Navigation.back"
               defaultMessage="Back"
-            />,
+            />
             </button></Link>
               <ul className='list-steps'>
                 <li>
@@ -58,13 +59,11 @@ class Navigation extends Component {
               <FormattedMessage
                 id="Navigation.next"
                 defaultMessage="Next"
-              />,
+              />
+              
               </button></Link>
-            </nav>
-            
-            
-            
-            
+              <Link to={`/step/${followingStep}`}><p className={handleNextStepClass}>Completar luego Saltar paso</p></Link>
+            </nav>  
         </div>
       );
     }
