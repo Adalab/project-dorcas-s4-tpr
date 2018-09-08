@@ -3,6 +3,7 @@ import Title from './Title';
 import Navigation from './Navigation';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 const countryIssueInput = {
     labelContent: <FormattedMessage
@@ -41,6 +42,22 @@ const documentNumberInput = {
 };
 
 class Step2 extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            passIssueDateCal: {
+                passIssueDate:"",
+                focused:"",
+            },
+            passExpDateCal: {
+                passExpDate:"",
+                focused:"",
+            },
+            // passExpirationDate:"",
+            // passExpirationDateFocused:"",
+            
+        }
+    }
     render() {
         const {
             title1,
@@ -85,7 +102,16 @@ class Step2 extends Component {
                                 defaultMessage="Date of issue"
                             />
                         </label>
-                        <input id='dateIssue' type='number' name='dateIssue' value='' />
+                    <SingleDatePicker
+                    date={this.state.passIssueDateCal.passIssueDate} // momentPropTypes.momentObj or null
+                    onDateChange={passIssueDate => this.setState({ passIssueDateCal: {passIssueDate}})} // PropTypes.func.isRequired
+                    focused={this.state.passIssueDateCal.focused} // PropTypes.bool
+                    onFocusChange={({ focused }) => this.setState({ passIssueDateCal:{focused }})} // PropTypes.func.isRequired
+                    id="issueDate" // PropTypes.string.isRequired,
+                    placeholder= "F.emisión"
+                    numberOfMonths= {1}
+                    small= {true}
+                    />
 
                         <label htmlFor='expirationDate'>
                             <FormattedMessage
@@ -93,7 +119,16 @@ class Step2 extends Component {
                                 defaultMessage="Expiration date"
                             />
                         </label>
-                        <input id='expirationDate' type='number' name='expirationDate' value='' />
+                        <SingleDatePicker
+                        date={this.state.passExpDateCal.passExpDate} // momentPropTypes.momentObj or null
+                        onDateChange={passExpDate => this.setState({ passExpDateCal: {passExpDate}})} // PropTypes.func.isRequired
+                        focused={this.state.passExpDateCal.focused} // PropTypes.bool
+                        onFocusChange={({ focused }) => this.setState({ passExpDateCal:{focused}})} // PropTypes.func.isRequired
+                        id="expirationDate" // PropTypes.string.isRequired,
+                        placeholder= "F.expiración"
+                        numberOfMonths= {1}
+                        small= {true}
+                    />
                     </div>
 
                     <h2>

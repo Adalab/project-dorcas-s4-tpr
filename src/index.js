@@ -7,6 +7,8 @@ import { HashRouter } from "react-router-dom";
 import { IntlProvider, addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
 import es from "react-intl/locale-data/es";
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
 import localeData from "./../build/locales/data.json";
 
