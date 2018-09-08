@@ -6,7 +6,6 @@ import { FormattedMessage } from 'react-intl';
 import TypeTextInput from './TypeTextInput';
 import moment from 'moment';
 
-//Poniedo esto, el calendario sale siempre en español. Ahora falta cambiar a inglés o español dependiendo del local
     let locale = window.navigator.userLanguage || window.navigator.language;
     console.log(locale);
     
@@ -25,7 +24,6 @@ import moment from 'moment';
     } else {
         moment.locale(locale);
     }
-
 
 const countryIssueInput = {
     labelContent: <FormattedMessage
@@ -71,7 +69,6 @@ const passIssueDateCal = {
     id: "passIssueDate",
     numberOfMonths: 1,
     small: true,
-    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 const passExpDateCal = {
@@ -82,7 +79,6 @@ const passExpDateCal = {
     id: "passExpirationDate",
     numberOfMonths: 1,
     small: true,
-    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 const idIssueDateCal = {
@@ -93,7 +89,6 @@ const idIssueDateCal = {
     id: "idIssueDate",
     numberOfMonths: 1,
     small: true,
-    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 const idExpDateCal = {
@@ -104,7 +99,6 @@ const idExpDateCal = {
     id: "expirationDate",
     numberOfMonths: 1,
     small: true,
-    displayFormat: () => moment.localeData().longDateFormat('L'),
 }
 
 class Step2 extends Component {
