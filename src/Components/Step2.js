@@ -102,14 +102,11 @@ const idExpDateCal = {
 }
 
 class Step2 extends Component {
-<<<<<<< HEAD
-=======
     handleNextStepClass(){
         if(this.props.followingStep===3){
             return 'hidden'
         }
     }
->>>>>>> master
 
     render() {
         const {
