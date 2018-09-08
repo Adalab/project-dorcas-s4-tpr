@@ -13,13 +13,14 @@ class Calendar extends Component {
             <SingleDatePicker
                 date={date} // momentPropTypes.momentObj or null
                 onDateChange={onDateChange} // PropTypes.func.isRequired
-                focused={focused } // PropTypes.bool
+                focused= {focused} // PropTypes.bool
                 onFocusChange={onFocusChange} // PropTypes.func.isRequired
                 id={id} // PropTypes.string.isRequired
                 numberOfMonths={numberOfMonths}
                 small={small}
+                autocomplete="on"
         />
-            </Fragment>
+        </Fragment>
          );
     }
 }

@@ -88,19 +88,19 @@ class Step2 extends Component {
         this.state = {
             passIssueDateCal: {
                 passIssueDate: "",
-                focused: "",
+                focused: false,
             },
             passExpDateCal: {
                 passExpDate: "",
-                focused: "",
+                focused: false,
             },
             idIssueDateCal: {
                 idIssueDate: "",
-                focused: "",
+                focused: false,
             },
             idExpDateCal: {
                 idExpDate: "",
-                focused: "",
+                focused: false,
             },
         }
 
@@ -113,8 +113,8 @@ class Step2 extends Component {
         this.onFocusChangeIdExpDate = this.onFocusChangeIdExpDate.bind(this);
         this.onFocusChangeIdIssueDate = this.onFocusChangeIdIssueDate.bind(this);
     }
-
     onDateChangePassIssueDate() {
+       
         this.setState({ passIssueDateCal: {passIssueDate: "holi"}});
     }
 
@@ -122,11 +122,13 @@ class Step2 extends Component {
         this.setState({ passExpDateCal: { passExpDate:"holi" } });
     }
 
-    onFocusChangePassExpDate() {
-        this.setState({ passExpDateCal: { focused: "true" } })
+    onFocusChangePassExpDate(e) {
+        const inputState = !this.state.passExpDateCal.focused;
+        this.setState({ passExpDateCal: { focused: inputState} })
     }
     onFocusChangePassIssueDate() {
-        this.setState({ passIssueDateCal: { focused: "true" } })
+        const inputState = !this.state.passIssueDateCal.focused;
+        this.setState({ passIssueDateCal: { focused: inputState} })
     }
     onDateChangeIdIssueDate() {
         this.setState({ idIssueDateCal: {passIssueDate: "holi"}});
@@ -137,10 +139,12 @@ class Step2 extends Component {
     }
 
     onFocusChangeIdExpDate() {
-        this.setState({ idExpDateCal: { focused: "true" } })
+        const inputState = !this.state.idExpDateCal.focused;
+        this.setState({ idExpDateCal: { focused: inputState} })
     }
     onFocusChangeIdIssueDate() {
-        this.setState({ idIssueDateCal: { focused: "true" } })
+        const inputState = !this.state.idIssueDateCal.focused;
+        this.setState({ idIssueDateCal: { focused: inputState} })
     }
 
     render() {
@@ -159,7 +163,7 @@ class Step2 extends Component {
             previousStep,
             followingStep,
             handleClickPreviousStep,
-            handleClickFollowingStep
+            handleClickFollowingStep,
         } = this.props;
         console.log('props STEP2', this.props);
         return (
@@ -261,18 +265,9 @@ class Step2 extends Component {
                             numberOfMonths={idExpDateCal.numberOfMonths}
                             small={idExpDateCal.small}
                         />
-                       
-
-                        <label htmlFor='expirationDate'>
-                            <FormattedMessage
-                                id="Step2.userDocExpirationDate"
-                                defaultMessage="Expiration date"
-                            />
-                        </label>
-                        <input id='expirationDate' type='number' name='expirationDate' value='' />
-                    </div>
 
                     <TypeTextInput inputText={birthPlaceInput} />
+                    </div>
                 </form>
 
                 <Navigation
