@@ -49,3 +49,23 @@
   top: 0;
   color: #8d9293;
   transition: all 0.2s; }
+
+.control-label:focus + .placeholder-label {
+  font-size: 60%;
+  transform: translateX(4%);
+  transform: translateY(-25%); }
+
+.control-label:valid + .placeholder-label {
+  font-size: 60%;
+  transform: translateX(4%);
+  transform: translateY(-25%); }
+
+.number-step {
+  color: #5b5b5b;
+  font-size: 12px;
+  font-weight: 500; }
+
+.title-step {
+  color: #222222;
+  font-size: 36px;
+  font-weight: 500; }

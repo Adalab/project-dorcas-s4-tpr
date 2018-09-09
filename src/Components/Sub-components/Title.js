@@ -6,8 +6,8 @@ class Title extends Component {
         const {title, step} = this.props;
       return (
         <div>
-            <h2>{step}</h2>
-            <h1>{title}</h1>
+            <h2 className='number-step'>{step}</h2>
+            <h1 className='title-step'>{title}</h1>
         </div>
       );
     }
