@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import AccommodationPref from './AccommodationPref';
-import Navigation from './Navigation';
+import Title from '../Sub-components/Title';
+import AccommodationPref from '../Sub-components/AccommodationPref';
+import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
 
 const prefContent1 = {

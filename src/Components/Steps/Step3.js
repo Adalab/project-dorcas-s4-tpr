@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
 
 class Step3 extends Component {
     render() {

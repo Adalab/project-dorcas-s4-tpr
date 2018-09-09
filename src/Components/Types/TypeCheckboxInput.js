@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 
 class TypeCheckboxInput extends Component {
@@ -11,7 +11,7 @@ class TypeCheckboxInput extends Component {
           required
         } = this.props.contentCheckbox;  
         return (
-            <Fragment>
+            <div>
               <label htmlFor={id}>
                 <input 
                   type="checkbox" 
@@ -22,7 +22,7 @@ class TypeCheckboxInput extends Component {
                 <span className="slider round"></span>
                 {labelContent}
               </label>
-            </Fragment>
+            </div>
         );
     }
 }
