@@ -12,9 +12,6 @@ class TypePhoneInput extends Component {
         } = this.props.phoneNumber;  
         return (
             <div className='position-label'>
-              <label className='placeholder-label' htmlFor={id}>
-                {labelContent}
-              </label>
               <input 
                 className='control-label'
                 id={id}
@@ -24,6 +21,9 @@ class TypePhoneInput extends Component {
                 maxLength="15"
                 required={required}
               />
+              <label className='placeholder-label' htmlFor={id}>
+              {labelContent}
+            </label>
             </div>
         );
     }

@@ -11,9 +11,6 @@ class TypeEmailInput extends Component {
         } = this.props.emailAdress;  
         return (
             <div className='position-label'>
-              <label className='placeholder-label' htmlFor="">
-                {labelContent}
-              </label>
               <input
                 className='control-label' 
                 id={id} 
@@ -22,6 +19,9 @@ class TypeEmailInput extends Component {
                 placeholder='me@aboutjunior.com'
                 disabled={disabled}
               />
+              <label className='placeholder-label' htmlFor="">
+              {labelContent}
+            </label>
             </div>
         );
     }
