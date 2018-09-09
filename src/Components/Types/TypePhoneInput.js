@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 
 class TypePhoneInput extends Component {
@@ -11,20 +11,20 @@ class TypePhoneInput extends Component {
           required
         } = this.props.phoneNumber;  
         return (
-            <Fragment>
-              <label htmlFor={id}>
+            <div className='position-label'>
+              <label className='placeholder-label' htmlFor={id}>
                 {labelContent}
               </label>
               <input 
+                className='control-label'
                 id={id}
                 type="tel" 
                 name={name} 
                 pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"
                 maxLength="15"
-                placeholder='+34 789 987 781'
                 required={required}
               />
-            </Fragment>
+            </div>
         );
     }
 }

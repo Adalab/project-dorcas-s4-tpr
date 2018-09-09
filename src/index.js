@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './scss/index.css';
 import App from './Components/App';
 import fontAwesome from '@fortawesome/fontawesome-free/css/all.css';
 import { HashRouter } from "react-router-dom";
