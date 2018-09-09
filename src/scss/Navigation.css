@@ -4,3 +4,6 @@
 
 .list-steps {
   display: flex; }
+
+.hidden {
+  display: none; }

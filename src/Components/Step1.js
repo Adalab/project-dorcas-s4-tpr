@@ -55,6 +55,12 @@ const landLineNumber = {
 };
 
 class Step1 extends Component {
+    handleNextStepClass(){
+        if(this.props.followingStep===2){
+            return 'hidden'
+        }
+    }
+
     render() {
         console.log('props STEP1', this.props);
         const {
@@ -104,6 +110,7 @@ class Step1 extends Component {
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
+                    handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>
         );
