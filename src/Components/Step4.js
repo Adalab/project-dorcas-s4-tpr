@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import { FormattedMessage } from 'react-intl';
 
 const prefContent1 = {
-    legenContent: <FormattedMessage
+    legendContent: <FormattedMessage
                     id="Step4.breakfast"
                     defaultMessage="Breakfast"
                 />,
@@ -29,7 +29,7 @@ const prefContent1 = {
 };
 
 const prefContent2 = {
-    legenContent: <FormattedMessage
+    legendContent: <FormattedMessage
                     id="Step4.accommodationQuality"
                     defaultMessage="Accommodation quality"
                 />,
@@ -53,7 +53,7 @@ const prefContent2 = {
 };
 
 const prefContent3 = {
-    legenContent: <FormattedMessage
+    legendContent: <FormattedMessage
                     id="Step4.typeOfAccommodation"
                     defaultMessage="Type of accommodation"
                 />,
@@ -98,7 +98,10 @@ class Step4 extends Component {
         } = this.props;
         return (
             <div className='stepBox'>
-                <Title title={title4} step={step4}/>
+                <Title 
+                    title={title4} 
+                    step={step4}
+                />
                 <form className='form'>
                     <span>
                         <FormattedMessage

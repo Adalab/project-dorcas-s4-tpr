@@ -41,12 +41,11 @@ class AccommodationPref extends Component {
           name: name+'4',
           required: true
         };
-
+        
       return (
         <Fragment>
           <legend>
-            <div>{legendContent} hola</div>
-            
+            {legendContent}
             <TypeCheckboxInput contentCheckbox={checkboxOption1}/>
             <TypeCheckboxInput contentCheckbox={checkboxOption2}/>
             <TypeCheckboxInput contentCheckbox={checkboxOption3}/>
