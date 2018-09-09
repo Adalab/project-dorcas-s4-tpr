@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class TypeTextInput extends Component {
     render() {
@@ -8,16 +8,17 @@ class TypeTextInput extends Component {
           name,
         } = this.props.inputText;  
         return (
-            <Fragment>
-              <label htmlFor={id}>
+            <div className='position-label'>
+              <label className='placeholder-label' htmlFor={id}>
                 {labelContent}
               </label>
               <input 
+                className='control-label'
                 id={id} 
                 type="text" 
                 name={name}
               />
-            </Fragment>
+            </div>
         );
     }
 }

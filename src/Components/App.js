@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Pages from './Pages';
-import '../scss/App.css';
 import { FormattedMessage } from 'react-intl';
 
 

@@ -1,0 +1,22 @@
+.position-label {
+    position: relative;
+}
+
+.placeholder-label {
+    position: absolute;
+    top: 0;
+    color: $color-terciary-dark;
+    transition: all 0.2s;
+}
+
+// .control-label:focus + .placeholder-label {
+//     font-size: 60%;
+//     transform: translateX(4%);
+//     transform: translateY(-25%);
+//     }
+
+// .control-label:valid + .placeholder-label {
+//     font-size: 60%;
+//     transform: translateX(4%);
+//     transform: translateY(-25%);
+// }
