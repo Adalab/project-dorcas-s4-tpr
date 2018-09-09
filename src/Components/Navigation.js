@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from './Icon';
+import Icon from './Sub-components/Icon';
 import '../scss/Navigation.css';
 import { FormattedMessage } from 'react-intl';
 
