@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class TypeEmailInput extends Component {
     render() {
@@ -10,18 +10,19 @@ class TypeEmailInput extends Component {
           disabled
         } = this.props.emailAdress;  
         return (
-            <Fragment>
-              <label htmlFor="">
+            <div className='position-label'>
+              <label className='placeholder-label' htmlFor="">
                 {labelContent}
               </label>
-              <input 
+              <input
+                className='control-label' 
                 id={id} 
                 type="email" 
                 name={name}               
                 placeholder='me@aboutjunior.com'
                 disabled={disabled}
               />
-            </Fragment>
+            </div>
         );
     }
 }

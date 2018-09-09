@@ -1,0 +1,51 @@
+/* TYPOGRAPHY */
+/* COLORES */
+/* TYPOGRAPHY WEIGHT */
+/* Font-family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Fira Sans", sans-serif; }
+
+.stepBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.form {
+  display: flex;
+  flex-direction: column; }
+
+#landlinePhone {
+  text-align: end; }
+
+.emergencyContact-step5 {
+  display: flex; }
+
+.emergencyContact-container {
+  display: flex;
+  flex-direction: column; }
+
+.select-step5 {
+  height: 20px; }
+
+.navigation-container {
+  display: flex;
+  align-items: center; }
+
+.list-steps {
+  display: flex; }
+
+.hidden {
+  display: none; }
+
+.position-label {
+  position: relative; }
+
+.placeholder-label {
+  position: absolute;
+  top: 0;
+  color: #8d9293;
+  transition: all 0.2s; }
