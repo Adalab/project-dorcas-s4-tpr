@@ -9,13 +9,11 @@
     transition: all 0.2s;
 }
 
-// .control-label:focus {
-//     + .placeholder-label {
+// .control-label:focus + .placeholder-label {
 //     font-size: 60%;
 //     transform: translateX(4%);
 //     transform: translateY(-25%);
 //     }
-// }
 
 // .control-label:valid + .placeholder-label {
 //     font-size: 60%;
