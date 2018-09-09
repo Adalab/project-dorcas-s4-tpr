@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
-import TypeEmailInput from './TypeEmailInput';
-import TypePhoneInput from './TypePhoneInput';
-import TypeTextInput from './TypeTextInput';
-import TypeSelect from './TypeSelect';
-import TypeCheckboxInput from './TypeCheckboxInput';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import TypeEmailInput from '../Types/TypeEmailInput';
+import TypePhoneInput from '../Types/TypePhoneInput';
+import TypeTextInput from '../Types/TypeTextInput';
+import TypeSelect from '../Types/TypeSelect';
+import TypeCheckboxInput from '../Types/TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {

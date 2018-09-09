@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
-import Calendar from './Calendar';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import Calendar from '../Sub-components/Calendar';
 import { FormattedMessage } from 'react-intl';
-import TypeTextInput from './TypeTextInput';
+import TypeTextInput from '../Types/TypeTextInput';
 import moment from 'moment';
 
     let locale = window.navigator.userLanguage || window.navigator.language;
