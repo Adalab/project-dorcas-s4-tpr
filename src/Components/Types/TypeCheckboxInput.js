@@ -2,25 +2,32 @@ import React, { Component } from 'react';
 
 
 class TypeCheckboxInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+  }
+
     render() {
         console.log('inputCHECKBOX', this.props);
         const {
-          labelContent,
-          id,
           name,
-          required
-        } = this.props.contentCheckbox;  
+          type,
+          onChange,
+          isChecked
+        } = this.props;  
         return (
             <div>
-              <label htmlFor={id}>
+              <label htmlFor={name}>
                 <input 
                   type="checkbox" 
-                  name={name} 
-                  id={id}
-                  required={required}
+                  value={name}
+                  id={name}
+                  required={true}
+                  checked={isChecked}
+                  onChange={()=>onChange(type,name)}
                 />
                 <span className="slider round"></span>
-                {labelContent}
+                {name}
               </label>
             </div>
         );

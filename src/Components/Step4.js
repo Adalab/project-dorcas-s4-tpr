@@ -1,76 +1,34 @@
 import React, { Component } from 'react';
-import Title from '../Sub-components/Title';
-import AccommodationPref from '../Sub-components/AccommodationPref';
-import Navigation from '../Navigation';
-import { FormattedMessage } from 'react-intl';
+import Title from './Title';
+import AccommodationPref from './AccommodationPref';
+import Navigation from './Navigation';
 
 const preferences = [
     {
-        legenContent: <FormattedMessage
-            id="Step4.breakfast"
-            defaultMessage="Breakfast"
-        />,
+        legenContent: 'Desayunos',
         options: [
-            <FormattedMessage
-                id="Step4.always"
-                defaultMessage="Always"
-            />,
-            <FormattedMessage
-                id="Step4.sometimes"
-                defaultMessage="Sometimes"
-            />,
-            <FormattedMessage
-                id="Step4.ifIncluded"
-                defaultMessage="Only if included"
-            />,
-            <FormattedMessage
-                id="Step4.never"
-                defaultMessage="Never"
-            />],
+            'Siempre',
+            'Algunas veces',
+            'Solo si está incluido',
+            'Nunca'],
         name: 'breakfastPreference'
     },
     {
-        legenContent: <FormattedMessage
-            id="Step4.accommodationQuality"
-            defaultMessage="Accommodation quality"
-        />,
+        legenContent: 'Tipo de alojamiento',
         options: [
-            <FormattedMessage
-                id="Step4.fromFourStars"
-                defaultMessage="From 4 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromThreeStars"
-                defaultMessage="From 3 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromTwoStars"
-                defaultMessage="From 2 Stars"
-            />],
+            'Irrelevante',
+            'Clásica',
+            'Moderno',
+            'Nicho'],
         name: 'typeAccommodation'
     },
     {
-        legenContent: <FormattedMessage
-            id="Step4.typeOfAccommodation"
-            defaultMessage="Type of accommodation"
-        />,
+        legenContent: 'Calidad del alojamiento',
         options: [
-            <FormattedMessage
-                id="Step4.irrelevant"
-                defaultMessage="Irrelevant"
-            />,
-            <FormattedMessage
-                id="Step4.classic"
-                defaultMessage="Classic"
-            />,
-            <FormattedMessage
-                id="Step4.modern"
-                defaultMessage="Modern"
-            />,
-            <FormattedMessage
-                id="Step4.niche"
-                defaultMessage="Niche"
-            />],
+            '5 estrellas',
+            'Desde 4 estrellas',
+            'Desde 3 estrellas',
+            'Desde 2 estrellas'],
         name: 'qualityPreference'
     }
 ]
@@ -105,7 +63,9 @@ class Step4 extends Component {
             handleClickPreviousStep,
             handleClickFollowingStep
         } = this.props;
+        console.log(this.state)
         return (
+
             <div className='stepBox'>
                 <Title
                     title={title4}

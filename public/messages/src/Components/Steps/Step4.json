@@ -24,10 +24,6 @@
     "defaultMessage": "Accommodation quality"
   },
   {
-    "id": "Step4.fiveStars",
-    "defaultMessage": "5 Stars"
-  },
-  {
     "id": "Step4.fromFourStars",
     "defaultMessage": "From 4 Stars"
   },
@@ -58,13 +54,5 @@
   {
     "id": "Step4.niche",
     "defaultMessage": "Niche"
-  },
-  {
-    "id": "Step4.accommodations",
-    "defaultMessage": "Accommodations"
-  },
-  {
-    "id": "Step4.accommodationPreferences",
-    "defaultMessage": "Accommodation preferences"
   }
 ]
