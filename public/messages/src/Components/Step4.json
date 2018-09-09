@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Step4.breakfast",
+    "defaultMessage": "Breakfast"
+  },
+  {
+    "id": "Step4.always",
+    "defaultMessage": "Always"
+  },
+  {
+    "id": "Step4.sometimes",
+    "defaultMessage": "Sometimes"
+  },
+  {
+    "id": "Step4.ifIncluded",
+    "defaultMessage": "Only if included"
+  },
+  {
+    "id": "Step4.never",
+    "defaultMessage": "Never"
+  },
+  {
+    "id": "Step4.accommodations",
+    "defaultMessage": "Accommodations"
+  },
+  {
+    "id": "Step4.accommodationPreferences",
+    "defaultMessage": "Accommodation preferences"
+  }
+]

@@ -2,13 +2,29 @@ import React, { Component } from 'react';
 import Title from './Title';
 import AccommodationPref from './AccommodationPref';
 import Navigation from './Navigation';
+import { FormattedMessage } from 'react-intl';
 
 const prefContent1 = {
-    legenContent: 'Desayunos',
-    option1: 'Siempre',
-    option2: 'Algunas veces',
-    option3: 'Solo si está incluido',
-    option4: 'Nunca',
+    legenContent: <FormattedMessage
+                    id="Step4.breakfast"
+                    defaultMessage="Breakfast"
+                />,
+    option1: <FormattedMessage
+                id="Step4.always"
+                defaultMessage="Always"
+            />,
+    option2: <FormattedMessage
+                id="Step4.sometimes"
+                defaultMessage="Sometimes"
+            />,
+    option3: <FormattedMessage
+                id="Step4.ifIncluded"
+                defaultMessage="Only if included"
+            />,
+    option4: <FormattedMessage
+                id="Step4.never"
+                defaultMessage="Never"
+            />,
     name: 'breakfastPreference'
 };
 
@@ -54,8 +70,19 @@ class Step4 extends Component {
             <div className='stepBox'>
                 <Title title={title4} step={step4}/>
                 <form className='form'>
-                    <span>Alojamientos</span>
-                    <h2>Preferencias en alojamientos</h2>
+                    <span>
+                        <FormattedMessage
+                            id="Step4.accommodations"
+                            defaultMessage="Accommodations"
+                        />
+                        
+                    </span>
+                    <h2>
+                        <FormattedMessage
+                            id="Step4.accommodationPreferences"
+                            defaultMessage="Accommodation preferences"
+                        />
+                    </h2>
                     <AccommodationPref prefContent={prefContent1}/>
                     <AccommodationPref prefContent={prefContent2}/>
                     <AccommodationPref prefContent={prefContent3}/>
