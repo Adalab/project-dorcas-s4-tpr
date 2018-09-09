@@ -1,10 +1,9 @@
 import React, { Component,Fragment } from 'react';
 import TypeCheckboxInput from './TypeCheckboxInput';
-import { FormattedMessage } from 'react-intl';
 
 class AccommodationPref extends Component {
     render() {
-        console.log('propsACCOM', this.props);
+        // console.log('propsACCOM', this.props);
         const{
           legendContent,
           option1,

@@ -10,12 +10,14 @@ class Pages extends Component {
   render() {
     console.log('PAGES', this.props);
     const {
+      currentStep,
       previousStep,
       followingStep,
       titles,
       dots,
-      steps
-    } = this.props.state;
+      steps,
+      changingStep
+    } = this.props.dataFromState;
     const {
       title1,
       title2,
@@ -37,7 +39,10 @@ class Pages extends Component {
       dot4,
       dot5
     } = dots;
-    const { handleClickPreviousStep, handleClickFollowingStep } = this.props;
+    const { 
+      handleClickPreviousStep, 
+      handleClickFollowingStep 
+    } = this.props;
     return (
       <Fragment>
         <Switch>
@@ -64,8 +69,10 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
+                currentStep={currentStep}
                 previousStep={previousStep}
                 followingStep={followingStep}
+                changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
               />}
@@ -85,8 +92,10 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
+                currentStep={currentStep}
                 previousStep={previousStep}
                 followingStep={followingStep}
+                changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
               />}
@@ -106,8 +115,10 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
+                currentStep={currentStep}
                 previousStep={previousStep}
                 followingStep={followingStep}
+                changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
               />}
@@ -127,8 +138,10 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
+                currentStep={currentStep}
                 previousStep={previousStep}
                 followingStep={followingStep}
+                changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
               />}
@@ -148,8 +161,10 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
+                currentStep={currentStep}
                 previousStep={previousStep}
                 followingStep={followingStep}
+                changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
               />}

@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 
 class TypePhoneInput extends Component {
     render() {
-        console.log('inputPHONE', this.props);
         const {
           labelContent,
           id,

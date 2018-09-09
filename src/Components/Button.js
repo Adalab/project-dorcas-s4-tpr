@@ -12,7 +12,7 @@ class Button extends Component {
       buttonClass,
       textButton
     } = buttonContent;
-    console.log('BUTTONNNN', buttonContent);
+    
     return (
       <button 
         type="submit"

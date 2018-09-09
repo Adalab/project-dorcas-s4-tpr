@@ -75,8 +75,10 @@ class Step1 extends Component {
             dot3,
             dot4,
             dot5,
+            currentStep,
             previousStep,
             followingStep,
+            changingStep,
             handleClickPreviousStep,
             handleClickFollowingStep
         } = this.props;
@@ -106,8 +108,10 @@ class Step1 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
+                    currentStep={currentStep}
                     previousStep={previousStep}
                     followingStep={followingStep}
+                    changingStep={changingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
                     handleNextStepClass={this.handleNextStepClass()}

@@ -35,12 +35,31 @@ class Navigation extends Component {
           dot3, 
           dot4,
           dot5,
+          currentStep,
           previousStep,
           followingStep,
+          changingStep,
           handleClickPreviousStep,
           handleClickFollowingStep,
           handleNextStepClass
         } = this.props;
+
+        const {
+          changingStep1,
+          changingStep2,
+          changingStep3,
+          changingStep4,
+          changingStep5,
+        } = changingStep;
+
+        const activeClass = 'stepActive';
+        const inactiveClass = 'stepInactive';
+        const completedClass = 'stepCompleted';
+
+        if (dot1===true){
+
+        }
+
       return (
         <div>
             <nav className='navigation-container'>
@@ -52,23 +71,53 @@ class Navigation extends Component {
             </Link>
               <ul className='list-steps'>
                 <li>
-                  <Icon state={dot1}/>
+                  <Icon 
+                    active={dot1}
+                    title={title1}
+                    className={activeClass}
+                    changingStep={changingStep1}
+                  />
+                  <span className={activeClass}>1</span>
                   <p>{title1}</p>
                 </li>
                 <li>
-                  <Icon state={dot2}/>
+                  <Icon 
+                    active={dot2}
+                    title={title2}
+                    className={inactiveClass}
+                    changingStep={changingStep2}
+                  />
+                  <span className={inactiveClass}>2</span>
                   <p>{title2}</p>
                 </li>
                 <li>
-                  <Icon state={dot3}/>
+                  <Icon 
+                    active={dot3}
+                    title={title3}
+                    className={inactiveClass}
+                    changingStep={changingStep3}
+                  />
+                  <span className={inactiveClass}>3</span>
                   <p>{title3}</p>
                 </li>
                 <li>
-                  <Icon state={dot4}/>
+                  <Icon 
+                    active={dot4}
+                    title={title4}
+                    className={inactiveClass}
+                    changingStep={changingStep4}
+                  />
+                  <span className={inactiveClass}>4</span>
                   <p>{title4}</p>
                 </li>
                 <li>
-                  <Icon state={dot5}/>
+                  <Icon 
+                    active={dot5}
+                    title={title5}
+                    className={completedClass}
+                    changingStep={changingStep5}
+                  />
+                  <span className={completedClass}>5</span>
                   <p>{title5}</p>
                 </li>
               </ul>
