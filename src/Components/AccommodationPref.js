@@ -1,5 +1,6 @@
 import React, { Component,Fragment } from 'react';
 import TypeCheckboxInput from './TypeCheckboxInput';
+import { FormattedMessage } from 'react-intl';
 
 class AccommodationPref extends Component {
     render() {
@@ -40,7 +41,7 @@ class AccommodationPref extends Component {
           name: name+'4',
           required: true
         };
-
+        
       return (
         <Fragment>
           <legend>

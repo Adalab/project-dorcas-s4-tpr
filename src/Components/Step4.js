@@ -2,31 +2,77 @@ import React, { Component } from 'react';
 import Title from './Title';
 import AccommodationPref from './AccommodationPref';
 import Navigation from './Navigation';
+import { FormattedMessage } from 'react-intl';
 
 const prefContent1 = {
-    legenContent: 'Desayunos',
-    option1: 'Siempre',
-    option2: 'Algunas veces',
-    option3: 'Solo si está incluido',
-    option4: 'Nunca',
+    legendContent: <FormattedMessage
+                    id="Step4.breakfast"
+                    defaultMessage="Breakfast"
+                />,
+    option1: <FormattedMessage
+                id="Step4.always"
+                defaultMessage="Always"
+            />,
+    option2: <FormattedMessage
+                id="Step4.sometimes"
+                defaultMessage="Sometimes"
+            />,
+    option3: <FormattedMessage
+                id="Step4.ifIncluded"
+                defaultMessage="Only if included"
+            />,
+    option4: <FormattedMessage
+                id="Step4.never"
+                defaultMessage="Never"
+            />,
     name: 'breakfastPreference'
 };
 
 const prefContent2 = {
-    legenContent: 'Calidad del alojamiento',
-    option1: '5 estrellas',
-    option2: 'Desde 4 estrellas',
-    option3: 'Desde 3 estrellas',
-    option4: 'Desde 2 estrellas',
+    legendContent: <FormattedMessage
+                    id="Step4.accommodationQuality"
+                    defaultMessage="Accommodation quality"
+                />,
+    option1: <FormattedMessage
+                id="Step4.fiveStars"
+                defaultMessage="5 Stars"
+            />,
+    option2: <FormattedMessage
+                id="Step4.fromFourStars"
+                defaultMessage="From 4 Stars"
+            />,
+    option3: <FormattedMessage
+                id="Step4.fromThreeStars"
+                defaultMessage="From 3 Stars"
+            />,
+    option4: <FormattedMessage
+                id="Step4.fromTwoStars"
+                defaultMessage="From 2 Stars"
+            />,
     name: 'qualityPreference'
 };
 
 const prefContent3 = {
-    legenContent: 'Tipo de alojamiento',
-    option1: 'Irrelevante',
-    option2: 'Clásica',
-    option3: 'Moderno',
-    option4: 'Nicho',
+    legendContent: <FormattedMessage
+                    id="Step4.typeOfAccommodation"
+                    defaultMessage="Type of accommodation"
+                />,
+    option1: <FormattedMessage
+                id="Step4.irrelevant"
+                defaultMessage="Irrelevant"
+            />,
+    option2: <FormattedMessage
+                id="Step4.classic"
+                defaultMessage="Classic"
+            />,
+    option3: <FormattedMessage
+                id="Step4.modern"
+                defaultMessage="Modern"
+            />,
+    option4: <FormattedMessage
+                id="Step4.niche"
+                defaultMessage="Niche"
+            />,
     name: 'typeAccommodation'
 };
 
@@ -52,10 +98,24 @@ class Step4 extends Component {
         } = this.props;
         return (
             <div className='stepBox'>
-                <Title title={title4} step={step4}/>
+                <Title 
+                    title={title4} 
+                    step={step4}
+                />
                 <form className='form'>
-                    <span>Alojamientos</span>
-                    <h2>Preferencias en alojamientos</h2>
+                    <span>
+                        <FormattedMessage
+                            id="Step4.accommodations"
+                            defaultMessage="Accommodations"
+                        />
+                        
+                    </span>
+                    <h2>
+                        <FormattedMessage
+                            id="Step4.accommodationPreferences"
+                            defaultMessage="Accommodation preferences"
+                        />
+                    </h2>
                     <AccommodationPref prefContent={prefContent1}/>
                     <AccommodationPref prefContent={prefContent2}/>
                     <AccommodationPref prefContent={prefContent3}/>
