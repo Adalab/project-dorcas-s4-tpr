@@ -29,20 +29,50 @@ const prefContent1 = {
 };
 
 const prefContent2 = {
-    legenContent: 'Calidad del alojamiento',
-    option1: '5 estrellas',
-    option2: 'Desde 4 estrellas',
-    option3: 'Desde 3 estrellas',
-    option4: 'Desde 2 estrellas',
+    legenContent: <FormattedMessage
+                    id="Step4.accommodationQuality"
+                    defaultMessage="Accommodation quality"
+                />,
+    option1: <FormattedMessage
+                id="Step4.fiveStars"
+                defaultMessage="5 Stars"
+            />,
+    option2: <FormattedMessage
+                id="Step4.fromFourStars"
+                defaultMessage="From 4 Stars"
+            />,
+    option3: <FormattedMessage
+                id="Step4.fromThreeStars"
+                defaultMessage="From 3 Stars"
+            />,
+    option4: <FormattedMessage
+                id="Step4.fromTwoStars"
+                defaultMessage="From 2 Stars"
+            />,
     name: 'qualityPreference'
 };
 
 const prefContent3 = {
-    legenContent: 'Tipo de alojamiento',
-    option1: 'Irrelevante',
-    option2: 'Clásica',
-    option3: 'Moderno',
-    option4: 'Nicho',
+    legenContent: <FormattedMessage
+                    id="Step4.typeOfAccommodation"
+                    defaultMessage="Type of accommodation"
+                />,
+    option1: <FormattedMessage
+                id="Step4.irrelevant"
+                defaultMessage="Irrelevant"
+            />,
+    option2: <FormattedMessage
+                id="Step4.classic"
+                defaultMessage="Classic"
+            />,
+    option3: <FormattedMessage
+                id="Step4.modern"
+                defaultMessage="Modern"
+            />,
+    option4: <FormattedMessage
+                id="Step4.niche"
+                defaultMessage="Niche"
+            />,
     name: 'typeAccommodation'
 };
 

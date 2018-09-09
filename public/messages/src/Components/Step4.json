@@ -20,6 +20,46 @@
     "defaultMessage": "Never"
   },
   {
+    "id": "Step4.accommodationQuality",
+    "defaultMessage": "Accommodation quality"
+  },
+  {
+    "id": "Step4.fiveStars",
+    "defaultMessage": "5 Stars"
+  },
+  {
+    "id": "Step4.fromFourStars",
+    "defaultMessage": "From 4 Stars"
+  },
+  {
+    "id": "Step4.fromThreeStars",
+    "defaultMessage": "From 3 Stars"
+  },
+  {
+    "id": "Step4.fromTwoStars",
+    "defaultMessage": "From 2 Stars"
+  },
+  {
+    "id": "Step4.typeOfAccommodation",
+    "defaultMessage": "Type of accommodation"
+  },
+  {
+    "id": "Step4.irrelevant",
+    "defaultMessage": "Irrelevant"
+  },
+  {
+    "id": "Step4.classic",
+    "defaultMessage": "Classic"
+  },
+  {
+    "id": "Step4.modern",
+    "defaultMessage": "Modern"
+  },
+  {
+    "id": "Step4.niche",
+    "defaultMessage": "Niche"
+  },
+  {
     "id": "Step4.accommodations",
     "defaultMessage": "Accommodations"
   },
