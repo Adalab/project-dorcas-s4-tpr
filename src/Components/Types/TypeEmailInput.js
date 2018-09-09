@@ -19,7 +19,7 @@ class TypeEmailInput extends Component {
                 placeholder='me@aboutjunior.com'
                 disabled={disabled}
               />
-              <label className='placeholder-label' htmlFor="">
+              <label className='placeholder-label label-email' htmlFor="">
               {labelContent}
             </label>
             </div>

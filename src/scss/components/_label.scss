@@ -9,6 +9,7 @@
     color: $color-terciary-dark;
     transition: all 0.2s;
     font-size: $font-size-xl;
+    font-weight: $normal;
     padding: 24px 0 18px 24px;
 }
 
@@ -19,12 +20,19 @@
     color: $color-primary-dark;
     font-size: $font-size-xl;
     font-weight: $bold;
+    outline: none;
 }
 
-.control-label:focus + .placeholder-label,
-//.control-label:valid + .placeholder-label 
-{
+.control-label:focus + .placeholder-label {
     font-size: $font-size-m;
     padding: 3px 0 0 12px;
-    //transform: translate3d(4%, -25%, 0);
-    }
+    } 
+
+.control-label:valid + .placeholder-label {
+
+}    
+
+ .label-email {
+    font-size: $font-size-m;
+    padding: 3px 0 0 12px;
+ }

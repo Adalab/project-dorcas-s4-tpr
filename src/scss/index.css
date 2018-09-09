@@ -9,6 +9,18 @@
   list-style: none;
   font-family: "Fira Sans", sans-serif; }
 
+.CalendarDay__highlighted_calendar {
+  background: #82E0AA;
+  color: #186A3B; }
+
+.CalendarDay__highlighted_calendar:hover {
+  background: #58D68D;
+  color: #186A3B; }
+
+.CalendarDay__highlighted_calendar:active {
+  background: #58D68D;
+  color: #186A3B; }
+
 .header {
   height: 100px;
   background-color: #f8f9f8; }
@@ -73,6 +85,12 @@
   font-size: 18px;
   font-weight: 600; }
 
+.nav-label_step {
+  color: #5b5b5b;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500; }
+
 .position-label {
   position: relative; }
 
@@ -83,6 +101,7 @@
   color: #8d9293;
   transition: all 0.2s;
   font-size: 36px;
+  font-weight: 500;
   padding: 24px 0 18px 24px; }
 
 .control-label {
@@ -91,9 +110,14 @@
   padding: 24px 0 18px 24px;
   color: #06a790;
   font-size: 36px;
-  font-weight: 600; }
+  font-weight: 600;
+  outline: none; }
 
 .control-label:focus + .placeholder-label {
+  font-size: 15px;
+  padding: 3px 0 0 12px; }
+
+.label-email {
   font-size: 15px;
   padding: 3px 0 0 12px; }
 

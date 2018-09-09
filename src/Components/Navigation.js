@@ -37,23 +37,23 @@ class Navigation extends Component {
               <ul className='list-steps'>
                 <li className='nav-steps'>
                   <Icon state={dot1}/>
-                  <p>{title1}</p>
+                  <p className='nav-label_step'>{title1}</p>
                 </li>
                 <li className='nav-steps'>
                   <Icon state={dot2}/>
-                  <p>{title2}</p>
+                  <p className='nav-label_step'>{title2}</p>
                 </li>
                 <li className='nav-steps'>
                   <Icon state={dot3}/>
-                  <p>{title3}</p>
+                  <p className='nav-label_step'>{title3}</p>
                 </li>
                 <li className='nav-steps'>
                   <Icon state={dot4}/>
-                  <p>{title4}</p>
+                  <p className='nav-label_step'>{title4}</p>
                 </li>
                 <li className='nav-steps'>
                   <Icon state={dot5}/>
-                  <p>{title5}</p>
+                  <p className='nav-label_step'>{title5}</p>
                 </li>
               </ul>
               <Link to={`/step/${followingStep}`}>
