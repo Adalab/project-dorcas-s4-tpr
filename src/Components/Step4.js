@@ -67,7 +67,10 @@ class Step4 extends Component {
         return (
 
             <div className='stepBox'>
-                <Title title={title4} step={step4} />
+                <Title
+                    title={title4}
+                    step={step4}
+                />
                 <form className='form'>
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
@@ -75,7 +78,6 @@ class Step4 extends Component {
                         prefContent={preference}
                         optionSelected={this.state.responses[preference.name]}
                         onChange={this.handleSelectCheckbox} />)}
-
                 </form>
                 <Navigation
                     title1={title1}

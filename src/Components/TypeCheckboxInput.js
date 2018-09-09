@@ -20,7 +20,6 @@ class TypeCheckboxInput extends Component {
               <label htmlFor={name}>
                 <input 
                   type="checkbox" 
-                  name={name} 
                   value={name}
                   id={name}
                   required={true}
