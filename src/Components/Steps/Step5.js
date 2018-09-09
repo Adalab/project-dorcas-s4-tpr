@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
-import TypeEmailInput from './TypeEmailInput';
-import TypePhoneInput from './TypePhoneInput';
-import TypeTextInput from './TypeTextInput';
-import TypeSelect from './TypeSelect';
-import TypeCheckboxInput from './TypeCheckboxInput';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import TypeEmailInput from '../Types/TypeEmailInput';
+import TypePhoneInput from '../Types/TypePhoneInput';
+import TypeTextInput from '../Types/TypeTextInput';
+import TypeSelect from '../Types/TypeSelect';
+import TypeCheckboxInput from '../Types/TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
     labelContent: <FormattedMessage
-        id="Step5.numberMembers"
-        defaultMessage="Number of members"
-    />,
+                    id="Step5.numberMembers"
+                    defaultMessage="Number of members"
+                />,
     id: 'familyNumber',
     name: 'familyNumber'
 };
 
 const emergencyContactInput = {
     labelContent: <FormattedMessage
-        id="Step5.nameAndSurname"
-        defaultMessage="Name and Surname"
-    />,
+                    id="Step5.nameAndSurname"
+                    defaultMessage="Name and Surname"
+                />,
     id: 'emergencyContactName',
     name: 'emergencyContactName'
 };
 
 const emailAddress = {
     labelContent: <FormattedMessage
-        id="Step5.email"
-        defaultMessage="Email"
-    />,
+                    id="Step5.email"
+                    defaultMessage="Email"
+                />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
     disable: false
@@ -38,18 +38,18 @@ const emailAddress = {
 
 const emergencyContactPhone = {
     labelContent: <FormattedMessage
-        id="Step5.phoneNumber"
-        defaultMessage="Phone number"
-    />,
+                    id="Step5.phoneNumber"
+                    defaultMessage="Phone number"
+                />,
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
     required: true
 };
 const locality = {
     labelContent: <FormattedMessage
-        id="Step5.locality"
-        defaultMessage="Locality"
-    />,
+                    id="Step5.locality"
+                    defaultMessage="Locality"
+                />,
     id: 'Locality',
     name: 'Locality',
     required: true
@@ -65,13 +65,14 @@ const region = [
         defaultMessage="Balearic Islands"
     />,
     'Ceuta', 
-    'Melilla']
+    'Melilla'
+];
 
 const largeFamily = {
     labelContent: <FormattedMessage
-        id="Step5.numerousFamily"
-        defaultMessage="Numerous Family"
-    />,
+                    id="Step5.numerousFamily"
+                    defaultMessage="Numerous Family"
+                />,
     id: 'largeFamily',
     name: 'largeFamily',
     required: true
@@ -79,9 +80,9 @@ const largeFamily = {
 
 const residentOutside = {
     labelContent: <FormattedMessage
-        id="Step5.residentOutsidePeninsula"
-        defaultMessage="Resident outside Iberian Peninsula"
-    />,
+                    id="Step5.residentOutsidePeninsula"
+                    defaultMessage="Resident outside Iberian Peninsula"
+                />,
     id: 'residentOutside',
     name: 'residentOutside',
     required: true

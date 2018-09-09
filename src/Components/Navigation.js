@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from './Icon';
+import Icon from './Sub-components/Icon';
 import '../scss/Navigation.css';
 import { FormattedMessage } from 'react-intl';
 
@@ -21,7 +21,8 @@ class Navigation extends Component {
           previousStep,
           followingStep,
           handleClickPreviousStep,
-          handleClickFollowingStep
+          handleClickFollowingStep,
+          handleNextStepClass
         } = this.props;
       return (
         <div>
@@ -59,12 +60,10 @@ class Navigation extends Component {
                 id="Navigation.next"
                 defaultMessage="Next"
               />
+              
               </button></Link>
-            </nav>
-            
-            
-            
-            
+              <Link to={`/step/${followingStep}`}><p className={handleNextStepClass}>Completar luego Saltar paso</p></Link>
+            </nav>  
         </div>
       );
     }

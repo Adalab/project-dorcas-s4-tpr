@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
 
 class Step3 extends Component {
     render() {
-        console.log(this.props);
-        const {title1, title2, title3, title4, title5, step3, dot1, dot2, dot3, dot4, dot5, previousStep, followingStep, handleClickPreviousStep, handleClickFollowingStep} = this.props;
+        console.log('propsSTEP3', this.props);
+        const {
+            title1, 
+            title2, 
+            title3, 
+            title4, 
+            title5, 
+            step3, 
+            dot1, 
+            dot2, 
+            dot3, 
+            dot4, 
+            dot5, 
+            previousStep, 
+            followingStep, 
+            handleClickPreviousStep,
+            handleClickFollowingStep
+        } = this.props;
         return (
             <div className='stepBox'>
                 <Title title={title3} step={step3}/>

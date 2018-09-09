@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import Title from './Title';
-import Navigation from './Navigation';
-import TypeEmailInput from './TypeEmailInput';
-import TypePhoneInput from './TypePhoneInput';
-import TypeTextInput from './TypeTextInput';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import TypeEmailInput from '../Types/TypeEmailInput';
+import TypePhoneInput from '../Types/TypePhoneInput';
+import TypeTextInput from '../Types/TypeTextInput';
 
 const surnameInput = {
     labelContent: <FormattedMessage
@@ -55,6 +55,12 @@ const landLineNumber = {
 };
 
 class Step1 extends Component {
+    handleNextStepClass(){
+        if(this.props.followingStep===2){
+            return 'hidden'
+        }
+    }
+
     render() {
         console.log('props STEP1', this.props);
         const {
@@ -104,6 +110,7 @@ class Step1 extends Component {
                     followingStep={followingStep}
                     handleClickPreviousStep={handleClickPreviousStep}
                     handleClickFollowingStep={handleClickFollowingStep}
+                    handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>
         );
