@@ -9,15 +9,15 @@ class TypeTextInput extends Component {
         } = this.props.inputText;  
         return (
             <div className='position-label'>
-              <label className='placeholder-label' htmlFor={id}>
-                {labelContent}
-              </label>
               <input 
                 className='control-label'
                 id={id} 
                 type="text" 
                 name={name}
               />
+              <label className='placeholder-label' htmlFor={id}>
+              {labelContent}
+            </label>
             </div>
         );
     }

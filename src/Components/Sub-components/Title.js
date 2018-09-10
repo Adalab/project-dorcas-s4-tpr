@@ -5,9 +5,9 @@ class Title extends Component {
         console.log('props TITLE', this.props);
         const {title, step} = this.props;
       return (
-        <div>
-            <h2>{step}</h2>
-            <h1>{title}</h1>
+        <div className='titles-container'>
+            <h2 className='number-step'>{step}</h2>
+            <h1 className='title-step'>{title}</h1>
         </div>
       );
     }
