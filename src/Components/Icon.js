@@ -11,6 +11,7 @@ class Icon extends Component {
             className,
             changingStep,
             currentStep,
+            handleUpdateNavigation
         } = this.props;
 
         const{
@@ -22,31 +23,18 @@ class Icon extends Component {
         let stepState;
         if (stepNumber === currentStep){
             stepState = 'stepActive';
+            // handleUpdateNavigation ();
         } else {
             stepState = 'stepInactive';
         }
-        // if(active === true){
-            // return <IconOn/>
             return(
                 <Fragment>
                     <span className={stepState}>
                         {changingStep.stepNumber}
                     </span>
                     <p>{title}</p>
-                </Fragment>
-                
+                </Fragment>       
             )
-        // } else if(active === false){
-        //     // return <IconOff/>
-        //     return(
-        //         <Fragment>
-        //             <span className={className}>
-        //                 {changingStep.stepNumber}
-        //             </span>
-        //             <p>{title}</p>
-                // </Fragment>
-            // )
-        // }
     }
 }
 

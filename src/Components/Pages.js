@@ -41,7 +41,8 @@ class Pages extends Component {
     } = dots;
     const { 
       handleClickPreviousStep, 
-      handleClickFollowingStep 
+      handleClickFollowingStep,
+      handleUpdateNavigation 
     } = this.props;
     return (
       <Fragment>
@@ -75,6 +76,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
+                handleUpdateNavigation={handleUpdateNavigation}
               />}
           />
           <Route
@@ -98,6 +100,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
+                handleUpdateNavigation={handleUpdateNavigation}
               />}
           />
           <Route
@@ -121,6 +124,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
+                handleUpdateNavigation={handleUpdateNavigation}
               />}
           />
           <Route
@@ -144,6 +148,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
+                handleUpdateNavigation={handleUpdateNavigation}
               />}
           />
           <Route
@@ -167,6 +172,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleClickPreviousStep={handleClickPreviousStep}
                 handleClickFollowingStep={handleClickFollowingStep}
+                handleUpdateNavigation={handleUpdateNavigation}
               />}
           />
         </Switch>

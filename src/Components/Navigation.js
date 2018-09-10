@@ -41,6 +41,7 @@ class Navigation extends Component {
           changingStep,
           handleClickPreviousStep,
           handleClickFollowingStep,
+          handleUpdateNavigation,
           handleNextStepClass
         } = this.props;
 
@@ -72,6 +73,7 @@ class Navigation extends Component {
                     title={title1}
                     changingStep={changingStep1}
                     currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
                   />
                 </li>
                 <li>
@@ -80,6 +82,7 @@ class Navigation extends Component {
                     title={title2}
                     changingStep={changingStep2}
                     currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
                   />
                 </li>
                 <li>
@@ -88,6 +91,7 @@ class Navigation extends Component {
                     title={title3}
                     changingStep={changingStep3}
                     currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
                   />
                 </li>
                 <li>
@@ -96,6 +100,7 @@ class Navigation extends Component {
                     title={title4}
                     changingStep={changingStep4}
                     currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
                   />
                 </li>
                 <li>
@@ -104,6 +109,7 @@ class Navigation extends Component {
                     title={title5}
                     changingStep={changingStep5}
                     currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
                   />
                 </li>
               </ul>

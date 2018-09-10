@@ -109,7 +109,7 @@ class App extends Component {
       changingStep: {
         changingStep1: {
           stepNumber: 1,
-          active: true,
+          active: false,
           completed: false
         },
         changingStep2: {
@@ -136,6 +136,84 @@ class App extends Component {
     }
     this.handleClickPreviousStep = this.handleClickPreviousStep.bind(this);
     this.handleClickFollowingStep = this.handleClickFollowingStep.bind(this);
+    this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
+  }
+
+    componentDidMount () {
+      this.handleUpdateNavigation();
+    }
+
+  handleUpdateNavigation() {
+    console.log('FUNCIONAAAA!!!');
+    const {
+      currentStep,
+      changingStep,
+    } = this.state;
+    const {
+      changingStep1,
+      changingStep2,
+      changingStep3,
+      changingStep4,
+      changingStep5
+    } = changingStep;
+    console.log('changingStep, currentStep', changingStep, currentStep);
+    console.log('change1',changingStep1.active );
+    if(changingStep1.stepNumber === currentStep){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: true},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: false},
+        }
+      });
+      console.log('STATEINFUNCTION', this.state);
+    } else if(changingStep2.stepNumber === currentStep){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: true},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: false},
+        }
+      });
+      console.log('STATEINFUNCTION', this.state);
+    } else if(changingStep3.stepNumber === currentStep){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: true},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: false},
+        }
+      });
+      console.log('STATEINFUNCTION', this.state);
+    } else if(changingStep4.stepNumber === currentStep){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: true},
+          changingStep5: {...changingStep5, active: false},
+        }
+      });
+      console.log('STATEINFUNCTION', this.state);
+    } else if(changingStep5.stepNumber === currentStep){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: true},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: true},
+        }
+      });
+      console.log('STATEINFUNCTION', this.state);
+    } 
   }
 
   handleClickPreviousStep() {
@@ -229,6 +307,7 @@ class App extends Component {
           dataFromState={state}
           handleClickPreviousStep={this.handleClickPreviousStep}
           handleClickFollowingStep={this.handleClickFollowingStep}
+          handleUpdateNavigation={this.handleUpdateNavigation}
         />
       </div>
     );
