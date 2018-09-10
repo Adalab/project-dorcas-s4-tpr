@@ -89,6 +89,16 @@ const residentOutside = {
 };
 
 class Step5 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 5
+        }
+    }
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
+
     render() {
         console.log('STEP5', this.props);
         const {
@@ -103,10 +113,7 @@ class Step5 extends Component {
             dot3,
             dot4,
             dot5,
-            previousStep,
-            followingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep
+            currentStep
         } = this.props;
         return (
             <div className='stepBox'>
@@ -144,10 +151,7 @@ class Step5 extends Component {
                     dot3={dot3}
                     dot4={dot4}
                     dot5={dot5}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
+                    currentStep={currentStep}
                 />
             </div>
         );

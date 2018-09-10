@@ -17,16 +17,15 @@ class Navigation extends Component {
           dot3, 
           dot4,
           dot5,
-          previousStep,
-          followingStep,
           handleClickPreviousStep,
           handleClickFollowingStep,
-          handleNextStepClass
+          handleNextStepClass,
+          currentStep
         } = this.props;
       return (
         <div>
             <nav className='navigation-container'>
-            <Link to={`/step/${previousStep}`}>
+            <Link to={`/step/${currentStep-1}`}>
             <button className='back-button' onClick={handleClickPreviousStep}>
             <FormattedMessage
               id="Navigation.back"
@@ -56,7 +55,7 @@ class Navigation extends Component {
                   <p className='nav-label_step'>{title5}</p>
                 </li>
               </ul>
-              <Link to={`/step/${followingStep}`}>
+              <Link to={`/step/${currentStep + 1}`}>
               <button className='next-button' onClick={handleClickFollowingStep}>
               <FormattedMessage
                 id="Navigation.next"
@@ -64,7 +63,7 @@ class Navigation extends Component {
               />
               </button>
               </Link>
-              <Link to={`/step/${followingStep}`}>
+              <Link to={`/step/${currentStep+1}`}>
               <p className={handleNextStepClass}>Completar luego Saltar paso</p>
               </Link>
             </nav>  
