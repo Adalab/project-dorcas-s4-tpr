@@ -9,10 +9,27 @@
   list-style: none;
   font-family: "Fira Sans", sans-serif; }
 
+.CalendarDay__highlighted_calendar {
+  background: #82E0AA;
+  color: #186A3B; }
+
+.CalendarDay__highlighted_calendar:hover {
+  background: #58D68D;
+  color: #186A3B; }
+
+.CalendarDay__highlighted_calendar:active {
+  background: #58D68D;
+  color: #186A3B; }
+
+.header {
+  height: 100px;
+  background-color: #f8f9f8; }
+
 .stepBox {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  background-color: #f8f9f8; }
 
 .form {
   display: flex;
@@ -33,7 +50,9 @@
 
 .navigation-container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  height: 120px;
+  align-self: flex-end; }
 
 .list-steps {
   display: flex; }
@@ -41,11 +60,76 @@
 .hidden {
   display: none; }
 
+.nav-steps {
+  width: 120px;
+  text-align: center; }
+
+.back-button {
+  width: 175px;
+  height: 50px;
+  background-color: #f8f9f8;
+  border: solid 1px #06a790;
+  border-radius: 4px;
+  color: #06a790;
+  font-size: 18px;
+  font-weight: 600; }
+
+.next-button {
+  width: 185px;
+  height: 50px;
+  background-image: linear-gradient(101deg, #77c7ad, #06a790);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600; }
+
+.nav-label_step {
+  color: #5b5b5b;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500; }
+
 .position-label {
   position: relative; }
 
 .placeholder-label {
   position: absolute;
   top: 0;
+  left: 0;
   color: #8d9293;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  font-size: 36px;
+  font-weight: 500;
+  padding: 24px 0 18px 24px; }
+
+.control-label {
+  width: 695px;
+  height: 85px;
+  padding: 24px 0 18px 24px;
+  color: #06a790;
+  font-size: 36px;
+  font-weight: 600;
+  outline: none; }
+
+.control-label:focus + .placeholder-label {
+  font-size: 15px;
+  padding: 3px 0 0 12px; }
+
+.label-email {
+  font-size: 15px;
+  padding: 3px 0 0 12px; }
+
+.titles-container {
+  width: 695px; }
+
+.number-step {
+  color: #5b5b5b;
+  font-size: 12px;
+  font-weight: 500; }
+
+.title-step {
+  color: #222222;
+  font-size: 36px;
+  font-weight: 500; }

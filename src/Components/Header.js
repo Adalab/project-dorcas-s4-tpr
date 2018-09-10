@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <div>
+      <div className='header'>
         {/* <img src={logo}/> */}
         <img src=''/>
       </div>
