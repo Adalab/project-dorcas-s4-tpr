@@ -8,7 +8,7 @@ import Step5 from './Steps/Step5';
 
 class Pages extends Component {
   render() {
-    console.log('PAGES', this.props);
+    // console.log('PAGES', this.props);
     const {
       currentStep,
       steps,
@@ -31,7 +31,6 @@ class Pages extends Component {
     } = steps;
     const { 
       handleCurrentStep,
-      handleUpdateNavigation 
     } = this.props;
     return (
       <Fragment>
@@ -56,7 +55,6 @@ class Pages extends Component {
                 step1={step1}
                 currentStep={currentStep}
                 changingStep={changingStep}
-                handleUpdateNavigation={handleUpdateNavigation}
                 handleCurrentStep={handleCurrentStep}
               />}
           />
@@ -72,7 +70,6 @@ class Pages extends Component {
                 step2={step2}
                 currentStep={currentStep}
                 changingStep={changingStep}
-                handleUpdateNavigation={handleUpdateNavigation}
                 handleCurrentStep={handleCurrentStep}
               />}
           />
@@ -87,7 +84,6 @@ class Pages extends Component {
                 title5={title5}
                 step3={step3}
                 changingStep={changingStep}
-                handleUpdateNavigation={handleUpdateNavigation}
                 handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
               />}
@@ -104,7 +100,6 @@ class Pages extends Component {
                 step4={step4}
                 currentStep={currentStep}
                 changingStep={changingStep}
-                handleUpdateNavigation={handleUpdateNavigation}
                 handleCurrentStep={handleCurrentStep}
               />}
           />
@@ -120,7 +115,6 @@ class Pages extends Component {
                 step5={step5}
                 currentStep={currentStep}
                 changingStep={changingStep}
-                handleUpdateNavigation={handleUpdateNavigation}
                 handleCurrentStep={handleCurrentStep}
               />}
           />

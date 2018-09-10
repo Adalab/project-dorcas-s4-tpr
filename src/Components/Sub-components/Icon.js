@@ -2,26 +2,20 @@ import React, { Component,Fragment } from 'react';
 
 class Icon extends Component {
     render() {
-        console.log('props ICON',this.props);
+        // console.log('props ICON',this.props);
         const {
-            
             title,
-            className,
             changingStep,
             currentStep,
-            handleUpdateNavigation
         } = this.props;
 
         const{
-            stepNumber,
-            active,
-            completed
+            stepNumber
         } = changingStep;
 
         let stepState;
         if (stepNumber === currentStep){
             stepState = 'stepActive';
-            // handleUpdateNavigation ();
         } else {
             stepState = 'stepInactive';
         }

@@ -47,7 +47,6 @@ class Navigation extends Component {
             <nav className='navigation-container'>
             <Link to={`/step/${currentStep-1}`}>
               <Button 
-                // onClick={handleClickPreviousStep}
                 buttonContent={backButton}
               />
             </Link>
@@ -95,7 +94,6 @@ class Navigation extends Component {
               </ul>
               <Link to={`/step/${currentStep+1}`}>
                 <Button 
-                  // onClick={handleClickFollowingStep}
                   buttonContent={nextButton}
                 />      
               </Link>

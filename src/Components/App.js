@@ -95,14 +95,6 @@ class App extends Component {
                 defaultMessage="Step 5"
               />,
       },
-      dots : {
-        dot1: true,
-        dot2: false,
-        dot3: false,
-        dot4: false,
-        dot5: false,
-      },
-
       currentStep: 1,
       changingStep: {
         changingStep1: {
@@ -137,11 +129,19 @@ class App extends Component {
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
   }
 
-    componentDidMount () {
-      this.handleUpdateNavigation();
-    }
+    // componentWillMount () {
+    //   this.handleUpdateNavigation();
+    // }
 
-  handleUpdateNavigation() {
+  handleCurrentStep(step){
+    console.log('step',step);
+    this.setState({
+      currentStep: step,
+    }, ()=> {console.log(this.state.currentStep)})
+    this.handleUpdateNavigation(step);
+  }
+
+  handleUpdateNavigation(step) {
     console.log('FUNCIONAAAA!!!');
     const {
       currentStep,
@@ -154,9 +154,8 @@ class App extends Component {
       changingStep4,
       changingStep5
     } = changingStep;
-    console.log('changingStep, currentStep', changingStep, currentStep);
-    console.log('change1',changingStep1.active );
-    if(changingStep1.stepNumber === currentStep){
+    console.log('changingStep, step', changingStep, step);
+    if(changingStep1.stepNumber === step){
       this.setState({
         changingStep: {
           changingStep1: {...changingStep1,active: true},
@@ -165,8 +164,8 @@ class App extends Component {
           changingStep4: {...changingStep4,active: false},
           changingStep5: {...changingStep5, active: false},
         }
-      });
-    } else if(changingStep2.stepNumber === currentStep){
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep2.stepNumber === step){
       this.setState({
         changingStep: {
           changingStep1: {...changingStep1,active: false},
@@ -175,8 +174,8 @@ class App extends Component {
           changingStep4: {...changingStep4,active: false},
           changingStep5: {...changingStep5, active: false},
         }
-      });
-    } else if(changingStep3.stepNumber === currentStep){
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep3.stepNumber === step){
       this.setState({
         changingStep: {
           changingStep1: {...changingStep1,active: false},
@@ -185,8 +184,8 @@ class App extends Component {
           changingStep4: {...changingStep4,active: false},
           changingStep5: {...changingStep5, active: false},
         }
-      });
-    } else if(changingStep4.stepNumber === currentStep){
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep4.stepNumber === step){
       this.setState({
         changingStep: {
           changingStep1: {...changingStep1,active: false},
@@ -195,8 +194,8 @@ class App extends Component {
           changingStep4: {...changingStep4,active: true},
           changingStep5: {...changingStep5, active: false},
         }
-      });
-    } else if(changingStep5.stepNumber === currentStep){
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep5.stepNumber === step){
       this.setState({
         changingStep: {
           changingStep1: {...changingStep1,active: false},
@@ -205,16 +204,8 @@ class App extends Component {
           changingStep4: {...changingStep4,active: false},
           changingStep5: {...changingStep5, active: true},
         }
-      });
+      },()=> {console.log(this.state.currentStep)});
     } 
-    console.log('STATEINFUNCTION', this.state);
-  }
-  
-  handleCurrentStep(step){
-    console.log(step);
-    this.setState({
-      currentStep: step,
-    }, ()=> {console.log(this.state.currentStep)})
   }
 
   render() {

@@ -155,7 +155,6 @@ class Step5 extends Component {
                     dot5={dot5}
                     currentStep={currentStep}
                     changingStep={changingStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
                 />
             </div>
         );

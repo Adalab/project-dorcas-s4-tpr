@@ -80,14 +80,8 @@ class Step1 extends Component {
             title4,
             title5,
             step1,
-            dot1,
-            dot2,
-            dot3,
-            dot4,
-            dot5,
             currentStep,
             changingStep,
-            handleUpdateNavigation
         } = this.props;
         return (
             <div className='stepBox'>
@@ -105,11 +99,6 @@ class Step1 extends Component {
                     <TypeEmailInput emailAdress={emailAdress} />
                 </form>
                 <Navigation
-                    dot1={dot1}
-                    dot2={dot2}
-                    dot3={dot3}
-                    dot4={dot4}
-                    dot5={dot5}
                     title1={title1}
                     title2={title2}
                     title3={title3}
@@ -117,7 +106,6 @@ class Step1 extends Component {
                     title5={title5}
                     currentStep={currentStep}
                     changingStep={changingStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
                     handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>
