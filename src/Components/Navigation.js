@@ -52,13 +52,9 @@ class Navigation extends Component {
           changingStep5,
         } = changingStep;
 
-        const activeClass = 'stepActive';
-        const inactiveClass = 'stepInactive';
-        const completedClass = 'stepCompleted';
-
-        if (dot1===true){
-
-        }
+        // const activeClass = 'stepActive';
+        // const inactiveClass = 'stepInactive';
+        // const completedClass = 'stepCompleted';
 
       return (
         <div>
@@ -74,51 +70,41 @@ class Navigation extends Component {
                   <Icon 
                     active={dot1}
                     title={title1}
-                    className={activeClass}
                     changingStep={changingStep1}
+                    currentStep={currentStep}
                   />
-                  <span className={activeClass}>1</span>
-                  <p>{title1}</p>
                 </li>
                 <li>
                   <Icon 
                     active={dot2}
                     title={title2}
-                    className={inactiveClass}
                     changingStep={changingStep2}
+                    currentStep={currentStep}
                   />
-                  <span className={inactiveClass}>2</span>
-                  <p>{title2}</p>
                 </li>
                 <li>
                   <Icon 
                     active={dot3}
                     title={title3}
-                    className={inactiveClass}
                     changingStep={changingStep3}
+                    currentStep={currentStep}
                   />
-                  <span className={inactiveClass}>3</span>
-                  <p>{title3}</p>
                 </li>
                 <li>
                   <Icon 
                     active={dot4}
                     title={title4}
-                    className={inactiveClass}
                     changingStep={changingStep4}
+                    currentStep={currentStep}
                   />
-                  <span className={inactiveClass}>4</span>
-                  <p>{title4}</p>
                 </li>
                 <li>
                   <Icon 
                     active={dot5}
                     title={title5}
-                    className={completedClass}
                     changingStep={changingStep5}
+                    currentStep={currentStep}
                   />
-                  <span className={completedClass}>5</span>
-                  <p>{title5}</p>
                 </li>
               </ul>
               <Link to={`/step/${followingStep}`}>

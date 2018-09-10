@@ -6,29 +6,47 @@ class Icon extends Component {
     render() {
         console.log('props ICON',this.props);
         const {
-            active,
+            
             title,
             className,
-            changingStep
+            changingStep,
+            currentStep,
         } = this.props;
-        if(active === true){
+
+        const{
+            stepNumber,
+            active,
+            completed
+        } = changingStep;
+
+        let stepState;
+        if (stepNumber === currentStep){
+            stepState = 'stepActive';
+        } else {
+            stepState = 'stepInactive';
+        }
+        // if(active === true){
             // return <IconOn/>
             return(
                 <Fragment>
-                    <span className={className}>{changingStep.stepNumber}</span>
+                    <span className={stepState}>
+                        {changingStep.stepNumber}
+                    </span>
                     <p>{title}</p>
                 </Fragment>
                 
             )
-        } else if(active === false){
-            // return <IconOff/>
-            return(
-                <Fragment>
-                    <span className={className}>{changingStep.stepNumber}</span>
-                    <p>{title}</p>
-                </Fragment>
-            )
-        }
+        // } else if(active === false){
+        //     // return <IconOff/>
+        //     return(
+        //         <Fragment>
+        //             <span className={className}>
+        //                 {changingStep.stepNumber}
+        //             </span>
+        //             <p>{title}</p>
+                // </Fragment>
+            // )
+        // }
     }
 }
 
