@@ -102,6 +102,9 @@ class Step2 extends Component {
         this.state = {
             currentStep: 2
         }
+    
+        this.handlePassportInput = this.handlePassportInput.bind(this)
+        this.handleCountryInput = this.handleCountryInput.bind(this)
     }
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
@@ -111,6 +114,14 @@ class Step2 extends Component {
         if(this.props.currentStep===2){
             return 'hidden'
         }
+    }
+
+    handlePassportInput(){
+        console.log('click passport')
+    }
+
+    handleCountryInput(){
+        console.log('click passport country')
     }
 
     render() {
@@ -144,8 +155,8 @@ class Step2 extends Component {
                         />
                     </h2>
 
-                    <TypeTextInput inputText={numPassportInput} />
-                    <TypeTextInput inputText={countryIssueInput} />
+                    <TypeTextInput onChange={this.handlePassportInput} inputText={numPassportInput} />
+                    <TypeTextInput onChange={this.handleCountryInput} inputText={countryIssueInput} />
 
                     <div className='verticalDisplay'>
                         <Calendar
