@@ -5,27 +5,41 @@ class Calendar extends Component {
     constructor(props){
         super(props);
         this.state = {
-                date: "",
+                date: null,
                 focused: false,
         }
+    this.onDateChange = this.onDateChange.bind(this);
+    this.onFocusChange = this.onFocusChange.bind(this);
     }
+
+    onDateChange(date) {
+        this.setState({ date }, () => {console.log(this.state)});
+      }
+    
+    onFocusChange({ focused }) {
+        this.setState({ focused }, () => {console.log(this.state)});
+      }
+
     render() {
         console.log(this.props);
-        const { id, labelContent, numberOfMonths, small} = this.props;
+        const {focused, date} = this.state;
+        const { id, labelContent } = this.props;
         return (
             <Fragment>
             <label htmlFor='dateIssue'>
                {labelContent} 
             </label>
             <SingleDatePicker
-                date={this.state.date} // momentPropTypes.momentObj or null
-                onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
-                focused={this.state.focused} // PropTypes.bool
-                onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+                date={date} // momentPropTypes.momentObj or null
+                onDateChange={this.onDateChange} // PropTypes.func.isRequired
+                focused={focused} // PropTypes.bool
+                onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
                 id={id} // PropTypes.string.isRequired
-                numberOfMonths={numberOfMonths}
-                small={small}
-                autocomplete="on"
+                placeholder={date}
+                showDefaultInputIcon={true}
+                inputIconPosition="after"
+                numberOfMonths= {1}
+                small = {true}
         />
         </Fragment>
          );
