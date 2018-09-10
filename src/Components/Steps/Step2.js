@@ -20,6 +20,9 @@ import moment from 'moment';
             weekdaysParseExact : true,
             longDateFormat : {
                 L : 'DD/MM/YYYY',
+            },
+            week :{
+                dow: 1
             }});
     } else {
         moment.locale(locale);
@@ -67,8 +70,6 @@ const passIssueDateCal = {
                     defaultMessage="Date of issue"
                 />,
     id: "passIssueDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 const passExpDateCal = {
@@ -77,8 +78,6 @@ const passExpDateCal = {
                     defaultMessage="Expiration date"
                 />,
     id: "passExpirationDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 const idIssueDateCal = {
@@ -87,8 +86,6 @@ const idIssueDateCal = {
                     defaultMessage="Date of issue"
                     />,
     id: "idIssueDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 const idExpDateCal = {
@@ -97,8 +94,6 @@ const idExpDateCal = {
                     defaultMessage="Expiration date"
                 />,
     id: "expirationDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 class Step2 extends Component {
@@ -182,17 +177,6 @@ class Step2 extends Component {
                     </h2>
 
                     <div className='verticalDisplay'>
-                        <label htmlFor='documentType'>
-                        </label>
-                        <select id='documentType' name='documentType' value=''>
-                            <option value="">
-                                <FormattedMessage
-                                    id="Step2.type"
-                                    defaultMessage="Type"
-                                />
-                            </option>
-                        </select>
-
                         <TypeTextInput inputText={documentNumberInput} />
                     </div>
 
