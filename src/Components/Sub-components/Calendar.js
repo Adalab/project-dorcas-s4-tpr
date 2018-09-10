@@ -23,7 +23,7 @@ class Calendar extends Component {
     render() {
         console.log(this.props);
         const {focused, date} = this.state;
-        const { id, labelContent, numberOfMonths, small} = this.props;
+        const { id, labelContent } = this.props;
         return (
             <Fragment>
             <label htmlFor='dateIssue'>
@@ -35,12 +35,11 @@ class Calendar extends Component {
                 focused={focused} // PropTypes.bool
                 onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
                 id={id} // PropTypes.string.isRequired
-                numberOfMonths={numberOfMonths}
-                small={small}
                 placeholder={date}
                 showDefaultInputIcon={true}
                 inputIconPosition="after"
-                autoFocus={false}
+                numberOfMonths= {1}
+                small = {true}
         />
         </Fragment>
          );
