@@ -7,9 +7,14 @@ class TypeTextInput extends Component {
           id,
           name,
         } = this.props.inputText;  
+
+        const {
+          onChange
+        } = this.props;
+        
         return (
             <div className='position-label'>
-              <input 
+              <input onChange={onChange}
                 className='control-label'
                 id={id} 
                 type="text" 
