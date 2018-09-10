@@ -10,27 +10,27 @@ import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
     labelContent: <FormattedMessage
-                    id="Step5.numberMembers"
-                    defaultMessage="Number of members"
-                />,
+        id="Step5.numberMembers"
+        defaultMessage="Number of members"
+    />,
     id: 'familyNumber',
     name: 'familyNumber'
 };
 
 const emergencyContactInput = {
     labelContent: <FormattedMessage
-                    id="Step5.nameAndSurname"
-                    defaultMessage="Name and Surname"
-                />,
+        id="Step5.nameAndSurname"
+        defaultMessage="Name and Surname"
+    />,
     id: 'emergencyContactName',
     name: 'emergencyContactName'
 };
 
 const emailAddress = {
     labelContent: <FormattedMessage
-                    id="Step5.email"
-                    defaultMessage="Email"
-                />,
+        id="Step5.email"
+        defaultMessage="Email"
+    />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
     disable: false
@@ -38,18 +38,18 @@ const emailAddress = {
 
 const emergencyContactPhone = {
     labelContent: <FormattedMessage
-                    id="Step5.phoneNumber"
-                    defaultMessage="Phone number"
-                />,
+        id="Step5.phoneNumber"
+        defaultMessage="Phone number"
+    />,
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
     required: true
 };
 const locality = {
     labelContent: <FormattedMessage
-                    id="Step5.locality"
-                    defaultMessage="Locality"
-                />,
+        id="Step5.locality"
+        defaultMessage="Locality"
+    />,
     id: 'Locality',
     name: 'Locality',
     required: true
@@ -59,20 +59,20 @@ const region = [
     <FormattedMessage
         id="Step5.canaryIslands"
         defaultMessage="Canary Islands"
-    />, 
+    />,
     <FormattedMessage
         id="Step5.balearicIslands"
         defaultMessage="Balearic Islands"
     />,
-    'Ceuta', 
+    'Ceuta',
     'Melilla'
 ];
 
 const largeFamily = {
     labelContent: <FormattedMessage
-                    id="Step5.numerousFamily"
-                    defaultMessage="Numerous Family"
-                />,
+        id="Step5.numerousFamily"
+        defaultMessage="Numerous Family"
+    />,
     id: 'largeFamily',
     name: 'largeFamily',
     required: true
@@ -80,23 +80,49 @@ const largeFamily = {
 
 const residentOutside = {
     labelContent: <FormattedMessage
-                    id="Step5.residentOutsidePeninsula"
-                    defaultMessage="Resident outside Iberian Peninsula"
-                />,
+        id="Step5.residentOutsidePeninsula"
+        defaultMessage="Resident outside Iberian Peninsula"
+    />,
     id: 'residentOutside',
     name: 'residentOutside',
     required: true
 };
 
 class Step5 extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             currentStep: 5
         }
+        this.handleFamilyNumber = this.handleFamilyNumber.bind(this)
+        this.handleLocality = this.handleLocality.bind(this)
+        this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
+        this.handleEmailAddress = this.handleEmailAddress.bind(this)
+        this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
+
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
+    }
+
+    handleFamilyNumber() {
+        console.log('click family number')
+    }
+
+    handleLocality() {
+        console.log('click locality')
+    }
+
+    handleEmergencyContact(){
+        console.log('click emergency contact')
+    }
+
+    handleEmailAddress(){
+        console.log('click email address')
+    }
+
+    handleEmergencyContact(){
+        console.log('click emergency contact')
     }
 
     render() {
@@ -123,11 +149,17 @@ class Step5 extends Component {
                 />
                 <form className='form'>
                     <TypeCheckboxInput contentCheckbox={largeFamily} />
-                    <TypeTextInput inputText={familyNumberInput} />
+                    <TypeTextInput
+                        onChange={this.handleFamilyNumber}
+                        inputText={familyNumberInput}
+                    />
 
                     <TypeCheckboxInput contentCheckbox={residentOutside} />
                     <TypeSelect options={region} />
-                    <TypeTextInput inputText={locality} />
+                    <TypeTextInput
+                        onChange={this.handleLocality}
+                        inputText={locality}
+                    />
 
                     <h2><FormattedMessage
                         id="Step5.emergencyContact"
@@ -135,9 +167,18 @@ class Step5 extends Component {
                     />
                     </h2>
                     <div className='emergencyContact-container'>
-                        <TypeTextInput inputText={emergencyContactInput} />
-                        <TypeEmailInput emailAdress={emailAddress} />
-                        <TypePhoneInput phoneNumber={emergencyContactPhone} />
+                        <TypeTextInput
+                            onChange={this.handleEmergencyContact}
+                            inputText={emergencyContactInput}
+                        />
+                        <TypeEmailInput
+                            onChange={this.handleEmailAddress}
+                            emailAdress={emailAddress}
+                        />
+                        <TypePhoneInput
+                            onChange={this.handleEmergencyContact}
+                            phoneNumber={emergencyContactPhone}
+                        />
                     </div>
                 </form>
                 <Navigation

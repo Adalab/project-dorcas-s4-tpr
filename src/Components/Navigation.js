@@ -22,6 +22,7 @@ class Navigation extends Component {
           handleNextStepClass,
           currentStep
         } = this.props;
+        
       return (
         <div>
             <nav className='navigation-container'>
