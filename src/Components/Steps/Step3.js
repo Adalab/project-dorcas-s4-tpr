@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
 
 class Step3 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 3
+        }
+    }
+
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
     render() {
         console.log('propsSTEP3', this.props);
         const {
@@ -18,11 +28,7 @@ class Step3 extends Component {
             dot4, 
             dot5, 
             currentStep,
-            previousStep,
-            followingStep,
             changingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep,
             handleUpdateNavigation
         } = this.props;
         return (
@@ -43,11 +49,7 @@ class Step3 extends Component {
                     dot4={dot4}
                     dot5={dot5}
                     currentStep={currentStep}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
                     changingStep={changingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
                     handleUpdateNavigation={handleUpdateNavigation}
                 />
             </div>

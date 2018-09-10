@@ -1,6 +1,4 @@
 import React, { Component,Fragment } from 'react';
-import IconOn from './IconOn';
-import IconOff from './IconOff';
 
 class Icon extends Component {
     render() {

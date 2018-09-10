@@ -1,23 +1,20 @@
 import React, { Component, Fragment } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
-import Step4 from './Step4';
-import Step5 from './Step5';
+import Step1 from './Steps/Step1';
+import Step2 from './Steps/Step2';
+import Step3 from './Steps/Step3';
+import Step4 from './Steps/Step4';
+import Step5 from './Steps/Step5';
 
 class Pages extends Component {
   render() {
     console.log('PAGES', this.props);
     const {
       currentStep,
-      previousStep,
-      followingStep,
-      titles,
-      dots,
       steps,
-      changingStep
-    } = this.props.dataFromState;
+      changingStep,
+      titles,
+    } = this.props.stateObject;
     const {
       title1,
       title2,
@@ -32,16 +29,8 @@ class Pages extends Component {
       step4,
       step5
     } = steps;
-    const {
-      dot1,
-      dot2,
-      dot3,
-      dot4,
-      dot5
-    } = dots;
     const { 
-      handleClickPreviousStep, 
-      handleClickFollowingStep,
+      handleCurrentStep,
       handleUpdateNavigation 
     } = this.props;
     return (
@@ -65,18 +54,10 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step1={step1}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
                 currentStep={currentStep}
-                previousStep={previousStep}
-                followingStep={followingStep}
                 changingStep={changingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
                 handleUpdateNavigation={handleUpdateNavigation}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
           <Route
@@ -89,18 +70,10 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step2={step2}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
                 currentStep={currentStep}
-                previousStep={previousStep}
-                followingStep={followingStep}
                 changingStep={changingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
                 handleUpdateNavigation={handleUpdateNavigation}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
           <Route
@@ -113,18 +86,10 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step3={step3}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
-                currentStep={currentStep}
-                previousStep={previousStep}
-                followingStep={followingStep}
                 changingStep={changingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
                 handleUpdateNavigation={handleUpdateNavigation}
+                handleCurrentStep={handleCurrentStep}
+                currentStep={currentStep}
               />}
           />
           <Route
@@ -137,18 +102,10 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step4={step4}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
                 currentStep={currentStep}
-                previousStep={previousStep}
-                followingStep={followingStep}
                 changingStep={changingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
                 handleUpdateNavigation={handleUpdateNavigation}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
           <Route
@@ -161,18 +118,10 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step5={step5}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
                 currentStep={currentStep}
-                previousStep={previousStep}
-                followingStep={followingStep}
                 changingStep={changingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
                 handleUpdateNavigation={handleUpdateNavigation}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
         </Switch>

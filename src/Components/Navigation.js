@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from './Icon';
-import '../scss/Navigation.css';
-import Button from './Button';
+import Button from './Sub-components/Button';
+import Icon from './Sub-components/Icon';
 import { FormattedMessage } from 'react-intl';
 
 const backButton = {
@@ -30,19 +29,10 @@ class Navigation extends Component {
           title3,
           title4,
           title5,
-          dot1,
-          dot2,
-          dot3, 
-          dot4,
-          dot5,
           currentStep,
-          previousStep,
-          followingStep,
           changingStep,
-          handleClickPreviousStep,
-          handleClickFollowingStep,
           handleUpdateNavigation,
-          handleNextStepClass
+          handleNextStepClass,
         } = this.props;
 
         const {
@@ -52,24 +42,18 @@ class Navigation extends Component {
           changingStep4,
           changingStep5,
         } = changingStep;
-
-        // const activeClass = 'stepActive';
-        // const inactiveClass = 'stepInactive';
-        // const completedClass = 'stepCompleted';
-
       return (
         <div>
             <nav className='navigation-container'>
-            <Link to={`/step/${previousStep}`}>
+            <Link to={`/step/${currentStep-1}`}>
               <Button 
-                onClick={handleClickPreviousStep}
+                // onClick={handleClickPreviousStep}
                 buttonContent={backButton}
               />
             </Link>
               <ul className='list-steps'>
                 <li>
-                  <Icon 
-                    active={dot1}
+                  <Icon
                     title={title1}
                     changingStep={changingStep1}
                     currentStep={currentStep}
@@ -78,7 +62,6 @@ class Navigation extends Component {
                 </li>
                 <li>
                   <Icon 
-                    active={dot2}
                     title={title2}
                     changingStep={changingStep2}
                     currentStep={currentStep}
@@ -87,7 +70,6 @@ class Navigation extends Component {
                 </li>
                 <li>
                   <Icon 
-                    active={dot3}
                     title={title3}
                     changingStep={changingStep3}
                     currentStep={currentStep}
@@ -96,7 +78,6 @@ class Navigation extends Component {
                 </li>
                 <li>
                   <Icon 
-                    active={dot4}
                     title={title4}
                     changingStep={changingStep4}
                     currentStep={currentStep}
@@ -105,7 +86,6 @@ class Navigation extends Component {
                 </li>
                 <li>
                   <Icon 
-                    active={dot5}
                     title={title5}
                     changingStep={changingStep5}
                     currentStep={currentStep}
@@ -113,13 +93,13 @@ class Navigation extends Component {
                   />
                 </li>
               </ul>
-              <Link to={`/step/${followingStep}`}>
+              <Link to={`/step/${currentStep+1}`}>
                 <Button 
-                  onClick={handleClickFollowingStep}
+                  // onClick={handleClickFollowingStep}
                   buttonContent={nextButton}
                 />      
               </Link>
-              <Link to={`/step/${followingStep}`}><p className={handleNextStepClass}>Completar luego Saltar paso</p></Link>
+              <Link to={`/step/${currentStep+1}`}><p className={handleNextStepClass}>Completar luego Saltar paso</p></Link>
             </nav>  
         </div>
       );

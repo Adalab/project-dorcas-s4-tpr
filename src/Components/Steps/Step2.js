@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
-import Calendar from './Calendar';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import Calendar from '../Sub-components/Calendar';
 import { FormattedMessage } from 'react-intl';
-import TypeTextInput from './TypeTextInput';
+import TypeTextInput from '../Types/TypeTextInput';
 import moment from 'moment';
 
     let locale = window.navigator.userLanguage || window.navigator.language;
@@ -20,6 +20,9 @@ import moment from 'moment';
             weekdaysParseExact : true,
             longDateFormat : {
                 L : 'DD/MM/YYYY',
+            },
+            week :{
+                dow: 1
             }});
     } else {
         moment.locale(locale);
@@ -67,8 +70,6 @@ const passIssueDateCal = {
                     defaultMessage="Date of issue"
                 />,
     id: "passIssueDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 const passExpDateCal = {
@@ -77,8 +78,6 @@ const passExpDateCal = {
                     defaultMessage="Expiration date"
                 />,
     id: "passExpirationDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 const idIssueDateCal = {
@@ -87,8 +86,6 @@ const idIssueDateCal = {
                     defaultMessage="Date of issue"
                     />,
     id: "idIssueDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 const idExpDateCal = {
@@ -97,13 +94,21 @@ const idExpDateCal = {
                     defaultMessage="Expiration date"
                 />,
     id: "expirationDate",
-    numberOfMonths: 1,
-    small: true,
 }
 
 class Step2 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 2
+        }
+    }
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
+    
     handleNextStepClass(){
-        if(this.props.followingStep===3){
+        if(this.props.currentStep===2){
             return 'hidden'
         }
     }
@@ -122,11 +127,7 @@ class Step2 extends Component {
             dot4,
             dot5,
             currentStep,
-            previousStep,
-            followingStep,
             changingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep,
             handleUpdateNavigation,
         } = this.props;
         console.log('props STEP2', this.props);
@@ -230,11 +231,7 @@ class Step2 extends Component {
                     dot4={dot4}
                     dot5={dot5}
                     currentStep={currentStep}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
                     changingStep={changingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
                     handleUpdateNavigation={handleUpdateNavigation}
                     handleNextStepClass={this.handleNextStepClass()}
                 />

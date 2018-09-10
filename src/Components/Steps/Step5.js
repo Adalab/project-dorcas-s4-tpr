@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Title from './Title';
-import Navigation from './Navigation';
-import TypeEmailInput from './TypeEmailInput';
-import TypePhoneInput from './TypePhoneInput';
-import TypeTextInput from './TypeTextInput';
-import TypeSelect from './TypeSelect';
-import TypeCheckboxInput from './TypeCheckboxInput';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import TypeEmailInput from '../Types/TypeEmailInput';
+import TypePhoneInput from '../Types/TypePhoneInput';
+import TypeTextInput from '../Types/TypeTextInput';
+import TypeSelect from '../Types/TypeSelect';
+import TypeCheckboxInput from '../Types/TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
@@ -89,6 +89,16 @@ const residentOutside = {
 };
 
 class Step5 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 5
+        }
+    }
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
+
     render() {
         console.log('STEP5', this.props);
         const {
@@ -104,11 +114,7 @@ class Step5 extends Component {
             dot4,
             dot5,
             currentStep,
-            previousStep,
-            followingStep,
             changingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep,
             handleUpdateNavigation
         } = this.props;
         return (
@@ -148,11 +154,7 @@ class Step5 extends Component {
                     dot4={dot4}
                     dot5={dot5}
                     currentStep={currentStep}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
                     changingStep={changingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
                     handleUpdateNavigation={handleUpdateNavigation}
                 />
             </div>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import Title from './Title';
-import Navigation from './Navigation';
-import TypeEmailInput from './TypeEmailInput';
-import TypePhoneInput from './TypePhoneInput';
-import TypeTextInput from './TypeTextInput';
+import Title from '../Sub-components/Title';
+import Navigation from '../Navigation';
+import TypeEmailInput from '../Types/TypeEmailInput';
+import TypePhoneInput from '../Types/TypePhoneInput';
+import TypeTextInput from '../Types/TypeTextInput';
 
 const surnameInput = {
     labelContent: <FormattedMessage
@@ -55,8 +55,18 @@ const landLineNumber = {
 };
 
 class Step1 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 1
+        }
+    }
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
+    
     handleNextStepClass(){
-        if(this.props.followingStep===2){
+        if(this.props.currentStep===1){
             return 'hidden'
         }
     }
@@ -76,11 +86,7 @@ class Step1 extends Component {
             dot4,
             dot5,
             currentStep,
-            previousStep,
-            followingStep,
             changingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep,
             handleUpdateNavigation
         } = this.props;
         return (
@@ -110,11 +116,7 @@ class Step1 extends Component {
                     title4={title4}
                     title5={title5}
                     currentStep={currentStep}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
                     changingStep={changingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
                     handleUpdateNavigation={handleUpdateNavigation}
                     handleNextStepClass={this.handleNextStepClass()}
                 />

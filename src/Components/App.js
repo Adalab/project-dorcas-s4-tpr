@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Pages from './Pages';
-import '../scss/App.css';
 import { FormattedMessage } from 'react-intl';
 
 
@@ -103,9 +102,8 @@ class App extends Component {
         dot4: false,
         dot5: false,
       },
-      previousStep: 0,
+
       currentStep: 1,
-      followingStep: 2,
       changingStep: {
         changingStep1: {
           stepNumber: 1,
@@ -134,9 +132,9 @@ class App extends Component {
         },
       }
     }
-    this.handleClickPreviousStep = this.handleClickPreviousStep.bind(this);
-    this.handleClickFollowingStep = this.handleClickFollowingStep.bind(this);
+    
     this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
+    this.handleCurrentStep=this.handleCurrentStep.bind(this);
   }
 
     componentDidMount () {
@@ -210,101 +208,24 @@ class App extends Component {
       });
     } 
     console.log('STATEINFUNCTION', this.state);
-
   }
-
-  handleClickPreviousStep() {
-    console.log(this.state.currentStep);
-    const {dot1} = this.state.dots;
-    if(dot1 === true){
-      this.setState({
-        dots: {
-          dot1: false,
-          dot2:true,
-          dot3: false,
-          dot4: false,
-          dot5: false,
-        },
-        previousStep: this.state.previousStep - 1,
-        currentStep: this.state.currentStep - 1,
-        followingStep: this.state.followingStep - 1,
-      }, function () {
-        console.log(this.state.previousStep);
-        console.log(this.state.currentStep);
-        console.log(this.state.followingStep);
-    })
-  } else if(dot1 === false){
-      this.setState({
-        dots:{
-          dot1: true,
-          dot2: false,
-          dot3: false,
-          dot4: false,
-          dot5: false,
-        },
-        previousStep: this.state.previousStep - 1,
-        currentStep: this.state.currentStep - 1,
-        followingStep: this.state.followingStep - 1,
-      }, function () {
-        console.log(this.state.previousStep);
-        console.log(this.state.currentStep);
-        console.log(this.state.followingStep);
-      })
-    }
-  }
-
-  handleClickFollowingStep() {
-    console.log(this.state.currentStep);
-    const {dot1} = this.state.dots;
-    console.log('dot1',dot1);
-    if(dot1 === true){
-      this.setState({
-        dots:{
-          dot1: false,
-          dot2: true,
-          dot3: false,
-          dot4: false,
-          dot5: false
-        },
-        previousStep: this.state.previousStep + 1,
-        currentStep: this.state.currentStep + 1,
-        followingStep: this.state.followingStep + 1,
-      }, function () {
-        console.log(this.state.previousStep);
-        console.log(this.state.currentStep);
-        console.log(this.state.followingStep);
-    })
-  } else if(dot1 === false){
-      this.setState({
-        dots:{
-          dot1: true,
-          dot2: false,
-          dot3: false,
-          dot4: false,
-          dot5: false,
-        },
-        previousStep: this.state.previousStep + 1,
-        currentStep: this.state.currentStep + 1,
-        followingStep: this.state.followingStep + 1,
-      }, function(){
-        console.log(this.state.previousStep);
-        console.log(this.state.currentStep);
-        console.log(this.state.followingStep);
-      })
-    }
+  
+  handleCurrentStep(step){
+    console.log(step);
+    this.setState({
+      currentStep: step,
+    }, ()=> {console.log(this.state.currentStep)})
   }
 
   render() {
     console.log('ESTADO',this.state);
-    const {state} = this;
     return (
       <div className="App">
         <Header />
         <Pages 
-          dataFromState={state}
-          handleClickPreviousStep={this.handleClickPreviousStep}
-          handleClickFollowingStep={this.handleClickFollowingStep}
           handleUpdateNavigation={this.handleUpdateNavigation}
+          stateObject={this.state}
+          handleCurrentStep={this.handleCurrentStep}
         />
       </div>
     );
