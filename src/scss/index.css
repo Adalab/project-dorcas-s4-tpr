@@ -21,6 +21,14 @@
   background: #58D68D;
   color: #186A3B; }
 
+.SingleDatePickerInput {
+  width: 335px;
+  height: 85px; }
+
+.DateInput_input.DateInput_input_1.DateInput_input__small.DateInput_input__small_2 {
+  width: 335px;
+  height: 85px; }
+
 .header {
   height: 100px;
   background-color: #f8f9f8; }
@@ -120,6 +128,11 @@
 .label-email {
   font-size: 15px;
   padding: 3px 0 0 12px; }
+
+.position-calendar {
+  position: relative;
+  height: 85px;
+  display: inline-block; }
 
 .titles-container {
   width: 695px; }
