@@ -8,7 +8,6 @@ import Step5 from './Steps/Step5';
 
 class Pages extends Component {
   render() {
-    console.log('PAGES', this.props);
     const {
       previousStep,
       followingStep,

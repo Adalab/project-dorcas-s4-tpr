@@ -23,10 +23,11 @@ class Navigation extends Component {
           handleClickFollowingStep,
           handleNextStepClass
         } = this.props;
+        
       return (
         <div>
             <nav className='navigation-container'>
-            <Link to={`/step/${previousStep}`}><button onClick={handleClickPreviousStep}>
+            <Link to={`/step/${previousStep}`}><button className={handleClickPreviousStep} onClick={handleClickPreviousStep}>
             <FormattedMessage
               id="Navigation.back"
               defaultMessage="Back"

@@ -8,27 +8,27 @@ import TypeTextInput from '../Types/TypeTextInput';
 
 const surnameInput = {
     labelContent: <FormattedMessage
-                   id="Step1.userSurname"
-                   defaultMessage="Surname"
-                   />,
+        id="Step1.userSurname"
+        defaultMessage="Surname"
+    />,
     id: 'surname',
     name: 'surname'
 };
 
 const nameInput = {
     labelContent: <FormattedMessage
-                   id="Step1.userName"
-                   defaultMessage="Name"
-                   />,
+        id="Step1.userName"
+        defaultMessage="Name"
+    />,
     id: 'name',
     name: 'name'
 };
 
 const emailAdress = {
     labelContent: <FormattedMessage
-                    id="Step1.email"
-                    defaultMessage="Email"
-                  />,
+        id="Step1.email"
+        defaultMessage="Email"
+    />,
     id: 'email',
     name: 'email',
     disabled: true
@@ -36,9 +36,9 @@ const emailAdress = {
 
 const mobilePhoneNumber = {
     labelContent: <FormattedMessage
-                    id="Step1.mobilePhone"
-                    defaultMessage="Mobile Phone"
-                  />,
+        id="Step1.mobilePhone"
+        defaultMessage="Mobile Phone"
+    />,
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true
@@ -46,17 +46,23 @@ const mobilePhoneNumber = {
 
 const landLineNumber = {
     labelContent: <FormattedMessage
-                    id="Step1.landLinePhoneNumber"
-                    defaultMessage="Landline phone number"
-                  />,
+        id="Step1.landLinePhoneNumber"
+        defaultMessage="Landline phone number"
+    />,
     id: 'landLinePhone',
     name: 'landLinePhone',
     required: false
 };
 
 class Step1 extends Component {
-    handleNextStepClass(){
-        if(this.props.followingStep===2){
+    handleNextStepClass() {
+        if (this.props.followingStep === 2) {
+            return 'hidden'
+        }
+    }
+
+    handleClickPreviousStep() {
+        if (this.props.followingStep === 2) {
             return 'hidden'
         }
     }
@@ -77,8 +83,6 @@ class Step1 extends Component {
             dot5,
             previousStep,
             followingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep
         } = this.props;
         return (
             <div className='stepBox'>
@@ -107,9 +111,7 @@ class Step1 extends Component {
                     title4={title4}
                     title5={title5}
                     previousStep={previousStep}
-                    followingStep={followingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
+                    followingStep={followingStep}        
                     handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>
