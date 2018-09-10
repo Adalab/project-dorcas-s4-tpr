@@ -78,8 +78,15 @@ const preferences = [
 class Step4 extends Component {
     constructor(props) {
         super(props)
-        this.state = { responses: {} }
+        this.state = { 
+            responses: {}, 
+            currentStep: 4
+    }
         this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this)
+    }
+
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
     }
 
     handleSelectCheckbox(type, value) {
@@ -100,10 +107,7 @@ class Step4 extends Component {
             dot3,
             dot4,
             dot5,
-            previousStep,
-            followingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep
+            currentStep
         } = this.props;
         return (
             <div className='stepBox'>
@@ -130,10 +134,7 @@ class Step4 extends Component {
                     dot3={dot3}
                     dot4={dot4}
                     dot5={dot5}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
+                    currentStep={currentStep}
                 />
             </div>
         );

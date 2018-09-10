@@ -3,6 +3,16 @@ import Title from '../Sub-components/Title';
 import Navigation from '../Navigation';
 
 class Step3 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 3
+        }
+    }
+
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
     render() {
         console.log('propsSTEP3', this.props);
         const {
@@ -17,10 +27,7 @@ class Step3 extends Component {
             dot3, 
             dot4, 
             dot5, 
-            previousStep, 
-            followingStep, 
-            handleClickPreviousStep,
-            handleClickFollowingStep
+            currentStep, 
         } = this.props;
         return (
             <div className='stepBox'>
@@ -39,10 +46,7 @@ class Step3 extends Component {
                     dot3={dot3}
                     dot4={dot4}
                     dot5={dot5}
-                    previousStep={previousStep} 
-                    followingStep={followingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
+                    currentStep={currentStep}
                 />
             </div>
         );

@@ -97,8 +97,18 @@ const idExpDateCal = {
 }
 
 class Step2 extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 2
+        }
+    }
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
+    
     handleNextStepClass(){
-        if(this.props.followingStep===3){
+        if(this.props.currentStep===2){
             return 'hidden'
         }
     }
@@ -116,10 +126,7 @@ class Step2 extends Component {
             dot3,
             dot4,
             dot5,
-            previousStep,
-            followingStep,
-            handleClickPreviousStep,
-            handleClickFollowingStep,
+            currentStep
         } = this.props;
         console.log('props STEP2', this.props);
         return (
@@ -221,10 +228,7 @@ class Step2 extends Component {
                     dot3={dot3}
                     dot4={dot4}
                     dot5={dot5}
-                    previousStep={previousStep}
-                    followingStep={followingStep}
-                    handleClickPreviousStep={handleClickPreviousStep}
-                    handleClickFollowingStep={handleClickFollowingStep}
+                    currentStep={currentStep}
                     handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>

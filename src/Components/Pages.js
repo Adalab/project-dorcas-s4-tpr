@@ -10,12 +10,11 @@ class Pages extends Component {
   render() {
     console.log('PAGES', this.props);
     const {
-      previousStep,
-      followingStep,
       titles,
       dots,
-      steps
-    } = this.props.state;
+      steps, 
+      currentStep
+    } = this.props.stateObject;
     const {
       title1,
       title2,
@@ -37,7 +36,7 @@ class Pages extends Component {
       dot4,
       dot5
     } = dots;
-    const { handleClickPreviousStep, handleClickFollowingStep } = this.props;
+    const { handleClickPreviousStep, handleClickFollowingStep, handleCurrentStep } = this.props;
     return (
       <Fragment>
         <Switch>
@@ -64,10 +63,8 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
-                previousStep={previousStep}
-                followingStep={followingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
+                handleCurrentStep={handleCurrentStep}
+                currentStep={currentStep}
               />}
           />
           <Route
@@ -85,10 +82,8 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
-                previousStep={previousStep}
-                followingStep={followingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
+                handleCurrentStep={handleCurrentStep}
+                currentStep={currentStep}
               />}
           />
           <Route
@@ -106,10 +101,8 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
-                previousStep={previousStep}
-                followingStep={followingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
+                handleCurrentStep={handleCurrentStep}
+                currentStep={currentStep}
               />}
           />
           <Route
@@ -127,10 +120,8 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
-                previousStep={previousStep}
-                followingStep={followingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
+                handleCurrentStep={handleCurrentStep}
+                currentStep={currentStep}
               />}
           />
           <Route
@@ -148,10 +139,8 @@ class Pages extends Component {
                 dot3={dot3}
                 dot4={dot4}
                 dot5={dot5}
-                previousStep={previousStep}
-                followingStep={followingStep}
-                handleClickPreviousStep={handleClickPreviousStep}
-                handleClickFollowingStep={handleClickFollowingStep}
+                handleCurrentStep={handleCurrentStep}
+                currentStep={currentStep}
               />}
           />
         </Switch>
