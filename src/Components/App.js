@@ -168,7 +168,6 @@ class App extends Component {
           changingStep5: {...changingStep5, active: false},
         }
       });
-      console.log('STATEINFUNCTION', this.state);
     } else if(changingStep2.stepNumber === currentStep){
       this.setState({
         changingStep: {
@@ -179,7 +178,6 @@ class App extends Component {
           changingStep5: {...changingStep5, active: false},
         }
       });
-      console.log('STATEINFUNCTION', this.state);
     } else if(changingStep3.stepNumber === currentStep){
       this.setState({
         changingStep: {
@@ -190,7 +188,6 @@ class App extends Component {
           changingStep5: {...changingStep5, active: false},
         }
       });
-      console.log('STATEINFUNCTION', this.state);
     } else if(changingStep4.stepNumber === currentStep){
       this.setState({
         changingStep: {
@@ -201,19 +198,19 @@ class App extends Component {
           changingStep5: {...changingStep5, active: false},
         }
       });
-      console.log('STATEINFUNCTION', this.state);
     } else if(changingStep5.stepNumber === currentStep){
       this.setState({
         changingStep: {
-          changingStep1: {...changingStep1,active: true},
+          changingStep1: {...changingStep1,active: false},
           changingStep2: {...changingStep2,active: false},
           changingStep3: {...changingStep3,active: false},
           changingStep4: {...changingStep4,active: false},
           changingStep5: {...changingStep5, active: true},
         }
       });
-      console.log('STATEINFUNCTION', this.state);
     } 
+    console.log('STATEINFUNCTION', this.state);
+
   }
 
   handleClickPreviousStep() {
