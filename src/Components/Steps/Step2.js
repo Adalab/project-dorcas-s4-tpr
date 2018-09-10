@@ -6,27 +6,28 @@ import { FormattedMessage } from 'react-intl';
 import TypeTextInput from '../Types/TypeTextInput';
 import moment from 'moment';
 
-    let locale = window.navigator.userLanguage || window.navigator.language;
-    console.log(locale);
-    
-    if(locale === "es-ES"){
-        moment.locale('es', {
-            months : 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
-            monthsShort : 'En_Feb_Mar_Abr_May_Jun_Jul_Ag_Sept_Oct_Nov_Dic'.split('_'),
-            monthsParseExact : true,
-            weekdays : 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado_Domingo'.split('_'),
-            weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
-            weekdaysMin : 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
-            weekdaysParseExact : true,
-            longDateFormat : {
-                L : 'DD/MM/YYYY',
-            },
-            week :{
-                dow: 1
-            }});
-    } else {
-        moment.locale(locale);
-    }
+let locale = window.navigator.userLanguage || window.navigator.language;
+console.log(locale);
+
+if (locale === "es-ES") {
+    moment.locale('es', {
+        months: 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
+        monthsShort: 'En_Feb_Mar_Abr_May_Jun_Jul_Ag_Sept_Oct_Nov_Dic'.split('_'),
+        monthsParseExact: true,
+        weekdays: 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado_Domingo'.split('_'),
+        weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+        weekdaysMin: 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
+        weekdaysParseExact: true,
+        longDateFormat: {
+            L: 'DD/MM/YYYY',
+        },
+        week: {
+            dow: 1
+        }
+    });
+} else {
+    moment.locale(locale);
+}
 
 const countryIssueInput = {
     labelContent: <FormattedMessage
@@ -66,62 +67,72 @@ const documentNumberInput = {
 
 const passIssueDateCal = {
     labelContent: <FormattedMessage
-                    id="Step2.userPassDateIssue"
-                    defaultMessage="Date of issue"
-                />,
+        id="Step2.userPassDateIssue"
+        defaultMessage="Date of issue"
+    />,
     id: "passIssueDate",
 }
 
 const passExpDateCal = {
     labelContent: <FormattedMessage
-                    id="Step2.userPassExpirationDate"
-                    defaultMessage="Expiration date"
-                />,
+        id="Step2.userPassExpirationDate"
+        defaultMessage="Expiration date"
+    />,
     id: "passExpirationDate",
 }
 
 const idIssueDateCal = {
     labelContent: <FormattedMessage
-                    id="Step2.userDocDateIssue"
-                    defaultMessage="Date of issue"
-                    />,
+        id="Step2.userDocDateIssue"
+        defaultMessage="Date of issue"
+    />,
     id: "idIssueDate",
 }
 
 const idExpDateCal = {
     labelContent: <FormattedMessage
-                    id="Step2.userPassExpirationDate"
-                    defaultMessage="Expiration date"
-                />,
+        id="Step2.userPassExpirationDate"
+        defaultMessage="Expiration date"
+    />,
     id: "expirationDate",
 }
 
 class Step2 extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             currentStep: 2
         }
-    
+
         this.handlePassportInput = this.handlePassportInput.bind(this)
         this.handleCountryInput = this.handleCountryInput.bind(this)
+        this.handleBirthPlace = this.handleBirthPlace.bind(this)
+        this.handleNumberInput = this.handleNumberInput.bind(this)
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
-    
-    handleNextStepClass(){
-        if(this.props.currentStep===2){
+
+    handleNextStepClass() {
+        if (this.props.currentStep === 2) {
             return 'hidden'
         }
     }
 
-    handlePassportInput(){
+    handlePassportInput() {
         console.log('click passport')
     }
 
-    handleCountryInput(){
+    handleCountryInput() {
         console.log('click passport country')
+    }
+
+    handleBirthPlace() {
+        console.log('click birth place')
+    }
+
+    handleNumberInput(){
+        console.log('click Number Input')
     }
 
     render() {
@@ -206,11 +217,13 @@ class Step2 extends Component {
                             </option>
                         </select>
 
-                        <TypeTextInput inputText={documentNumberInput} />
+                        <TypeTextInput
+                            onChange={this.handleNumberInput}
+                            inputText={documentNumberInput} />
                     </div>
 
                     <div className='verticalDisplay'>
-                    <Calendar
+                        <Calendar
                             labelContent={idIssueDateCal.labelContent}
                             id={idIssueDateCal.id}
                             numberOfMonths={idIssueDateCal.numberOfMonths}
@@ -224,7 +237,10 @@ class Step2 extends Component {
                             small={idExpDateCal.small}
                         />
 
-                    <TypeTextInput inputText={birthPlaceInput} />
+                        <TypeTextInput
+                            onChange={this.handleBirthPlace}
+                            inputText={birthPlaceInput}
+                        />
                     </div>
                 </form>
 
