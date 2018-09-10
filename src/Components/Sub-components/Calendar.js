@@ -39,7 +39,7 @@ class Calendar extends Component {
                     small={true}
                 />
                 <label
-                    className='placeholder-label'
+                    className='placeholder-label_calendar'
                     htmlFor='dateIssue'>
                     {labelContent}
                 </label>

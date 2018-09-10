@@ -24,7 +24,7 @@ class Navigation extends Component {
           handleNextStepClass
         } = this.props;
       return (
-        <div>
+        <div className='position-nav'>
             <nav className='navigation-container'>
             <Link to={`/step/${previousStep}`}>
             <button className='back-button' onClick={handleClickPreviousStep}>

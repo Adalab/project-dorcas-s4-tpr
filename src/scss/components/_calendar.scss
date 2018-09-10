@@ -16,9 +16,38 @@
   .SingleDatePickerInput {
     width: 335px;
     height: 85px;
+    border-radius: 6px;
+    box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px $color-secondary-light;
 }
 
 .DateInput_input.DateInput_input_1.DateInput_input__small.DateInput_input__small_2 {
    width: 335px;
    height: 85px;
+   position: relative;
+}
+
+.placeholder-label_calendar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $color-terciary-dark;
+  transition: all 0.2s;
+  font-size: $font-size-xl;
+  font-weight: $normal;
+  padding: 24px 0 18px 24px;
+}
+
+.SingleDatePickerInput_calendarIcon.SingleDatePickerInput_calendarIcon_1 {
+  position: absolute;
+  right: 0;
+  padding: 0;
+  margin-top: 24px;
+  margin-right: 30px;
+}
+
+.SingleDatePickerInput_calendarIcon_svg.SingleDatePickerInput_calendarIcon_svg_1 {
+  width: 36px;
+  height: 36px;
+  fill: $color-primary-dark;
 }

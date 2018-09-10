@@ -20,6 +20,9 @@
     color: $color-primary-dark;
     font-size: $font-size-xl;
     font-weight: $bold;
+    border-radius: 6px;
+    box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px $color-secondary-light;
     outline: none;
 }
 

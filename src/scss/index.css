@@ -23,20 +23,55 @@
 
 .SingleDatePickerInput {
   width: 335px;
-  height: 85px; }
+  height: 85px;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px #f8f9f8; }
 
 .DateInput_input.DateInput_input_1.DateInput_input__small.DateInput_input__small_2 {
   width: 335px;
-  height: 85px; }
+  height: 85px;
+  position: relative; }
+
+.placeholder-label_calendar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #8d9293;
+  transition: all 0.2s;
+  font-size: 36px;
+  font-weight: 500;
+  padding: 24px 0 18px 24px; }
+
+.SingleDatePickerInput_calendarIcon.SingleDatePickerInput_calendarIcon_1 {
+  position: absolute;
+  right: 0;
+  padding: 0;
+  margin-top: 24px;
+  margin-right: 30px; }
+
+.SingleDatePickerInput_calendarIcon_svg.SingleDatePickerInput_calendarIcon_svg_1 {
+  width: 36px;
+  height: 36px;
+  fill: #06a790; }
 
 .header {
   height: 100px;
+  width: 100%;
+  background-color: #f8f9f8;
+  position: fixed;
+  top: 0;
+  background-image: linear-gradient(to bottom, #f8f9f8, rgba(248, 249, 248, 0.3)); }
+
+.App {
+  min-height: 100vh;
   background-color: #f8f9f8; }
 
 .stepBox {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 145px;
   background-color: #f8f9f8; }
 
 .form {
@@ -56,11 +91,18 @@
 .select-step5 {
   height: 20px; }
 
+.position-nav {
+  bottom: 0;
+  position: fixed;
+  background-color: #f8f9f8;
+  width: 100%;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14); }
+
 .navigation-container {
   display: flex;
   align-items: center;
-  height: 120px;
-  align-self: flex-end; }
+  justify-content: center;
+  height: 120px; }
 
 .list-steps {
   display: flex; }
@@ -119,6 +161,9 @@
   color: #06a790;
   font-size: 36px;
   font-weight: 600;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px #f8f9f8;
   outline: none; }
 
 .control-label:focus + .placeholder-label {
