@@ -21,13 +21,10 @@ class Step3 extends Component {
             title3, 
             title4, 
             title5, 
-            step3, 
-            dot1, 
-            dot2, 
-            dot3, 
-            dot4, 
-            dot5, 
-            currentStep, 
+            step3,
+            currentStep,
+            changingStep,
+            handleUpdateNavigation
         } = this.props;
         return (
             <div className='stepBox'>
@@ -41,12 +38,8 @@ class Step3 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    dot1={dot1} 
-                    dot2={dot2}
-                    dot3={dot3}
-                    dot4={dot4}
-                    dot5={dot5}
                     currentStep={currentStep}
+                    changingStep={changingStep}
                 />
             </div>
         );

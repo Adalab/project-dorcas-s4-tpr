@@ -1,16 +1,32 @@
-import React, { Component } from 'react';
-import IconOn from './IconOn';
-import IconOff from './IconOff';
+import React, { Component,Fragment } from 'react';
 
 class Icon extends Component {
     render() {
-        console.log('props ICON',this.props);
-        const {state} = this.props;
-        if(state === 'active'){
-            return <IconOn/>
-        } else if(state === ''){
-            return <IconOff/>
+        // console.log('props ICON',this.props);
+        const {
+            title,
+            changingStep,
+            currentStep,
+        } = this.props;
+
+        const{
+            stepNumber
+        } = changingStep;
+
+        let stepState;
+        if (stepNumber === currentStep){
+            stepState = 'stepActive';
+        } else {
+            stepState = 'stepInactive';
         }
+            return(
+                <Fragment>
+                    <span className={stepState}>
+                        {changingStep.stepNumber}
+                    </span>
+                    <p>{title}</p>
+                </Fragment>       
+            )
     }
 }
 
