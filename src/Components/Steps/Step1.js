@@ -60,6 +60,10 @@ class Step1 extends Component {
         this.state = {
             currentStep: 1
         }
+
+        this.handleSurnameInput = this.handleSurnameInput.bind(this)
+        this.handlePhoneNumber = this.handlePhoneNumber.bind(this)
+        this.handleLineNumber = this.handleLineNumber.bind(this)
     }
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
@@ -69,6 +73,22 @@ class Step1 extends Component {
         if(this.props.currentStep===1){
             return 'hidden'
         }
+    }
+
+    handleSurnameInput(){
+        console.log('click surname')
+    }
+
+    handleNameInput(){
+        console.log('click name')
+    }
+
+    handlePhoneNumber(){
+        console.log('click phone')
+    }
+
+    handleLineNumber(){
+        console.log('click line numb')
     }
 
     render() {
@@ -94,11 +114,11 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput inputText={surnameInput} />
-                    <TypeTextInput inputText={nameInput} />
+                    <TypeTextInput inputText={surnameInput} onChange={this.handleSurnameInput} />
+                    <TypeTextInput inputText={nameInput} onChange={this.handleNameInput}/>
                     <div className='phones'>
-                        <TypePhoneInput phoneNumber={mobilePhoneNumber} />
-                        <TypePhoneInput phoneNumber={landLineNumber} />
+                        <TypePhoneInput onChange={this.handlePhoneNumber} phoneNumber={mobilePhoneNumber} />
+                        <TypePhoneInput onChange={this.handleLineNumber} phoneNumber={landLineNumber} />
                     </div>
                     <TypeEmailInput emailAdress={emailAdress} />
                 </form>
