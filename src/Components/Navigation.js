@@ -17,52 +17,56 @@ class Navigation extends Component {
           dot3, 
           dot4,
           dot5,
-          previousStep,
-          followingStep,
           handleClickPreviousStep,
           handleClickFollowingStep,
-          handleNextStepClass
+          handleNextStepClass,
+          currentStep
         } = this.props;
         
       return (
         <div>
             <nav className='navigation-container'>
-            <Link to={`/step/${previousStep}`}><button className={handleClickPreviousStep} onClick={handleClickPreviousStep}>
+            <Link to={`/step/${currentStep-1}`}>
+            <button className='back-button' onClick={handleClickPreviousStep}>
             <FormattedMessage
               id="Navigation.back"
               defaultMessage="Back"
             />
-            </button></Link>
+            </button>
+            </Link>
               <ul className='list-steps'>
-                <li>
+                <li className='nav-steps'>
                   <Icon state={dot1}/>
-                  <p>{title1}</p>
+                  <p className='nav-label_step'>{title1}</p>
                 </li>
-                <li>
+                <li className='nav-steps'>
                   <Icon state={dot2}/>
-                  <p>{title2}</p>
+                  <p className='nav-label_step'>{title2}</p>
                 </li>
-                <li>
+                <li className='nav-steps'>
                   <Icon state={dot3}/>
-                  <p>{title3}</p>
+                  <p className='nav-label_step'>{title3}</p>
                 </li>
-                <li>
+                <li className='nav-steps'>
                   <Icon state={dot4}/>
-                  <p>{title4}</p>
+                  <p className='nav-label_step'>{title4}</p>
                 </li>
-                <li>
+                <li className='nav-steps'>
                   <Icon state={dot5}/>
-                  <p>{title5}</p>
+                  <p className='nav-label_step'>{title5}</p>
                 </li>
               </ul>
-              <Link to={`/step/${followingStep}`}><button onClick={handleClickFollowingStep}>
+              <Link to={`/step/${currentStep + 1}`}>
+              <button className='next-button' onClick={handleClickFollowingStep}>
               <FormattedMessage
                 id="Navigation.next"
                 defaultMessage="Next"
               />
-              
-              </button></Link>
-              <Link to={`/step/${followingStep}`}><p className={handleNextStepClass}>Completar luego Saltar paso</p></Link>
+              </button>
+              </Link>
+              <Link to={`/step/${currentStep+1}`}>
+              <p className={handleNextStepClass}>Completar luego Saltar paso</p>
+              </Link>
             </nav>  
         </div>
       );

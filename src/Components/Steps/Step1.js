@@ -55,14 +55,18 @@ const landLineNumber = {
 };
 
 class Step1 extends Component {
-    handleNextStepClass() {
-        if (this.props.followingStep === 2) {
-            return 'hidden'
+    constructor(props){
+        super(props)
+        this.state = {
+            currentStep: 1
         }
     }
-
-    handleClickPreviousStep() {
-        if (this.props.followingStep === 2) {
+    componentDidMount(){
+        this.props.handleCurrentStep(this.state.currentStep);
+    }
+    
+    handleNextStepClass(){
+        if(this.props.currentStep===1){
             return 'hidden'
         }
     }
@@ -81,8 +85,7 @@ class Step1 extends Component {
             dot3,
             dot4,
             dot5,
-            previousStep,
-            followingStep,
+            currentStep
         } = this.props;
         return (
             <div className='stepBox'>
@@ -110,8 +113,7 @@ class Step1 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    previousStep={previousStep}
-                    followingStep={followingStep}        
+                    currentStep={currentStep}
                     handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>

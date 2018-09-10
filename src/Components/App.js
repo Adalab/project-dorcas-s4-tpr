@@ -102,22 +102,30 @@ class App extends Component {
         dot4: '',
         dot5: '',
       },
-      previousStep: 0,
+
       currentStep: 1,
-      followingStep: 2,
+
     }
+    this.handleCurrentStep=this.handleCurrentStep.bind(this);
   }
 
+  handleCurrentStep(step){
+    console.log(step);
+    this.setState({
+      currentStep: step,
+    }, ()=> {console.log(this.state.currentStep)})
+  }
 
   render() {
-    const {state} = this;
+    console.log('ESTADO',this.state);
     return (
       <div className="App">
         <Header />
         <Pages 
-          state={state}
+          stateObject={this.state}
           handleClickPreviousStep={this.handleClickPreviousStep}
           handleClickFollowingStep={this.handleClickFollowingStep}
+          handleCurrentStep={this.handleCurrentStep}
         />
       </div>
     );

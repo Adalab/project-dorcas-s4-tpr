@@ -5,18 +5,34 @@
 .placeholder-label {
     position: absolute;
     top: 0;
+    left: 0;
     color: $color-terciary-dark;
     transition: all 0.2s;
+    font-size: $font-size-xl;
+    font-weight: $normal;
+    padding: 24px 0 18px 24px;
 }
 
-// .control-label:focus + .placeholder-label {
-//     font-size: 60%;
-//     transform: translateX(4%);
-//     transform: translateY(-25%);
-//     }
+.control-label {
+    width: 695px;
+    height: 85px;
+    padding: 24px 0 18px 24px;
+    color: $color-primary-dark;
+    font-size: $font-size-xl;
+    font-weight: $bold;
+    outline: none;
+}
 
-// .control-label:valid + .placeholder-label {
-//     font-size: 60%;
-//     transform: translateX(4%);
-//     transform: translateY(-25%);
-// }
+.control-label:focus + .placeholder-label {
+    font-size: $font-size-m;
+    padding: 3px 0 0 12px;
+    } 
+
+.control-label:valid + .placeholder-label {
+
+}    
+
+ .label-email {
+    font-size: $font-size-m;
+    padding: 3px 0 0 12px;
+ }
