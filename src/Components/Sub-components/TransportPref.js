@@ -8,8 +8,8 @@ class TransportPref extends Component {
         const {
             plainPreferences,
             trainPreferences,
-            name,
-            type,
+            nombre,
+            tipo,
             onChange,
             isChecked
         } = this.props;
@@ -18,25 +18,22 @@ class TransportPref extends Component {
             <div>
                 <legend>
                     <h2>Preferencias en aviones</h2>
-                    {plainPreferences.map(plainPreference => <input
-                        type="checkbox"
-                        value={name}
-                        id={name}
-                        required={true}
-                        checked={isChecked}
-                        // onChange={() => onChange(type, name)}
-                    />)}
+                    <form >
+                        <input type="radio" name="window" value="Window" />
+                        <input type="radio" name="aisle" value="Aisle" />
+                    </form>
+                    <form >
+                        <input type="radio" name="Front" value="Front" />
+                        <input type="radio" name="Middle" value="Middle" />
+                        <input type="radio" name="Back" value="Back" />
+                    </form>
                     <h2>Preferencias en trenes</h2>
-                    {trainPreferences.map(trainPreference => <input
-                        type="checkbox"
-                        value={name}
-                        id={name}
-                        required={true}
-                        checked={isChecked}
-                    />)}
+                    <form >
+                        <input type="radio" name="window" value="Window" />
+                        <input type="radio" name="aisle" value="Aisle" />
+                    </form>
                 </legend>
             </div>
-
         );
     }
 }

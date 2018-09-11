@@ -117,6 +117,12 @@ class Step4 extends Component {
         console.log(this.state)
     }
 
+    handleSelectPreference() {
+        // this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [tipo]: valor } }))
+        console.log(this.state)
+        console.log('holi')
+    }
+
     render() {
         console.log('propsSTEP4', this.props);
         const {
@@ -138,6 +144,7 @@ class Step4 extends Component {
                 />
                 <form className='form'>
                     <TransportPref
+                        onChange={this.handleSelectPreference}
                         plainPreferences={plainPreferences}
                         trainPreferences={trainPreferences}
                     />
