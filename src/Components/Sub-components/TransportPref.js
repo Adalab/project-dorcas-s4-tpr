@@ -6,6 +6,9 @@ class TransportPref extends Component {
     render() {
 
         const {
+            onChangePlainPreferences,
+            onChangePlainLocation,
+            onChangeTrainPreferences,
             plainPreferences,
             trainPreferences,
             nombre,
@@ -17,20 +20,60 @@ class TransportPref extends Component {
         return (
             <div>
                 <legend>
-                    <h2>Preferencias en aviones</h2>
+                    <h2>Preferencias en vuelos</h2>
                     <form >
-                        <input type="radio" name="window" value="Window" />
-                        <input type="radio" name="aisle" value="Aisle" />
+                        <span>Window</span>
+                        <input
+                            type="radio"
+                            name="place"
+                            value="Window"
+                            onChange={onChangePlainPreferences}
+                        />
+                        <span>Aisle</span>
+                        <input
+                            type="radio"
+                            name="place"
+                            value="Aisle"
+                            onChange={onChangePlainPreferences}
+                        />
                     </form>
                     <form >
-                        <input type="radio" name="Front" value="Front" />
-                        <input type="radio" name="Middle" value="Middle" />
-                        <input type="radio" name="Back" value="Back" />
+                        <span>Front</span>
+                        <input
+                            type="radio"
+                            name="ubication"
+                            value="Front"
+                            onChange={onChangeTrainPreferences}
+                        />
+                        <span>Middle</span>
+                        <input
+                            type="radio"
+                            name="ubication"
+                            value="Middle"
+                            onChange={onChangeTrainPreferences}
+                        />
+                        <span>Back</span>
+                        <input
+                            type="radio"
+                            name="ubication"
+                            value="Back"
+                            onChange={onChangeTrainPreferences}
+                        />
                     </form>
                     <h2>Preferencias en trenes</h2>
                     <form >
-                        <input type="radio" name="window" value="Window" />
-                        <input type="radio" name="aisle" value="Aisle" />
+                        <span>Window</span>
+                        <input
+                            type="radio"
+                            name="window"
+                            value="Window"
+                        />
+                        <span>Aisle</span>
+                        <input
+                            type="radio"
+                            name="aisle"
+                            value="Aisle"
+                        />
                     </form>
                 </legend>
             </div>

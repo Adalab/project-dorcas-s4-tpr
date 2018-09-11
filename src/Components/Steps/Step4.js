@@ -117,10 +117,18 @@ class Step4 extends Component {
         console.log(this.state)
     }
 
-    handleSelectPreference() {
+    handlePlainPreference() {
         // this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [tipo]: valor } }))
-        console.log(this.state)
-        console.log('holi')
+        // console.log(this.state)
+        console.log('avion ventana o pasillo')
+    }
+
+    handlePlainLocation(){
+        console.log('avion adelante,medio o atrás')
+    }
+
+    handleTrainPreference(){
+
     }
 
     render() {
@@ -144,9 +152,10 @@ class Step4 extends Component {
                 />
                 <form className='form'>
                     <TransportPref
-                        onChange={this.handleSelectPreference}
-                        plainPreferences={plainPreferences}
-                        trainPreferences={trainPreferences}
+                        onChangePlainPreferences={this.handlePlainPreference}
+                        onChangePlainLocation={this.handlePlainLocation}
+                        onChangeTrainPreferences={this.handleTrainPreference}
+                
                     />
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
