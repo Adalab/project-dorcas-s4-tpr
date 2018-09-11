@@ -9,7 +9,8 @@ const backButton = {
                 id="Navigation.back"
                 defaultMessage="Back"
               />,
-  buttonClass: ''
+  buttonClass: '',
+  buttonClassHidden: 'hidden',
 };
 
 const nextButton = {
@@ -17,7 +18,8 @@ const nextButton = {
                 id="Navigation.next"
                 defaultMessage="Next"
               />,
-  buttonClass: ''
+  buttonClass: '',
+  buttonClassHidden: '',
 };
 
 class Navigation extends Component {
@@ -42,12 +44,14 @@ class Navigation extends Component {
           changingStep4,
           changingStep5,
         } = changingStep;
+
       return (
         <div>
             <nav className='navigation-container'>
             <Link to={`/step/${currentStep-1}`}>
               <Button 
                 buttonContent={backButton}
+                currentStep={currentStep}
               />
             </Link>
               <ul className='list-steps'>
