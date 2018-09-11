@@ -129,17 +129,18 @@ class App extends Component {
     this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
     this.handleCurrentStep = this.handleCurrentStep.bind(this);
   }
-  // componentDidMount() {
-  //   axios.get(`http://www.nokeynoshade.party/api/queens?limit=50`)
-  //     .then(res => {
-  //       const drag = res.data;
-  //       console.log(drag)
-  //       this.setState({
-  //         queen: drag
-  //       });
-  //       console.log(this.state.queen)
-  //     })
-  // }
+
+  componentDidMount() {
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers`)
+      .then(res => {
+        const person = res.data;
+        console.log(person)
+        this.setState({
+          traveler: person
+        });
+        console.log(this.state.traveler)
+      })
+  }
   // componentWillMount () {
   //   this.handleUpdateNavigation();
   // }
