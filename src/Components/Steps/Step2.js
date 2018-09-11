@@ -29,7 +29,7 @@ if (locale === "es-ES") {
 } else {
     moment.locale(locale);
 }
-
+//País emisión pas
 const countryIssueInput = {
     labelContent: <FormattedMessage
         id="Step2.userPassCountryIssue"
@@ -38,7 +38,7 @@ const countryIssueInput = {
     id: 'countryIssue',
     name: 'countryIssue'
 };
-
+//Lugar nac
 const birthPlaceInput = {
     labelContent: <FormattedMessage
         id="Step2.userBirthPlace"
@@ -47,7 +47,7 @@ const birthPlaceInput = {
     id: 'birthPlace',
     name: 'birthPlace'
 };
-
+//Num pas
 const numPassportInput = {
     labelContent: <FormattedMessage
         id="Step2.userPassportNumber"
@@ -56,7 +56,7 @@ const numPassportInput = {
     id: 'numPassport',
     name: 'numPassport'
 };
-
+//Num doc
 const documentNumberInput = {
     labelContent: <FormattedMessage
         id="Step2.userDocumentNumber"
@@ -65,45 +65,80 @@ const documentNumberInput = {
     id: 'documentNumber',
     name: 'documentNumber'
 };
-
+//Pasaporte emi
 const passIssueDateCal = {
     labelContent: <FormattedMessage
         id="Step2.userPassDateIssue"
         defaultMessage="Date of issue"
     />,
     id: "passIssueDate",
-}
-
+};
+//Pasaporte exp
 const passExpDateCal = {
     labelContent: <FormattedMessage
-        id="Step2.userPassExpirationDate"
-        defaultMessage="Expiration date"
-    />,
+                    id="Step2.userPassExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
     id: "passExpirationDate",
-}
-
+};
+//Id emi
 const idIssueDateCal = {
     labelContent: <FormattedMessage
         id="Step2.userDocDateIssue"
         defaultMessage="Date of issue"
     />,
     id: "idIssueDate",
-}
-
+};
+//Pasaporte o id ?exp
 const idExpDateCal = {
     labelContent: <FormattedMessage
         id="Step2.userPassExpirationDate"
         defaultMessage="Expiration date"
     />,
     id: "expirationDate",
-}
+};
+//Visado
+const visaCountryIssueInput = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassCountryIssue"
+                    defaultMessage="Country of issue"
+                />,
+    id: 'visaCountryIssue',
+    name: 'visaCountryIssue'
+};
+
+const numVisaInput = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassportNumber"
+                    defaultMessage="Passport number"
+                />,
+    id: 'numVisa',
+    name: 'numVisa'
+};
+
+const visaIssueDateCal = {
+    labelContent: <FormattedMessage
+        id="Step2.userPassDateIssue"
+        defaultMessage="Date of issue"
+    />,
+    id: "visaIssueDate",
+};
+
+const visaExpDateCal = {
+    labelContent: <FormattedMessage
+        id="Step2.userPassExpirationDate"
+        defaultMessage="Expiration date"
+    />,
+    id: "visaExpirationDate",
+};
 
 const visaButton = {
     textButton: <FormattedMessage
-                    id="Step2.visa"
-                    defaultMessage="Visa (optional)"
+                    id="Step2.addVisaDetails"
+                    defaultMessage="Add visa details"
                 />,
     buttonClass: '',
+    buttonClassHidden: '',
 };
 
 class Step2 extends Component {
@@ -123,13 +158,17 @@ class Step2 extends Component {
                 placeBirth:"",
             } 
         }
-
-        this.handlePassportInput = this.handlePassportInput.bind(this)
-        this.handleCountryInput = this.handleCountryInput.bind(this)
-        this.handleBirthPlace = this.handleBirthPlace.bind(this)
-        this.handleNumberInput = this.handleNumberInput.bind(this)
+        
+        this.handlePassportInput = this.handlePassportInput.bind(this);
+        this.handleCountryInput = this.handleCountryInput.bind(this);
+        this.handleVisaInput = this.handleVisaInput.bind(this);
+        this.handleVisaCountryInput = this.handleVisaCountryInput.bind(this);
+        this.handleBirthPlace = this.handleBirthPlace.bind(this);
+        this.handleNumberInput = this.handleNumberInput.bind(this);
         this.handlePassIssueDate=this.handlePassIssueDate.bind(this);
         this.handlePassExpDate=this.handlePassExpDate.bind(this);
+        this.handleVisaIssueDate=this.handleVisaIssueDate.bind(this);
+        this.handleVisaExpDate=this.handleVisaExpDate.bind(this);
         this.handleIdIssueDate=this.handleIdIssueDate.bind(this);
         this.handleIdExpDate=this.handleIdExpDate.bind(this);
     }
@@ -152,33 +191,33 @@ class Step2 extends Component {
             } 
         }, ()=>(this.props.handleStep2(this.state.data)))
     }
-      
-      handlePassExpDate(date){
+
+    handlePassExpDate(date){
         this.setState({
             data:{
                 ...this.state.data,
                 passExpDate: date,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
-      }
+        }, ()=>(this.props.handleStep2(this.state.data)))
+    }
     
-      handleIdIssueDate(date){
+    handleIdIssueDate(date){
         this.setState({
             data:{
                 ...this.state.data,
                 idIssueDate: date,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
-      }
+        }, ()=>(this.props.handleStep2(this.state.data)))
+    }
     
-      handleIdExpDate(date){
+    handleIdExpDate(date){
         this.setState({
             data:{
                 ...this.state.data,
                 idExpDate: date,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
-      }
+        }, ()=>(this.props.handleStep2(this.state.data)))
+    }
 
     handlePassportInput(e) {
         const inputValue=e.target.value;
@@ -187,7 +226,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 numberPassport: inputValue,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     handleCountryInput(e) {
@@ -197,7 +236,23 @@ class Step2 extends Component {
                 ...this.state.data,
                 passCountryIssue: inputValue,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)))
+    }
+
+    handleVisaInput (e) {
+        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+    }
+
+    handleVisaCountryInput (e) {
+        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+    }
+
+    handleVisaIssueDate (e) {
+        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+    }
+
+    handleVisaExpDate (e) {
+        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
     }
 
     handleBirthPlace(e) {
@@ -207,7 +262,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 placeBirth: inputValue,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     handleNumberInput(e){
@@ -217,7 +272,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 numberId: inputValue,
             } 
-      }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     render() {
@@ -239,7 +294,7 @@ class Step2 extends Component {
                     step={step2}
                 />
                 <form className='form'>
-
+                    {/* Pasaporte desde aquí */}
                     <h2>
                         <FormattedMessage
                             id="Step2.passport"
@@ -272,25 +327,48 @@ class Step2 extends Component {
                             handleDate={this.handlePassExpDate}
                         />
                     </div>
-
+                    {/* Pasaporte hasta aquí */}
+                    {/* Visado desde aqui */}
                     <h2>
                         <FormattedMessage
                             id="Step2.visa"
                             defaultMessage="Visa (optional)"
                         />
                     </h2>
-                    <Button
-                        buttonContent={visaButton}
-                    />
+                    
                     <div>
-                        
-
-                        <FormattedMessage
-                            id="Step2.addVisaDetails"
-                            defaultMessage="Add visa details"
+                        <Button
+                            buttonContent={visaButton}
                         />
-                    </div>
 
+                        <TypeTextInput 
+                            onChange={this.handleVisaInput}
+                            inputText={numVisaInput} 
+                        />
+                        <TypeTextInput 
+                            onChange={this.handleVisaCountryInput} 
+                            inputText={visaCountryIssueInput} 
+                        />
+
+                        <div className='verticalDisplay'>
+                            <Calendar
+                                labelContent={visaIssueDateCal.labelContent}
+                                id={visaIssueDateCal.id}
+                                numberOfMonths={visaIssueDateCal.numberOfMonths}
+                                small={visaIssueDateCal.small}
+                                handleDate={this.handleVisaIssueDate}
+                            />
+                            <Calendar
+                                labelContent={visaExpDateCal.labelContent}
+                                id={visaExpDateCal.id}
+                                numberOfMonths={visaExpDateCal.numberOfMonths}
+                                small={visaExpDateCal.small}
+                                handleDate={this.handleVisaExpDate}
+                            />
+                            
+                        </div>
+                    </div>
+                    {/* Visado hasta aquí */}
                     <h2>
                         <FormattedMessage
                             id="Step2.dniNie"
