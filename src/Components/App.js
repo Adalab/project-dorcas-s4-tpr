@@ -128,6 +128,7 @@ class App extends Component {
     this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
     this.handleStep1=this.handleStep1.bind(this);
+    this.handleStep2=this.handleStep2.bind(this);
   }
 
     // componentWillMount () {
@@ -147,6 +148,33 @@ class App extends Component {
           phoneNumbers: [data.phoneNumber, data.lineNumber],
         },
     }
+    }, console.log(this.state.data))
+  }
+
+  handleStep2(data){
+    console.log(data);
+    this.setState({
+      data: {
+        ...this.state.data,
+        travelDocuments: {
+          idCard: [
+            {
+              placeOfBirth: data.placeBirth,
+              issueDate: data.idIssueDate,
+              expiryDate: data.idExpDate,
+              dniNumber: data.numberId,
+            },
+          ],
+          passport: [
+            {
+              issueCountry: data.passCountryIssue,
+              issueDate: data.passIssueDate,
+              expiryDate: data.passExpDate,
+              passportNumber: data.numberPassport,
+              },
+          ],
+        }
+      }
     }, console.log(this.state.data))
   }
 
@@ -234,11 +262,8 @@ class App extends Component {
           handleUpdateNavigation={this.handleUpdateNavigation}
           stateObject={this.state}
           handleCurrentStep={this.handleCurrentStep}
-          // handlePassIssueDate={this.handlePassIssueDate}
-          // handlePassExpDate={this.handlePassExpDate}
-          // handleIdIssueDate={this.handleIdIssueDate}
-          // handleIdExpDate={this.handleIdExpDate}
           handleStep1={this.handleStep1}
+          handleStep2={this.handleStep2}
         />
       </div>
     );
