@@ -62,5 +62,13 @@
   {
     "id": "Step4.aisle",
     "defaultMessage": "Aisle"
+  },
+  {
+    "id": "Step4.trainWindow",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "Step4.trainAisle",
+    "defaultMessage": "Aisle"
   }
 ]

@@ -87,6 +87,17 @@ const plainPreferences = [
     />
 ]
 
+const trainPreferences = [
+    <FormattedMessage
+        id="Step4.trainWindow"
+        defaultMessage="Window"
+    />,
+    <FormattedMessage
+        id="Step4.trainAisle"
+        defaultMessage="Aisle"
+    />
+]
+
 class Step4 extends Component {
     constructor(props) {
         super(props)
@@ -126,11 +137,10 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
-                    <h2>Preferencias en aviones</h2>
-                     <TransportPref
+                    <TransportPref
                         plainPreferences={plainPreferences}
+                        trainPreferences={trainPreferences}
                     />
-                    <h2>Preferencias en trenes</h2>
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
                     {preferences.map(preference => <AccommodationPref
