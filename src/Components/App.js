@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Header from './Header';
 import Pages from './Pages';
 import { FormattedMessage } from 'react-intl';
@@ -47,53 +48,53 @@ class App extends Component {
               issueDate: '',
               expiryDate: '',
               passportNumber: '',
-              },
+            },
           ],
         }
       },
-      titles : {
+      titles: {
         title1: <FormattedMessage
-                  id="App.personalInfo"
-                  defaultMessage="Personal information"
-                />,
+          id="App.personalInfo"
+          defaultMessage="Personal information"
+        />,
         title2: <FormattedMessage
-                  id="App.travelDocuments"
-                  defaultMessage="Travel documents"
-                />,
+          id="App.travelDocuments"
+          defaultMessage="Travel documents"
+        />,
         title3: <FormattedMessage
-                  id="App.paymentMethod"
-                  defaultMessage="Payment method"
-                />,
+          id="App.paymentMethod"
+          defaultMessage="Payment method"
+        />,
         title4: <FormattedMessage
-                  id="App.tripPreferences"
-                  defaultMessage="Trip preferences"
-                />,
+          id="App.tripPreferences"
+          defaultMessage="Trip preferences"
+        />,
         title5: <FormattedMessage
-                  id="App.extraInfo"
-                  defaultMessage="Extra information"
-                />,
+          id="App.extraInfo"
+          defaultMessage="Extra information"
+        />,
       },
-      steps : {
+      steps: {
         step1: <FormattedMessage
-                id="App.step1"
-                defaultMessage="Step 1"
-              />,
+          id="App.step1"
+          defaultMessage="Step 1"
+        />,
         step2: <FormattedMessage
-                id="App.step2"
-                defaultMessage="Step 2"
-              />,
+          id="App.step2"
+          defaultMessage="Step 2"
+        />,
         step3: <FormattedMessage
-                id="App.step3"
-                defaultMessage="Step 3"
-              />,
+          id="App.step3"
+          defaultMessage="Step 3"
+        />,
         step4: <FormattedMessage
-                id="App.step4"
-                defaultMessage="Step 4"
-              />,
+          id="App.step4"
+          defaultMessage="Step 4"
+        />,
         step5: <FormattedMessage
-                id="App.step5"
-                defaultMessage="Step 5"
-              />,
+          id="App.step5"
+          defaultMessage="Step 5"
+        />,
       },
       currentStep: 1,
       changingStep: {
@@ -112,32 +113,43 @@ class App extends Component {
           active: false,
           completed: false
         },
-        changingStep4:  {
+        changingStep4: {
           stepNumber: 4,
           active: false,
           completed: false
         },
-        changingStep5:  {
+        changingStep5: {
           stepNumber: 5,
           active: false,
           completed: false
         },
       }
     }
-    
+
     this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
-    this.handleCurrentStep=this.handleCurrentStep.bind(this);
+    this.handleCurrentStep = this.handleCurrentStep.bind(this);
   }
 
-    // componentWillMount () {
-    //   this.handleUpdateNavigation();
-    // }
+  componentDidMount() {
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers`)
+      .then(res => {
+        const person = res.data;
+        console.log(person)
+        this.setState({
+          traveler: person
+        });
+        console.log(this.state.traveler)
+      })
+  }
+  // componentWillMount () {
+  //   this.handleUpdateNavigation();
+  // }
 
-  handleCurrentStep(step){
-    console.log('step',step);
+  handleCurrentStep(step) {
+    console.log('step', step);
     this.setState({
       currentStep: step,
-    }, ()=> {console.log(this.state.currentStep)})
+    }, () => { console.log(this.state.currentStep) })
     this.handleUpdateNavigation(step);
   }
 
@@ -155,65 +167,65 @@ class App extends Component {
       changingStep5
     } = changingStep;
     console.log('changingStep, step', changingStep, step);
-    if(changingStep1.stepNumber === step){
+    if (changingStep1.stepNumber === step) {
       this.setState({
         changingStep: {
-          changingStep1: {...changingStep1,active: true},
-          changingStep2: {...changingStep2,active: false},
-          changingStep3: {...changingStep3,active: false},
-          changingStep4: {...changingStep4,active: false},
-          changingStep5: {...changingStep5, active: false},
+          changingStep1: { ...changingStep1, active: true },
+          changingStep2: { ...changingStep2, active: false },
+          changingStep3: { ...changingStep3, active: false },
+          changingStep4: { ...changingStep4, active: false },
+          changingStep5: { ...changingStep5, active: false },
         }
-      },()=> {console.log(this.state.currentStep)});
-    } else if(changingStep2.stepNumber === step){
+      }, () => { console.log(this.state.currentStep) });
+    } else if (changingStep2.stepNumber === step) {
       this.setState({
         changingStep: {
-          changingStep1: {...changingStep1,active: false},
-          changingStep2: {...changingStep2,active: true},
-          changingStep3: {...changingStep3,active: false},
-          changingStep4: {...changingStep4,active: false},
-          changingStep5: {...changingStep5, active: false},
+          changingStep1: { ...changingStep1, active: false },
+          changingStep2: { ...changingStep2, active: true },
+          changingStep3: { ...changingStep3, active: false },
+          changingStep4: { ...changingStep4, active: false },
+          changingStep5: { ...changingStep5, active: false },
         }
-      },()=> {console.log(this.state.currentStep)});
-    } else if(changingStep3.stepNumber === step){
+      }, () => { console.log(this.state.currentStep) });
+    } else if (changingStep3.stepNumber === step) {
       this.setState({
         changingStep: {
-          changingStep1: {...changingStep1,active: false},
-          changingStep2: {...changingStep2,active: false},
-          changingStep3: {...changingStep3,active: true},
-          changingStep4: {...changingStep4,active: false},
-          changingStep5: {...changingStep5, active: false},
+          changingStep1: { ...changingStep1, active: false },
+          changingStep2: { ...changingStep2, active: false },
+          changingStep3: { ...changingStep3, active: true },
+          changingStep4: { ...changingStep4, active: false },
+          changingStep5: { ...changingStep5, active: false },
         }
-      },()=> {console.log(this.state.currentStep)});
-    } else if(changingStep4.stepNumber === step){
+      }, () => { console.log(this.state.currentStep) });
+    } else if (changingStep4.stepNumber === step) {
       this.setState({
         changingStep: {
-          changingStep1: {...changingStep1,active: false},
-          changingStep2: {...changingStep2,active: false},
-          changingStep3: {...changingStep3,active: false},
-          changingStep4: {...changingStep4,active: true},
-          changingStep5: {...changingStep5, active: false},
+          changingStep1: { ...changingStep1, active: false },
+          changingStep2: { ...changingStep2, active: false },
+          changingStep3: { ...changingStep3, active: false },
+          changingStep4: { ...changingStep4, active: true },
+          changingStep5: { ...changingStep5, active: false },
         }
-      },()=> {console.log(this.state.currentStep)});
-    } else if(changingStep5.stepNumber === step){
+      }, () => { console.log(this.state.currentStep) });
+    } else if (changingStep5.stepNumber === step) {
       this.setState({
         changingStep: {
-          changingStep1: {...changingStep1,active: false},
-          changingStep2: {...changingStep2,active: false},
-          changingStep3: {...changingStep3,active: false},
-          changingStep4: {...changingStep4,active: false},
-          changingStep5: {...changingStep5, active: true},
+          changingStep1: { ...changingStep1, active: false },
+          changingStep2: { ...changingStep2, active: false },
+          changingStep3: { ...changingStep3, active: false },
+          changingStep4: { ...changingStep4, active: false },
+          changingStep5: { ...changingStep5, active: true },
         }
-      },()=> {console.log(this.state.currentStep)});
-    } 
+      }, () => { console.log(this.state.currentStep) });
+    }
   }
 
   render() {
-    console.log('ESTADO',this.state);
+    console.log('ESTADO', this.state);
     return (
       <div className="App">
         <Header />
-        <Pages 
+        <Pages
           handleUpdateNavigation={this.handleUpdateNavigation}
           stateObject={this.state}
           handleCurrentStep={this.handleCurrentStep}
