@@ -28,12 +28,12 @@
     "defaultMessage": "Date of issue"
   },
   {
-    "id": "Step2.passport",
-    "defaultMessage": "Passport"
-  },
-  {
     "id": "Step2.visa",
     "defaultMessage": "Visa (optional)"
+  },
+  {
+    "id": "Step2.passport",
+    "defaultMessage": "Passport"
   },
   {
     "id": "Step2.addVisaDetails",

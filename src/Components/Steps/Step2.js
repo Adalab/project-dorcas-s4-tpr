@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../Sub-components/Title';
+import Button from '../Sub-components/Button';
 import Navigation from '../Navigation';
 import Calendar from '../Sub-components/Calendar';
 import { FormattedMessage } from 'react-intl';
@@ -96,6 +97,14 @@ const idExpDateCal = {
     />,
     id: "expirationDate",
 }
+
+const visaButton = {
+    textButton: <FormattedMessage
+                    id="Step2.visa"
+                    defaultMessage="Visa (optional)"
+                />,
+    buttonClass: '',
+};
 
 class Step2 extends Component {
     constructor(props) {
@@ -238,8 +247,14 @@ class Step2 extends Component {
                         />
                     </h2>
 
-                    <TypeTextInput onChange={this.handlePassportInput} inputText={numPassportInput} />
-                    <TypeTextInput onChange={this.handleCountryInput} inputText={countryIssueInput} />
+                    <TypeTextInput 
+                        onChange={this.handlePassportInput}
+                        inputText={numPassportInput} 
+                    />
+                    <TypeTextInput 
+                        onChange={this.handleCountryInput} 
+                        inputText={countryIssueInput} 
+                    />
 
                     <div className='verticalDisplay'>
                         <Calendar
@@ -264,8 +279,12 @@ class Step2 extends Component {
                             defaultMessage="Visa (optional)"
                         />
                     </h2>
-
+                    <Button
+                        buttonContent={visaButton}
+                    />
                     <div>
+                        
+
                         <FormattedMessage
                             id="Step2.addVisaDetails"
                             defaultMessage="Add visa details"
