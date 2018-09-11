@@ -101,13 +101,23 @@ class Step2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentStep: 2
+            currentStep: 2,
+            data:{
+                passIssueDate: "",
+                passExpDate: "",
+                idIssueDate: "",
+                idExpDate: "",
+            } 
         }
 
         this.handlePassportInput = this.handlePassportInput.bind(this)
         this.handleCountryInput = this.handleCountryInput.bind(this)
         this.handleBirthPlace = this.handleBirthPlace.bind(this)
         this.handleNumberInput = this.handleNumberInput.bind(this)
+        this.handlePassIssueDate=this.handlePassIssueDate.bind(this);
+        this.handlePassExpDate=this.handlePassExpDate.bind(this);
+        this.handleIdIssueDate=this.handleIdIssueDate.bind(this);
+        this.handleIdExpDate=this.handleIdExpDate.bind(this);
     }
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
@@ -118,6 +128,43 @@ class Step2 extends Component {
             return 'hidden'
         }
     }
+
+
+    handlePassIssueDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                passIssueDate: date,
+            } 
+      }, ()=>(console.log(this.state.data)))
+    }
+      
+      handlePassExpDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                passExpDate: date,
+            } 
+      }, ()=>(console.log(this.state.data)))
+      }
+    
+      handleIdIssueDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                idIssueDate: date,
+            } 
+      }, ()=>(console.log(this.state.data)))
+      }
+    
+      handleIdExpDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                idExpDate: date,
+            } 
+      }, ()=>(console.log(this.state.data)))
+      }
 
     handlePassportInput() {
         console.log('click passport')
@@ -172,12 +219,14 @@ class Step2 extends Component {
                             id={passIssueDateCal.id}
                             numberOfMonths={passIssueDateCal.numberOfMonths}
                             small={passIssueDateCal.small}
+                            handlePassIssueDate={this.handlePassIssueDate}
                         />
                         <Calendar
                             labelContent={passExpDateCal.labelContent}
                             id={passExpDateCal.id}
                             numberOfMonths={passExpDateCal.numberOfMonths}
                             small={passExpDateCal.small}
+                            handlePassExpDate={this.handlePassExpDate}
                         />
                     </div>
 
@@ -225,6 +274,7 @@ class Step2 extends Component {
                             id={idIssueDateCal.id}
                             numberOfMonths={idIssueDateCal.numberOfMonths}
                             small={idIssueDateCal.small}
+                            handleIdIssueDate={this.handleIdIssueDate}
                         />
 
                         <Calendar
@@ -232,6 +282,7 @@ class Step2 extends Component {
                             id={idExpDateCal.id}
                             numberOfMonths={idExpDateCal.numberOfMonths}
                             small={idExpDateCal.small}
+                            handleIdExpDate={this.handleIdExpDate}
                         />
 
                         <TypeTextInput
