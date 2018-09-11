@@ -8,27 +8,27 @@ import TypeTextInput from '../Types/TypeTextInput';
 
 const surnameInput = {
     labelContent: <FormattedMessage
-                   id="Step1.userSurname"
-                   defaultMessage="Surname"
-                   />,
+        id="Step1.userSurname"
+        defaultMessage="Surname"
+    />,
     id: 'surname',
     name: 'surname'
 };
 
 const nameInput = {
     labelContent: <FormattedMessage
-                   id="Step1.userName"
-                   defaultMessage="Name"
-                   />,
+        id="Step1.userName"
+        defaultMessage="Name"
+    />,
     id: 'name',
     name: 'name'
 };
 
 const emailAdress = {
     labelContent: <FormattedMessage
-                    id="Step1.email"
-                    defaultMessage="Email"
-                  />,
+        id="Step1.email"
+        defaultMessage="Email"
+    />,
     id: 'email',
     name: 'email',
     disabled: true
@@ -36,9 +36,9 @@ const emailAdress = {
 
 const mobilePhoneNumber = {
     labelContent: <FormattedMessage
-                    id="Step1.mobilePhone"
-                    defaultMessage="Mobile Phone"
-                  />,
+        id="Step1.mobilePhone"
+        defaultMessage="Mobile Phone"
+    />,
     id: 'mobilePhone',
     name: 'mobilePhone',
     required: true
@@ -46,9 +46,9 @@ const mobilePhoneNumber = {
 
 const landLineNumber = {
     labelContent: <FormattedMessage
-                    id="Step1.landLinePhoneNumber"
-                    defaultMessage="Landline phone number"
-                  />,
+        id="Step1.landLinePhoneNumber"
+        defaultMessage="Landline phone number"
+    />,
     id: 'landLinePhone',
     name: 'landLinePhone',
     required: false
@@ -60,6 +60,10 @@ class Step1 extends Component {
         this.state = {
             currentStep: 1
         }
+
+        this.handleSurnameInput = this.handleSurnameInput.bind(this)
+        this.handlePhoneNumber = this.handlePhoneNumber.bind(this)
+        this.handleLineNumber = this.handleLineNumber.bind(this)
     }
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
@@ -71,6 +75,22 @@ class Step1 extends Component {
         }
     }
 
+    handleSurnameInput(){
+        console.log('click surname')
+    }
+
+    handleNameInput(){
+        console.log('click name')
+    }
+
+    handlePhoneNumber(){
+        console.log('click phone')
+    }
+
+    handleLineNumber(){
+        console.log('click line numb')
+    }
+
     render() {
         console.log('props STEP1', this.props);
         const {
@@ -80,12 +100,8 @@ class Step1 extends Component {
             title4,
             title5,
             step1,
-            dot1,
-            dot2,
-            dot3,
-            dot4,
-            dot5,
-            currentStep
+            currentStep,
+            changingStep,
         } = this.props;
         return (
             <div className='stepBox'>
@@ -94,26 +110,22 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput inputText={surnameInput} />
-                    <TypeTextInput inputText={nameInput} />
+                    <TypeTextInput inputText={surnameInput} onChange={this.handleSurnameInput} />
+                    <TypeTextInput inputText={nameInput} onChange={this.handleNameInput}/>
                     <div className='phones'>
-                        <TypePhoneInput phoneNumber={mobilePhoneNumber} />
-                        <TypePhoneInput phoneNumber={landLineNumber} />
+                        <TypePhoneInput onChange={this.handlePhoneNumber} phoneNumber={mobilePhoneNumber} />
+                        <TypePhoneInput onChange={this.handleLineNumber} phoneNumber={landLineNumber} />
                     </div>
                     <TypeEmailInput emailAdress={emailAdress} />
                 </form>
                 <Navigation
-                    dot1={dot1}
-                    dot2={dot2}
-                    dot3={dot3}
-                    dot4={dot4}
-                    dot5={dot5}
                     title1={title1}
                     title2={title2}
                     title3={title3}
                     title4={title4}
                     title5={title5}
                     currentStep={currentStep}
+                    changingStep={changingStep}
                     handleNextStepClass={this.handleNextStepClass()}
                 />
             </div>

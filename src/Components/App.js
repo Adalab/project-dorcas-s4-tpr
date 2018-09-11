@@ -95,25 +95,117 @@ class App extends Component {
                 defaultMessage="Step 5"
               />,
       },
-      dots : {
-        dot1: 'active',
-        dot2: '',
-        dot3: '',
-        dot4: '',
-        dot5: '',
-      },
-
       currentStep: 1,
-
+      changingStep: {
+        changingStep1: {
+          stepNumber: 1,
+          active: false,
+          completed: false
+        },
+        changingStep2: {
+          stepNumber: 2,
+          active: false,
+          completed: false
+        },
+        changingStep3: {
+          stepNumber: 3,
+          active: false,
+          completed: false
+        },
+        changingStep4:  {
+          stepNumber: 4,
+          active: false,
+          completed: false
+        },
+        changingStep5:  {
+          stepNumber: 5,
+          active: false,
+          completed: false
+        },
+      }
     }
+    
+    this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
   }
 
+    // componentWillMount () {
+    //   this.handleUpdateNavigation();
+    // }
+
   handleCurrentStep(step){
-    console.log(step);
+    console.log('step',step);
     this.setState({
       currentStep: step,
     }, ()=> {console.log(this.state.currentStep)})
+    this.handleUpdateNavigation(step);
+  }
+
+  handleUpdateNavigation(step) {
+    console.log('FUNCIONAAAA!!!');
+    const {
+      currentStep,
+      changingStep,
+    } = this.state;
+    const {
+      changingStep1,
+      changingStep2,
+      changingStep3,
+      changingStep4,
+      changingStep5
+    } = changingStep;
+    console.log('changingStep, step', changingStep, step);
+    if(changingStep1.stepNumber === step){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: true},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: false},
+        }
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep2.stepNumber === step){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: true},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: false},
+        }
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep3.stepNumber === step){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: true},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: false},
+        }
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep4.stepNumber === step){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: true},
+          changingStep5: {...changingStep5, active: false},
+        }
+      },()=> {console.log(this.state.currentStep)});
+    } else if(changingStep5.stepNumber === step){
+      this.setState({
+        changingStep: {
+          changingStep1: {...changingStep1,active: false},
+          changingStep2: {...changingStep2,active: false},
+          changingStep3: {...changingStep3,active: false},
+          changingStep4: {...changingStep4,active: false},
+          changingStep5: {...changingStep5, active: true},
+        }
+      },()=> {console.log(this.state.currentStep)});
+    } 
   }
 
   render() {
@@ -122,9 +214,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Pages 
+          handleUpdateNavigation={this.handleUpdateNavigation}
           stateObject={this.state}
-          handleClickPreviousStep={this.handleClickPreviousStep}
-          handleClickFollowingStep={this.handleClickFollowingStep}
           handleCurrentStep={this.handleCurrentStep}
         />
       </div>

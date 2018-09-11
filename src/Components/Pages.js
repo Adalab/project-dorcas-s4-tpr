@@ -8,12 +8,12 @@ import Step5 from './Steps/Step5';
 
 class Pages extends Component {
   render() {
-    console.log('PAGES', this.props);
+    // console.log('PAGES', this.props);
     const {
+      currentStep,
+      steps,
+      changingStep,
       titles,
-      dots,
-      steps, 
-      currentStep
     } = this.props.stateObject;
     const {
       title1,
@@ -29,14 +29,9 @@ class Pages extends Component {
       step4,
       step5
     } = steps;
-    const {
-      dot1,
-      dot2,
-      dot3,
-      dot4,
-      dot5
-    } = dots;
-    const { handleClickPreviousStep, handleClickFollowingStep, handleCurrentStep } = this.props;
+    const { 
+      handleCurrentStep,
+    } = this.props;
     return (
       <Fragment>
         <Switch>
@@ -58,13 +53,9 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step1={step1}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
-                handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
+                changingStep={changingStep}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
           <Route
@@ -77,13 +68,9 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step2={step2}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
-                handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
+                changingStep={changingStep}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
           <Route
@@ -96,11 +83,7 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step3={step3}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
+                changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
               />}
@@ -115,13 +98,9 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step4={step4}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
-                handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
+                changingStep={changingStep}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
           <Route
@@ -134,13 +113,9 @@ class Pages extends Component {
                 title4={title4}
                 title5={title5}
                 step5={step5}
-                dot1={dot1}
-                dot2={dot2}
-                dot3={dot3}
-                dot4={dot4}
-                dot5={dot5}
-                handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
+                changingStep={changingStep}
+                handleCurrentStep={handleCurrentStep}
               />}
           />
         </Switch>
