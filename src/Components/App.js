@@ -143,7 +143,7 @@ class App extends Component {
               firstName: person.personalInformation.firstName,
             }
           }
-        }, ()=> (console.log("NASI YEy",this.state.data)))
+        })
       })
   }
 
@@ -200,7 +200,6 @@ class App extends Component {
 }
 
   handleUpdateNavigation(step) {
-    console.log('FUNCIONAAAA!!!');
     const {
       changingStep,
     } = this.state;

@@ -20,7 +20,7 @@ class TypeTextInput extends Component {
                 id={id} 
                 type="text" 
                 name={name}
-                value={inputText}
+                value={this.props.inputText}
               />
               <label className='placeholder-label' htmlFor={id}>
               {labelContent}

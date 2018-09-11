@@ -18,6 +18,7 @@ class Pages extends Component {
 
     const{
       personalInformation,
+      contactInformation,
     } = this.props.stateDataObject;
 
     const {
@@ -65,7 +66,8 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 handleStep1={handleStep1}
-                dataStep1={personalInformation}
+                personalInformation={personalInformation}
+                contactInformation= {contactInformation}
               />}
           />
           <Route
