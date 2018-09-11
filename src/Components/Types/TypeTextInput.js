@@ -15,7 +15,7 @@ class TypeTextInput extends Component {
         return (
             <div className='position-label'>
               <input onChange={onChange}
-                className='control-label'
+                className='control-label marginSomeInputs'
                 id={id} 
                 type="text" 
                 name={name}

@@ -63,6 +63,11 @@
   top: 0;
   background-image: linear-gradient(to bottom, #f8f9f8, rgba(248, 249, 248, 0.3)); }
 
+.logoTRP {
+  width: 50px;
+  height: 35px;
+  margin: 30px 30px; }
+
 .App {
   min-height: 100vh;
   background-color: #f8f9f8; }
@@ -92,6 +97,9 @@
   display: flex;
   flex-direction: column; }
 
+.marginSomeInputs {
+  margin-bottom: 25px; }
+
 #landlinePhone {
   text-align: end; }
 
@@ -103,7 +111,19 @@
   flex-direction: column; }
 
 .select-step5 {
-  height: 20px; }
+  height: 60px;
+  width: 335px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+  color: #06a790;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 35px 15px 15px;
+  margin-bottom: 30px;
+  appearance: none; }
 
 .position-nav {
   bottom: 0;
@@ -142,7 +162,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 40px;
   line-height: 1.5;
   margin-top: 10px;
@@ -268,4 +288,5 @@
 .title-step {
   color: #222222;
   font-size: 36px;
-  font-weight: 500; }
+  font-weight: 500;
+  margin-bottom: 20px; }

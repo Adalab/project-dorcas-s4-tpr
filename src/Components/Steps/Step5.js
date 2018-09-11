@@ -33,7 +33,7 @@ const emailAddress = {
     />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
-    disabled: true
+    disabled: false
 };
 
 const emergencyContactPhone = {
@@ -67,6 +67,10 @@ const region = [
     'Ceuta',
     'Melilla'
 ];
+
+const classOfSelect = {
+    className: 'select-step5'
+}
 
 const largeFamily = {
     labelContent: <FormattedMessage
@@ -157,7 +161,9 @@ class Step5 extends Component {
                     />
 
                     <TypeCheckboxInput contentCheckbox={residentOutside} />
-                    <TypeSelect options={region} />
+                    <TypeSelect
+                    classOfSelect={classOfSelect} 
+                    options={region} />
                     <TypeTextInput
                         onChange={this.handleLocality}
                         inputText={locality}
