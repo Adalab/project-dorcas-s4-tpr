@@ -192,12 +192,11 @@ class App extends Component {
     console.log('step', step);
     this.setState({
       currentStep: step,
-     }, ()=> (this.handleUpdateNavigation(step))
+    }, ()=> (this.handleUpdateNavigation(step))
   );
 }
 
   handleUpdateNavigation(step) {
-    console.log('FUNCIONAAAA!!!');
     const {
       changingStep,
     } = this.state;
