@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Title from '../Sub-components/Title';
 import AccommodationPref from '../Sub-components/AccommodationPref';
+import TransportPref from '../Sub-components/TransportPref';
 import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
 
@@ -75,24 +76,34 @@ const preferences = [
     }
 ]
 
+const plainPreferences = [
+    <FormattedMessage
+        id="Step4.window"
+        defaultMessage="Window"
+    />,
+    <FormattedMessage
+        id="Step4.aisle"
+        defaultMessage="Aisle"
+    />
+]
+
 class Step4 extends Component {
     constructor(props) {
         super(props)
-        this.state = { 
-            responses: {}, 
+        this.state = {
+            responses: {},
             currentStep: 4
-    }
+        }
         this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
     handleSelectCheckbox(type, value) {
         this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [type]: value } }))
         console.log(this.state)
-        console.log('holi')
     }
 
     render() {
@@ -115,6 +126,11 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
+                    <h2>Preferencias en aviones</h2>
+                     <TransportPref
+                        plainPreferences={plainPreferences}
+                    />
+                    <h2>Preferencias en trenes</h2>
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
                     {preferences.map(preference => <AccommodationPref

@@ -54,5 +54,13 @@
   {
     "id": "Step4.niche",
     "defaultMessage": "Niche"
+  },
+  {
+    "id": "Step4.window",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "Step4.aisle",
+    "defaultMessage": "Aisle"
   }
 ]
