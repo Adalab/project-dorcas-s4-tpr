@@ -96,7 +96,7 @@ class App extends Component {
           defaultMessage="Step 5"
         />,
       },
-      currentStep: 1,
+      currentStep: "",
       changingStep: {
         changingStep1: {
           stepNumber: 1,
@@ -127,7 +127,9 @@ class App extends Component {
     }
 
     this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
-    this.handleCurrentStep = this.handleCurrentStep.bind(this);
+    this.handleCurrentStep=this.handleCurrentStep.bind(this);
+    this.handleStep1=this.handleStep1.bind(this);
+    this.handleStep2=this.handleStep2.bind(this);
   }
 
   componentDidMount() {
@@ -141,22 +143,62 @@ class App extends Component {
         console.log(this.state.traveler)
       })
   }
-  // componentWillMount () {
-  //   this.handleUpdateNavigation();
-  // }
+
+  handleStep1(data){
+    console.log(data);
+    this.setState({
+      data: {
+        ...this.state.data,
+        personalInformation: {
+          lastName: data.surname,
+          firstName: data.name,
+        },
+        contactInformation: {
+          ...this.state.data.contactInformation,
+          phoneNumbers: [data.phoneNumber, data.lineNumber],
+        },
+    }
+  },()=>(console.log(this.state.data)))
+} 
+
+  handleStep2(data){
+    console.log(data);
+    this.setState({
+      data: {
+        ...this.state.data,
+        travelDocuments: {
+          idCard: [
+            {
+              placeOfBirth: data.placeBirth,
+              issueDate: data.idIssueDate,
+              expiryDate: data.idExpDate,
+              dniNumber: data.numberId,
+            },
+          ],
+          passport: [
+            {
+              issueCountry: data.passCountryIssue,
+              issueDate: data.passIssueDate,
+              expiryDate: data.passExpDate,
+              passportNumber: data.numberPassport,
+              },
+          ],
+        }
+      }
+    },()=>(console.log(this.state.data)))
+  } 
 
   handleCurrentStep(step) {
     console.log('step', step);
     this.setState({
       currentStep: step,
-    }, () => { console.log(this.state.currentStep) })
-    this.handleUpdateNavigation(step);
-  }
+     }, ()=> (this.handleUpdateNavigation(step))
+  );
+}
 
   handleUpdateNavigation(step) {
     console.log('FUNCIONAAAA!!!');
     const {
-      currentStep,
       changingStep,
     } = this.state;
     const {
@@ -229,6 +271,8 @@ class App extends Component {
           handleUpdateNavigation={this.handleUpdateNavigation}
           stateObject={this.state}
           handleCurrentStep={this.handleCurrentStep}
+          handleStep1={this.handleStep1}
+          handleStep2={this.handleStep2}
         />
       </div>
     );

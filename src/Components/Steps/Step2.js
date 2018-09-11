@@ -101,15 +101,31 @@ class Step2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentStep: 2
+            currentStep: 2,
+            data:{
+                numberPassport:"",
+                passCountryIssue:"",
+                passIssueDate: "",
+                passExpDate: "",
+                typeId:"",
+                numberId:"",
+                idIssueDate: "",
+                idExpDate: "",
+                placeBirth:"",
+            } 
         }
 
         this.handlePassportInput = this.handlePassportInput.bind(this)
         this.handleCountryInput = this.handleCountryInput.bind(this)
         this.handleBirthPlace = this.handleBirthPlace.bind(this)
         this.handleNumberInput = this.handleNumberInput.bind(this)
+        this.handlePassIssueDate=this.handlePassIssueDate.bind(this);
+        this.handlePassExpDate=this.handlePassExpDate.bind(this);
+        this.handleIdIssueDate=this.handleIdIssueDate.bind(this);
+        this.handleIdExpDate=this.handleIdExpDate.bind(this);
     }
     componentDidMount() {
+        console.log(this.state.currentStep);
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
@@ -119,20 +135,80 @@ class Step2 extends Component {
         }
     }
 
-    handlePassportInput() {
-        console.log('click passport')
+    handlePassIssueDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                passIssueDate: date,
+            } 
+        }, ()=>(this.props.handleStep2(this.state.data)))
+    }
+      
+      handlePassExpDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                passExpDate: date,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
+      }
+    
+      handleIdIssueDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                idIssueDate: date,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
+      }
+    
+      handleIdExpDate(date){
+        this.setState({
+            data:{
+                ...this.state.data,
+                idExpDate: date,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
+      }
+
+    handlePassportInput(e) {
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                numberPassport: inputValue,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
-    handleCountryInput() {
-        console.log('click passport country')
+    handleCountryInput(e) {
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                passCountryIssue: inputValue,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
-    handleBirthPlace() {
-        console.log('click birth place')
+    handleBirthPlace(e) {
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                placeBirth: inputValue,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
-    handleNumberInput(){
-        console.log('click Number Input')
+    handleNumberInput(e){
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                numberId: inputValue,
+            } 
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     render() {
@@ -145,7 +221,6 @@ class Step2 extends Component {
             step2,
             currentStep,
             changingStep,
-            handleUpdateNavigation,
         } = this.props;
         console.log('props STEP2', this.props);
         return (
@@ -172,12 +247,14 @@ class Step2 extends Component {
                             id={passIssueDateCal.id}
                             numberOfMonths={passIssueDateCal.numberOfMonths}
                             small={passIssueDateCal.small}
+                            handleDate={this.handlePassIssueDate}
                         />
                         <Calendar
                             labelContent={passExpDateCal.labelContent}
                             id={passExpDateCal.id}
                             numberOfMonths={passExpDateCal.numberOfMonths}
                             small={passExpDateCal.small}
+                            handleDate={this.handlePassExpDate}
                         />
                     </div>
 
@@ -225,6 +302,7 @@ class Step2 extends Component {
                             id={idIssueDateCal.id}
                             numberOfMonths={idIssueDateCal.numberOfMonths}
                             small={idIssueDateCal.small}
+                            handleDate={this.handleIdIssueDate}
                         />
 
                         <Calendar
@@ -232,6 +310,7 @@ class Step2 extends Component {
                             id={idExpDateCal.id}
                             numberOfMonths={idExpDateCal.numberOfMonths}
                             small={idExpDateCal.small}
+                            handleDate={this.handleIdExpDate}
                         />
 
                         <TypeTextInput
