@@ -39,6 +39,7 @@ class Pages extends Component {
       handleStep1,
       handleStep2
     } = this.props;
+    console.log('personalInformation', personalInformation);
     return (
       <Fragment>
         <Switch>
