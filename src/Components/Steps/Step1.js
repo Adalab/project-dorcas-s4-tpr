@@ -89,7 +89,7 @@ class Step1 extends Component {
                 ...this.state.data,
                 surname: inputValue
             }
-        }, this.props.handleStep1(this.state.data));   
+        }, ()=>(this.props.handleStep1(this.state.data)));   
     }
 
     handleNameInput(e){
@@ -99,7 +99,7 @@ class Step1 extends Component {
                 ...this.state.data,
                 name: inputValue
             }
-        }, this.props.handleStep1(this.state.data))  
+        }, ()=>(this.props.handleStep1(this.state.data)));  
     }
 
     handlePhoneNumber(e){
@@ -109,7 +109,7 @@ class Step1 extends Component {
                 ...this.state.data,
                 phoneNumber: inputValue
             }
-        }, this.props.handleStep1(this.state.data)) 
+        }, ()=>(this.props.handleStep1(this.state.data))); 
     }
 
     handleLineNumber(e){
@@ -119,7 +119,7 @@ class Step1 extends Component {
                 ...this.state.data,
                 lineNumber: inputValue
             }
-        }, this.props.handleStep1(this.state.data)) 
+        }, ()=>(this.props.handleStep1(this.state.data))); 
     }
 
     render() {

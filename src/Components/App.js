@@ -148,8 +148,8 @@ class App extends Component {
           phoneNumbers: [data.phoneNumber, data.lineNumber],
         },
     }
-    }, console.log(this.state.data))
-  }
+  },()=>(console.log(this.state.data)))
+} 
 
   handleStep2(data){
     console.log(data);
@@ -175,8 +175,9 @@ class App extends Component {
           ],
         }
       }
-    }, console.log(this.state.data))
-  }
+    },()=>(console.log(this.state.data)))
+  } 
+  
 
   handleCurrentStep(step){
     console.log('step',step);

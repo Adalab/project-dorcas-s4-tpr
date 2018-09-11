@@ -134,14 +134,13 @@ class Step2 extends Component {
         }
     }
 
-
     handlePassIssueDate(date){
         this.setState({
             data:{
                 ...this.state.data,
                 passIssueDate: date,
             } 
-        }, this.props.handleStep2(this.state.data))
+        }, ()=>(this.props.handleStep2(this.state.data)))
     }
       
       handlePassExpDate(date){
@@ -150,7 +149,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 passExpDate: date,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
       }
     
       handleIdIssueDate(date){
@@ -159,7 +158,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 idIssueDate: date,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
       }
     
       handleIdExpDate(date){
@@ -168,7 +167,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 idExpDate: date,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
       }
 
     handlePassportInput(e) {
@@ -178,7 +177,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 numberPassport: inputValue,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     handleCountryInput(e) {
@@ -188,7 +187,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 passCountryIssue: inputValue,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     handleBirthPlace(e) {
@@ -198,7 +197,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 placeBirth: inputValue,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     handleNumberInput(e){
@@ -208,7 +207,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 numberId: inputValue,
             } 
-      }, this.props.handleStep2(this.state.data))
+      }, ()=>(this.props.handleStep2(this.state.data)))
     }
 
     render() {
