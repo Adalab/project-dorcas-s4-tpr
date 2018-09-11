@@ -141,11 +141,23 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput inputText={surnameInput} onChange={this.handleSurnameInput} />
-                    <TypeTextInput inputText={nameInput} onChange={this.handleNameInput}/>
+                    <TypeTextInput 
+                        inputText={surnameInput} 
+                        onChange={this.handleSurnameInput} 
+                    />
+                    <TypeTextInput 
+                        inputText={nameInput} 
+                        onChange={this.handleNameInput}
+                    />
                     <div className='phones'>
-                        <TypePhoneInput onChange={this.handlePhoneNumber} phoneNumber={mobilePhoneNumber} />
-                        <TypePhoneInput onChange={this.handleLineNumber} phoneNumber={landLineNumber} />
+                        <TypePhoneInput 
+                            onChange={this.handlePhoneNumber} 
+                            phoneNumber={mobilePhoneNumber} 
+                        />
+                        <TypePhoneInput 
+                            onChange={this.handleLineNumber} 
+                            phoneNumber={landLineNumber} 
+                        />
                     </div>
                     <TypeEmailInput emailAdress={emailAdress} />
                 </form>
