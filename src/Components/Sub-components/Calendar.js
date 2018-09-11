@@ -13,7 +13,7 @@ class Calendar extends Component {
 
     onDateChange(date) {
         // console.log(date && date.format("YYYY-MM-DD"));
-        this.props.handlePassIssueDate(date);
+        this.props.handleDate(date);
       }
 
     onFocusChange({ focused }) {

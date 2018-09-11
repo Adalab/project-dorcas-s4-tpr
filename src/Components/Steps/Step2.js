@@ -103,10 +103,15 @@ class Step2 extends Component {
         this.state = {
             currentStep: 2,
             data:{
+                numberPassport:"",
+                passCountryIssue:"",
                 passIssueDate: "",
                 passExpDate: "",
+                typeId:"",
+                numberId:"",
                 idIssueDate: "",
                 idExpDate: "",
+                placeBirth:"",
             } 
         }
 
@@ -136,7 +141,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 passIssueDate: date,
             } 
-      }, ()=>(console.log(this.state.data)))
+        })
     }
       
       handlePassExpDate(date){
@@ -145,7 +150,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 passExpDate: date,
             } 
-      }, ()=>(console.log(this.state.data)))
+      })
       }
     
       handleIdIssueDate(date){
@@ -154,7 +159,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 idIssueDate: date,
             } 
-      }, ()=>(console.log(this.state.data)))
+      })
       }
     
       handleIdExpDate(date){
@@ -163,23 +168,47 @@ class Step2 extends Component {
                 ...this.state.data,
                 idExpDate: date,
             } 
-      }, ()=>(console.log(this.state.data)))
+      })
       }
 
-    handlePassportInput() {
-        console.log('click passport')
+    handlePassportInput(e) {
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                numberPassport: inputValue,
+            } 
+      })
     }
 
-    handleCountryInput() {
-        console.log('click passport country')
+    handleCountryInput(e) {
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                passCountryIssue: inputValue,
+            } 
+      })
     }
 
-    handleBirthPlace() {
-        console.log('click birth place')
+    handleBirthPlace(e) {
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                placeBirth: inputValue,
+            } 
+      })
     }
 
-    handleNumberInput(){
-        console.log('click Number Input')
+    handleNumberInput(e){
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                numberId: inputValue,
+            } 
+      }, ()=>(console.log(this.state.data)))
     }
 
     render() {
@@ -219,14 +248,14 @@ class Step2 extends Component {
                             id={passIssueDateCal.id}
                             numberOfMonths={passIssueDateCal.numberOfMonths}
                             small={passIssueDateCal.small}
-                            handlePassIssueDate={this.handlePassIssueDate}
+                            handleDate={this.handlePassIssueDate}
                         />
                         <Calendar
                             labelContent={passExpDateCal.labelContent}
                             id={passExpDateCal.id}
                             numberOfMonths={passExpDateCal.numberOfMonths}
                             small={passExpDateCal.small}
-                            handlePassExpDate={this.handlePassExpDate}
+                            handleDate={this.handlePassExpDate}
                         />
                     </div>
 
@@ -274,7 +303,7 @@ class Step2 extends Component {
                             id={idIssueDateCal.id}
                             numberOfMonths={idIssueDateCal.numberOfMonths}
                             small={idIssueDateCal.small}
-                            handleIdIssueDate={this.handleIdIssueDate}
+                            handleDate={this.handleIdIssueDate}
                         />
 
                         <Calendar
@@ -282,7 +311,7 @@ class Step2 extends Component {
                             id={idExpDateCal.id}
                             numberOfMonths={idExpDateCal.numberOfMonths}
                             small={idExpDateCal.small}
-                            handleIdExpDate={this.handleIdExpDate}
+                            handleDate={this.handleIdExpDate}
                         />
 
                         <TypeTextInput
