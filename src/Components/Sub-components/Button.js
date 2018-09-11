@@ -5,18 +5,23 @@ class Button extends Component {
   render() {
     const{
       buttonContent,
-      onClick
+      onClick,
+      currentStep,
     } = this.props;
 
     const{
       buttonClass,
-      textButton
+      textButton,
+      buttonClassHidden
     } = buttonContent;
     
     return (
       <button 
         type="submit"
-        className={buttonClass}
+        className={currentStep===1
+                    ?buttonClassHidden
+                    :buttonClass
+                  }
         onClick={onClick}
       >
         {textButton}
