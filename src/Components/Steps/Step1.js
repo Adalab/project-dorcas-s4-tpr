@@ -58,8 +58,8 @@ class Step1 extends Component {
     constructor(props){
         super(props)
         this.state = {
+            currentStep: 1,
             data: {
-                currentStep: 1,
                 surname:"",
                 name:"",
                 phoneNumber:"",

@@ -125,6 +125,7 @@ class Step2 extends Component {
         this.handleIdExpDate=this.handleIdExpDate.bind(this);
     }
     componentDidMount() {
+        console.log(this.state.currentStep);
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
@@ -220,7 +221,6 @@ class Step2 extends Component {
             step2,
             currentStep,
             changingStep,
-            handleUpdateNavigation,
         } = this.props;
         console.log('props STEP2', this.props);
         return (

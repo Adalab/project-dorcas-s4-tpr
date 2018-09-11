@@ -96,7 +96,7 @@ class App extends Component {
           defaultMessage="Step 5"
         />,
       },
-      currentStep: 1,
+      currentStep: "",
       changingStep: {
         changingStep1: {
           stepNumber: 1,
@@ -192,14 +192,13 @@ class App extends Component {
     console.log('step', step);
     this.setState({
       currentStep: step,
-    }, () => { console.log(this.state.currentStep) })
-    this.handleUpdateNavigation(step);
-  }
+     }, ()=> (this.handleUpdateNavigation(step))
+  );
+}
 
   handleUpdateNavigation(step) {
     console.log('FUNCIONAAAA!!!');
     const {
-      currentStep,
       changingStep,
     } = this.state;
     const {
