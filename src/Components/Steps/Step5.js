@@ -6,6 +6,7 @@ import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 import TypeSelect from '../Types/TypeSelect';
 import TypeCheckboxInput from '../Types/TypeCheckboxInput';
+import TypeOnOff from '../Types/TypeOnOff';
 import { FormattedMessage } from 'react-intl';
 
 const familyNumberInput = {
@@ -99,7 +100,7 @@ class Step5 extends Component {
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleEmailAddress = this.handleEmailAddress.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
-
+        this.handleTypeOnOff = this.handleTypeOnOff.bind(this)
     }
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
@@ -121,8 +122,8 @@ class Step5 extends Component {
         console.log('click email address')
     }
 
-    handleEmergencyContact(){
-        console.log('click emergency contact')
+    handleTypeOnOff(e){
+        console.log('hola alex', e.target.checked)
     }
 
     render() {
@@ -141,7 +142,6 @@ class Step5 extends Component {
             dot5,
             currentStep,
             changingStep,
-            handleUpdateNavigation
         } = this.props;
         return (
             <div className='stepBox'>
@@ -150,13 +150,13 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-                    <TypeCheckboxInput contentCheckbox={largeFamily} />
+                    <TypeOnOff labelTypeOnOff={largeFamily} handleTypeOnOff={this.handleTypeOnOff}/>
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
                         inputText={familyNumberInput}
                     />
 
-                    <TypeCheckboxInput contentCheckbox={residentOutside} />
+                    <TypeOnOff labelTypeOnOff={residentOutside} handleTypeOnOff={this.handleTypeOnOff} />
                     <TypeSelect options={region} />
                     <TypeTextInput
                         onChange={this.handleLocality}
