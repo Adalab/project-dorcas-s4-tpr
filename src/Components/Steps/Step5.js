@@ -5,7 +5,6 @@ import TypeEmailInput from '../Types/TypeEmailInput';
 import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 import TypeSelect from '../Types/TypeSelect';
-import TypeCheckboxInput from '../Types/TypeCheckboxInput';
 import TypeOnOff from '../Types/TypeOnOff';
 import { FormattedMessage } from 'react-intl';
 
@@ -93,22 +92,22 @@ class Step5 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentStep: 5
+            currentStep: 5,
+            checkedFamily: false,
+            checkedResidency: false,
         }
-        this.handleFamilyNumber = this.handleFamilyNumber.bind(this)
         this.handleLocality = this.handleLocality.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleEmailAddress = this.handleEmailAddress.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleTypeOnOff = this.handleTypeOnOff.bind(this)
+        this.handleFamilyNumber = this.handleFamilyNumber.bind(this)
     }
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    handleFamilyNumber() {
-        console.log('click family number')
-    }
+     
 
     handleLocality() {
         console.log('click locality')
@@ -122,9 +121,22 @@ class Step5 extends Component {
         console.log('click email address')
     }
 
-    handleTypeOnOff(e){
-        console.dir('hola', e.currentTarget);
+    handleFamilyNumber(){
+        console.log('click email address')
     }
+
+    handleTypeOnOff(e){
+        if (e.currentTarget.id=== 'largeFamily' ){
+            this.setState({
+                checkedFamily:  !this.state.checkedFamily,
+            })
+        } else if (e.currentTarget.id==='residentOutside'){
+            this.setState({
+            checkedResidency: !this.state.checkedResidency,
+            } )
+        }
+    }
+    
 
     render() {
         console.log('STEP5', this.props);
@@ -150,19 +162,27 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-                    <TypeOnOff labelTypeOnOff={largeFamily} handleTypeOnOff={this.handleTypeOnOff}/>
+                    <TypeOnOff 
+                        labelTypeOnOff={largeFamily} 
+                        handleTypeOnOff={this.handleTypeOnOff}/>
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
                         inputText={familyNumberInput}
+                        toggleClass={this.state.checkedFamily ? '' : 'hidden'}
                     />
-
-                    <TypeOnOff labelTypeOnOff={residentOutside} handleTypeOnOff={this.handleTypeOnOff} />
-                    <TypeSelect options={region} />
-                    <TypeTextInput
-                        onChange={this.handleLocality}
-                        inputText={locality}
+                    <TypeOnOff 
+                    labelTypeOnOff={residentOutside} 
+                    handleTypeOnOff={this.handleTypeOnOff} 
                     />
-
+                    <div className={this.state.checkedResidency ? '' : 'hidden'}>
+                        <TypeSelect 
+                            options={region}
+                        />
+                        <TypeTextInput
+                            onChange={this.handleLocality}
+                            inputText={locality}
+                        />
+                    </div>
                     <h2><FormattedMessage
                         id="Step5.emergencyContact"
                         defaultMessage="Emergency contact"
