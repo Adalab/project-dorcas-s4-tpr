@@ -58,10 +58,17 @@ class Step1 extends Component {
     constructor(props){
         super(props)
         this.state = {
-            currentStep: 1
+            data: {
+                currentStep: 1,
+                surname:"",
+                name:"",
+                phoneNumber:"",
+                lineNumber:""
+            }
         }
 
         this.handleSurnameInput = this.handleSurnameInput.bind(this)
+        this.handleNameInput = this.handleNameInput.bind(this)
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this)
         this.handleLineNumber = this.handleLineNumber.bind(this)
     }
@@ -75,20 +82,44 @@ class Step1 extends Component {
         }
     }
 
-    handleSurnameInput(){
-        console.log('click surname')
+    handleSurnameInput(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                surname: inputValue
+            }
+        }, this.props.handleStep1(this.state.data));   
     }
 
-    handleNameInput(){
-        console.log('click name')
+    handleNameInput(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                name: inputValue
+            }
+        }, this.props.handleStep1(this.state.data))  
     }
 
-    handlePhoneNumber(){
-        console.log('click phone')
+    handlePhoneNumber(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                phoneNumber: inputValue
+            }
+        }, this.props.handleStep1(this.state.data)) 
     }
 
-    handleLineNumber(){
-        console.log('click line numb')
+    handleLineNumber(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                lineNumber: inputValue
+            }
+        }, this.props.handleStep1(this.state.data)) 
     }
 
     render() {

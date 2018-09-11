@@ -127,11 +127,54 @@ class App extends Component {
     
     this.handleUpdateNavigation = this.handleUpdateNavigation.bind(this);
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
+    this.handlePassIssueDate=this.handlePassIssueDate.bind(this);
+    this.handlePassExpDate=this.handlePassExpDate.bind(this);
+    this.handleIdIssueDate=this.handleIdIssueDate.bind(this);
+    this.handleIdExpDate=this.handleIdExpDate.bind(this);
+    this.handleStep1=this.handleStep1.bind(this);
+
   }
 
     // componentWillMount () {
     //   this.handleUpdateNavigation();
     // }
+  handleStep1(data){
+    console.log(data);
+    this.setState({
+      data: {
+        ...this.state.data,
+        personalInformation: {
+          lastName: data.surname,
+          firstName: data.name,
+        },
+        contactInformation: {
+          ...this.state.data.contactInformation,
+          phoneNumbers: [data.phoneNumber, data.lineNumber],
+        },
+    }
+    }, console.log(this.state.data))
+  }
+
+  handlePassIssueDate(date){
+    console.log(date);
+    this.setState({data: {travelDocuments: {passport:[{issueDate: date}]}}}, ()=>(console.log(this.state.data.travelDocuments.passport)))
+  }
+  
+  handlePassExpDate(date){
+    console.log(date);
+    this.setState({data: {travelDocuments: {passport:[{expiryDate: date}]}}}, ()=>(console.log(this.state.data.travelDocuments.passport)))
+    console.log(this.state.data.travelDocuments.passport)
+  }
+
+  handleIdIssueDate(date){
+    console.log(date);
+    this.setState({data: {travelDocuments: {idCard:[{issueDate: date}]}}}, ()=>(console.log(this.state.data.travelDocuments.idCard)))
+  }
+
+  handleIdExpDate(date){
+    console.log(date);
+    this.setState({data: {travelDocuments: {idCard:[{expiryDate: date}]}}}, ()=>(console.log(this.state.data.travelDocuments.idCard)))
+  }
 
   handleCurrentStep(step){
     console.log('step',step);
@@ -217,6 +260,11 @@ class App extends Component {
           handleUpdateNavigation={this.handleUpdateNavigation}
           stateObject={this.state}
           handleCurrentStep={this.handleCurrentStep}
+          handlePassIssueDate={this.handlePassIssueDate}
+          handlePassExpDate={this.handlePassExpDate}
+          handleIdIssueDate={this.handleIdIssueDate}
+          handleIdExpDate={this.handleIdExpDate}
+          handleStep1={this.handleStep1}
         />
       </div>
     );

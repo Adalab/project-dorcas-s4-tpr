@@ -31,6 +31,7 @@ class Pages extends Component {
     } = steps;
     const { 
       handleCurrentStep,
+      handleStep1,
     } = this.props;
     return (
       <Fragment>
@@ -56,6 +57,7 @@ class Pages extends Component {
                 currentStep={currentStep}
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
+                handleStep1={handleStep1}
               />}
           />
           <Route
