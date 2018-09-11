@@ -91,6 +91,8 @@ class Step4 extends Component {
 
     handleSelectCheckbox(type, value) {
         this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [type]: value } }))
+        console.log(this.state)
+        console.log('holi')
     }
 
     render() {

@@ -131,7 +131,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea9386b2c30abc982fe28`)
       .then(res => {
         const person = res.data;
         console.log(person)
