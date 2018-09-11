@@ -6,16 +6,23 @@ class TransportPref extends Component {
     render() {
 
         const {
-            plainPreferences
-        } = this.props;
-        
-
+            plainPreferences,
+            name,
+            type,
+            onChange,
+            isChecked
+          } = this.props; 
 
         return (
             <div>
                 <legend>
-                    {plainPreferences.map(plainPreference => <TransportPref
-                        plainPreference={plainPreference}
+                    {plainPreferences.map(plainPreference => <input
+                        type="checkbox"
+                        value={name}
+                        id={name}
+                        required={true}
+                        checked={isChecked}
+                        onChange={() => onChange(type, name)}
                     />)}
                 </legend>
             </div>
