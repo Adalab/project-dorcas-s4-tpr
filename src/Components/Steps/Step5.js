@@ -123,7 +123,7 @@ class Step5 extends Component {
     }
 
     handleTypeOnOff(e){
-        console.dir('hola', e.currentTarget);
+        console.log('hola', e);
     }
 
     render() {

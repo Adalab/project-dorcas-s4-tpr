@@ -6,6 +6,7 @@ class TypeTextInput extends Component {
           labelContent,  
           id,
           name,
+          inputText
         } = this.props.inputText;  
 
         const {
@@ -19,6 +20,7 @@ class TypeTextInput extends Component {
                 id={id} 
                 type="text" 
                 name={name}
+                value={inputText}
               />
               <label className='placeholder-label' htmlFor={id}>
               {labelContent}

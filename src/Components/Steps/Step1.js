@@ -133,7 +133,12 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
+            dataStep1,
         } = this.props;
+        const {
+            firstName, 
+            lastName,
+        } = dataStep1;
         return (
             <div className='stepBox'>
                 <Title
@@ -142,11 +147,11 @@ class Step1 extends Component {
                 />
                 <form className='form'>
                     <TypeTextInput 
-                        inputText={surnameInput} 
+                        inputText={lastName} 
                         onChange={this.handleSurnameInput} 
                     />
                     <TypeTextInput 
-                        inputText={nameInput} 
+                        inputText={firstName} 
                         onChange={this.handleNameInput}
                     />
                     <div className='phones'>
