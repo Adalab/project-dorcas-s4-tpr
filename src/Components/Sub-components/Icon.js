@@ -24,7 +24,7 @@ class Icon extends Component {
                     <span className={stepState}>
                         {changingStep.stepNumber}
                     </span>
-                    <p>{title}</p>
+                    <p className='nav-label'>{title}</p>
                 </Fragment>       
             )
     }

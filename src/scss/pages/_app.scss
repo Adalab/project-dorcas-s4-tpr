@@ -11,6 +11,23 @@
     background-color: $color-secondary-light;
 }
 
+.step1 {
+    padding-bottom: 270px;
+}
+
+.step2, 
+.step5 {
+    padding-bottom: 175px;
+}
+
+.subtitles-step2 {
+    text-align: center;
+    font-size: $font-size-m;
+    font-weight: $regular;
+    text-transform: uppercase;
+    color: $color-secondary-dark;
+}
+
 .form {
     display: flex;
     flex-direction: column;

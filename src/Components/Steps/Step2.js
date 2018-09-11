@@ -149,14 +149,14 @@ class Step2 extends Component {
         } = this.props;
         console.log('props STEP2', this.props);
         return (
-            <div className='stepBox'>
+            <div className='stepBox step2'>
                 <Title
                     title={title2}
                     step={step2}
                 />
                 <form className='form'>
 
-                    <h2>
+                    <h2 className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.passport"
                             defaultMessage="Passport"
@@ -181,7 +181,7 @@ class Step2 extends Component {
                         />
                     </div>
 
-                    <h2>
+                    <h2 className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.visa"
                             defaultMessage="Visa (optional)"
@@ -195,7 +195,7 @@ class Step2 extends Component {
                         />
                     </div>
 
-                    <h2>
+                    <h2 className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.dniNie"
                             defaultMessage="Id"

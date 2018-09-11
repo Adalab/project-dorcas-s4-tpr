@@ -104,7 +104,7 @@ class Step1 extends Component {
             changingStep,
         } = this.props;
         return (
-            <div className='stepBox'>
+            <div className='stepBox step1'>
                 <Title
                     title={title1}
                     step={step1}

@@ -33,7 +33,7 @@ const emailAddress = {
     />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
-    disable: false
+    disabled: true
 };
 
 const emergencyContactPhone = {
@@ -144,7 +144,7 @@ class Step5 extends Component {
             handleUpdateNavigation
         } = this.props;
         return (
-            <div className='stepBox'>
+            <div className='stepBox step5'>
                 <Title
                     title={title5}
                     step={step5}

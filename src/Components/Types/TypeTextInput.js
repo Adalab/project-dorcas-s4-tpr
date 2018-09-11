@@ -11,7 +11,7 @@ class TypeTextInput extends Component {
         const {
           onChange
         } = this.props;
-        
+
         return (
             <div className='position-label'>
               <input onChange={onChange}
@@ -25,7 +25,7 @@ class TypeTextInput extends Component {
             </label>
             </div>
         );
-    }
+  }  
 }
  
 export default TypeTextInput;
