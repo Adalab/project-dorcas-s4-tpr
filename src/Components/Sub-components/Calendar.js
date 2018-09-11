@@ -13,8 +13,14 @@ class Calendar extends Component {
     }
 
     onDateChange(date) {
-        this.setState({ date }, () => { console.log(this.state) });
-    }
+        console.log(date && date.format("YYYY-MM-DD"));
+        // this.setState({ 
+        //     date: date 
+        // }, () => {console.log(this.state)});
+      }
+    
+        // this.setState({ date }, () => { console.log(this.state) });
+
 
     onFocusChange({ focused }) {
         this.setState({ focused }, () => { console.log(this.state) });

@@ -54,3 +54,18 @@
     font-size: $font-size-s;
     font-weight: $normal;
 }
+
+.stepActive {
+    border: 1px solid black;
+    background-color: lightgreen; }
+  
+.stepInactive {
+    color: white;
+    border: 1px solid #06a790;
+    border-radius: 22px;
+    background-color: #06a790; }
+  
+.stepCompleted {
+    color: white;
+    border: 1px solid #56027e;
+    background-color: #56027e; }
