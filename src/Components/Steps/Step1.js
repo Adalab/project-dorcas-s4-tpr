@@ -58,10 +58,17 @@ class Step1 extends Component {
     constructor(props){
         super(props)
         this.state = {
-            currentStep: 1
+            currentStep: 1,
+            data: {
+                surname:"",
+                name:"",
+                phoneNumber:"",
+                lineNumber:""
+            }
         }
 
         this.handleSurnameInput = this.handleSurnameInput.bind(this)
+        this.handleNameInput = this.handleNameInput.bind(this)
         this.handlePhoneNumber = this.handlePhoneNumber.bind(this)
         this.handleLineNumber = this.handleLineNumber.bind(this)
     }
@@ -75,20 +82,44 @@ class Step1 extends Component {
         }
     }
 
-    handleSurnameInput(){
-        console.log('click surname')
+    handleSurnameInput(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                surname: inputValue
+            }
+        }, ()=>(this.props.handleStep1(this.state.data)));   
     }
 
-    handleNameInput(){
-        console.log('click name')
+    handleNameInput(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                name: inputValue
+            }
+        }, ()=>(this.props.handleStep1(this.state.data)));  
     }
 
-    handlePhoneNumber(){
-        console.log('click phone')
+    handlePhoneNumber(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                phoneNumber: inputValue
+            }
+        }, ()=>(this.props.handleStep1(this.state.data))); 
     }
 
-    handleLineNumber(){
-        console.log('click line numb')
+    handleLineNumber(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                ...this.state.data,
+                lineNumber: inputValue
+            }
+        }, ()=>(this.props.handleStep1(this.state.data))); 
     }
 
     render() {
@@ -110,11 +141,23 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput inputText={surnameInput} onChange={this.handleSurnameInput} />
-                    <TypeTextInput inputText={nameInput} onChange={this.handleNameInput}/>
+                    <TypeTextInput 
+                        inputText={surnameInput} 
+                        onChange={this.handleSurnameInput} 
+                    />
+                    <TypeTextInput 
+                        inputText={nameInput} 
+                        onChange={this.handleNameInput}
+                    />
                     <div className='phones'>
-                        <TypePhoneInput onChange={this.handlePhoneNumber} phoneNumber={mobilePhoneNumber} />
-                        <TypePhoneInput onChange={this.handleLineNumber} phoneNumber={landLineNumber} />
+                        <TypePhoneInput 
+                            onChange={this.handlePhoneNumber} 
+                            phoneNumber={mobilePhoneNumber} 
+                        />
+                        <TypePhoneInput 
+                            onChange={this.handleLineNumber} 
+                            phoneNumber={landLineNumber} 
+                        />
                     </div>
                     <TypeEmailInput emailAdress={emailAdress} />
                 </form>
