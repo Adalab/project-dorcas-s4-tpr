@@ -340,14 +340,14 @@ class Step2 extends Component {
         console.log('props STEP2', this.props);
         console.log('estadoSTEP2', this.state.data);
         return (
-            <div className='stepBox'>
+            <div className='stepBox step2'>
                 <Title
                     title={title2}
                     step={step2}
                 />
                 <form className='form'>
-                    {/* Pasaporte desde aquí */}
-                    <h2>
+
+                    <h2 className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.passport"
                             defaultMessage="Passport"
@@ -379,9 +379,10 @@ class Step2 extends Component {
                             handleDate={this.handlePassExpDate}
                         />
                     </div>
+
+                    <h2 className='subtitles-step2'>
                     {/* Pasaporte hasta aquí */}
                     {/* Visado desde aqui */}
-                    <h2>
                         <FormattedMessage
                             id="Step2.visa"
                             defaultMessage="Visa (optional)"
@@ -432,16 +433,6 @@ class Step2 extends Component {
                     </h2>
 
                     <div className='verticalDisplay'>
-                        <label htmlFor='documentType'>
-                        </label>
-                        <select id='documentType' name='documentType' value=''>
-                            <option value="">
-                                <FormattedMessage
-                                    id="Step2.type"
-                                    defaultMessage="Type"
-                                />
-                            </option>
-                        </select>
 
                         <TypeTextInput
                             onChange={this.handleNumberInput}

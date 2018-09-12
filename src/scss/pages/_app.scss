@@ -1,13 +1,40 @@
+.App {
+    min-height: 100vh;
+    background-color: $color-secondary-light;
+}
+
 .stepBox {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 145px;
     background-color: $color-secondary-light;
+}
+
+.step1 {
+    padding-bottom: 270px;
+}
+
+.step2, 
+.step5 {
+    padding-bottom: 175px;
+}
+
+.subtitles-step2 {
+    text-align: center;
+    font-size: $font-size-m;
+    font-weight: $regular;
+    text-transform: uppercase;
+    color: $color-secondary-dark;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.marginSomeInputs {
+    margin-bottom: 25px;
 }
 
 #landlinePhone {
@@ -24,5 +51,17 @@
 }
 
 .select-step5 {
-    height: 20px;
+    height: 60px;
+    width: 335px;
+    border-radius: 3px;
+    background-color: $color-light;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: $color-primary-dark;
+    font-size: $font-size-l;
+    font-weight: $normal;
+    padding: 15px 35px 15px 15px;
+    margin-bottom: 30px;
+    appearance: none;
 }

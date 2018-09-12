@@ -18,7 +18,7 @@ class TypePhoneInput extends Component {
             <div className='position-label'>
               <input 
                 onChange={onChange}
-                className='control-label'
+                className='control-label marginSomeInputs'
                 id={id}
                 type="tel" 
                 name={name} 

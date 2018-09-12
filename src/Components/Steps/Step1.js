@@ -164,7 +164,7 @@ class Step1 extends Component {
 
         console.log('lastname', this.props.contactInformation);
         return (
-            <div className='stepBox'>
+            <div className='stepBox step1'>
                 <Title
                     title={title1}
                     step={step1}

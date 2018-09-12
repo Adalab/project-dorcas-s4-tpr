@@ -20,6 +20,9 @@
     color: $color-primary-dark;
     font-size: $font-size-xl;
     font-weight: $bold;
+    border-radius: 6px;
+    box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px $color-secondary-light;
     outline: none;
 }
 
@@ -28,11 +31,13 @@
     padding: 3px 0 0 12px;
     } 
 
-.control-label:valid + .placeholder-label {
-
-}    
-
  .label-email {
     font-size: $font-size-m;
     padding: 3px 0 0 12px;
+ }
+
+ .position-calendar {
+     position: relative;
+     height: 85px;
+     display: inline-block;
  }
