@@ -129,10 +129,11 @@ class App extends Component {
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
     this.handleStep1=this.handleStep1.bind(this);
     this.handleStep2=this.handleStep2.bind(this);
+    this.handleStep5=this.handleStep5.bind(this);
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ff418d8625d8e3a613b1c`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
       .then(res => {
         const person = res.data;
         console.log('backend',person)
@@ -141,9 +142,24 @@ class App extends Component {
             personalInformation: {
               lastName: person.personalInformation.lastName,
               firstName: person.personalInformation.firstName,
-            }
+            },
+            extras: {
+              familyNumber: person.extras.familyNumber,
+              islandResident: {
+                region: person.extras.islandResident.region,
+                locality: person.extras.islandResident.locality,
+              },
+            },
+            emergencyContact: [
+              {
+                firstName: person.extras.emergencyContact[0].firstName,
+                lastName: person.extras.emergencyContact[0].lastName,
+                email: person.extras.emergencyContact[0].email,
+                phoneNumber: person.extras.emergencyContact[0].phoneNumber,
+              }
+            ],
           }
-        }, ()=> console.log('222222ireneee', this.state))
+        }, ()=>(console.log(this.state)))
       })
   }
 
@@ -187,6 +203,30 @@ class App extends Component {
               },
           ],
         }
+      }
+    },()=>(console.log(this.state.data)))
+  } 
+
+  handleStep5(data){
+    console.log(data);
+    this.setState({
+      data: {
+        ...this.state.data,
+        extras: {
+          familyNumber: data.familyNumber,
+          islandResident: {
+            region: data.region,
+            locality: data.locality,
+          },
+        },
+        emergencyContact: [
+          {
+            firstName: data.firstNameEmergency,
+            lastName: "",
+            email: data.emailEmergency,
+            phoneNumber: data.phoneNumberEmergency,
+          }
+        ],
       }
     },()=>(console.log(this.state.data)))
   } 
@@ -275,6 +315,7 @@ class App extends Component {
           handleCurrentStep={this.handleCurrentStep}
           handleStep1={this.handleStep1}
           handleStep2={this.handleStep2}
+          handleStep5={this.handleStep5}
           stateDataObject={this.state.data}
         />
       </div>
