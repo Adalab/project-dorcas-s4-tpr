@@ -142,7 +142,7 @@ class Step1 extends Component {
     }
 
     render() {
-        console.log('props STEP1', this.props.personalInformation);
+        console.log('props STEP1', this.props.contactInformation);
         const {
             title1,
             title2,
@@ -160,12 +160,12 @@ class Step1 extends Component {
             lastName,
         } = this.props.personalInformation;
 
-        // const {
-        //     emails,
-        //     phoneNumbers
-        // } = this.props.contactInformation;
+        const {
+            emails,
+            phoneNumbers
+        } = this.props.contactInformation;
 
-        console.log('lastname', this.props.contactInformation);
+        console.log('ALEX', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -184,14 +184,19 @@ class Step1 extends Component {
                     <div className='phones'>
                         <TypePhoneInput 
                             onChange={this.handlePhoneNumber} 
-                            phoneNumber={mobilePhoneNumber} 
+                            phoneNumber={mobilePhoneNumber}
+                            inputText={phoneNumbers[0]}
                         />
                         <TypePhoneInput 
                             onChange={this.handleLineNumber} 
                             phoneNumber={landLineNumber} 
+                            inputText={phoneNumbers[1]} //errata con la API, comentar con Triporate
                         />
                     </div>
-                    <TypeEmailInput emailAdress={emailAdress} />
+                        <TypeEmailInput 
+                        emailAdress={emailAdress}
+                        inputText={emails[0]}
+                         />
                 </form>
                 <Navigation
                     title1={title1}

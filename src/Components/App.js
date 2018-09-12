@@ -141,7 +141,12 @@ class App extends Component {
             personalInformation: {
               lastName: person.personalInformation.lastName,
               firstName: person.personalInformation.firstName,
-            }
+            },
+            contactInformation: {
+                phoneNumbers: person.contactInformation.phoneNumbers,
+                emails: person.contactInformation.emails,
+            },
+            
           }
         }, ()=> console.log('222222ireneee', this.state))
       })
