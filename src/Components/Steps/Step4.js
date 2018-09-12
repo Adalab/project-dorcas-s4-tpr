@@ -123,11 +123,11 @@ class Step4 extends Component {
         console.log('avion ventana o pasillo')
     }
 
-    handlePlainLocation(){
+    handlePlainLocation() {
         console.log('avion adelante,medio o atrás')
     }
 
-    handleTrainPreference(){
+    handleTrainPreference() {
 
     }
 
@@ -154,14 +154,15 @@ class Step4 extends Component {
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}
                         onChangeTrainPreferences={this.handleTrainPreference}
-                
+
                     />
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
-                    {preferences.map(preference => <AccommodationPref
-                        prefContent={preference}
-                        optionSelected={this.state.responses[preference.name]}
-                        onChange={this.handleSelectCheckbox} />)}
+                    <AccommodationPref
+                        onChange={this.handleSelectCheckbox}
+                        onChangeHotelStars={this.handleSelectStars}
+                        onChangeHotelType={this.handleSelectType}
+                    />
                 </form>
                 <Navigation
                     title1={title1}
