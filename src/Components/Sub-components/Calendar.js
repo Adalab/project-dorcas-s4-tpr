@@ -14,18 +14,17 @@ class Calendar extends Component {
     onDateChange(date) {
         // console.log(date && date.format("YYYY-MM-DD"));
         this.props.handleDate(date);
-      }
+    }
 
     onFocusChange({ focused }) {
         this.setState({ focused }, () => { console.log(this.state) });
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { focused, date } = this.state;
         const { id,
             labelContent,
-            onChange
         } = this.props;
         return (
             <Fragment>

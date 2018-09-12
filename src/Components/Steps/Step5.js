@@ -121,10 +121,6 @@ class Step5 extends Component {
         console.log('click email address')
     }
 
-    handleEmergencyContact(){
-        console.log('click emergency contact')
-    }
-
     render() {
         console.log('STEP5', this.props);
         const {
@@ -141,7 +137,6 @@ class Step5 extends Component {
             dot5,
             currentStep,
             changingStep,
-            handleUpdateNavigation
         } = this.props;
         return (
             <div className='stepBox'>

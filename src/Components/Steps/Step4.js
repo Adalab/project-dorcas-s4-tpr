@@ -104,7 +104,6 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
-            handleUpdateNavigation,
         } = this.props;
         return (
             <div className='stepBox'>

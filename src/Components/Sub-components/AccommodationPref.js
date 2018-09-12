@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import TypeCheckboxInput from '../Types/TypeCheckboxInput';
-import { FormattedMessage } from 'react-intl';
 
 class AccommodationPref extends Component {
 

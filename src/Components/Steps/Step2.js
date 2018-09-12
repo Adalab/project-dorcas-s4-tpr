@@ -104,7 +104,16 @@ const visaCountryIssueInput = {
                     defaultMessage="Country of issue"
                 />,
     id: 'visaCountryIssue',
-    name: 'visaCountryIssue'
+    name: 'visaCountryIssue',
+};
+
+const visaCountryDestinationInput = {
+    labelContent: <FormattedMessage
+                    id="Step2.userPassCountryIssue"
+                    defaultMessage="Country of issue"
+                />,
+    id: 'visaCountryDestination',
+    name: 'visaCountryDestination',
 };
 
 const numVisaInput = {
@@ -113,7 +122,7 @@ const numVisaInput = {
                     defaultMessage="Passport number"
                 />,
     id: 'numVisa',
-    name: 'numVisa'
+    name: 'numVisa',
 };
 
 const visaIssueDateCal = {
@@ -151,6 +160,11 @@ class Step2 extends Component {
                 passCountryIssue:"",
                 passIssueDate: "",
                 passExpDate: "",
+                numberVisa: "",
+                visaCountryIssue: "",
+                visaCountryDestination: "",
+                visaIssueDate: "",
+                visaExpDate: "",
                 typeId:"",
                 numberId:"",
                 idIssueDate: "",
@@ -163,6 +177,7 @@ class Step2 extends Component {
         this.handleCountryInput = this.handleCountryInput.bind(this);
         this.handleVisaInput = this.handleVisaInput.bind(this);
         this.handleVisaCountryInput = this.handleVisaCountryInput.bind(this);
+        this.handleVisaCountryDestination = this.handleVisaCountryDestination.bind(this);
         this.handleBirthPlace = this.handleBirthPlace.bind(this);
         this.handleNumberInput = this.handleNumberInput.bind(this);
         this.handlePassIssueDate=this.handlePassIssueDate.bind(this);
@@ -189,7 +204,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 passIssueDate: date,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handlePassExpDate(date){
@@ -198,7 +213,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 passExpDate: date,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
     
     handleIdIssueDate(date){
@@ -207,7 +222,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 idIssueDate: date,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
     
     handleIdExpDate(date){
@@ -216,7 +231,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 idExpDate: date,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handlePassportInput(e) {
@@ -226,7 +241,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 numberPassport: inputValue,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handleCountryInput(e) {
@@ -236,23 +251,60 @@ class Step2 extends Component {
                 ...this.state.data,
                 passCountryIssue: inputValue,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
-
+    //Visa handles
     handleVisaInput (e) {
         console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                numberVisa: inputValue,
+            } 
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handleVisaCountryInput (e) {
         console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                visaCountryIssue: inputValue,
+            } 
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    handleVisaIssueDate (e) {
+    handleVisaCountryDestination (e) {
         console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+        const inputValue=e.target.value;
+        this.setState({
+            data:{
+                ...this.state.data,
+                visaCountryDestination: inputValue,
+            } 
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    handleVisaExpDate (e) {
+    handleVisaIssueDate (date) {
         console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+        this.setState({
+            data:{
+                ...this.state.data,
+                visaIssueDate: date,
+            } 
+        }, ()=>(this.props.handleStep2(this.state.data)));
+    }
+
+    handleVisaExpDate (date) {
+        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
+        this.setState({
+            data:{
+                ...this.state.data,
+                visaExpDate: date,
+            } 
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handleBirthPlace(e) {
@@ -262,7 +314,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 placeBirth: inputValue,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handleNumberInput(e){
@@ -272,7 +324,7 @@ class Step2 extends Component {
                 ...this.state.data,
                 numberId: inputValue,
             } 
-        }, ()=>(this.props.handleStep2(this.state.data)))
+        }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     render() {
@@ -287,6 +339,7 @@ class Step2 extends Component {
             changingStep,
         } = this.props;
         console.log('props STEP2', this.props);
+        console.log('estadoSTEP2', this.state.data);
         return (
             <div className='stepBox'>
                 <Title
@@ -349,7 +402,10 @@ class Step2 extends Component {
                             onChange={this.handleVisaCountryInput} 
                             inputText={visaCountryIssueInput} 
                         />
-
+                        <TypeTextInput 
+                            onChange={this.handleVisaCountryDestination} 
+                            inputText={visaCountryDestinationInput} 
+                        />
                         <div className='verticalDisplay'>
                             <Calendar
                                 labelContent={visaIssueDateCal.labelContent}
