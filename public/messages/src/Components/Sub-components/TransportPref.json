@@ -1,0 +1,34 @@
+[
+  {
+    "id": "TransportPref.flightWindow",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "TransportPref.aisle",
+    "defaultMessage": "Aisle"
+  },
+  {
+    "id": "TransportPref.front",
+    "defaultMessage": "Front"
+  },
+  {
+    "id": "TransportPref.middle",
+    "defaultMessage": "Middle"
+  },
+  {
+    "id": "TransportPref.back",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "TransportPref.prefTrains",
+    "defaultMessage": "Preferences in trains"
+  },
+  {
+    "id": "TransportPref.windowTrain",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "TransportPref.aisleTrain",
+    "defaultMessage": "Aisle"
+  }
+]

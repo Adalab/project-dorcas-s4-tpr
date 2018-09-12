@@ -8,17 +8,21 @@ class AccommodationPref extends Component {
     const {
       onChangeBreakfast,
       onChangeHotelStars,
-      onChangeHotelType
+      onChangeHotelType,
+      translationsAccom,
+      translationsBreakfast,
+      translationsTypeOfAccom
     } = this.props;
 
-
+    console.log( translationsAccom)
+    console.log(translationsBreakfast)
+    console.log(translationsTypeOfAccom)
     return (
       <div>
-        <form >
+        {/* <form >
           <p>
             <FormattedMessage
-              id="Step4.breakfast"
-              defaultMessage="Breakfast"
+              id={translations.id}
             />
           </p>
           <input
@@ -29,8 +33,7 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.always"
-              defaultMessage="Always"
+              id={optionTranslations[0].id}
             />
           </span>
           <input
@@ -41,8 +44,7 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.sometimes"
-              defaultMessage="Sometimes"
+              id={optionTranslations[1].id}
             />
           </span>
           <input
@@ -53,8 +55,7 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.ifIncluded"
-              defaultMessage="Only if included"
+              id={optionTranslations[2].id}
             />
           </span>
           <input
@@ -65,11 +66,10 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.never"
-              defaultMessage="Never"
+              id={optionTranslations[3].id}
             />
           </span>
-        </form>
+        </form> */}
         <form >
           <p>
             <FormattedMessage
