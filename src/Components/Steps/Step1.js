@@ -96,7 +96,6 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        console.log('chula', e.target.value)
         const inputValue = e.target.value
         this.setState({
             data: {
@@ -124,8 +123,10 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                phoneNumber: inputValue
+                surname: this.props.personalInformation.lastName,
+                name: this.props.personalInformation.firstName,
+                phoneNumber:inputValue,
+                lineNumber:""
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
