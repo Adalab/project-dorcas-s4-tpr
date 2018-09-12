@@ -15,45 +15,80 @@ class AccommodationPref extends Component {
     return (
       <div>
         <form >
-          <p>Desayunos</p>
+          <p>
+            <FormattedMessage
+              id="Step4.breakfast"
+              defaultMessage="Breakfast"
+            />
+          </p>
           <input
             type="radio"
             name="breakfast"
             value="Window"
             onChange={onChangeBreakfast}
           />
-          <span>Always</span>
+          <span>
+            <FormattedMessage
+              id="Step4.always"
+              defaultMessage="Always"
+            />
+          </span>
           <input
             type="radio"
             name="breakfast"
             value="Aisle"
             onChange={onChangeBreakfast}
           />
-          <span>Sometimes</span>
+          <span>
+            <FormattedMessage
+              id="Step4.sometimes"
+              defaultMessage="Sometimes"
+            />
+          </span>
           <input
             type="radio"
             name="breakfast"
             value="Window"
             onChange={onChangeBreakfast}
           />
-          <span>Solo si está incluido</span>
+          <span>
+            <FormattedMessage
+              id="Step4.ifIncluded"
+              defaultMessage="Only if included"
+            />
+          </span>
           <input
             type="radio"
             name="breakfast"
             value="Aisle"
             onChange={onChangeBreakfast}
           />
-          <span>Never</span>
+          <span>
+            <FormattedMessage
+              id="Step4.never"
+              defaultMessage="Never"
+            />
+          </span>
         </form>
         <form >
-          <p>Calidad del alojamiento</p>
+          <p>
+            <FormattedMessage
+              id="Step4.accommodationQuality"
+              defaultMessage="Accommodation quality"
+            />
+          </p>
           <input
             type="radio"
             name="stars"
             value="Front"
             onChange={onChangeHotelStars}
           />
-          <span>5 stars</span>
+          <span>
+          <FormattedMessage
+              id="Step4.5stars"
+              defaultMessage="5 stars"
+            />
+          </span>
           <input
             type="radio"
             name="stars"
