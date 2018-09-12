@@ -7,17 +7,19 @@ class TypePhoneInput extends Component {
           labelContent,
           id,
           name,
-          required
+          required,
         } = this.props.phoneNumber;  
 
         const {
-          onChange, 
+          onChange,
+          inputText,
           phoneNumber
         } = this.props;
-        
+        console.log('phoneeeee', this.props);
         return (
             <div className='position-label'>
               <input 
+                value={inputText}
                 onChange={onChange}
                 className='control-label marginSomeInputs'
                 id={id}

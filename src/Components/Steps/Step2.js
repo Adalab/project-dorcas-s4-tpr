@@ -135,6 +135,7 @@ const visaButton = {
     buttonClassHidden: 'hidden',
 };
 
+const passPortString='this.props.travelDocuments.passport[0]';
 class Step2 extends Component {
     constructor(props) {
         super(props)
@@ -142,10 +143,10 @@ class Step2 extends Component {
             buttonHidden: false,
             currentStep: 2,
             data:{
-                numberPassport:"",
-                passCountryIssue:"",
-                passIssueDate: "",
-                passExpDate: "",
+                numberPassport:'',
+                passCountryIssue:'' ,
+                passIssueDate: '',
+                passExpDate: '',
                 numberVisa: "",
                 visaCountryIssue: "",
                 visaCountryDestination: "",
@@ -224,8 +225,20 @@ class Step2 extends Component {
         const inputValue=e.target.value;
         this.setState({
             data:{
-                ...this.state.data,
                 numberPassport: inputValue,
+                passCountryIssue:{passPortString}.passCountryIssue ,
+                passIssueDate: {passPortString}.passIssueDate,
+                passExpDate: {passPortString}.passExpDate,
+                numberVisa: "",
+                visaCountryIssue: "",
+                visaCountryDestination: "",
+                visaIssueDate: "",
+                visaExpDate: "",
+                typeId:"",
+                numberId:"",
+                idIssueDate: "",
+                idExpDate: "",
+                placeBirth:"",
             } 
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
@@ -363,11 +376,12 @@ class Step2 extends Component {
 
                     <TypeTextInput 
                         onChange={this.handlePassportInput}
-                        inputText={numPassportInput} 
+                        inputText={title1} 
                     />
                     <TypeTextInput 
                         onChange={this.handleCountryInput} 
-                        inputText={countryIssueInput} 
+                        inputData={countryIssueInput} 
+                        inputText={this.props.travelDocuments.passport[0].passCountryIssue}
                     />
                     <div className='verticalDisplay'>
                         <Calendar
