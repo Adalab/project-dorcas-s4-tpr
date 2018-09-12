@@ -100,7 +100,7 @@ const idExpDateCal = {
 //Visado
 const visaCountryIssueInput = {
     labelContent: '',
-    id: 'visaCountryIssue',
+    id: 'vsetStateisaCountryIssue',
     name: 'visaCountryIssue',
 };
 

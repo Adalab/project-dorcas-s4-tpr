@@ -143,12 +143,12 @@ class App extends Component {
               firstName: person.personalInformation.firstName,
             }
           }
-        })
+        }, ()=> console.log('222222ireneee', this.state))
       })
   }
 
   handleStep1(data){
-    console.log(data);
+    console.log('aaaaaaaaajjjjjjjjjjjj',data);
     this.setState({
       data: {
         ...this.state.data,
@@ -161,7 +161,7 @@ class App extends Component {
           phoneNumbers: [data.phoneNumber, data.lineNumber],
         },
     }
-  },()=>(console.log(this.state.data)))
+  },()=>(console.log('estoy aqui',this.state.data)))
 } 
 
   handleStep2(data){
