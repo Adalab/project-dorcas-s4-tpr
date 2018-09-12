@@ -45,7 +45,7 @@ const emergencyContactPhone = {
     name: 'emergencyContactPhone',
     required: true
 };
-const locality = {
+const localityOptions = {
     labelContent: <FormattedMessage
         id="Step5.locality"
         defaultMessage="Locality"
@@ -55,7 +55,7 @@ const locality = {
     required: true
 };
 
-const region = [
+const regionOptions = [
     <FormattedMessage
         id="Step5.canaryIslands"
         defaultMessage="Canary Islands"
@@ -99,35 +99,113 @@ class Step5 extends Component {
             currentStep: 5,
             checkedFamily: false,
             checkedResidency: false,
-        }
+            data: {
+                familyNumber: 0,
+                region: '',
+                locality: '',
+                firstNameEmergency: '',
+                emailEmergency: '',
+                phoneNumberEmergency: '',
+                }
+            }
+           
         this.handleLocality = this.handleLocality.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleEmailAddress = this.handleEmailAddress.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleTypeOnOff = this.handleTypeOnOff.bind(this)
         this.handleFamilyNumber = this.handleFamilyNumber.bind(this)
+        this.handleRegion = this.handleRegion.bind(this);
+        this.handleEmergencyPhone = this.handleEmergencyPhone.bind(this);
     }
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-     
-
-    handleLocality() {
-        console.log('click locality')
+    handleFamilyNumber(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                familyNumber: inputValue,
+                region: this.props.extras.islandResident.region,
+                locality: this.props.extras.islandResident.locality,
+                firstNameEmergency: this.props.emergencyContact[0].firstName,
+                emailEmergency: this.props.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                }
+        }, ()=>(this.props.handleStep5(this.state.data))); 
     }
 
-    handleEmergencyContact(){
-        console.log('click emergency contact')
+    handleRegion(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                familyNumber: this.props.extras.familyNumber,
+                region: inputValue,
+                locality: this.props.extras.islandResident.locality,
+                firstNameEmergency: this.props.emergencyContact[0].firstName,
+                emailEmergency: this.props.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                }
+        }, ()=>(this.props.handleStep5(this.state.data)));
     }
 
-    handleEmailAddress(){
-        console.log('click email address')
+    handleLocality(e) {
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                familyNumber: this.props.extras.familyNumber,
+                region: this.props.extras.islandResident.region, 
+                locality: inputValue, 
+                firstNameEmergency: this.props.emergencyContact[0].firstName,
+                emailEmergency: this.props.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                }
+        }, ()=>(this.props.handleStep5(this.state.data)));
     }
 
-    handleFamilyNumber(){
-        console.log('click email address')
+    handleEmergencyContact(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                familyNumber: this.props.extras.familyNumber,
+                region: this.props.extras.islandResident.region,
+                locality: this.props.extras.islandResident.locality,
+                firstNameEmergency: inputValue,
+                emailEmergency: this.props.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                }
+        }, ()=>(this.props.handleStep5(this.state.data)));
     }
+
+    handleEmailAddress(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                familyNumber: this.props.extras.familyNumber,
+                region: this.props.extras.islandResident.region,
+                locality: this.props.extras.islandResident.locality,
+                firstNameEmergency: this.props.emergencyContact[0].firstName,
+                emailEmergency: inputValue,
+                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                }
+        }, ()=>(this.props.handleStep5(this.state.data)));  
+    }
+
+    handleEmergencyPhone(e){
+        const inputValue = e.target.value
+        this.setState({
+            data: {
+                familyNumber: this.props.extras.familyNumber,
+                region: this.props.extras.islandResident.region,
+                locality: this.props.extras.islandResident.locality,
+                firstNameEmergency: this.props.emergencyContact[0].firstName,
+                emailEmergency: this.props.emergencyContact[0].email, 
+                phoneNumberEmergency: inputValue,
+                }
+        }, ()=>(this.props.handleStep5(this.state.data)));  
+    }
+
 
     handleTypeOnOff(e){
         if (e.currentTarget.id=== 'largeFamily' ){
@@ -143,6 +221,21 @@ class Step5 extends Component {
     
 
     render() {
+        const {
+            familyNumber,
+        } = this.props.extras;
+
+        const {
+            region,
+            locality,
+        } = this.props.extras.islandResident;
+        
+        const {
+            firstName,
+            email,
+            phoneNumber
+        } = this.props.emergencyContact[0];
+
         console.log('STEP5', this.props);
         const {
             title1,
@@ -151,11 +244,6 @@ class Step5 extends Component {
             title4,
             title5,
             step5,
-            dot1,
-            dot2,
-            dot3,
-            dot4,
-            dot5,
             currentStep,
             changingStep,
         } = this.props;
@@ -172,6 +260,7 @@ class Step5 extends Component {
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
                         inputData={familyNumberInput}
+                        inputText={familyNumber}
                         toggleClass={this.state.checkedFamily ? '' : 'hidden'}
                     />
                     <TypeOnOff 
@@ -180,8 +269,9 @@ class Step5 extends Component {
                     />
                     <div className={this.state.checkedResidency ? '' : 'hidden'}>
                         <TypeSelect 
-                            options={region}
+                            options={regionOptions}
                             classOfSelect={classOfSelect}
+                            onChange={this.handleRegion}
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}
@@ -197,14 +287,15 @@ class Step5 extends Component {
                         <TypeTextInput
                             onChange={this.handleEmergencyContact}
                             inputData={emergencyContactInput}
+                            inputText={firstName}
                         />
                         <TypeEmailInput
                             onChange={this.handleEmailAddress}
-                            emailAdress={emailAddress}
+                            emailAddress={email}
                         />
                         <TypePhoneInput
-                            onChange={this.handleEmergencyContact}
-                            phoneNumber={emergencyContactPhone}
+                            onChange={this.handleEmergencyPhone}
+                            phoneNumber={phoneNumber}
                         />
                     </div>
                 </form>
@@ -214,11 +305,6 @@ class Step5 extends Component {
                     title3={title3}
                     title4={title4}
                     title5={title5}
-                    dot1={dot1}
-                    dot2={dot2}
-                    dot3={dot3}
-                    dot4={dot4}
-                    dot5={dot5}
                     currentStep={currentStep}
                     changingStep={changingStep}
                 />

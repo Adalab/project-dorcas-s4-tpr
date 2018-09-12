@@ -8,8 +8,6 @@ class TypeTextInput extends Component {
           name,
         } = this.props.inputData;  
 
-
-
         const {
           onChange,
           toggleClass,

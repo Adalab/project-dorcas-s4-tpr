@@ -126,8 +126,10 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                phoneNumber: inputValue
+                surname: this.props.personalInformation.lastName,
+                name: this.props.personalInformation.firstName,
+                phoneNumber:inputValue,
+                lineNumber:""
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
@@ -136,14 +138,16 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                lineNumber: inputValue
+                surname: this.props.personalInformation.lastName,
+                name: this.props.personalInformation.firstName,
+                phoneNumber:this.props.personalInformation.phoneNumbers[0],
+                lineNumber:inputValue
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
 
     render() {
-        console.log('props STEP1', this.props.personalInformation);
+        console.log('props STEP1', this.props.contactInformation);
         const {
             title1,
             title2,
@@ -153,7 +157,6 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
-            dataStep1,
             
         } = this.props;
         const {
@@ -161,12 +164,12 @@ class Step1 extends Component {
             lastName,
         } = this.props.personalInformation;
 
-        // const {
-        //     emails,
-        //     phoneNumbers
-        // } = this.props.contactInformation;
+        const {
+            emails,
+            phoneNumbers
+        } = this.props.contactInformation;
 
-        console.log('lastname', this.props.contactInformation);
+        console.log('ALEX', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -187,14 +190,19 @@ class Step1 extends Component {
                     <div className='phones'>
                         <TypePhoneInput 
                             onChange={this.handlePhoneNumber} 
-                            phoneNumber={mobilePhoneNumber} 
+                            phoneNumber={mobilePhoneNumber}
+                            inputText={phoneNumbers[0]}
                         />
                         <TypePhoneInput 
                             onChange={this.handleLineNumber} 
                             phoneNumber={landLineNumber} 
+                            inputText={phoneNumbers[1]} //errata con la API, comentar con Triporate
                         />
                     </div>
-                    <TypeEmailInput emailAdress={emailAdress} />
+                        <TypeEmailInput 
+                        emailAdress={emailAdress}
+                        inputText={emails[0]}
+                         />
                 </form>
                 <Navigation
                     title1={title1}
