@@ -54,6 +54,7 @@ const landLineNumber = {
     required: false
 };
 
+
 class Step1 extends Component {
     constructor(props){
         super(props)
@@ -75,6 +76,21 @@ class Step1 extends Component {
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
     }
+    // componentWillUpdate(){
+         
+    //     const { 
+    //         lastName
+    //         }= this.props.dataStep1;
+    //         console.log('locura', lastName);
+    //         if (lastName !== 'undefined'){
+    //             this.setState ({
+    //                 data: {
+    //                     ...this.state.data,
+    //                     surname: lastName
+    //                 }
+    //             })
+    //         }
+    // }
     
     handleNextStepClass(){
         if(this.props.currentStep===1){
@@ -133,7 +149,20 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
+            dataStep1,
+            
         } = this.props;
+        const {
+            firstName, 
+            lastName,
+        } = this.props.personalInformation;
+
+        // const {
+        //     emails,
+        //     phoneNumbers
+        // } = this.props.contactInformation;
+
+        console.log('lastname', this.props.contactInformation);
         return (
             <div className='stepBox'>
                 <Title
@@ -142,11 +171,11 @@ class Step1 extends Component {
                 />
                 <form className='form'>
                     <TypeTextInput 
-                        inputText={surnameInput} 
+                        inputText={lastName} 
                         onChange={this.handleSurnameInput} 
                     />
                     <TypeTextInput 
-                        inputText={nameInput} 
+                        inputText={firstName} 
                         onChange={this.handleNameInput}
                     />
                     <div className='phones'>
