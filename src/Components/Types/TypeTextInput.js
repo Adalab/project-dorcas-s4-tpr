@@ -5,13 +5,13 @@ class TypeTextInput extends Component {
         const {
           labelContent,  
           id,
-          name,
-          inputText
-        } = this.props.inputText;  
+          name
+        } = this.props.inputData;  
 
         const {
           onChange,
-          toggleClass
+          toggleClass,
+          value,
         } = this.props;
 
         return (
@@ -21,7 +21,7 @@ class TypeTextInput extends Component {
                 id={id} 
                 type="text" 
                 name={name}
-                value={this.props.inputText}
+                value={value}
               />
               <label className='placeholder-label' htmlFor={id}>
               {labelContent}

@@ -170,11 +170,13 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput 
+                    <TypeTextInput
+                        inputData={surnameInput}
                         inputText={lastName} 
                         onChange={this.handleSurnameInput} 
                     />
                     <TypeTextInput 
+                        inputData={nameInput}
                         inputText={firstName} 
                         onChange={this.handleNameInput}
                     />

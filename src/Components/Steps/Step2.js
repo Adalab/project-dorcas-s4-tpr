@@ -356,11 +356,11 @@ class Step2 extends Component {
 
                     <TypeTextInput 
                         onChange={this.handlePassportInput}
-                        inputText={numPassportInput} 
+                        inputData={numPassportInput} 
                     />
                     <TypeTextInput 
                         onChange={this.handleCountryInput} 
-                        inputText={countryIssueInput} 
+                        inputData={countryIssueInput} 
                     />
 
                     <div className='verticalDisplay'>
@@ -396,15 +396,15 @@ class Step2 extends Component {
 
                         <TypeTextInput 
                             onChange={this.handleVisaInput}
-                            inputText={numVisaInput} 
+                            inputData={numVisaInput} 
                         />
                         <TypeTextInput 
                             onChange={this.handleVisaCountryInput} 
-                            inputText={visaCountryIssueInput} 
+                            inputData={visaCountryIssueInput} 
                         />
                         <TypeTextInput 
                             onChange={this.handleVisaCountryDestination} 
-                            inputText={visaCountryDestinationInput} 
+                            inputData={visaCountryDestinationInput} 
                         />
                         <div className='verticalDisplay'>
                             <Calendar
@@ -436,7 +436,7 @@ class Step2 extends Component {
 
                         <TypeTextInput
                             onChange={this.handleNumberInput}
-                            inputText={documentNumberInput} />
+                            inputData={documentNumberInput} />
                     </div>
 
                     <div className='verticalDisplay'>
@@ -458,7 +458,7 @@ class Step2 extends Component {
 
                         <TypeTextInput
                             onChange={this.handleBirthPlace}
-                            inputText={birthPlaceInput}
+                            inputData={birthPlaceInput}
                         />
                     </div>
                 </form>

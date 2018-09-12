@@ -171,7 +171,7 @@ class Step5 extends Component {
                         handleTypeOnOff={this.handleTypeOnOff}/>
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
-                        inputText={familyNumberInput}
+                        inputData={familyNumberInput}
                         toggleClass={this.state.checkedFamily ? '' : 'hidden'}
                     />
                     <TypeOnOff 
@@ -185,7 +185,7 @@ class Step5 extends Component {
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}
-                            inputText={locality}
+                            inputData={locality}
                         />
                     </div>
                     <h2><FormattedMessage
@@ -196,7 +196,7 @@ class Step5 extends Component {
                     <div className='emergencyContact-container'>
                         <TypeTextInput
                             onChange={this.handleEmergencyContact}
-                            inputText={emergencyContactInput}
+                            inputData={emergencyContactInput}
                         />
                         <TypeEmailInput
                             onChange={this.handleEmailAddress}
