@@ -112,15 +112,16 @@ class Step4 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    handleSelectCheckbox(type, value) {
-        this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [type]: value } }))
-        console.log(this.state)
+    handleSelectCheckbox() {
+        console.log('desayuno si o no?')
     }
 
     handlePlainPreference() {
-        // this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [tipo]: valor } }))
-        // console.log(this.state)
         console.log('avion ventana o pasillo')
+    }
+
+    handleSelectStars(){
+        console.log('elegir estrellas')
     }
 
     handlePlainLocation() {
@@ -128,7 +129,11 @@ class Step4 extends Component {
     }
 
     handleTrainPreference() {
+        console.log('preferencia tren')
+    }
 
+    handleSelectType(){
+        console.log('tipo de alojamiento')
     }
 
     render() {
@@ -154,12 +159,11 @@ class Step4 extends Component {
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}
                         onChangeTrainPreferences={this.handleTrainPreference}
-
                     />
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
                     <AccommodationPref
-                        onChange={this.handleSelectCheckbox}
+                        onChangeBreakfast={this.handleSelectCheckbox}
                         onChangeHotelStars={this.handleSelectStars}
                         onChangeHotelType={this.handleSelectType}
                     />

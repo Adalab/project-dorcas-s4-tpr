@@ -5,7 +5,6 @@ class AccommodationPref extends Component {
   render() {
 
     const {
-      optionSelected,
       onChangeBreakfast,
       onChangeHotelStars,
       onChangeHotelType
