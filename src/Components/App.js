@@ -163,7 +163,7 @@ class App extends Component {
   }
 
   handleStep1(data){
-    console.log(data);
+    console.log('aaaaaaaaajjjjjjjjjjjj',data);
     this.setState({
       data: {
         ...this.state.data,
@@ -176,7 +176,7 @@ class App extends Component {
           phoneNumbers: [data.phoneNumber, data.lineNumber],
         },
     }
-  },()=>(console.log(this.state.data)))
+  },()=>(console.log('estoy aqui',this.state.data)))
 } 
 
   handleStep2(data){
