@@ -132,7 +132,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ff418d8625d8e3a613b1c`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
       .then(res => {
         const person = res.data;
         console.log('backend',person)
@@ -141,9 +141,24 @@ class App extends Component {
             personalInformation: {
               lastName: person.personalInformation.lastName,
               firstName: person.personalInformation.firstName,
-            }
+            },
+            extras: {
+              familyNumber: person.extras.familyNumber,
+              islandResident: {
+                region: person.extras.islandResident.region,
+                locality: person.extras.islandResident.locality,
+              },
+            },
+            emergencyContact: [
+              {
+                firstName: person.extras.emergencyContact[0].firstName,
+                lastName: person.extras.emergencyContact[0].lastName,
+                email: person.extras.emergencyContact[0].email,
+                phoneNumber: person.extras.emergencyContact[0].phoneNumber,
+              }
+            ],
           }
-        })
+        }, ()=>(console.log(this.state)))
       })
   }
 

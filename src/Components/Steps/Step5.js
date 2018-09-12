@@ -45,7 +45,7 @@ const emergencyContactPhone = {
     name: 'emergencyContactPhone',
     required: true
 };
-const locality = {
+const localityOptions = {
     labelContent: <FormattedMessage
         id="Step5.locality"
         defaultMessage="Locality"
@@ -55,7 +55,7 @@ const locality = {
     required: true
 };
 
-const region = [
+const regionOptions = [
     <FormattedMessage
         id="Step5.canaryIslands"
         defaultMessage="Canary Islands"
@@ -99,7 +99,16 @@ class Step5 extends Component {
             currentStep: 5,
             checkedFamily: false,
             checkedResidency: false,
-        }
+            data: {
+                familyNumber: 0,
+                region: '',
+                locality: '',
+                firstNameEmergency: '',
+                emailEmergency: '',
+                phoneNumberEmergency: '',
+                }
+            }
+           
         this.handleLocality = this.handleLocality.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleEmailAddress = this.handleEmailAddress.bind(this)
@@ -111,10 +120,15 @@ class Step5 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-     
-
-    handleLocality() {
+    handleLocality(e) {
         console.log('click locality')
+        // const inputValue = e.target.value
+        // this.setState({
+        //     data: {
+        //         ...this.state.data,
+        //         surname: inputValue
+        //     }
+        // }, ()=>(this.props.handleStep1(this.state.data)));
     }
 
     handleEmergencyContact(){
@@ -143,6 +157,21 @@ class Step5 extends Component {
     
 
     render() {
+        const {
+            familyNumber,
+        } = this.props.extras;
+
+        const {
+            region,
+            locality,
+        } = this.props.extras.islandResident;
+        
+        const {
+            firstName,
+            email,
+            phoneNumber
+        } = this.props.emergencyContact[0];
+
         console.log('STEP5', this.props);
         const {
             title1,
@@ -180,12 +209,12 @@ class Step5 extends Component {
                     />
                     <div className={this.state.checkedResidency ? '' : 'hidden'}>
                         <TypeSelect 
-                            options={region}
+                            options={regionOptions}
                             classOfSelect={classOfSelect}
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}
-                            inputText={locality}
+                            inputText={localityOptions}
                         />
                     </div>
                     <h2><FormattedMessage
