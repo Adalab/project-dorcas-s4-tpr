@@ -99,45 +99,30 @@ const idExpDateCal = {
 };
 //Visado
 const visaCountryIssueInput = {
-    labelContent: <FormattedMessage
-                    id="Step2.userPassCountryIssue"
-                    defaultMessage="Country of issue"
-                />,
+    labelContent: '',
     id: 'visaCountryIssue',
     name: 'visaCountryIssue',
 };
 
 const visaCountryDestinationInput = {
-    labelContent: <FormattedMessage
-                    id="Step2.userPassCountryIssue"
-                    defaultMessage="Country of issue"
-                />,
+    labelContent: '',
     id: 'visaCountryDestination',
     name: 'visaCountryDestination',
 };
 
 const numVisaInput = {
-    labelContent: <FormattedMessage
-                    id="Step2.userPassportNumber"
-                    defaultMessage="Passport number"
-                />,
+    labelContent: '',
     id: 'numVisa',
     name: 'numVisa',
 };
 
 const visaIssueDateCal = {
-    labelContent: <FormattedMessage
-        id="Step2.userPassDateIssue"
-        defaultMessage="Date of issue"
-    />,
+    labelContent: '',
     id: "visaIssueDate",
 };
 
 const visaExpDateCal = {
-    labelContent: <FormattedMessage
-        id="Step2.userPassExpirationDate"
-        defaultMessage="Expiration date"
-    />,
+    labelContent: '',
     id: "visaExpirationDate",
 };
 
