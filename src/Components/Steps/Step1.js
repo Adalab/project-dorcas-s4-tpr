@@ -6,13 +6,14 @@ import TypeEmailInput from '../Types/TypeEmailInput';
 import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 
-const surnameInput = {
+let surnameInput = {
     labelContent: <FormattedMessage
         id="Step1.userSurname"
         defaultMessage="Surname"
     />,
     id: 'surname',
-    name: 'surname'
+    name: 'surname',
+    className: ''
 };
 
 const nameInput = {
@@ -21,7 +22,8 @@ const nameInput = {
         defaultMessage="Name"
     />,
     id: 'name',
-    name: 'name'
+    name: 'name',
+    className: ''
 };
 
 const emailAdress = {
@@ -61,8 +63,8 @@ class Step1 extends Component {
         this.state = {
             currentStep: 1,
             data: {
-                surname:"",
-                name:"",
+                surname: '',
+                name:'',
                 phoneNumber:"",
                 lineNumber:""
             }
@@ -76,22 +78,19 @@ class Step1 extends Component {
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
     }
-    // componentWillUpdate(){
-         
-    //     const { 
-    //         lastName
-    //         }= this.props.dataStep1;
-    //         console.log('locura', lastName);
-    //         if (lastName !== 'undefined'){
-    //             this.setState ({
-    //                 data: {
-    //                     ...this.state.data,
-    //                     surname: lastName
-    //                 }
-    //             })
-    //         }
-    // }
-    
+
+    componentDidUpdate(prevState){
+        if(prevState == this.state){
+            this.setState({
+                data: {
+                    ...this.state.data,
+                    surname:this.props.personalInformation.lastName,
+                    name:this.props.personalInformation.firstName,
+                }
+            });
+        } 
+    }
+
     handleNextStepClass(){
         if(this.props.currentStep===1){
             return 'hidden'
@@ -99,11 +98,17 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        const inputValue = e.target.value
+        console.log('chula', e.target.value);
+        const inputValue = e.target.value;
+        if (inputValue.length > 0) {
+            surnameInput.className ='label-located';
+        }
         this.setState({
             data: {
-                ...this.state.data,
-                surname: inputValue
+                surname: inputValue,
+                name:this.props.personalInformation.firstName,
+                phoneNumber:"",
+                lineNumber:""
             }
         }, ()=>(this.props.handleStep1(this.state.data)));   
     }
@@ -112,8 +117,10 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                name: inputValue
+                surname: this.props.personalInformation.lastName,
+                name:inputValue,
+                phoneNumber:"",
+                lineNumber:""
             }
         }, ()=>(this.props.handleStep1(this.state.data)));  
     }
@@ -139,7 +146,7 @@ class Step1 extends Component {
     }
 
     render() {
-        console.log('props STEP1', this.props);
+        console.log('props STEP1', this.props.personalInformation);
         const {
             title1,
             title2,
