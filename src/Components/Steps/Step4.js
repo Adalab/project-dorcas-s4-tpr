@@ -112,23 +112,28 @@ class Step4 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    handleSelectCheckbox(type, value) {
-        this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [type]: value } }))
-        console.log(this.state)
+    handleSelectCheckbox() {
+        console.log('desayuno si o no?')
     }
 
     handlePlainPreference() {
-        // this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [tipo]: valor } }))
-        // console.log(this.state)
         console.log('avion ventana o pasillo')
     }
 
-    handlePlainLocation(){
+    handleSelectStars(){
+        console.log('elegir estrellas')
+    }
+
+    handlePlainLocation() {
         console.log('avion adelante,medio o atrás')
     }
 
-    handleTrainPreference(){
+    handleTrainPreference() {
         console.log('preferencia tren')
+    }
+
+    handleSelectType(){
+        console.log('tipo de alojamiento')
     }
 
     render() {
@@ -154,14 +159,14 @@ class Step4 extends Component {
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}
                         onChangeTrainPreferences={this.handleTrainPreference}
-                
                     />
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
-                    {preferences.map(preference => <AccommodationPref
-                        prefContent={preference}
-                        optionSelected={this.state.responses[preference.name]}
-                        onChange={this.handleSelectCheckbox} />)}
+                    <AccommodationPref
+                        onChangeBreakfast={this.handleSelectCheckbox}
+                        onChangeHotelStars={this.handleSelectStars}
+                        onChangeHotelType={this.handleSelectType}
+                    />
                 </form>
                 <Navigation
                     title1={title1}

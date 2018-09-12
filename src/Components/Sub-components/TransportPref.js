@@ -9,12 +9,6 @@ class TransportPref extends Component {
             onChangePlainPreferences,
             onChangePlainLocation,
             onChangeTrainPreferences,
-            plainPreferences,
-            trainPreferences,
-            nombre,
-            tipo,
-            onChange,
-            isChecked
         } = this.props;
 
         return (
