@@ -40,7 +40,8 @@ class Pages extends Component {
     const { 
       handleCurrentStep,
       handleStep1,
-      handleStep2
+      handleStep2, 
+      handleStep5,
     } = this.props;
     console.log('extras', extras);
     return (
@@ -133,6 +134,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 extras={extras}
                 emergencyContact={emergencyContact}
+                handleStep5={handleStep5}
               />}
           />
         </Switch>
