@@ -13,11 +13,11 @@ class TypeTextInput extends Component {
           onChange,
           toggleClass
         } = this.props;
-        
+
         return (
             <div className={`position-label ${toggleClass}`}>
               <input onChange={onChange}
-                className='control-label'
+                className='control-label marginSomeInputs'
                 id={id} 
                 type="text" 
                 name={name}
@@ -28,7 +28,7 @@ class TypeTextInput extends Component {
             </label>
             </div>
         );
-    }
+  }  
 }
  
 export default TypeTextInput;
