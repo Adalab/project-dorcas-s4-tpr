@@ -84,7 +84,7 @@ class AccommodationPref extends Component {
             onChange={onChangeHotelStars}
           />
           <span>
-          <FormattedMessage
+            <FormattedMessage
               id="Step4.5stars"
               defaultMessage="5 stars"
             />
@@ -95,52 +95,92 @@ class AccommodationPref extends Component {
             value="Middle"
             onChange={onChangeHotelStars}
           />
-          <span>From 4 stars</span>
+          <span>
+            <FormattedMessage
+              id="Step4.fromFourStars"
+              defaultMessage="From 4 Stars"
+            />
+          </span>
           <input
             type="radio"
             name="stars"
             value="Back"
             onChange={onChangeHotelStars}
           />
-          <span>From 3 stars</span>
+          <span>
+            <FormattedMessage
+              id="Step4.fromThreeStars"
+              defaultMessage="From 3 Stars"
+            />
+          </span>
           <input
             type="radio"
             name="stars"
             value="Back"
             onChange={onChangeHotelStars}
           />
-          <span>From 2 stars</span>
+          <span>
+            <FormattedMessage
+              id="Step4.fromTwoStars"
+              defaultMessage="From 2 Stars"
+            />
+          </span>
         </form>
         <form >
-          <p>Tipo de alojamiento</p>
+          <p>
+            <FormattedMessage
+              id="Step4.typeOfAccommodation"
+              defaultMessage="Type of accommodation"
+            />
+          </p>
           <input
             type="radio"
             name="type"
             value="Window"
             onChange={onChangeHotelType}
           />
-          <span>Irrelevante</span>
+          <span>
+            <FormattedMessage
+              id="Step4.irrelevant"
+              defaultMessage="Irrelevant"
+            />
+          </span>
           <input
             type="radio"
             name="type"
             value="Aisle"
             onChange={onChangeHotelType}
           />
-          <span>Clásica</span>
+          <span>
+            <FormattedMessage
+              id="Step4.classic"
+              defaultMessage="Classic"
+            />
+          </span>
           <input
             type="radio"
             name="type"
             value="Window"
             onChange={onChangeHotelType}
           />
-          <span>Moderno</span>
+          <span>
+            <FormattedMessage
+              id="Step4.modern"
+              defaultMessage="Modern"
+            />
+          </span>
           <input
             type="radio"
             name="type"
             value="Aisle"
             onChange={onChangeHotelType}
           />
-          <span>Nicho</span>
+          <span>
+            <FormattedMessage
+              id="Step4.niche"
+              defaultMessage="Niche"
+            />
+          </span>
         </form>
 
       </div>
