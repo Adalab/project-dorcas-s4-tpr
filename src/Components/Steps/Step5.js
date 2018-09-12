@@ -126,6 +126,9 @@ class Step5 extends Component {
     }
 
     handleTypeOnOff(e){
+<<<<<<< HEAD
+        console.log('hola', e);
+=======
         if (e.currentTarget.id=== 'largeFamily' ){
             this.setState({
                 checkedFamily:  !this.state.checkedFamily,
@@ -135,6 +138,7 @@ class Step5 extends Component {
             checkedResidency: !this.state.checkedResidency,
             } )
         }
+>>>>>>> master
     }
     
 
