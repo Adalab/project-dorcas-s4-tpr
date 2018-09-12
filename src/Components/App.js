@@ -210,7 +210,7 @@ class App extends Component {
       changingStep4,
       changingStep5
     } = changingStep;
-    console.log('changingStep, step', changingStep, step);
+    // console.log('changingStep, step', changingStep, step);
     if (changingStep1.stepNumber === step) {
       this.setState({
         changingStep: {
