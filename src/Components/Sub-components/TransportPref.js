@@ -43,21 +43,21 @@ class TransportPref extends Component {
                             type="radio"
                             name="ubication"
                             value="Front"
-                            onChange={onChangeTrainPreferences}
+                            onChange={onChangePlainLocation}
                         />
                         <span>Middle</span>
                         <input
                             type="radio"
                             name="ubication"
                             value="Middle"
-                            onChange={onChangeTrainPreferences}
+                            onChange={onChangePlainLocation}
                         />
                         <span>Back</span>
                         <input
                             type="radio"
                             name="ubication"
                             value="Back"
-                            onChange={onChangeTrainPreferences}
+                            onChange={onChangePlainLocation}
                         />
                     </form>
                     <h2>Preferencias en trenes</h2>
@@ -67,12 +67,14 @@ class TransportPref extends Component {
                             type="radio"
                             name="window"
                             value="Window"
+                            onChange={onChangeTrainPreferences}
                         />
                         <span>Aisle</span>
                         <input
                             type="radio"
-                            name="aisle"
+                            name="window"
                             value="Aisle"
+                            onChange={onChangeTrainPreferences}
                         />
                     </form>
                 </legend>
