@@ -6,19 +6,22 @@ class TypeTextInput extends Component {
           labelContent,  
           id,
           name,
+          inputText
         } = this.props.inputText;  
 
         const {
-          onChange
+          onChange,
+          toggleClass
         } = this.props;
 
         return (
-            <div className='position-label'>
+            <div className={`position-label ${toggleClass}`}>
               <input onChange={onChange}
                 className='control-label marginSomeInputs'
                 id={id} 
                 type="text" 
                 name={name}
+                value={this.props.inputText}
               />
               <label className='placeholder-label' htmlFor={id}>
               {labelContent}

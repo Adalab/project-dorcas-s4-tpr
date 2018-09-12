@@ -5,7 +5,6 @@ class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: null,
             focused: false,
         }
         this.onDateChange = this.onDateChange.bind(this);
@@ -13,23 +12,20 @@ class Calendar extends Component {
     }
 
     onDateChange(date) {
-        console.log(date && date.format("YYYY-MM-DD"));
-        // this.setState({ 
-        //     date: date 
-        // }, () => {console.log(this.state)});
-      }
-    
-        // this.setState({ date }, () => { console.log(this.state) });
-
+        // console.log(date && date.format("YYYY-MM-DD"));
+        this.props.handleDate(date);
+    }
 
     onFocusChange({ focused }) {
         this.setState({ focused }, () => { console.log(this.state) });
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { focused, date } = this.state;
-        const { id, labelContent } = this.props;
+        const { id,
+            labelContent,
+        } = this.props;
         return (
             <div className='position-calendar'>
                 <SingleDatePicker

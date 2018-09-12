@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import TypeCheckboxInput from '../Types/TypeCheckboxInput';
+// import TypeCheckboxInput from '../Types/TypeCheckboxInput';
 import { FormattedMessage } from 'react-intl';
 
 class AccommodationPref extends Component {
 
   render() {
-    console.log('propsACCOM', this.props);
-    
+ 
     const {
       optionSelected,
       onChange,
@@ -23,8 +22,8 @@ class AccommodationPref extends Component {
       <Fragment>
         <legend>
           {legendContent}
-          {options.map(option => <TypeCheckboxInput
-            type={name}
+          {options.map(option => <input
+            // type="radio"
             onChange={onChange}
             isChecked={optionSelected === option}
             name={option} />

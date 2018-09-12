@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <div className='header'>
         <img className='logoTRP' src={logo} alt='Logo Triporate'/> 
-        <img src=''/>
+        <img src='' alt=''/>
       </div>
     );
   }

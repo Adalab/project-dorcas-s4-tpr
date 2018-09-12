@@ -15,6 +15,12 @@ class Pages extends Component {
       changingStep,
       titles,
     } = this.props.stateObject;
+
+    const{
+      personalInformation,
+      contactInformation,
+    } = this.props.stateDataObject;
+
     const {
       title1,
       title2,
@@ -31,7 +37,10 @@ class Pages extends Component {
     } = steps;
     const { 
       handleCurrentStep,
+      handleStep1,
+      handleStep2
     } = this.props;
+    console.log('personalInformation', personalInformation);
     return (
       <Fragment>
         <Switch>
@@ -56,6 +65,9 @@ class Pages extends Component {
                 currentStep={currentStep}
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
+                handleStep1={handleStep1}
+                personalInformation={personalInformation}
+                contactInformation= {contactInformation}
               />}
           />
           <Route
@@ -71,6 +83,7 @@ class Pages extends Component {
                 currentStep={currentStep}
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
+                handleStep2={handleStep2}
               />}
           />
           <Route

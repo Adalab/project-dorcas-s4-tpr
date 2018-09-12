@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Title from '../Sub-components/Title';
 import AccommodationPref from '../Sub-components/AccommodationPref';
+import TransportPref from '../Sub-components/TransportPref';
 import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
 
@@ -75,22 +76,59 @@ const preferences = [
     }
 ]
 
+const plainPreferences = [
+    <FormattedMessage
+        id="Step4.window"
+        defaultMessage="Window"
+    />,
+    <FormattedMessage
+        id="Step4.aisle"
+        defaultMessage="Aisle"
+    />
+]
+
+const trainPreferences = [
+    <FormattedMessage
+        id="Step4.trainWindow"
+        defaultMessage="Window"
+    />,
+    <FormattedMessage
+        id="Step4.trainAisle"
+        defaultMessage="Aisle"
+    />
+]
+
 class Step4 extends Component {
     constructor(props) {
         super(props)
-        this.state = { 
-            responses: {}, 
+        this.state = {
+            responses: {},
             currentStep: 4
-    }
+        }
         this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
     handleSelectCheckbox(type, value) {
         this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [type]: value } }))
+        console.log(this.state)
+    }
+
+    handlePlainPreference() {
+        // this.setState(prevState => ({ ...prevState, responses: { ...prevState.responses, [tipo]: valor } }))
+        // console.log(this.state)
+        console.log('avion ventana o pasillo')
+    }
+
+    handlePlainLocation(){
+        console.log('avion adelante,medio o atrás')
+    }
+
+    handleTrainPreference(){
+        console.log('preferencia tren')
     }
 
     render() {
@@ -104,7 +142,6 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
-            handleUpdateNavigation,
         } = this.props;
         return (
             <div className='stepBox'>
@@ -113,6 +150,12 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
+                    <TransportPref
+                        onChangePlainPreferences={this.handlePlainPreference}
+                        onChangePlainLocation={this.handlePlainLocation}
+                        onChangeTrainPreferences={this.handleTrainPreference}
+                
+                    />
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
                     {preferences.map(preference => <AccommodationPref
