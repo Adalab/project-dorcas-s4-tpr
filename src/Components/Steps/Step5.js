@@ -122,7 +122,6 @@ class Step5 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-<<<<<<< HEAD
     handleFamilyNumber(e){
         const inputValue = e.target.value
         this.setState({
@@ -163,10 +162,6 @@ class Step5 extends Component {
                 phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));
-=======
-    handleLocality() {
-        console.log('click locality')
->>>>>>> master
     }
 
     handleEmergencyContact(e){
