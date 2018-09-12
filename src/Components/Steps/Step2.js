@@ -376,6 +376,7 @@ class Step2 extends Component {
 
                     <TypeTextInput 
                         onChange={this.handlePassportInput}
+                        inputData={numPassportInput} 
                         inputText={title1} 
                     />
                     <TypeTextInput 
@@ -455,7 +456,7 @@ class Step2 extends Component {
                     <div className='verticalDisplay'>
                         <TypeTextInput
                             onChange={this.handleNumberInput}
-                            inputText={documentNumberInput} />
+                            inputData={documentNumberInput} />
                     </div>
                     <div className='verticalDisplay'>
                         <Calendar
@@ -474,7 +475,7 @@ class Step2 extends Component {
                         />
                         <TypeTextInput
                             onChange={this.handleBirthPlace}
-                            inputText={birthPlaceInput}
+                            inputData={birthPlaceInput}
                         />
                     </div>
                 </form>

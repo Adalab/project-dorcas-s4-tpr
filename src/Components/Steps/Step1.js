@@ -6,13 +6,14 @@ import TypeEmailInput from '../Types/TypeEmailInput';
 import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 
-const surnameInput = {
+let surnameInput = {
     labelContent: <FormattedMessage
         id="Step1.userSurname"
         defaultMessage="Surname"
     />,
     id: 'surname',
-    name: 'surname'
+    name: 'surname',
+    className: ''
 };
 
 const nameInput = {
@@ -21,7 +22,7 @@ const nameInput = {
         defaultMessage="Name"
     />,
     id: 'name',
-    name: 'name'
+    name: 'name',
 };
 
 const emailAdress = {
@@ -96,7 +97,9 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        const inputValue = e.target.value
+        console.log('chula', e.target.value);
+        const inputValue = e.target.value;
+        
         this.setState({
             data: {
                 surname: inputValue,
@@ -174,14 +177,14 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput 
-                        inputText={lastName} 
+                    <TypeTextInput
                         inputData={surnameInput}
+                        inputText={lastName} 
                         onChange={this.handleSurnameInput} 
                     />
                     <TypeTextInput 
-                        inputText={firstName} 
                         inputData={nameInput}
+                        inputText={firstName} 
                         onChange={this.handleNameInput}
                     />
                     <div className='phones'>
