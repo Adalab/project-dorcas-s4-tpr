@@ -128,7 +128,7 @@ class Step4 extends Component {
     }
 
     handleTrainPreference(){
-
+        console.log('preferencia tren')
     }
 
     render() {
