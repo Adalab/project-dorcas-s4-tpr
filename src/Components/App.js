@@ -4,7 +4,6 @@ import Header from './Header';
 import Pages from './Pages';
 import { FormattedMessage } from 'react-intl';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -133,14 +132,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea9386b2c30abc982fe28`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ff418d8625d8e3a613b1c`)
       .then(res => {
         const person = res.data;
-        console.log(person)
+        console.log('backend',person)
         this.setState({
-          traveler: person
-        });
-        console.log(this.state.traveler)
+          data: {
+            personalInformation: {
+              lastName: person.personalInformation.lastName,
+              firstName: person.personalInformation.firstName,
+            }
+          }
+        })
       })
   }
 
@@ -192,7 +195,7 @@ class App extends Component {
     console.log('step', step);
     this.setState({
       currentStep: step,
-    }, ()=> (this.handleUpdateNavigation(step))
+     }, ()=> (this.handleUpdateNavigation(step))
   );
 }
 
@@ -207,7 +210,7 @@ class App extends Component {
       changingStep4,
       changingStep5
     } = changingStep;
-    console.log('changingStep, step', changingStep, step);
+    // console.log('changingStep, step', changingStep, step);
     if (changingStep1.stepNumber === step) {
       this.setState({
         changingStep: {
@@ -272,6 +275,7 @@ class App extends Component {
           handleCurrentStep={this.handleCurrentStep}
           handleStep1={this.handleStep1}
           handleStep2={this.handleStep2}
+          stateDataObject={this.state.data}
         />
       </div>
     );
