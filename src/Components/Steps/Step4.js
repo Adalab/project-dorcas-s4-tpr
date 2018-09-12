@@ -160,7 +160,6 @@ class Step4 extends Component {
                     <span>Alojamientos</span>
                     <h2>Preferencias en alojamientos</h2>
                     {preferences.map(preference => <AccommodationPref
-                    type="radio"
                         prefContent={preference}
                         optionSelected={this.state.responses[preference.name]}
                         onChange={this.handleSelectCheckbox} />)}
