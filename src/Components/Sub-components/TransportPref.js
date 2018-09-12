@@ -66,7 +66,7 @@ class TransportPref extends Component {
                         <span>Aisle</span>
                         <input
                             type="radio"
-                            name="aisle"
+                            name="window"
                             value="Aisle"
                             onChange={onChangeTrainPreferences}
                         />
