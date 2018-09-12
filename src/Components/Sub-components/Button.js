@@ -7,6 +7,7 @@ class Button extends Component {
       buttonContent,
       onClick,
       currentStep,
+      buttonHidden,
     } = this.props;
 
     const{
@@ -14,7 +15,7 @@ class Button extends Component {
       textButton,
       buttonClassHidden
     } = buttonContent;
-    
+    console.log('propsButton', this.props);
     return (
       <button 
         type="submit"

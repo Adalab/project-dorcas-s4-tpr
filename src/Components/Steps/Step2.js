@@ -131,8 +131,8 @@ const visaButton = {
                     id="Step2.addVisaDetails"
                     defaultMessage="Add visa details"
                 />,
-    buttonClass: '',
-    buttonClassHidden: '',
+    buttonClass: 'visaButton-styles',
+    buttonClassHidden: 'hidden',
 };
 
 const passPortString='this.props.travelDocuments.passport[0]';
@@ -140,6 +140,7 @@ class Step2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            buttonHidden: false,
             currentStep: 2,
             data:{
                 numberPassport:'',
@@ -167,11 +168,12 @@ class Step2 extends Component {
         this.handleBirthPlace = this.handleBirthPlace.bind(this);
         this.handleNumberInput = this.handleNumberInput.bind(this);
         this.handlePassIssueDate=this.handlePassIssueDate.bind(this);
-        this.handlePassExpDate=this.handlePassExpDate.bind(this);
-        this.handleVisaIssueDate=this.handleVisaIssueDate.bind(this);
-        this.handleVisaExpDate=this.handleVisaExpDate.bind(this);
-        this.handleIdIssueDate=this.handleIdIssueDate.bind(this);
-        this.handleIdExpDate=this.handleIdExpDate.bind(this);
+        this.handlePassExpDate = this.handlePassExpDate.bind(this);
+        this.handleVisaIssueDate = this.handleVisaIssueDate.bind(this);
+        this.handleVisaExpDate = this.handleVisaExpDate.bind(this);
+        this.handleIdIssueDate = this.handleIdIssueDate.bind(this);
+        this.handleIdExpDate = this.handleIdExpDate.bind(this);
+        this.handleVisaButton = this.handleVisaButton.bind(this);
     }
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
@@ -251,8 +253,19 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
     //Visa handles
+    handleVisaButton (e) {
+        e.preventDefault();
+        console.log('clickando', visaButton.buttonClassHidden);
+        if(this.state.buttonHidden === false){
+            visaButton.buttonClassHidden='hidden';
+            this.setState({
+                buttonHidden: true
+            });
+        }
+        console.log('ESTADOOOO', this.state);
+    }
+
     handleVisaInput (e) {
-        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
         const inputValue=e.target.value;
         this.setState({
             data:{
@@ -263,7 +276,6 @@ class Step2 extends Component {
     }
 
     handleVisaCountryInput (e) {
-        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
         const inputValue=e.target.value;
         this.setState({
             data:{
@@ -274,7 +286,6 @@ class Step2 extends Component {
     }
 
     handleVisaCountryDestination (e) {
-        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
         const inputValue=e.target.value;
         this.setState({
             data:{
@@ -285,7 +296,6 @@ class Step2 extends Component {
     }
 
     handleVisaIssueDate (date) {
-        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
         this.setState({
             data:{
                 ...this.state.data,
@@ -295,7 +305,6 @@ class Step2 extends Component {
     }
 
     handleVisaExpDate (date) {
-        console.log('Estoy cambiando,eoeoeoeoeoeoeoeoeoeo');
         this.setState({
             data:{
                 ...this.state.data,
@@ -336,14 +345,20 @@ class Step2 extends Component {
             changingStep,
         } = this.props;
 
-        // const{
-        //     issueCountry,
-        //     expiryDate,
-        //     issueDate,
-        //     passportNumber
-        // } = this.props.travelDocuments.passport
-        console.log('PASSPORT', this.props);
-        console.log('estadoSTEP2', this.state.data);
+        const {buttonHidden} = this.state;
+
+        let visaConteinerContent;
+        if (buttonHidden===false){
+            visaConteinerContent = 'hidden';
+            visaButton.buttonClass = 'visaButton-styles';
+        } else {
+            visaConteinerContent = '';
+            visaButton.buttonClass = 'hidden';
+        }
+
+        console.log('props STEP2', this.props);
+        console.log('visaConteinerContent', visaConteinerContent);
+        console.log('ESTADOOOO2000000000000000000000000000000', this.state);
         return (
             <div className='stepBox step2'>
                 <Title
@@ -368,7 +383,6 @@ class Step2 extends Component {
                         inputData={countryIssueInput} 
                         inputText={this.props.travelDocuments.passport[0].passCountryIssue}
                     />
-
                     <div className='verticalDisplay'>
                         <Calendar
                             labelContent={passIssueDateCal.labelContent}
@@ -385,7 +399,6 @@ class Step2 extends Component {
                             handleDate={this.handlePassExpDate}
                         />
                     </div>
-
                     <h2 className='subtitles-step2'>
                     {/* Pasaporte hasta aquí */}
                     {/* Visado desde aqui */}
@@ -394,40 +407,42 @@ class Step2 extends Component {
                             defaultMessage="Visa (optional)"
                         />
                     </h2>
-                    
                     <div>
                         <Button
                             buttonContent={visaButton}
+                            onClick={this.handleVisaButton}
+                            buttonHidden = {buttonHidden}
                         />
-
-                        <TypeTextInput 
-                            onChange={this.handleVisaInput}
-                            inputText={numVisaInput} 
-                        />
-                        <TypeTextInput 
-                            onChange={this.handleVisaCountryInput} 
-                            inputText={visaCountryIssueInput} 
-                        />
-                        <TypeTextInput 
-                            onChange={this.handleVisaCountryDestination} 
-                            inputText={visaCountryDestinationInput} 
-                        />
-                        <div className='verticalDisplay'>
-                            <Calendar
-                                labelContent={visaIssueDateCal.labelContent}
-                                id={visaIssueDateCal.id}
-                                numberOfMonths={visaIssueDateCal.numberOfMonths}
-                                small={visaIssueDateCal.small}
-                                handleDate={this.handleVisaIssueDate}
+                        <div className={visaConteinerContent}>
+                            <TypeTextInput 
+                                onChange={this.handleVisaInput}
+                                inputText={numVisaInput} 
                             />
-                            <Calendar
-                                labelContent={visaExpDateCal.labelContent}
-                                id={visaExpDateCal.id}
-                                numberOfMonths={visaExpDateCal.numberOfMonths}
-                                small={visaExpDateCal.small}
-                                handleDate={this.handleVisaExpDate}
+                            <TypeTextInput 
+                                onChange={this.handleVisaCountryInput} 
+                                inputText={visaCountryIssueInput} 
+                            />
+                            <TypeTextInput 
+                                onChange={this.handleVisaCountryDestination} 
+                                inputText={visaCountryDestinationInput} 
                             />
                             
+                            <div className='verticalDisplay'>
+                                <Calendar
+                                    labelContent={visaIssueDateCal.labelContent}
+                                    id={visaIssueDateCal.id}
+                                    numberOfMonths={visaIssueDateCal.numberOfMonths}
+                                    small={visaIssueDateCal.small}
+                                    handleDate={this.handleVisaIssueDate}
+                                />
+                                <Calendar
+                                    labelContent={visaExpDateCal.labelContent}
+                                    id={visaExpDateCal.id}
+                                    numberOfMonths={visaExpDateCal.numberOfMonths}
+                                    small={visaExpDateCal.small}
+                                    handleDate={this.handleVisaExpDate}
+                                />
+                            </div>
                         </div>
                     </div>
                     {/* Visado hasta aquí */}
@@ -437,14 +452,11 @@ class Step2 extends Component {
                             defaultMessage="Id"
                         />
                     </h2>
-
                     <div className='verticalDisplay'>
-
                         <TypeTextInput
                             onChange={this.handleNumberInput}
                             inputText={documentNumberInput} />
                     </div>
-
                     <div className='verticalDisplay'>
                         <Calendar
                             labelContent={idIssueDateCal.labelContent}
@@ -453,7 +465,6 @@ class Step2 extends Component {
                             small={idIssueDateCal.small}
                             handleDate={this.handleIdIssueDate}
                         />
-
                         <Calendar
                             labelContent={idExpDateCal.labelContent}
                             id={idExpDateCal.id}
@@ -461,7 +472,6 @@ class Step2 extends Component {
                             small={idExpDateCal.small}
                             handleDate={this.handleIdExpDate}
                         />
-
                         <TypeTextInput
                             onChange={this.handleBirthPlace}
                             inputText={birthPlaceInput}

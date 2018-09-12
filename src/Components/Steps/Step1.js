@@ -154,7 +154,6 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
-            dataStep1,
             
         } = this.props;
         const {
