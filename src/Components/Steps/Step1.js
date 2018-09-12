@@ -23,7 +23,6 @@ const nameInput = {
     />,
     id: 'name',
     name: 'name',
-    className: ''
 };
 
 const emailAdress = {
@@ -100,9 +99,7 @@ class Step1 extends Component {
     handleSurnameInput(e){
         console.log('chula', e.target.value);
         const inputValue = e.target.value;
-        if (inputValue.length > 0) {
-            surnameInput.className ='label-located';
-        }
+        
         this.setState({
             data: {
                 surname: inputValue,
