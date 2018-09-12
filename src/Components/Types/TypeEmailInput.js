@@ -18,11 +18,10 @@ class TypeEmailInput extends Component {
       <div className='position-label'>
         <input
           onChange={onChange}
-          className='control-label'
+          className='control-label marginSomeInputs'
           id={id}
           type="email"
           name={name}
-          placeholder='me@aboutjunior.com'
           disabled={disabled}
         />
         <label className='placeholder-label label-email' htmlFor="">

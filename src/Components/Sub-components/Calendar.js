@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { SingleDatePicker } from 'react-dates';
 
 class Calendar extends Component {
@@ -27,10 +27,7 @@ class Calendar extends Component {
             labelContent,
         } = this.props;
         return (
-            <Fragment>
-                <label htmlFor='dateIssue'>
-                    {labelContent}
-                </label>
+            <div className='position-calendar'>
                 <SingleDatePicker
                     date={date} // momentPropTypes.momentObj or null
                     onDateChange={this.onDateChange} // PropTypes.func.isRequired
@@ -43,7 +40,12 @@ class Calendar extends Component {
                     numberOfMonths={1}
                     small={true}
                 />
-            </Fragment>
+                <label
+                    className='placeholder-label_calendar'
+                    htmlFor='dateIssue'>
+                    {labelContent}
+                </label>
+            </div>
         );
     }
 }

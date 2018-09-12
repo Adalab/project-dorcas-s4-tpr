@@ -5,9 +5,12 @@ class TypeSelect extends Component {
         console.log ('typeselect', this.props)
         const {
             options
-        } = this.props;  
+        } = this.props; 
+        const {
+            className
+        } = this.props.classOfSelect;
         return (
-             <select>
+             <select className={className}>
                 {
                     options.map((option, index) =>
                 {return(

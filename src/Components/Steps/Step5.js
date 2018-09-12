@@ -33,7 +33,7 @@ const emailAddress = {
     />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
-    disable: false
+    disabled: false
 };
 
 const emergencyContactPhone = {
@@ -67,6 +67,10 @@ const region = [
     'Ceuta',
     'Melilla'
 ];
+
+const classOfSelect = {
+    className: 'select-step5'
+}
 
 const largeFamily = {
     labelContent: <FormattedMessage
@@ -156,7 +160,7 @@ class Step5 extends Component {
             changingStep,
         } = this.props;
         return (
-            <div className='stepBox'>
+            <div className='stepBox step5'>
                 <Title
                     title={title5}
                     step={step5}
@@ -177,6 +181,7 @@ class Step5 extends Component {
                     <div className={this.state.checkedResidency ? '' : 'hidden'}>
                         <TypeSelect 
                             options={region}
+                            classOfSelect={classOfSelect}
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}

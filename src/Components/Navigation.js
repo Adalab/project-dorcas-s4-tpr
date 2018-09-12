@@ -9,7 +9,7 @@ const backButton = {
                 id="Navigation.back"
                 defaultMessage="Back"
               />,
-  buttonClass: '',
+  buttonClass: 'back-button',
   buttonClassHidden: 'hidden',
 };
 
@@ -18,7 +18,7 @@ const nextButton = {
                 id="Navigation.next"
                 defaultMessage="Next"
               />,
-  buttonClass: '',
+  buttonClass: 'next-button',
   buttonClassHidden: '',
 };
 
@@ -46,66 +46,72 @@ class Navigation extends Component {
         } = changingStep;
 
       return (
-        <div>
+        <div className='position-nav'>
             <nav className='navigation-container'>
             <Link to={`/step/${currentStep-1}`}>
               <Button 
                 buttonContent={backButton}
                 currentStep={currentStep}
               />
-            </Link>
+              </Link>
               <ul className='list-steps'>
-                <li>
+                <li className='nav-steps'>
                   <Icon
                     title={title1}
                     changingStep={changingStep1}
                     currentStep={currentStep}
                     handleUpdateNavigation={handleUpdateNavigation}
-                  />
-                </li>
-                <li>
-                  <Icon 
-                    title={title2}
-                    changingStep={changingStep2}
-                    currentStep={currentStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
-                  />
-                </li>
-                <li>
-                  <Icon 
-                    title={title3}
-                    changingStep={changingStep3}
-                    currentStep={currentStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
-                  />
-                </li>
-                <li>
-                  <Icon 
-                    title={title4}
-                    changingStep={changingStep4}
-                    currentStep={currentStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
-                  />
-                </li>
-                <li>
-                  <Icon 
-                    title={title5}
-                    changingStep={changingStep5}
-                    currentStep={currentStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
-                  />
-                </li>
-              </ul>
-              <Link to={`/step/${currentStep+1}`}>
-                <Button 
-                  buttonContent={nextButton}
-                />      
-              </Link>
-              <Link to={`/step/${currentStep+1}`}><p className={handleNextStepClass}>Completar luego Saltar paso</p></Link>
-            </nav>  
-        </div>
-      );
-    }
+                  />    
+            </li>
+            <li className='nav-steps'>
+              <Icon
+                title={title2}
+                changingStep={changingStep2}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+            <li className='nav-steps'>
+              <Icon
+                title={title3}
+                changingStep={changingStep3}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+            <li className='nav-steps'>
+              <Icon
+                title={title4}
+                changingStep={changingStep4}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+            <li className='nav-steps'>
+              <Icon
+                title={title5}
+                changingStep={changingStep5}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+          </ul>
+          <div className='container-nexts'>
+            <Link to={`/step/${currentStep + 1}`}>
+              <Button
+                buttonContent={nextButton}
+              />
+            </Link>
+            <Link className='jumpLink' to={`/step/${currentStep + 1}`}>
+              <div className={handleNextStepClass}>Completar luego,
+              <span className='jumpLink-colorText'> saltar paso</span>
+              </div>
+            </Link>
+          </div>
+        </nav>
+      </div>
+    );
   }
+}
 
 export default Navigation;
