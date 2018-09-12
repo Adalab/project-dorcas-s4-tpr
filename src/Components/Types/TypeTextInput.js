@@ -10,11 +10,12 @@ class TypeTextInput extends Component {
         } = this.props.inputText;  
 
         const {
-          onChange
+          onChange,
+          toggleClass
         } = this.props;
         
         return (
-            <div className='position-label'>
+            <div className={`position-label ${toggleClass}`}>
               <input onChange={onChange}
                 className='control-label'
                 id={id} 

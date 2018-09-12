@@ -15,7 +15,7 @@ class TypeOnOff extends Component {
                         <input
                         id= {id}
                         type="checkbox"
-                        onChange={handleTypeOnOff}
+                        onClick={handleTypeOnOff}
                         />
                         {labelContent}
                     </label>

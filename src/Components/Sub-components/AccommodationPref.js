@@ -5,8 +5,7 @@ import { FormattedMessage } from 'react-intl';
 class AccommodationPref extends Component {
 
   render() {
-    console.log('propsACCOM', this.props);
-    
+ 
     const {
       optionSelected,
       onChange,
