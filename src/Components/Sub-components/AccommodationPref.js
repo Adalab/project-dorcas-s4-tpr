@@ -4,8 +4,7 @@ import TypeCheckboxInput from '../Types/TypeCheckboxInput';
 class AccommodationPref extends Component {
 
   render() {
-    console.log('propsACCOM', this.props);
-    
+ 
     const {
       optionSelected,
       onChange,
