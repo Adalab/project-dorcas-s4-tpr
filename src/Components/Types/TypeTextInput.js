@@ -6,13 +6,14 @@ class TypeTextInput extends Component {
           labelContent,  
           id,
           name,
-        } = this.props.inputText;  
+        } = this.props.inputData;  
 
         const {
           onChange,
-          toggleClass
+          toggleClass,
+          inputText,
         } = this.props;
-        console.log('adios', this.props.inputText);
+        console.log('adiossssssssssssss', this.props.inputData);
         return (
             <div className={`position-label ${toggleClass}`}>
               <input onChange={onChange}
@@ -20,7 +21,7 @@ class TypeTextInput extends Component {
                 id={id} 
                 type="text" 
                 name={name}
-                value={this.props.inputText}
+                value={inputText}
               />
               <label className='placeholder-label' htmlFor={id}>
               {labelContent}

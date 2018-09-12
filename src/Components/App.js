@@ -132,7 +132,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ff418d8625d8e3a613b1c`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
       .then(res => {
         const person = res.data;
         console.log('backend',person)
@@ -146,9 +146,26 @@ class App extends Component {
                 phoneNumbers: person.contactInformation.phoneNumbers,
                 emails: person.contactInformation.emails,
             },
-            
+            travelDocuments: {
+              idCard: [
+                {
+                  placeOfBirth: '',
+                  issueDate: '',
+                  expiryDate: '',
+                  dniNumber: '',
+                },
+              ],
+              passport: [
+                {
+                  issueCountry: person.travelDocuments.passport[0].issueCountry,
+                  issueDate: person.travelDocuments.passport[0].issueDate,
+                  expiryDate: person.travelDocuments.passport[0].expiryDate,
+                  passportNumber: person.travelDocuments.passport[0].passportNumber,
+                },
+              ],
+            }
           }
-        }, ()=> console.log('222222ireneee', this.state))
+        }, ()=> console.log('seteado de objetoAPP', this.state))
       })
   }
 

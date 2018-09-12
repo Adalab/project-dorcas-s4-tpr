@@ -135,8 +135,10 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                lineNumber: inputValue
+                surname: this.props.personalInformation.lastName,
+                name: this.props.personalInformation.firstName,
+                phoneNumber:this.props.personalInformation.phoneNumbers[0],
+                lineNumber:inputValue
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
