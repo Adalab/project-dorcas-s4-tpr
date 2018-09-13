@@ -1,0 +1,14 @@
+[
+  {
+    "id": "Step4.irrelevant",
+    "defaultMessage": "Irrelevant"
+  },
+  {
+    "id": "Step4.classic",
+    "defaultMessage": "Classic"
+  },
+  {
+    "id": "Step4.modern",
+    "defaultMessage": "Modern"
+  }
+]

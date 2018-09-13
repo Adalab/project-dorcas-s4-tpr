@@ -6,24 +6,40 @@ class TransportPref extends Component {
     render() {
 
         const {
+            translationsPlainPreferences,
+            translationsTrainPreferences,
             onChangePlainPreferences,
             onChangePlainLocation,
             onChangeTrainPreferences,
         } = this.props;
-
+        console.log(translationsPlainPreferences)
+        console.log(translationsPlainPreferences.window)
         return (
             <div>
                 <legend>
-                    <h2>Preferencias en vuelos</h2>
+                    <h2>
+                        <FormattedMessage
+                            id="TransportPref.plainPreferences"
+                            defaultMessage="Plain preferences"
+                        />
+                    </h2>
                     <form >
-                        <span>Window</span>
+                        <span>
+                            <FormattedMessage
+                                id={translationsPlainPreferences.window.defaultMessage}
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="place"
                             value="Window"
                             onChange={onChangePlainPreferences}
                         />
-                        <span>Aisle</span>
+                        <span>
+                            <FormattedMessage
+                                id={translationsPlainPreferences.aisle.defaultMessage}
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="place"
@@ -32,21 +48,36 @@ class TransportPref extends Component {
                         />
                     </form>
                     <form >
-                        <span>Front</span>
+                        <span>
+                            <FormattedMessage
+                                id="TransportPref.front"
+                                defaultMessage="Front"
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="ubication"
                             value="Front"
                             onChange={onChangePlainLocation}
                         />
-                        <span>Middle</span>
+                        <span>
+                            <FormattedMessage
+                                id="TransportPref.middle"
+                                defaultMessage="Middle"
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="ubication"
                             value="Middle"
                             onChange={onChangePlainLocation}
                         />
-                        <span>Back</span>
+                        <span>
+                            <FormattedMessage
+                                id="TransportPref.back"
+                                defaultMessage="Back"
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="ubication"
@@ -54,16 +85,29 @@ class TransportPref extends Component {
                             onChange={onChangePlainLocation}
                         />
                     </form>
-                    <h2>Preferencias en trenes</h2>
+                    <h2>
+                        <FormattedMessage
+                            id="TransportPref.prefTrains"
+                            defaultMessage="Preferences in trains"
+                        />
+                    </h2>
                     <form >
-                        <span>Window</span>
+                        <span>
+                            <FormattedMessage
+                                id={translationsTrainPreferences.window.defaultMessage}
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="window"
                             value="Window"
                             onChange={onChangeTrainPreferences}
                         />
-                        <span>Aisle</span>
+                        <span>
+                            <FormattedMessage
+                                id={translationsTrainPreferences.aisle.defaultMessage}
+                            />
+                        </span>
                         <input
                             type="radio"
                             name="window"
