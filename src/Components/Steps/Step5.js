@@ -303,7 +303,8 @@ class Step5 extends Component {
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}
-                            inputData={locality}
+                            inputData={localityOptions}
+                            inputText={locality}
                         />
                     </div>
                     <h2><FormattedMessage
@@ -319,11 +320,13 @@ class Step5 extends Component {
                         />
                         <TypeEmailInput
                             onChange={this.handleEmailAddress}
-                            emailAddress={email}
+                            emailAddress={emailAddress}
+                            inputText={email}
                         />
                         <TypePhoneInput
                             onChange={this.handleEmergencyPhone}
-                            phoneNumber={phoneNumber}
+                            phoneNumber={emergencyContactPhone}
+                            inputText={phoneNumber}
                         />
                     </div>
                 </form>

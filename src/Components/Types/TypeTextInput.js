@@ -15,7 +15,7 @@ class TypeTextInput extends Component {
         } = this.props;
         console.log('adios', this.props.inputText);
         let className;
-        if (inputText.length > 0) {
+        if (inputText !== undefined && inputText.length > 0) {
           className ='label-located';
       } else {
           className = '';

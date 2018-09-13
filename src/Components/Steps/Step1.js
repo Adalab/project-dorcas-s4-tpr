@@ -32,7 +32,7 @@ const emailAddress = {
     />,
     id: 'email',
     name: 'email',
-    disabled: true
+    disabled: true,
 };
 
 const mobilePhoneNumber = {
