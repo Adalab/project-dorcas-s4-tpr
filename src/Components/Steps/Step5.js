@@ -137,6 +137,7 @@ class Step5 extends Component {
     }
 
     handleRegion(e){
+        console.log(e.target.value)
         const inputValue = e.target.value
         this.setState({
             data: {
@@ -205,7 +206,6 @@ class Step5 extends Component {
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));  
     }
-
 
     handleTypeOnOff(e){
         if (e.currentTarget.id=== 'largeFamily' ){
