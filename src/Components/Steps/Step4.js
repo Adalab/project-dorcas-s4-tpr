@@ -5,98 +5,127 @@ import TransportPref from '../Sub-components/TransportPref';
 import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
 
-const preferences = [
-    {
-        legenContent: <FormattedMessage
-            id="Step4.breakfast"
-            defaultMessage="Breakfast"
-        />,
+const t = {
+    breakfast: {
+        legenContent: {
+            id: "Step4.breakfast",
+            defaultMessage: "Breakfast"
+        },
         options: [
-            <FormattedMessage
-                id="Step4.always"
-                defaultMessage="Always"
-            />,
-            <FormattedMessage
-                id="Step4.sometimes"
-                defaultMessage="Sometimes"
-            />,
-            <FormattedMessage
-                id="Step4.ifIncluded"
-                defaultMessage="Only if included"
-            />,
-            <FormattedMessage
-                id="Step4.never"
-                defaultMessage="Never"
-            />],
-        name: 'breakfastPreference'
+            {
+                id: "Step4.always",
+                defaultMessage: "Always"
+            },
+            {
+                id: "Step4.sometimes",
+                defaultMessage: "Sometimes"
+            },
+            {
+                id: "Step4.ifIncluded",
+                defaultMessage: "Only if included"
+            },
+            {
+                id: "Step4.never",
+                defaultMessage: "Never"
+            }
+        ],
+        name:
+        {
+            id: "Step4.breakfastPreference",
+            defaultMessage: "breakfastPreference"
+        },
+
     },
-    {
-        legenContent: <FormattedMessage
-            id="Step4.accommodationQuality"
-            defaultMessage="Accommodation quality"
-        />,
+
+    accommodation: {
+        legenContent: {
+            id: "Step4.accommodationQuality",
+            defaultMessage: "Accommodation quality"
+        },
         options: [
-            <FormattedMessage
-                id="Step4.fromFourStars"
-                defaultMessage="From 4 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromThreeStars"
-                defaultMessage="From 3 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromTwoStars"
-                defaultMessage="From 2 Stars"
-            />],
-        name: 'typeAccommodation'
+            {
+                id: "Step4.fiveStars",
+                defaultMessage: "5 Stars"
+            }
+            ,
+            {
+                id: "Step4.fromFourStars",
+                defaultMessage: "From 4 Stars"
+            }
+            ,
+            {
+                id: "Step4.fromThreeStars",
+                defaultMessage: "From 3 Stars"
+            }
+            ,
+            {
+                id: "Step4.fromTwoStars",
+                defaultMessage: "From 2 Stars"
+            }
+
+        ],
+        name: {
+            id: "Step4.accommodationPreference",
+            defaultMessage: "Accommodation Preference"
+        }
     },
-    {
-        legenContent: <FormattedMessage
-            id="Step4.typeOfAccommodation"
-            defaultMessage="Type of accommodation"
-        />,
+    typeOfAccommodation: {
+        legenContent: {
+            id: "Step4.typeOfAccommodation",
+            defaultMessage: "Type of accommodation"
+        }
+        ,
         options: [
-            <FormattedMessage
-                id="Step4.irrelevant"
-                defaultMessage="Irrelevant"
-            />,
-            <FormattedMessage
-                id="Step4.classic"
-                defaultMessage="Classic"
-            />,
-            <FormattedMessage
-                id="Step4.modern"
-                defaultMessage="Modern"
-            />,
-            <FormattedMessage
-                id="Step4.niche"
-                defaultMessage="Niche"
-            />],
-        name: 'qualityPreference'
+            {
+                id: "Step4.irrelevant",
+                defaultMessage: "Irrelevant"
+            },
+            {
+                id: "Step4.classic",
+                defaultMessage: "Classic"
+            },
+            {
+                id: "Step4.modern",
+                defaultMessage: "Modern"
+            },
+            {
+                id: "Step4.niche",
+                defaultMessage: "Niche"
+            }],
+        name: {
+            id: "Step4.qualityPreference",
+            defaultMessage: "Quality preference"
+        }
     }
-]
+}
+const plainPreferences = {
+    window:
+    {
+        id: "Step4.window",
+        defaultMessage: "Window"
+    }
+    ,
+    aisle:
+    {
+        id: "Step4.aisle",
+        defaultMessage: "Aisle"
+    }
 
-const plainPreferences = [
-    <FormattedMessage
-        id="Step4.window"
-        defaultMessage="Window"
-    />,
-    <FormattedMessage
-        id="Step4.aisle"
-        defaultMessage="Aisle"
-    />
-]
+}
 
-const trainPreferences = [
-    <FormattedMessage
-        id="Step4.trainWindow"
-        defaultMessage="Window"
-    />,
-    <FormattedMessage
-        id="Step4.trainAisle"
-        defaultMessage="Aisle"
-    />
-]
+const trainPreferences = {
+    window:
+    {
+        id: "Step4.trainWindow",
+        defaultMessage: "Window"
+    }
+    ,
+    aisle:
+    {
+        id: "Step4.trainAisle",
+        defaultMessage: "Aisle"
+    }
+}
 
 class Step4 extends Component {
     constructor(props) {
@@ -120,7 +149,7 @@ class Step4 extends Component {
         console.log('avion ventana o pasillo')
     }
 
-    handleSelectStars(){
+    handleSelectStars() {
         console.log('elegir estrellas')
     }
 
@@ -132,7 +161,7 @@ class Step4 extends Component {
         console.log('preferencia tren')
     }
 
-    handleSelectType(){
+    handleSelectType() {
         console.log('tipo de alojamiento')
     }
 
@@ -147,7 +176,13 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
+            legenContent
         } = this.props;
+
+        console.log(plainPreferences)
+        console.log(plainPreferences.window)
+        console.log(t)
+
         return (
             <div className='stepBox'>
                 <Title
@@ -159,10 +194,25 @@ class Step4 extends Component {
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}
                         onChangeTrainPreferences={this.handleTrainPreference}
+                        translationsPlainPreferences={plainPreferences}
+                        translationsTrainPreferences={trainPreferences}
                     />
-                    <span>Alojamientos</span>
-                    <h2>Preferencias en alojamientos</h2>
+                    <span>
+                        <FormattedMessage
+                            id="Step4.accommodation"
+                            defaultMessage="Accommodation"
+                        />
+                    </span>
+                    <h2>
+                    <FormattedMessage
+                            id="Step4.accommodationPreferences"
+                            defaultMessage="Accommodation preferences"
+                        />
+                    </h2>
                     <AccommodationPref
+                        translationsAccom={t.accommodation}
+                        translationsBreakfast={t.breakfast}
+                        translationsTypeOfAccom={t.typeOfAccommodation}
                         onChangeBreakfast={this.handleSelectCheckbox}
                         onChangeHotelStars={this.handleSelectStars}
                         onChangeHotelType={this.handleSelectType}
