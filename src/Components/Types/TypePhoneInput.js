@@ -16,6 +16,12 @@ class TypePhoneInput extends Component {
           phoneNumber
         } = this.props;
         console.log('phoneeeee', this.props);
+        let className;
+        if (inputText !== undefined && inputText.length > 0) {
+          className ='label-located';
+      } else {
+          className = '';
+      }
         return (
             <div className='position-label'>
               <input 
@@ -29,7 +35,7 @@ class TypePhoneInput extends Component {
                 maxLength="15"
                 required={required}
               />
-              <label className='placeholder-label' htmlFor={id}>
+              <label className={`placeholder-label ${className}`} htmlFor={id}>
               {labelContent}
             </label>
             </div>
