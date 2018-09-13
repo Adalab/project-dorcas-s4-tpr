@@ -6,20 +6,27 @@ class TransportPref extends Component {
     render() {
 
         const {
+            translationsPlainPreferences,
+            translationsTrainPreferences,
             onChangePlainPreferences,
             onChangePlainLocation,
             onChangeTrainPreferences,
         } = this.props;
-
+        console.log(translationsPlainPreferences)
+        console.log(translationsPlainPreferences.window)
         return (
             <div>
                 <legend>
-                    <h2>Preferencias en vuelos</h2>
+                    <h2>
+                        <FormattedMessage
+                            id="TransportPref.plainPreferences"
+                            defaultMessage="Plain preferences"
+                        />
+                    </h2>
                     <form >
                         <span>
                             <FormattedMessage
-                                id="TransportPref.flightWindow"
-                                defaultMessage="Window"
+                                id={translationsPlainPreferences.window.defaultMessage}
                             />
                         </span>
                         <input
@@ -30,8 +37,7 @@ class TransportPref extends Component {
                         />
                         <span>
                             <FormattedMessage
-                                id="TransportPref.aisle"
-                                defaultMessage="Aisle"
+                                id={translationsPlainPreferences.aisle.defaultMessage}
                             />
                         </span>
                         <input
@@ -88,8 +94,7 @@ class TransportPref extends Component {
                     <form >
                         <span>
                             <FormattedMessage
-                                id="TransportPref.windowTrain"
-                                defaultMessage="Window"
+                                id={translationsTrainPreferences.window.defaultMessage}
                             />
                         </span>
                         <input
@@ -100,8 +105,7 @@ class TransportPref extends Component {
                         />
                         <span>
                             <FormattedMessage
-                                id="TransportPref.aisleTrain"
-                                defaultMessage="Aisle"
+                                id={translationsTrainPreferences.aisle.defaultMessage}
                             />
                         </span>
                         <input

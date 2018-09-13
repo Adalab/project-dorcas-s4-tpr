@@ -14,67 +14,66 @@ class AccommodationPref extends Component {
       translationsTypeOfAccom
     } = this.props;
 
-    console.log( translationsAccom)
-    console.log(translationsBreakfast)
-    console.log(translationsTypeOfAccom)
+    console.log(translationsBreakfast.legenContent.defaultMessage)
+    console.log(translationsAccom.options)
+    console.log(translationsAccom.options[3])
     return (
       <div>
-        {/* <form >
+        <form >
           <p>
             <FormattedMessage
-              id={translations.id}
+              id={translationsBreakfast.legenContent.defaultMessage}
             />
           </p>
           <input
             type="radio"
             name="breakfast"
-            value="Window"
+            value="Always"
             onChange={onChangeBreakfast}
           />
           <span>
             <FormattedMessage
-              id={optionTranslations[0].id}
+              id={translationsBreakfast.options[0].defaultMessage}
             />
           </span>
           <input
             type="radio"
             name="breakfast"
-            value="Aisle"
+            value="Sometimes"
             onChange={onChangeBreakfast}
           />
           <span>
             <FormattedMessage
-              id={optionTranslations[1].id}
+              id={translationsBreakfast.options[1].defaultMessage}
             />
           </span>
           <input
             type="radio"
             name="breakfast"
-            value="Window"
+            value="OnlyIfIncluded"
             onChange={onChangeBreakfast}
           />
           <span>
             <FormattedMessage
-              id={optionTranslations[2].id}
+              id={translationsBreakfast.options[2].defaultMessage}
             />
           </span>
           <input
             type="radio"
             name="breakfast"
-            value="Aisle"
+            value="Never"
             onChange={onChangeBreakfast}
           />
           <span>
             <FormattedMessage
-              id={optionTranslations[3].id}
+              id={translationsBreakfast.options[3].defaultMessage}
             />
           </span>
-        </form> */}
+        </form>
         <form >
           <p>
             <FormattedMessage
-              id="Step4.accommodationQuality"
-              defaultMessage="Accommodation quality"
+              id={translationsAccom.legenContent.defaultMessage}
             />
           </p>
           <input
@@ -85,8 +84,7 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.5stars"
-              defaultMessage="5 stars"
+              id={translationsAccom.options[0].defaultMessage}
             />
           </span>
           <input
@@ -97,8 +95,7 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.fromFourStars"
-              defaultMessage="From 4 Stars"
+              id={translationsAccom.options[1].defaultMessage}
             />
           </span>
           <input
@@ -109,8 +106,7 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.fromThreeStars"
-              defaultMessage="From 3 Stars"
+              id={translationsAccom.options[2].defaultMessage}
             />
           </span>
           <input
@@ -121,16 +117,14 @@ class AccommodationPref extends Component {
           />
           <span>
             <FormattedMessage
-              id="Step4.fromTwoStars"
-              defaultMessage="From 2 Stars"
+              id={translationsAccom.options[3].defaultMessage}
             />
           </span>
         </form>
         <form >
           <p>
             <FormattedMessage
-              id="Step4.typeOfAccommodation"
-              defaultMessage="Type of accommodation"
+              id={translationsTypeOfAccom.legenContent.defaultMessage}
             />
           </p>
           <input
@@ -140,9 +134,8 @@ class AccommodationPref extends Component {
             onChange={onChangeHotelType}
           />
           <span>
-            <FormattedMessage
-              id="Step4.irrelevant"
-              defaultMessage="Irrelevant"
+          <FormattedMessage
+              id={translationsTypeOfAccom.options[0].defaultMessage}
             />
           </span>
           <input
@@ -152,9 +145,8 @@ class AccommodationPref extends Component {
             onChange={onChangeHotelType}
           />
           <span>
-            <FormattedMessage
-              id="Step4.classic"
-              defaultMessage="Classic"
+          <FormattedMessage
+              id={translationsTypeOfAccom.options[1].defaultMessage}
             />
           </span>
           <input
@@ -164,9 +156,8 @@ class AccommodationPref extends Component {
             onChange={onChangeHotelType}
           />
           <span>
-            <FormattedMessage
-              id="Step4.modern"
-              defaultMessage="Modern"
+          <FormattedMessage
+              id={translationsTypeOfAccom.options[2].defaultMessage}
             />
           </span>
           <input
@@ -176,9 +167,8 @@ class AccommodationPref extends Component {
             onChange={onChangeHotelType}
           />
           <span>
-            <FormattedMessage
-              id="Step4.niche"
-              defaultMessage="Niche"
+          <FormattedMessage
+              id={translationsTypeOfAccom.options[3].defaultMessage}
             />
           </span>
         </form>

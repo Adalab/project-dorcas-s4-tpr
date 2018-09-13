@@ -1,18 +1,10 @@
 [
   {
-    "id": "Step4.window",
-    "defaultMessage": "Window"
+    "id": "Step4.accommodation",
+    "defaultMessage": "Accommodation"
   },
   {
-    "id": "Step4.aisle",
-    "defaultMessage": "Aisle"
-  },
-  {
-    "id": "Step4.trainWindow",
-    "defaultMessage": "Window"
-  },
-  {
-    "id": "Step4.trainAisle",
-    "defaultMessage": "Aisle"
+    "id": "Step4.accommodationPreferences",
+    "defaultMessage": "Accommodation preferences"
   }
 ]
