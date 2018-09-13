@@ -16,10 +16,6 @@
     "defaultMessage": "Document number"
   },
   {
-    "id": "Step2.passport",
-    "defaultMessage": "Passport"
-  },
-  {
     "id": "Step2.userPassDateIssue",
     "defaultMessage": "Date of issue"
   },
@@ -28,27 +24,23 @@
     "defaultMessage": "Expiration date"
   },
   {
-    "id": "Step2.visa",
-    "defaultMessage": "Visa (optional)"
+    "id": "Step2.userDocDateIssue",
+    "defaultMessage": "Date of issue"
   },
   {
     "id": "Step2.addVisaDetails",
     "defaultMessage": "Add visa details"
   },
   {
+    "id": "Step2.passport",
+    "defaultMessage": "Passport"
+  },
+  {
+    "id": "Step2.visa",
+    "defaultMessage": "Visa (optional)"
+  },
+  {
     "id": "Step2.dniNie",
     "defaultMessage": "Id"
-  },
-  {
-    "id": "Step2.type",
-    "defaultMessage": "Type"
-  },
-  {
-    "id": "Step2.userDocDateIssue",
-    "defaultMessage": "Date of issue"
-  },
-  {
-    "id": "Step2.userDocExpirationDate",
-    "defaultMessage": "Expiration date"
   }
 ]

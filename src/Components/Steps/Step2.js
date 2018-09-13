@@ -99,30 +99,30 @@ const idExpDateCal = {
 };
 //Visado
 const visaCountryIssueInput = {
-    labelContent: '',
+    labelContent: 'AAA',
     id: 'vsetStateisaCountryIssue',
     name: 'visaCountryIssue',
 };
 
 const visaCountryDestinationInput = {
-    labelContent: '',
+    labelContent: 'AAA',
     id: 'visaCountryDestination',
     name: 'visaCountryDestination',
 };
 
 const numVisaInput = {
-    labelContent: '',
+    labelContent: 'AAA',
     id: 'numVisa',
     name: 'numVisa',
 };
 
 const visaIssueDateCal = {
-    labelContent: '',
+    labelContent: 'AAA',
     id: "visaIssueDate",
 };
 
 const visaExpDateCal = {
-    labelContent: '',
+    labelContent: 'AAA',
     id: "visaExpirationDate",
 };
 
@@ -417,15 +417,18 @@ class Step2 extends Component {
                         <div className={visaConteinerContent}>
                             <TypeTextInput 
                                 onChange={this.handleVisaInput}
-                                inputText={numVisaInput} 
+                                inputData={numVisaInput}
+                                inputText={this.state.data.numberVisa} 
                             />
                             <TypeTextInput 
                                 onChange={this.handleVisaCountryInput} 
-                                inputText={visaCountryIssueInput} 
+                                inputData={visaCountryIssueInput}
+                                inputText={this.state.data.visaCountryIssue} 
                             />
                             <TypeTextInput 
                                 onChange={this.handleVisaCountryDestination} 
-                                inputText={visaCountryDestinationInput} 
+                                inputData={visaCountryDestinationInput} 
+                                inputText={this.state.data.visaCountryDestination}
                             />
                             
                             <div className='verticalDisplay'>

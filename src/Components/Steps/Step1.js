@@ -25,14 +25,14 @@ const nameInput = {
     name: 'name',
 };
 
-const emailAdress = {
+const emailAddress = {
     labelContent: <FormattedMessage
         id="Step1.email"
         defaultMessage="Email"
     />,
     id: 'email',
     name: 'email',
-    disabled: true
+    disabled: true,
 };
 
 const mobilePhoneNumber = {
@@ -199,10 +199,7 @@ class Step1 extends Component {
                             inputText={phoneNumbers[1]} //errata con la API, comentar con Triporate
                         />
                     </div>
-                        <TypeEmailInput 
-                        emailAdress={emailAdress}
-                        inputText={emails[0]}
-                         />
+                    <TypeEmailInput emailAddress={emailAddress} inputText={emails[0]}/>
                 </form>
                 <Navigation
                     title1={title1}

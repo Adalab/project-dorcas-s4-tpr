@@ -13,7 +13,6 @@ class TypeEmailInput extends Component {
     const {
       onChange,
       inputText,
-      emailAddress
     } = this.props
     
     return (
@@ -26,7 +25,6 @@ class TypeEmailInput extends Component {
           type="email"
           name={name}
           disabled={disabled}
-          value={emailAddress}
         />
         <label className='placeholder-label label-email' htmlFor="">
           {labelContent}
