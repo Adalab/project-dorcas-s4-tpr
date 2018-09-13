@@ -24,7 +24,7 @@ const nameInput = {
     name: 'name'
 };
 
-const emailAdress = {
+const emailAddress = {
     labelContent: <FormattedMessage
         id="Step1.email"
         defaultMessage="Email"
@@ -189,7 +189,7 @@ class Step1 extends Component {
                             phoneNumber={landLineNumber} 
                         />
                     </div>
-                    <TypeEmailInput emailAdress={emailAdress} />
+                    <TypeEmailInput emailAddress={emailAddress} />
                 </form>
                 <Navigation
                     title1={title1}
