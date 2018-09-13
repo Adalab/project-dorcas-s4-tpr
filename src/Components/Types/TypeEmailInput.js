@@ -13,7 +13,14 @@ class TypeEmailInput extends Component {
     const {
       onChange,
       inputText,
-    } = this.props
+    } = this.props;
+
+    let className;
+    if (inputText !== undefined && inputText.length > 0) {
+      className ='label-located';
+  } else {
+      className = '';
+  }
     
     return (
       <div className='position-label'>
@@ -26,7 +33,7 @@ class TypeEmailInput extends Component {
           name={name}
           disabled={disabled}
         />
-        <label className='placeholder-label label-email' htmlFor="">
+        <label className={`placeholder-label label-email ${className}`} htmlFor="">
           {labelContent}
         </label>
       </div>
