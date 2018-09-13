@@ -100,7 +100,7 @@ class Step5 extends Component {
             checkedFamily: false,
             checkedResidency: false,
             data: {
-                familyNumber: 0,
+                familyNumber: '',
                 region: '',
                 locality: '',
                 firstNameEmergency: '',
@@ -121,6 +121,33 @@ class Step5 extends Component {
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        if(nextProps.extras.familyNumber !== 0){
+            console.log("Está entrando");
+            this.setState({
+                checkedFamily: true,
+                checked: true,
+            })
+        } else if((nextProps.extras.familyNumber === 0)) {
+            console.log("NO está entrando");
+            this.setState({
+                checkedFamily: false,
+                checked: false,
+            })
+        }
+        if(nextProps.extras.islandResident.region !== ""){
+            console.log("Está entrando");
+            this.setState({
+                checkedResidency: true,
+            })
+        } else {
+            console.log("NO está entrando");
+            this.setState({
+                checkedResidency: false,
+            }) 
+        }
+    }  
 
     handleFamilyNumber(e){
         const inputValue = e.target.value
@@ -137,6 +164,7 @@ class Step5 extends Component {
     }
 
     handleRegion(e){
+        console.log(e.target.value)
         const inputValue = e.target.value
         this.setState({
             data: {
@@ -206,7 +234,6 @@ class Step5 extends Component {
         }, ()=>(this.props.handleStep5(this.state.data)));  
     }
 
-
     handleTypeOnOff(e){
         if (e.currentTarget.id=== 'largeFamily' ){
             this.setState({
@@ -214,7 +241,7 @@ class Step5 extends Component {
             })
         } else if (e.currentTarget.id==='residentOutside'){
             this.setState({
-            checkedResidency: !this.state.checkedResidency,
+                checkedResidency: !this.state.checkedResidency,
             } )
         }
     }
@@ -226,7 +253,6 @@ class Step5 extends Component {
         } = this.props.extras;
 
         const {
-            region,
             locality,
         } = this.props.extras.islandResident;
         
@@ -256,7 +282,8 @@ class Step5 extends Component {
                 <form className='form'>
                     <TypeOnOff 
                         labelTypeOnOff={largeFamily} 
-                        handleTypeOnOff={this.handleTypeOnOff}/>
+                        handleTypeOnOff={this.handleTypeOnOff}
+                        checked={this.state.checkedFamily ? true : false}/>
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
                         inputData={familyNumberInput}
@@ -265,7 +292,8 @@ class Step5 extends Component {
                     />
                     <TypeOnOff 
                     labelTypeOnOff={residentOutside} 
-                    handleTypeOnOff={this.handleTypeOnOff} 
+                    handleTypeOnOff={this.handleTypeOnOff}
+                    checked={this.state.checkedResidency ? true : false} 
                     />
                     <div className={this.state.checkedResidency ? '' : 'hidden'}>
                         <TypeSelect 
@@ -275,7 +303,8 @@ class Step5 extends Component {
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}
-                            inputData={locality}
+                            inputData={localityOptions}
+                            inputText={locality}
                         />
                     </div>
                     <h2><FormattedMessage
@@ -291,11 +320,13 @@ class Step5 extends Component {
                         />
                         <TypeEmailInput
                             onChange={this.handleEmailAddress}
-                            emailAddress={email}
+                            emailAddress={emailAddress}
+                            inputText={email}
                         />
                         <TypePhoneInput
                             onChange={this.handleEmergencyPhone}
-                            phoneNumber={phoneNumber}
+                            phoneNumber={emergencyContactPhone}
+                            inputText={phoneNumber}
                         />
                     </div>
                 </form>

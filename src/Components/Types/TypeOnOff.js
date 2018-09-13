@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 
 class TypeOnOff extends Component {
     render() {
+        console.log(this.props);
         const {
             labelTypeOnOff,
             handleTypeOnOff,
+            checked,
         } = this.props;
         const {labelContent,id} = labelTypeOnOff;
 
@@ -16,6 +18,7 @@ class TypeOnOff extends Component {
                         id= {id}
                         type="checkbox"
                         onClick={handleTypeOnOff}
+                        checked={checked}
                         />
                         {labelContent}
                     </label>

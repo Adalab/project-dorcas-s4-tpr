@@ -28,7 +28,6 @@ class TypePhoneInput extends Component {
                 pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"
                 maxLength="15"
                 required={required}
-                value={phoneNumber}
               />
               <label className='placeholder-label' htmlFor={id}>
               {labelContent}
