@@ -11,13 +11,15 @@ class TypeEmailInput extends Component {
     } = this.props.emailAddress;
 
     const {
-      onChange, 
+      onChange,
+      inputText,
       emailAddress
     } = this.props
     
     return (
       <div className='position-label'>
         <input
+          value= {inputText}
           onChange={onChange}
           className='control-label marginSomeInputs'
           id={id}

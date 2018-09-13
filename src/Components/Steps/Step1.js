@@ -6,13 +6,14 @@ import TypeEmailInput from '../Types/TypeEmailInput';
 import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 
-const surnameInput = {
+let surnameInput = {
     labelContent: <FormattedMessage
         id="Step1.userSurname"
         defaultMessage="Surname"
     />,
     id: 'surname',
-    name: 'surname'
+    name: 'surname',
+    className: ''
 };
 
 const nameInput = {
@@ -21,7 +22,7 @@ const nameInput = {
         defaultMessage="Name"
     />,
     id: 'name',
-    name: 'name'
+    name: 'name',
 };
 
 const emailAddress = {
@@ -96,8 +97,9 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        console.log('chula', e.target.value)
-        const inputValue = e.target.value
+        console.log('chula', e.target.value);
+        const inputValue = e.target.value;
+        
         this.setState({
             data: {
                 surname: inputValue,
@@ -124,8 +126,10 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                phoneNumber: inputValue
+                surname: this.props.personalInformation.lastName,
+                name: this.props.personalInformation.firstName,
+                phoneNumber:inputValue,
+                lineNumber:""
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
@@ -134,14 +138,16 @@ class Step1 extends Component {
         const inputValue = e.target.value
         this.setState({
             data: {
-                ...this.state.data,
-                lineNumber: inputValue
+                surname: this.props.personalInformation.lastName,
+                name: this.props.personalInformation.firstName,
+                phoneNumber:this.props.personalInformation.phoneNumbers[0],
+                lineNumber:inputValue
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
 
     render() {
-        console.log('props STEP1', this.props.personalInformation);
+        console.log('props STEP1', this.props.contactInformation);
         const {
             title1,
             title2,
@@ -158,12 +164,12 @@ class Step1 extends Component {
             lastName,
         } = this.props.personalInformation;
 
-        // const {
-        //     emails,
-        //     phoneNumbers
-        // } = this.props.contactInformation;
+        const {
+            emails,
+            phoneNumbers
+        } = this.props.contactInformation;
 
-        console.log('lastname', this.props.contactInformation);
+        console.log('ALEX', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -171,25 +177,29 @@ class Step1 extends Component {
                     step={step1}
                 />
                 <form className='form'>
-                    <TypeTextInput 
+                    <TypeTextInput
+                        inputData={surnameInput}
                         inputText={lastName} 
                         onChange={this.handleSurnameInput} 
                     />
                     <TypeTextInput 
+                        inputData={nameInput}
                         inputText={firstName} 
                         onChange={this.handleNameInput}
                     />
                     <div className='phones'>
                         <TypePhoneInput 
                             onChange={this.handlePhoneNumber} 
-                            phoneNumber={mobilePhoneNumber} 
+                            phoneNumber={mobilePhoneNumber}
+                            inputText={phoneNumbers[0]}
                         />
                         <TypePhoneInput 
                             onChange={this.handleLineNumber} 
                             phoneNumber={landLineNumber} 
+                            inputText={phoneNumbers[1]} //errata con la API, comentar con Triporate
                         />
                     </div>
-                    <TypeEmailInput emailAddress={emailAddress} />
+                    <TypeEmailInput emailAddress={emailAddress} inputText={emails[0]}/>
                 </form>
                 <Navigation
                     title1={title1}

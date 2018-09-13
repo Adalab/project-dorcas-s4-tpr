@@ -21,6 +21,7 @@ class Pages extends Component {
       contactInformation,
       extras,
       emergencyContact,
+      travelDocuments
     } = this.props.stateDataObject;
 
     const {
@@ -43,7 +44,7 @@ class Pages extends Component {
       handleStep2, 
       handleStep5,
     } = this.props;
-    console.log('extras', extras);
+    console.log('PAGES', this.props);
     return (
       <Fragment>
         <Switch>
@@ -87,6 +88,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 handleStep2={handleStep2}
+                travelDocuments= {travelDocuments}
               />}
           />
           <Route

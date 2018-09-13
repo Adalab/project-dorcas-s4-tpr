@@ -286,6 +286,7 @@ class Step5 extends Component {
                         checked={this.state.checkedFamily ? true : false}/>
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
+                        inputData={familyNumberInput}
                         inputText={familyNumber}
                         toggleClass={this.state.checkedFamily ? '' : 'hidden'}
                     />
@@ -302,7 +303,7 @@ class Step5 extends Component {
                         />
                         <TypeTextInput
                             onChange={this.handleLocality}
-                            inputText={locality}
+                            inputData={locality}
                         />
                     </div>
                     <h2><FormattedMessage
@@ -313,6 +314,7 @@ class Step5 extends Component {
                     <div className='emergencyContact-container'>
                         <TypeTextInput
                             onChange={this.handleEmergencyContact}
+                            inputData={emergencyContactInput}
                             inputText={firstName}
                         />
                         <TypeEmailInput

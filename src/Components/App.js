@@ -143,6 +143,29 @@ class App extends Component {
               lastName: person.personalInformation.lastName,
               firstName: person.personalInformation.firstName,
             },
+            contactInformation: {
+                phoneNumbers: person.contactInformation.phoneNumbers,
+                emails: person.contactInformation.emails,
+            },
+            travelDocuments: {
+              idCard: [
+                {
+                  placeOfBirth: '',
+                  issueDate: '',
+                  expiryDate: '',
+                  dniNumber: '',
+                },
+              ],
+              passport: [
+                {
+                  issueCountry: person.travelDocuments.passport[0].issueCountry,
+                  issueDate: person.travelDocuments.passport[0].issueDate,
+                  expiryDate: person.travelDocuments.passport[0].expiryDate,
+                  passportNumber: person.travelDocuments.passport[0].passportNumber,
+                },
+              ],
+            },
+          
             extras: {
               familyNumber: person.extras.familyNumber,
               islandResident: {
@@ -159,7 +182,7 @@ class App extends Component {
               }
             ],
           }
-        }, ()=>(console.log(this.state)))
+        })
       })
   }
 
