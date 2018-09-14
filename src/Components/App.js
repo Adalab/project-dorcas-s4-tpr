@@ -51,7 +51,7 @@ class App extends Component {
           ],
         }
       },
-      dataAccommodation: {
+      dataAccommodation: { // data step4
         plain1: '',
         plain2: '',
         train1: '',
@@ -145,7 +145,7 @@ class App extends Component {
     axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
       .then(res => {
         const person = res.data;
-        console.log('backend',person)
+        console.log('BACKEND',person)
         this.setState({
           data: {
             personalInformation: {

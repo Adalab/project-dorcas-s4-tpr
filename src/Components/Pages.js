@@ -62,6 +62,7 @@ class Pages extends Component {
             path='/step/1'
             render={props =>
               <Step1
+                match={props.match}
                 title1={title1}
                 title2={title2}
                 title3={title3}
