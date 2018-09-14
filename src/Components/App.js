@@ -49,8 +49,15 @@ class App extends Component {
               passportNumber: '',
             },
           ],
-        }
+        },
       },
+        dataVisa: {
+          numberVisa:'4234',
+          issueCountry:'Perú',
+          destinyCountry:'Argentina',
+          issueDate:'',
+          expiryDate:'',
+        },
       titles: {
         title1: <FormattedMessage
           id="App.personalInfo"
@@ -250,8 +257,15 @@ class App extends Component {
             phoneNumber: data.phoneNumberEmergency,
           }
         ],
+        // dataVisa: {
+        //   numberVisa: data.numberVisa,
+        //   issueCountry: data.visaCountryIssue,
+        //   destinyCountry:data.visaCountryDestination,
+        //   issueDate:data.visaIssueDate,
+        //   expiryDate:data.visaExpDate,
+        // },
       }
-    },()=>(console.log(this.state.data)))
+    },()=>(console.log(this.state.dataVisa)))
   } 
 
   handleCurrentStep(step) {
@@ -340,11 +354,11 @@ class App extends Component {
           handleStep2={this.handleStep2}
           handleStep5={this.handleStep5}
           stateDataObject={this.state.data}
+          dataVisa={this.state.dataVisa}
         />
       </div>
     );
   }
 }
-
 
 export default App;
