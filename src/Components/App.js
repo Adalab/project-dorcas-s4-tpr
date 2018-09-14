@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Pages from './Pages';
+import Loading from './Loading';
+
 import { FormattedMessage } from 'react-intl';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      idRoute:'',
       data: {
         personalInformation: {
           lastName: '',
@@ -149,7 +152,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
+
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/ ${this.props.match.params.id}`)
       .then(res => {
         const person = res.data;
         console.log('BACKEND',person)
@@ -358,7 +362,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('ESTADO', this.state);
+    console.log('ESTADO', this.props);
     return (
       <div className="App">
         <Header />
@@ -373,6 +377,7 @@ class App extends Component {
           stateDataObject={this.state.data}
           dataVisa={this.state.dataVisa}
           stateAccommodationObject={this.state.dataAccommodation}
+          handleRoute={this.handleRoute}
         />
       </div>
     );

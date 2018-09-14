@@ -76,6 +76,7 @@ class Step1 extends Component {
     }
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
+        
     }
 
     handleNextStepClass(){
