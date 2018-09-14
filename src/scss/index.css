@@ -232,9 +232,9 @@ a {
   flex-direction: column; }
 
 .jumpLink {
+  padding-top: 9px;
   text-decoration: none;
   text-align: center;
-  margin: 10px 0px 0px 120px;
   font-size: 12px;
   color: #5b5b5b;
   font-weight: 500; }
