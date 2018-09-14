@@ -132,37 +132,118 @@ class Step4 extends Component {
         super(props)
         this.state = {
             responses: {},
-            currentStep: 4
+            currentStep: 4,
+            dataAccommodation: {
+                plain1: '',
+                plain2: '',
+                train1: '',
+                breakfast: '',
+                qualityAcom:'',
+                typeAcom:'',
+            }
         }
-        this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this)
+        this.handlePlainPreference= this.handlePlainPreference.bind(this);this.handlePlainLocation= this.handlePlainLocation.bind(this);
+        this.handleTrainPreference = this.handleTrainPreference.bind(this);
+        this.handleSelectBreakfast = this.handleSelectBreakfast.bind(this);
+        this.handleSelectQuality = this.handleSelectQuality.bind(this);
+        this.handleSelectType = this.handleSelectType.bind(this);
     }
 
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    handleSelectCheckbox() {
-        console.log('desayuno si o no?')
+    handlePlainPreference(e) {
+        console.log('HhHHHHHHHHHHHHHHHHHHHHHHHH', this.props);
+        console.log('RADIO',e.target.value)
+        const inputValue = e.target.value;
+        
+        this.setState({
+            dataAccommodation: {
+                plain1: inputValue,
+                plain2: this.props.stateAccommodationObject.plain2,
+                train1: this.props.stateAccommodationObject.train1,
+                breakfast: this.props.stateAccommodationObject.breakfast,
+                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
+                typeAcom:this.props.stateAccommodationObject.typeAcom,
+            }
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
     }
 
-    handlePlainPreference() {
-        console.log('avion ventana o pasillo')
-    }
-
-    handleSelectStars() {
-        console.log('elegir estrellas')
-    }
-
-    handlePlainLocation() {
+    handlePlainLocation(e) {
         console.log('avion adelante,medio o atrás')
+        const inputValue = e.target.value;
+        
+        this.setState({
+            dataAccommodation: {
+                plain1: this.props.stateAccommodationObject.plain1,
+                plain2: inputValue,
+                train1: this.props.stateAccommodationObject.train1,
+                breakfast: this.props.stateAccommodationObject.breakfast,
+                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
+                typeAcom:this.props.stateAccommodationObject.typeAcom,
+            }
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
     }
 
-    handleTrainPreference() {
+    handleTrainPreference(e) {
         console.log('preferencia tren')
+        const inputValue = e.target.value;
+        
+        this.setState({
+            dataAccommodation: {
+                plain1: this.props.stateAccommodationObject.plain1,
+                plain2: this.props.stateAccommodationObject.plain2,
+                train1: inputValue,
+                breakfast: this.props.stateAccommodationObject.breakfast,
+                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
+                typeAcom:this.props.stateAccommodationObject.typeAcom,
+            }
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
     }
 
-    handleSelectType() {
-        console.log('tipo de alojamiento')
+
+    handleSelectBreakfast(e) {
+        console.log('BREAKFAST',e.target.value );
+        const inputValue = e.target.value;
+        this.setState({
+            dataAccommodation: {
+                plain1: this.props.stateAccommodationObject.plain1,
+                plain2: this.props.stateAccommodationObject.plain2,
+                train1: this.props.stateAccommodationObject.train1 ,
+                breakfast: inputValue,
+                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
+                typeAcom:this.props.stateAccommodationObject.typeAcom,
+            }
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));  
+    }
+
+    handleSelectQuality(e) {
+        const inputValue = e.target.value;
+        this.setState({
+            dataAccommodation: {
+                plain1: this.props.stateAccommodationObject.plain1,
+                plain2: this.props.stateAccommodationObject.plain2,
+                train1: this.props.stateAccommodationObject.train1 ,
+                breakfast: this.props.stateAccommodationObject.breakfast,
+                qualityAcom:inputValue,
+                typeAcom:this.props.stateAccommodationObject.typeAcom,
+            }
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));  
+    }
+
+    handleSelectType(e) {
+        const inputValue = e.target.value;
+        this.setState({
+            dataAccommodation: {
+                plain1: this.props.stateAccommodationObject.plain1,
+                plain2: this.props.stateAccommodationObject.plain2,
+                train1: this.props.stateAccommodationObject.train1 ,
+                breakfast: this.props.stateAccommodationObject.breakfast,
+                qualityAcom: this.props.stateAccommodationObject.qualityAcom,
+                typeAcom:inputValue,
+            }
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));  
     }
 
     render() {
@@ -179,10 +260,7 @@ class Step4 extends Component {
             legenContent
         } = this.props;
 
-        console.log(plainPreferences)
-        console.log(plainPreferences.window)
-        console.log(t)
-
+        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', this.props);
         return (
             <div className='stepBox'>
                 <Title
@@ -213,8 +291,8 @@ class Step4 extends Component {
                         translationsAccom={t.accommodation}
                         translationsBreakfast={t.breakfast}
                         translationsTypeOfAccom={t.typeOfAccommodation}
-                        onChangeBreakfast={this.handleSelectCheckbox}
-                        onChangeHotelStars={this.handleSelectStars}
+                        onChangeBreakfast={this.handleSelectBreakfast}
+                        onChangeHotelStars={this.handleSelectQuality}
                         onChangeHotelType={this.handleSelectType}
                     />
                 </form>
