@@ -14,16 +14,14 @@ class AccommodationPref extends Component {
       translationsTypeOfAccom
     } = this.props;
 
-    console.log(translationsBreakfast.legenContent.defaultMessage)
-    console.log(translationsAccom.options)
-    console.log(translationsAccom.options[3])
+    console.log(translationsBreakfast.legenContent.props.id)
+    console.log(translationsBreakfast.options)
+
     return (
       <div>
         <form >
           <p>
-            <FormattedMessage
-              id={translationsBreakfast.legenContent.defaultMessage}
-            />
+            {translationsBreakfast.legenContent}
           </p>
           <input
             type="radio"
@@ -32,9 +30,7 @@ class AccommodationPref extends Component {
             onChange={onChangeBreakfast}
           />
           <span>
-            <FormattedMessage
-              id={translationsBreakfast.options[0].defaultMessage}
-            />
+            {translationsBreakfast.options[0]}
           </span>
           <input
             type="radio"
@@ -43,9 +39,7 @@ class AccommodationPref extends Component {
             onChange={onChangeBreakfast}
           />
           <span>
-            <FormattedMessage
-              id={translationsBreakfast.options[1].defaultMessage}
-            />
+            {translationsBreakfast.options[1]}
           </span>
           <input
             type="radio"
@@ -54,9 +48,8 @@ class AccommodationPref extends Component {
             onChange={onChangeBreakfast}
           />
           <span>
-            <FormattedMessage
-              id={translationsBreakfast.options[2].defaultMessage}
-            />
+            {translationsBreakfast.options[2]}
+
           </span>
           <input
             type="radio"
@@ -65,112 +58,74 @@ class AccommodationPref extends Component {
             onChange={onChangeBreakfast}
           />
           <span>
-            <FormattedMessage
-              id={translationsBreakfast.options[3].defaultMessage}
-            />
+            {translationsBreakfast.options[3]}
           </span>
         </form>
         <form >
           <p>
-            <FormattedMessage
-              id={translationsAccom.legenContent.defaultMessage}
-            />
+            {translationsAccom.legenContent}
           </p>
           <input
             type="radio"
             name="stars"
-            value="Front"
+            value="5stars"
             onChange={onChangeHotelStars}
           />
           <span>
-            <FormattedMessage
-              id={translationsAccom.options[0].defaultMessage}
-            />
+            {translationsAccom.options[0]}
           </span>
           <input
             type="radio"
             name="stars"
-            value="Middle"
+            value="4stars"
             onChange={onChangeHotelStars}
           />
           <span>
-            <FormattedMessage
-              id={translationsAccom.options[1].defaultMessage}
-            />
+            {translationsAccom.options[1]}
           </span>
           <input
             type="radio"
             name="stars"
-            value="Back"
+            value="3stars"
             onChange={onChangeHotelStars}
           />
           <span>
-            <FormattedMessage
-              id={translationsAccom.options[2].defaultMessage}
-            />
+            {translationsAccom.options[2]}
           </span>
           <input
             type="radio"
             name="stars"
-            value="Back"
+            value="2stars"
             onChange={onChangeHotelStars}
           />
           <span>
-            <FormattedMessage
-              id={translationsAccom.options[3].defaultMessage}
-            />
+            {translationsAccom.options[3]}
           </span>
         </form>
         <form >
           <p>
-            <FormattedMessage
-              id={translationsTypeOfAccom.legenContent.defaultMessage}
-            />
+            {translationsTypeOfAccom.legenContent}
           </p>
+
           <input
             type="radio"
             name="type"
-            value="Window"
+            value="Clásica"
             onChange={onChangeHotelType}
           />
           <span>
-          <FormattedMessage
-              id={translationsTypeOfAccom.options[0].defaultMessage}
-            />
+            {translationsTypeOfAccom.options[1]}
           </span>
           <input
             type="radio"
             name="type"
-            value="Aisle"
+            value="Moderna"
             onChange={onChangeHotelType}
           />
           <span>
-          <FormattedMessage
-              id={translationsTypeOfAccom.options[1].defaultMessage}
-            />
+            {translationsTypeOfAccom.options[2]}
           </span>
-          <input
-            type="radio"
-            name="type"
-            value="Window"
-            onChange={onChangeHotelType}
-          />
-          <span>
-          <FormattedMessage
-              id={translationsTypeOfAccom.options[2].defaultMessage}
-            />
-          </span>
-          <input
-            type="radio"
-            name="type"
-            value="Aisle"
-            onChange={onChangeHotelType}
-          />
-          <span>
-          <FormattedMessage
-              id={translationsTypeOfAccom.options[3].defaultMessage}
-            />
-          </span>
+
         </form>
 
       </div>

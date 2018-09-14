@@ -4,7 +4,8 @@
     background-color: $color-secondary-light;
     position: fixed;
     top: 0;
-    background-image: linear-gradient(to bottom, $color-secondary-light, rgba(248, 249, 248, 0.3));
+    z-index: $to-front;
+    //border-bottom: 20px solid $color-secondary-light opacity($color: #fff);
 }
 
 .logoTRP {
