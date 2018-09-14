@@ -64,8 +64,8 @@ class Step1 extends Component {
             data: {
                 surname: '',
                 name:'',
-                phoneNumber:"",
-                lineNumber:""
+                phoneNumber:'',
+                lineNumber:''
             }
         }
 

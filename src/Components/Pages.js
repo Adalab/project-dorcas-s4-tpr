@@ -43,9 +43,11 @@ class Pages extends Component {
       handleStep1,
       handleStep2, 
       handleStep5,
+      dataVisa,
       stateAccommodationObject,
       handleStep4,
     } = this.props;
+
     console.log('PAGES', this.props);
     return (
       <Fragment>
@@ -93,6 +95,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 handleStep2={handleStep2}
                 travelDocuments= {travelDocuments}
+                dataVisa={dataVisa}
               />}
           />
           <Route

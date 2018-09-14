@@ -49,8 +49,15 @@ class App extends Component {
               passportNumber: '',
             },
           ],
-        }
+        },
       },
+        dataVisa: {
+          numberVisa:'4234',
+          issueCountry:'Perú',
+          destinyCountry:'Argentina',
+          issueDate:'',
+          expiryDate:'',
+        },
       dataAccommodation: { // data step4
         plain1: '',
         plain2: '',
@@ -234,8 +241,15 @@ class App extends Component {
               passportNumber: data.numberPassport,
               },
           ],
-        }
-      }
+        },
+      },
+        dataVisa: {
+          numberVisa: data.numberVisa,
+          issueCountry: data.visaCountryIssue,
+          destinyCountry:data.visaCountryDestination,
+          issueDate:data.visaIssueDate,
+          expiryDate:data.visaExpDate,
+        },
     },()=>(console.log(this.state.data)))
   } 
 
@@ -267,7 +281,7 @@ class App extends Component {
           }
         ],
       }
-    },()=>(console.log(this.state.data)))
+    },()=>(console.log(this.state.dataVisa)))
   } 
 
   handleCurrentStep(step) {
@@ -357,12 +371,12 @@ class App extends Component {
           handleStep4={this.handleStep4}
           handleStep5={this.handleStep5}
           stateDataObject={this.state.data}
+          dataVisa={this.state.dataVisa}
           stateAccommodationObject={this.state.dataAccommodation}
         />
       </div>
     );
   }
 }
-
 
 export default App;
