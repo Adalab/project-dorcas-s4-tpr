@@ -5,6 +5,7 @@ import Navigation from '../Navigation';
 import Calendar from '../Sub-components/Calendar';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from '../Types/TypeTextInput';
+import MaskedInput from 'react-text-mask'; 
 import moment from 'moment';
 
 let locale = window.navigator.userLanguage || window.navigator.language;
@@ -435,7 +436,7 @@ class Step2 extends Component {
                         inputText={this.props.travelDocuments.passport[0].passCountryIssue}
                     />
                     <div className='verticalDisplay'>
-                        <Calendar
+                        {/* <Calendar
                             labelContent={passIssueDateCal.labelContent}
                             id={passIssueDateCal.id}
                             numberOfMonths={passIssueDateCal.numberOfMonths}
@@ -448,7 +449,19 @@ class Step2 extends Component {
                             numberOfMonths={passExpDateCal.numberOfMonths}
                             small={passExpDateCal.small}
                             handleDate={this.handlePassExpDate}
+                        /> */}
+                        <MaskedInput
+                            handleDate={this.handlePassIssueDate}
+                            id={passIssueDateCal.id}
+                            mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                         />
+                        <label htmlFor={passIssueDateCal.id}>{passIssueDateCal.labelContent}</label>
+                        <MaskedInput
+                            handleDate={this.handlePassExpDate}
+                            id={passExpDateCal.id}
+                            mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                        />
+                        <label htmlFor={passExpDateCal.id}>{passExpDateCal.labelContent}</label>
                     </div>
                     <h2 className='subtitles-step2'>
                     {/* Pasaporte hasta aquí */}
@@ -482,7 +495,7 @@ class Step2 extends Component {
                             />
                             
                             <div className='verticalDisplay'>
-                                <Calendar
+                              {/*  <Calendar
                                     labelContent={visaIssueDateCal.labelContent}
                                     id={visaIssueDateCal.id}
                                     numberOfMonths={visaIssueDateCal.numberOfMonths}
@@ -495,7 +508,19 @@ class Step2 extends Component {
                                     numberOfMonths={visaExpDateCal.numberOfMonths}
                                     small={visaExpDateCal.small}
                                     handleDate={this.handleVisaExpDate}
-                                />
+                                /> */}
+                                <MaskedInput
+                                handleDate={this.handleVisaIssueDate}
+                                id={visaIssueDateCal.id}
+                                mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            />
+                            <label htmlFor={visaIssueDateCal.id}>{visaIssueDateCal.labelContent}</label>
+                            <MaskedInput
+                                handleDate={this.handleVisaExpDate}
+                                id={visaExpDateCal.id}
+                                mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            />
+                            <label htmlFor={visaExpDateCal.id}>{visaExpDateCal.labelContent}</label>
                             </div>
                         </div>
                     </div>
