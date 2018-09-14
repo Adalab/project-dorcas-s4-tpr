@@ -78,18 +78,6 @@ class Step1 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    componentDidUpdate(prevState){
-        if(prevState == this.state){
-            this.setState({
-                data: {
-                    ...this.state.data,
-                    surname:this.props.personalInformation.lastName,
-                    name:this.props.personalInformation.firstName,
-                }
-            });
-        } 
-    }
-
     handleNextStepClass(){
         if(this.props.currentStep===1){
             return 'hidden'

@@ -132,7 +132,15 @@ class Step4 extends Component {
         super(props)
         this.state = {
             responses: {},
-            currentStep: 4
+            currentStep: 4,
+            dataAccommodation: {
+                plain1: '',
+                plain2: '',
+                train1: '',
+                breakfast: '',
+                qualityAcom:'',
+                typeAcom:'',
+            }
         }
         this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this)
     }
@@ -141,8 +149,35 @@ class Step4 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    handleSelectCheckbox() {
-        console.log('desayuno si o no?')
+    // handleSurnameInput(e){
+    //     console.log('chula', this.props);
+    //     const inputValue = e.target.value;
+        
+    //     this.setState({
+    //         data: {
+    //             surname: inputValue,
+    //             name:this.props.personalInformation.firstName,
+    //             phoneNumber:this.props.contactInformation.phoneNumbers[0],
+    //             lineNumber:this.props.contactInformation.phoneNumbers[1]
+    //         }
+    //     }, ()=>(this.props.handleStep1(this.state.data)));   
+    // }
+
+    handleSelectCheckbox(e) {
+        console.log('desayuno si o no?',this.props)
+        console.log('radiobutton',e)
+        const inputValue = e.target;
+        
+        this.setState({
+            dataAccommodation: {
+                plain1: inputValue,
+                plain2: '',
+                train1: '',
+                breakfast: '',
+                qualityAcom:'',
+                typeAcom:'',
+            }
+        });   
     }
 
     handlePlainPreference() {
@@ -179,10 +214,7 @@ class Step4 extends Component {
             legenContent
         } = this.props;
 
-        console.log(plainPreferences)
-        console.log(plainPreferences.window)
-        console.log(t)
-
+        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', this.props);
         return (
             <div className='stepBox'>
                 <Title

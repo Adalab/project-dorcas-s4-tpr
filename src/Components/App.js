@@ -51,6 +51,14 @@ class App extends Component {
           ],
         }
       },
+      dataAccommodation: {
+        plain1: '',
+        plain2: '',
+        train1: '',
+        breakfast: '',
+        qualityAcom:'',
+        typeAcom:'',
+    },
       titles: {
         title1: <FormattedMessage
           id="App.personalInfo"
@@ -340,6 +348,7 @@ class App extends Component {
           handleStep2={this.handleStep2}
           handleStep5={this.handleStep5}
           stateDataObject={this.state.data}
+          stateAccommodationObject={this.state.dataAccommodation}
         />
       </div>
     );

@@ -43,6 +43,7 @@ class Pages extends Component {
       handleStep1,
       handleStep2, 
       handleStep5,
+      stateAccommodationObject,
     } = this.props;
     console.log('PAGES', this.props);
     return (
@@ -72,6 +73,7 @@ class Pages extends Component {
                 handleStep1={handleStep1}
                 personalInformation={personalInformation}
                 contactInformation= {contactInformation}
+                
               />}
           />
           <Route
@@ -119,6 +121,7 @@ class Pages extends Component {
                 currentStep={currentStep}
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
+                stateAccommodationObject={stateAccommodationObject}
               />}
           />
           <Route
