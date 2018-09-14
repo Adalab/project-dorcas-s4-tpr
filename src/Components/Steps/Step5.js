@@ -11,7 +11,7 @@ import { FormattedMessage } from 'react-intl';
 const familyNumberInput = {
     labelContent: <FormattedMessage
         id="Step5.numberMembers"
-        defaultMessage="Number of members"
+        defaultMessage="Large family card number"
     />,
     id: 'familyNumber',
     name: 'familyNumber'
