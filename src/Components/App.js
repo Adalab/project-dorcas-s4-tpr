@@ -238,6 +238,13 @@ class App extends Component {
     },()=>(console.log(this.state.data)))
   } 
 
+  handleStep4(data){
+    console.log(data);
+    this.setState({
+      dataAccommodation: data
+    },()=>(console.log(this.state.data)))
+  } 
+
   handleStep5(data){
     console.log(data);
     this.setState({
@@ -346,6 +353,7 @@ class App extends Component {
           handleCurrentStep={this.handleCurrentStep}
           handleStep1={this.handleStep1}
           handleStep2={this.handleStep2}
+          handleStep4={this.handleStep4}
           handleStep5={this.handleStep5}
           stateDataObject={this.state.data}
           stateAccommodationObject={this.state.dataAccommodation}

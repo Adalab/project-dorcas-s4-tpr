@@ -142,46 +142,35 @@ class Step4 extends Component {
                 typeAcom:'',
             }
         }
-        this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this)
+        this.handleSelectCheckbox = this.handleSelectCheckbox.bind(this);
+        this.handlePlainPreference= this.handlePlainPreference.bind(this);
     }
 
     componentDidMount() {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    // handleSurnameInput(e){
-    //     console.log('chula', this.props);
-    //     const inputValue = e.target.value;
-        
-    //     this.setState({
-    //         data: {
-    //             surname: inputValue,
-    //             name:this.props.personalInformation.firstName,
-    //             phoneNumber:this.props.contactInformation.phoneNumbers[0],
-    //             lineNumber:this.props.contactInformation.phoneNumbers[1]
-    //         }
-    //     }, ()=>(this.props.handleStep1(this.state.data)));   
-    // }
-
     handleSelectCheckbox(e) {
         console.log('desayuno si o no?',this.props)
         console.log('radiobutton',e)
-        const inputValue = e.target;
+       
+    }
+
+    handlePlainPreference(e) {
+        console.log('HhHHHHHHHHHHHHHHHHHHHHHHHH', this.props);
+        console.log('RADIO',e.target.value)
+        const inputValue = e.target.value;
         
         this.setState({
             dataAccommodation: {
                 plain1: inputValue,
-                plain2: '',
-                train1: '',
-                breakfast: '',
-                qualityAcom:'',
-                typeAcom:'',
+                plain2: this.props.stateAccommodationObject.plain2,
+                train1: this.props.stateAccommodationObject.train1,
+                breakfast: this.props.stateAccommodationObject.breakfast,
+                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
+                typeAcom:this.props.stateAccommodationObject.typeAcom,
             }
-        });   
-    }
-
-    handlePlainPreference() {
-        console.log('avion ventana o pasillo')
+        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
     }
 
     handleSelectStars() {
