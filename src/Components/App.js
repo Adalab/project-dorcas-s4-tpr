@@ -232,8 +232,15 @@ class App extends Component {
               passportNumber: data.numberPassport,
               },
           ],
-        }
-      }
+        },
+      },
+        dataVisa: {
+          numberVisa: data.numberVisa,
+          issueCountry: data.visaCountryIssue,
+          destinyCountry:data.visaCountryDestination,
+          issueDate:data.visaIssueDate,
+          expiryDate:data.visaExpDate,
+        },
     },()=>(console.log(this.state.data)))
   } 
 
@@ -257,13 +264,6 @@ class App extends Component {
             phoneNumber: data.phoneNumberEmergency,
           }
         ],
-        // dataVisa: {
-        //   numberVisa: data.numberVisa,
-        //   issueCountry: data.visaCountryIssue,
-        //   destinyCountry:data.visaCountryDestination,
-        //   issueDate:data.visaIssueDate,
-        //   expiryDate:data.visaExpDate,
-        // },
       }
     },()=>(console.log(this.state.dataVisa)))
   } 

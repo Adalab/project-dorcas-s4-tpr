@@ -146,15 +146,15 @@ class Step2 extends Component {
                 passCountryIssue:'' ,
                 passIssueDate: '',
                 passExpDate: '',
-                numberVisa: "",
-                visaCountryIssue: "",
-                visaCountryDestination: "",
-                visaIssueDate: "",
-                visaExpDate: "",
+                numberVisa: '',
+                visaCountryIssue: '',
+                visaCountryDestination: '',
+                visaIssueDate: '',
+                visaExpDate: '',
                 numberId:"",
-                idIssueDate: "",
-                idExpDate: "",
-                placeBirth:"",
+                idIssueDate: '',
+                idExpDate: '',
+                placeBirth:'',
             } 
         }
         
@@ -362,6 +362,7 @@ class Step2 extends Component {
     }
 
     handleVisaInput (e) {
+        console.log("HhHHHHHHHOLOOOOOALLALALLAALL")
         const inputValue=e.target.value;
         this.setState({
             data:{
