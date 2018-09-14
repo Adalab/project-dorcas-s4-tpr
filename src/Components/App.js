@@ -146,6 +146,7 @@ class App extends Component {
     this.handleStep2=this.handleStep2.bind(this);
     this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
+    this.handleFirstPage=this.handleFirstPage.bind(this);
   }
 
   componentDidMount() {
@@ -355,6 +356,11 @@ class App extends Component {
         }
       }, () => { console.log(this.state.currentStep) });
     }
+  }
+
+  handleFirstPage(){
+    console.log('primer paso')
+   
   }
 
   render() {
