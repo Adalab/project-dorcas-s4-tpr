@@ -188,8 +188,20 @@ class Step2 extends Component {
     handlePassIssueDate(date){
         this.setState({
             data:{
-                ...this.state.data,
+                numberPassport:this.props.travelDocuments.passport[0].passportNumber,
+                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
                 passIssueDate: date,
+                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
+                numberVisa: '',
+                visaCountryIssue: "",
+                visaCountryDestination: "",
+                visaIssueDate: "",
+                visaExpDate: "",
+                typeId: '',
+                numberId: this.props.travelDocuments.idCard[0].dniNumber,
+                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
+                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
+                placeBirth:this.props.travelDocuments.idCard[0].placeOfBirth,
             } 
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
@@ -197,8 +209,20 @@ class Step2 extends Component {
     handlePassExpDate(date){
         this.setState({
             data:{
-                ...this.state.data,
+                numberPassport:this.props.travelDocuments.passport[0].passportNumber,
+                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
+                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
                 passExpDate: date,
+                numberVisa: '',
+                visaCountryIssue: "",
+                visaCountryDestination: "",
+                visaIssueDate: "",
+                visaExpDate: "",
+                typeId: '',
+                numberId: this.props.travelDocuments.idCard[0].dniNumber,
+                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
+                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
+                placeBirth:this.props.travelDocuments.idCard[0].placeOfBirth,
             } 
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
@@ -206,8 +230,20 @@ class Step2 extends Component {
     handleIdIssueDate(date){
         this.setState({
             data:{
-                ...this.state.data,
+                numberPassport:this.props.travelDocuments.passport[0].passportNumber,
+                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
+                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
+                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
+                numberVisa: '',
+                visaCountryIssue: "",
+                visaCountryDestination: "",
+                visaIssueDate: "",
+                visaExpDate: "",
+                typeId: '',
+                numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: date,
+                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
+                placeBirth:this.props.travelDocuments.idCard[0].placeOfBirth,
             } 
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
@@ -215,14 +251,26 @@ class Step2 extends Component {
     handleIdExpDate(date){
         this.setState({
             data:{
-                ...this.state.data,
+                numberPassport:this.props.travelDocuments.passport[0].passportNumber,
+                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
+                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
+                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
+                numberVisa: '',
+                visaCountryIssue: "",
+                visaCountryDestination: "",
+                visaIssueDate: "",
+                visaExpDate: "",
+                typeId: '',
+                numberId: this.props.travelDocuments.idCard[0].dniNumber,
+                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: date,
+                placeBirth:this.props.travelDocuments.idCard[0].placeOfBirth,
             } 
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
     handlePassportInput(e) {
-        const inputValue=e.target.value;
+        const inputValue = e.target.value;
         this.setState({
             data:{
                 numberPassport: inputValue,
@@ -334,6 +382,7 @@ class Step2 extends Component {
     }
 
     render() {
+        console.log(this.props)
         const {
             title1,
             title2,
@@ -343,6 +392,7 @@ class Step2 extends Component {
             step2,
             currentStep,
             changingStep,
+            travelDocuments
         } = this.props;
 
         const {buttonHidden} = this.state;
