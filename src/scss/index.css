@@ -9,6 +9,9 @@
   list-style: none;
   font-family: "Fira Sans", sans-serif; }
 
+a {
+  text-decoration: none; }
+
 .CalendarDay__highlighted_calendar {
   background: #82E0AA;
   color: #186A3B; }
@@ -130,24 +133,27 @@
   position: fixed;
   background-color: #f8f9f8;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14); }
 
 .navigation-container {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 120px;
   margin-left: 70px;
   margin-right: 70px; }
 
 .list-steps {
-  display: flex; }
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around; }
 
 .hidden {
   display: none; }
 
 .nav-steps {
-  width: 120px;
   height: 70px;
   text-transform: uppercase;
   font-size: 12px;
@@ -176,8 +182,7 @@
   border-radius: 4px;
   color: #06a790;
   font-size: 18px;
-  font-weight: 600;
-  margin-right: 130px; }
+  font-weight: 600; }
 
 .next-button {
   width: 185px;
@@ -188,8 +193,7 @@
   border-radius: 4px;
   color: #fff;
   font-size: 18px;
-  font-weight: 600;
-  margin-left: 120px; }
+  font-weight: 600; }
 
 .nav-label_step {
   color: #5b5b5b;
