@@ -64,8 +64,8 @@ class Step1 extends Component {
             data: {
                 surname: '',
                 name:'',
-                phoneNumber:"",
-                lineNumber:""
+                phoneNumber:'',
+                lineNumber:''
             }
         }
 
@@ -76,18 +76,6 @@ class Step1 extends Component {
     }
     componentDidMount(){
         this.props.handleCurrentStep(this.state.currentStep);
-    }
-
-    componentDidUpdate(prevState){
-        if(prevState == this.state){
-            this.setState({
-                data: {
-                    ...this.state.data,
-                    surname:this.props.personalInformation.lastName,
-                    name:this.props.personalInformation.firstName,
-                }
-            });
-        } 
     }
 
     handleNextStepClass(){

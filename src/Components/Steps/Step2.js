@@ -151,7 +151,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId:"",
                 numberId:"",
                 idIssueDate: "",
                 idExpDate: "",
@@ -197,7 +196,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -207,6 +205,7 @@ class Step2 extends Component {
     }
 
     handleCountryInput(e) {
+        console.log(this.state.data)
         const inputValue=e.target.value;
         this.setState({
             data:{
@@ -219,7 +218,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -240,7 +238,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -261,7 +258,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -283,7 +279,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: inputValue,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -304,7 +299,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: date,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -325,7 +319,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: date,
@@ -347,7 +340,6 @@ class Step2 extends Component {
                 visaCountryDestination: "",
                 visaIssueDate: "",
                 visaExpDate: "",
-                typeId: '',
                 numberId: this.props.travelDocuments.idCard[0].dniNumber,
                 idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
                 idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
@@ -417,10 +409,6 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    
-
-    
-
     render() {
         console.log(this.props)
         const {
@@ -435,7 +423,19 @@ class Step2 extends Component {
             travelDocuments
         } = this.props;
 
-        const {buttonHidden} = this.state;
+        const {
+            buttonHidden,
+        } = this.state;
+
+        const {
+            dniNumber,
+            placeOfBirth,
+        } = this.props.travelDocuments.idCard;
+
+        const {
+            issueCountry,
+            passportNumber,
+        } = this.props.travelDocuments.passport;
 
         let visaConteinerContent;
         if (buttonHidden===false){
@@ -467,12 +467,12 @@ class Step2 extends Component {
                     <TypeTextInput 
                         onChange={this.handlePassportInput}
                         inputData={numPassportInput} 
-                        inputText={title1} 
+                        inputText={passportNumber} 
                     />
                     <TypeTextInput 
                         onChange={this.handleCountryInput} 
                         inputData={countryIssueInput} 
-                        inputText={this.props.travelDocuments.passport[0].passCountryIssue}
+                        inputText={issueCountry}
                     />
                     <div className='verticalDisplay'>
                         <Calendar
@@ -549,7 +549,9 @@ class Step2 extends Component {
                     <div className='verticalDisplay'>
                         <TypeTextInput
                             onChange={this.handleNumberInput}
-                            inputData={documentNumberInput} />
+                            inputData={documentNumberInput}
+                            inputText={dniNumber} 
+                            />
                     </div>
                     <div className='verticalDisplay'>
                         <Calendar
@@ -569,6 +571,7 @@ class Step2 extends Component {
                         <TypeTextInput
                             onChange={this.handleBirthPlace}
                             inputData={birthPlaceInput}
+                            inputText={placeOfBirth}
                         />
                     </div>
                 </form>
