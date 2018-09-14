@@ -537,7 +537,7 @@ class Step2 extends Component {
                             inputData={documentNumberInput} />
                     </div>
                     <div className='verticalDisplay'>
-                        <Calendar
+                        {/*<Calendar
                             labelContent={idIssueDateCal.labelContent}
                             id={idIssueDateCal.id}
                             numberOfMonths={idIssueDateCal.numberOfMonths}
@@ -550,7 +550,19 @@ class Step2 extends Component {
                             numberOfMonths={idExpDateCal.numberOfMonths}
                             small={idExpDateCal.small}
                             handleDate={this.handleIdExpDate}
-                        />
+                        />*/}
+                        <MaskedInput
+                        handleDate={this.handleIdIssueDate}
+                        id={idIssueDateCal.id}
+                        mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                    />
+                    <label htmlFor={idIssueDateCal.id}>{idIssueDateCal.labelContent}</label>
+                    <MaskedInput
+                        handleDate={this.handleIdExpDate}
+                        id={idExpDateCal.id}
+                        mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                    />
+                    <label htmlFor={idExpDateCal.id}>{idExpDateCal.labelContent}</label>
                         <TypeTextInput
                             onChange={this.handleBirthPlace}
                             inputData={birthPlaceInput}
