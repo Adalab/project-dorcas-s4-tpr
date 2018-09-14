@@ -14,9 +14,6 @@ class AccommodationPref extends Component {
       translationsTypeOfAccom
     } = this.props;
 
-    console.log(translationsBreakfast.legenContent.props.id)
-    console.log(translationsBreakfast.options)
-
     return (
       <div>
         <form >
