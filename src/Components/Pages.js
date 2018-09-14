@@ -43,7 +43,11 @@ class Pages extends Component {
       handleStep1,
       handleStep2, 
       handleStep5,
+      dataVisa,
+      stateAccommodationObject,
+      handleStep4,
     } = this.props;
+
     console.log('PAGES', this.props);
     return (
       <Fragment>
@@ -60,6 +64,7 @@ class Pages extends Component {
             path='/step/1'
             render={props =>
               <Step1
+                match={props.match}
                 title1={title1}
                 title2={title2}
                 title3={title3}
@@ -72,6 +77,7 @@ class Pages extends Component {
                 handleStep1={handleStep1}
                 personalInformation={personalInformation}
                 contactInformation= {contactInformation}
+                
               />}
           />
           <Route
@@ -89,6 +95,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 handleStep2={handleStep2}
                 travelDocuments= {travelDocuments}
+                dataVisa={dataVisa}
               />}
           />
           <Route
@@ -119,6 +126,8 @@ class Pages extends Component {
                 currentStep={currentStep}
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
+                stateAccommodationObject={stateAccommodationObject}
+                handleStep4={handleStep4}
               />}
           />
           <Route
