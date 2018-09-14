@@ -97,15 +97,15 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        console.log('chula', e.target.value);
+        console.log('chula', this.props);
         const inputValue = e.target.value;
         
         this.setState({
             data: {
                 surname: inputValue,
                 name:this.props.personalInformation.firstName,
-                phoneNumber:"",
-                lineNumber:""
+                phoneNumber:this.props.contactInformation.phoneNumbers[0],
+                lineNumber:this.props.contactInformation.phoneNumbers[1]
             }
         }, ()=>(this.props.handleStep1(this.state.data)));   
     }
@@ -116,8 +116,8 @@ class Step1 extends Component {
             data: {
                 surname: this.props.personalInformation.lastName,
                 name:inputValue,
-                phoneNumber:"",
-                lineNumber:""
+                phoneNumber:this.props.contactInformation.phoneNumbers[0],
+                lineNumber:this.props.contactInformation.phoneNumbers[1]
             }
         }, ()=>(this.props.handleStep1(this.state.data)));  
     }
@@ -129,7 +129,7 @@ class Step1 extends Component {
                 surname: this.props.personalInformation.lastName,
                 name: this.props.personalInformation.firstName,
                 phoneNumber:inputValue,
-                lineNumber:""
+                lineNumber:this.props.contactInformation.phoneNumbers[1]
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
@@ -140,7 +140,7 @@ class Step1 extends Component {
             data: {
                 surname: this.props.personalInformation.lastName,
                 name: this.props.personalInformation.firstName,
-                phoneNumber:this.props.personalInformation.phoneNumbers[0],
+                phoneNumber:this.props.contactInformation.phoneNumbers[0],
                 lineNumber:inputValue
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
