@@ -2,33 +2,10 @@ import React, { Component } from 'react';
 import Title from '../Sub-components/Title';
 import Button from '../Sub-components/Button';
 import Navigation from '../Navigation';
-import Calendar from '../Sub-components/Calendar';
 import { FormattedMessage } from 'react-intl';
 import TypeTextInput from '../Types/TypeTextInput';
-import moment from 'moment';
+import MaskedInput from 'react-text-mask'; 
 
-let locale = window.navigator.userLanguage || window.navigator.language;
-console.log(locale);
-
-if (locale === "es-ES") {
-    moment.locale('es', {
-        months: 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
-        monthsShort: 'En_Feb_Mar_Abr_May_Jun_Jul_Ag_Sept_Oct_Nov_Dic'.split('_'),
-        monthsParseExact: true,
-        weekdays: 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado_Domingo'.split('_'),
-        weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
-        weekdaysMin: 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_'),
-        weekdaysParseExact: true,
-        longDateFormat: {
-            L: 'DD/MM/YYYY',
-        },
-        week: {
-            dow: 1
-        }
-    });
-} else {
-    moment.locale(locale);
-}
 //País emisión pas
 const countryIssueInput = {
     labelContent: <FormattedMessage
@@ -475,20 +452,18 @@ class Step2 extends Component {
                         inputText={this.props.travelDocuments.passport[0].passCountryIssue}
                     />
                     <div className='verticalDisplay'>
-                        <Calendar
-                            labelContent={passIssueDateCal.labelContent}
-                            id={passIssueDateCal.id}
-                            numberOfMonths={passIssueDateCal.numberOfMonths}
-                            small={passIssueDateCal.small}
+                        <MaskedInput
                             handleDate={this.handlePassIssueDate}
+                            id={passIssueDateCal.id}
+                            mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                         />
-                        <Calendar
-                            labelContent={passExpDateCal.labelContent}
-                            id={passExpDateCal.id}
-                            numberOfMonths={passExpDateCal.numberOfMonths}
-                            small={passExpDateCal.small}
+                        <label htmlFor={passIssueDateCal.id}>{passIssueDateCal.labelContent}</label>
+                        <MaskedInput
                             handleDate={this.handlePassExpDate}
+                            id={passExpDateCal.id}
+                            mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                         />
+                        <label htmlFor={passExpDateCal.id}>{passExpDateCal.labelContent}</label>
                     </div>
                     <h2 className='subtitles-step2'>
                     {/* Pasaporte hasta aquí */}
@@ -522,20 +497,18 @@ class Step2 extends Component {
                             />
                             
                             <div className='verticalDisplay'>
-                                <Calendar
-                                    labelContent={visaIssueDateCal.labelContent}
-                                    id={visaIssueDateCal.id}
-                                    numberOfMonths={visaIssueDateCal.numberOfMonths}
-                                    small={visaIssueDateCal.small}
-                                    handleDate={this.handleVisaIssueDate}
-                                />
-                                <Calendar
-                                    labelContent={visaExpDateCal.labelContent}
-                                    id={visaExpDateCal.id}
-                                    numberOfMonths={visaExpDateCal.numberOfMonths}
-                                    small={visaExpDateCal.small}
-                                    handleDate={this.handleVisaExpDate}
-                                />
+                                <MaskedInput
+                                handleDate={this.handleVisaIssueDate}
+                                id={visaIssueDateCal.id}
+                                mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            />
+                            <label htmlFor={visaIssueDateCal.id}>{visaIssueDateCal.labelContent}</label>
+                            <MaskedInput
+                                handleDate={this.handleVisaExpDate}
+                                id={visaExpDateCal.id}
+                                mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            />
+                            <label htmlFor={visaExpDateCal.id}>{visaExpDateCal.labelContent}</label>
                             </div>
                         </div>
                     </div>
@@ -552,20 +525,18 @@ class Step2 extends Component {
                             inputData={documentNumberInput} />
                     </div>
                     <div className='verticalDisplay'>
-                        <Calendar
-                            labelContent={idIssueDateCal.labelContent}
-                            id={idIssueDateCal.id}
-                            numberOfMonths={idIssueDateCal.numberOfMonths}
-                            small={idIssueDateCal.small}
-                            handleDate={this.handleIdIssueDate}
-                        />
-                        <Calendar
-                            labelContent={idExpDateCal.labelContent}
-                            id={idExpDateCal.id}
-                            numberOfMonths={idExpDateCal.numberOfMonths}
-                            small={idExpDateCal.small}
-                            handleDate={this.handleIdExpDate}
-                        />
+                        <MaskedInput
+                        handleDate={this.handleIdIssueDate}
+                        id={idIssueDateCal.id}
+                        mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                    />
+                    <label htmlFor={idIssueDateCal.id}>{idIssueDateCal.labelContent}</label>
+                    <MaskedInput
+                        handleDate={this.handleIdExpDate}
+                        id={idExpDateCal.id}
+                        mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                    />
+                    <label htmlFor={idExpDateCal.id}>{idExpDateCal.labelContent}</label>
                         <TypeTextInput
                             onChange={this.handleBirthPlace}
                             inputData={birthPlaceInput}
