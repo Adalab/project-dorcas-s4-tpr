@@ -51,6 +51,14 @@ class App extends Component {
           ],
         }
       },
+      dataAccommodation: { // data step4
+        plain1: '',
+        plain2: '',
+        train1: '',
+        breakfast: '',
+        qualityAcom:'',
+        typeAcom:'',
+    },
       titles: {
         title1: <FormattedMessage
           id="App.personalInfo"
@@ -129,6 +137,7 @@ class App extends Component {
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
     this.handleStep1=this.handleStep1.bind(this);
     this.handleStep2=this.handleStep2.bind(this);
+    this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
   }
 
@@ -136,7 +145,7 @@ class App extends Component {
     axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
       .then(res => {
         const person = res.data;
-        console.log('backend',person)
+        console.log('BACKEND',person)
         this.setState({
           data: {
             personalInformation: {
@@ -227,6 +236,13 @@ class App extends Component {
           ],
         }
       }
+    },()=>(console.log(this.state.data)))
+  } 
+
+  handleStep4(data){
+    console.log(data);
+    this.setState({
+      dataAccommodation: data
     },()=>(console.log(this.state.data)))
   } 
 
@@ -338,8 +354,10 @@ class App extends Component {
           handleCurrentStep={this.handleCurrentStep}
           handleStep1={this.handleStep1}
           handleStep2={this.handleStep2}
+          handleStep4={this.handleStep4}
           handleStep5={this.handleStep5}
           stateDataObject={this.state.data}
+          stateAccommodationObject={this.state.dataAccommodation}
         />
       </div>
     );

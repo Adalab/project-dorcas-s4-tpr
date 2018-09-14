@@ -78,18 +78,6 @@ class Step1 extends Component {
         this.props.handleCurrentStep(this.state.currentStep);
     }
 
-    componentDidUpdate(prevState){
-        if(prevState == this.state){
-            this.setState({
-                data: {
-                    ...this.state.data,
-                    surname:this.props.personalInformation.lastName,
-                    name:this.props.personalInformation.firstName,
-                }
-            });
-        } 
-    }
-
     handleNextStepClass(){
         if(this.props.currentStep===1){
             return 'hidden'
@@ -169,7 +157,7 @@ class Step1 extends Component {
             phoneNumbers
         } = this.props.contactInformation;
 
-        console.log('ALEX', this.props.contactInformation);
+        console.log('ALEXxxxxxxxxxxxxxxxxxxxxx', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title
