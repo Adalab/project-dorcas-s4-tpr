@@ -150,10 +150,10 @@ class App extends Component {
             travelDocuments: {
               idCard: [
                 {
-                  placeOfBirth: '',
-                  issueDate: '',
-                  expiryDate: '',
-                  dniNumber: '',
+                  placeOfBirth: person.travelDocuments.idCard[0].dniNumber,
+                  issueDate: person.travelDocuments.idCard[0].expiryDate,
+                  expiryDate: person.travelDocuments.idCard[0].issueDate,
+                  dniNumber: person.travelDocuments.idCard[0].placeOfBirth,
                 },
               ],
               passport: [
