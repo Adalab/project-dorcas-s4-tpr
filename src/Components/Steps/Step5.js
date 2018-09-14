@@ -124,25 +124,21 @@ class Step5 extends Component {
     componentWillReceiveProps(nextProps) {
         console.log(nextProps);
         if(nextProps.extras.familyNumber !== 0){
-            console.log("Está entrando");
             this.setState({
                 checkedFamily: true,
                 checked: true,
             })
         } else if((nextProps.extras.familyNumber === 0)) {
-            console.log("NO está entrando");
             this.setState({
                 checkedFamily: false,
                 checked: false,
             })
         }
         if(nextProps.extras.islandResident.region !== ""){
-            console.log("Está entrando");
             this.setState({
                 checkedResidency: true,
             })
         } else {
-            console.log("NO está entrando");
             this.setState({
                 checkedResidency: false,
             }) 
