@@ -270,7 +270,7 @@ class Step2 extends Component {
     }
 
     handlePassportInput(e) {
-        const inputValue=e.target.value;
+        const inputValue = e.target.value;
         this.setState({
             data:{
                 numberPassport: inputValue,
