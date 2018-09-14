@@ -7,124 +7,123 @@ import { FormattedMessage } from 'react-intl';
 
 const t = {
     breakfast: {
-        legenContent: {
-            id: "Step4.breakfast",
-            defaultMessage: "Breakfast"
-        },
-        options: [
-            {
-                id: "Step4.always",
-                defaultMessage: "Always"
-            },
-            {
-                id: "Step4.sometimes",
-                defaultMessage: "Sometimes"
-            },
-            {
-                id: "Step4.ifIncluded",
-                defaultMessage: "Only if included"
-            },
-            {
-                id: "Step4.never",
-                defaultMessage: "Never"
-            }
-        ],
-        name:
-        {
-            id: "Step4.breakfastPreference",
-            defaultMessage: "breakfastPreference"
-        },
+        legenContent: <FormattedMessage
+            id="Step4.breakfast"
+            defaultMessage="Breakfast" />
+    ,
+    options: [
+        <FormattedMessage
+            id="Step4.always"
+            defaultMessage="Always" />
+        ,
+        <FormattedMessage
+            id="Step4.sometimes"
+            defaultMessage="Sometimes" />
+        ,
+        <FormattedMessage
+            id="Step4.ifIncluded"
+            defaultMessage="Only if included" />
+        ,
+        <FormattedMessage
+            id="Step4.never"
+            defaultMessage="Never" />
 
+    ],
+    name:
+        <FormattedMessage
+            id="Step4.breakfastPreference"
+            defaultMessage="breakfastPreference"
+        />,
     },
 
     accommodation: {
-        legenContent: {
-            id: "Step4.accommodationQuality",
-            defaultMessage: "Accommodation quality"
-        },
+        legenContent:
+            <FormattedMessage
+                id="Step4.accommodationQuality"
+                defaultMessage="Accommodation quality"
+            />,
         options: [
-            {
-                id: "Step4.fiveStars",
-                defaultMessage: "5 Stars"
-            }
-            ,
-            {
-                id: "Step4.fromFourStars",
-                defaultMessage: "From 4 Stars"
-            }
-            ,
-            {
-                id: "Step4.fromThreeStars",
-                defaultMessage: "From 3 Stars"
-            }
-            ,
-            {
-                id: "Step4.fromTwoStars",
-                defaultMessage: "From 2 Stars"
-            }
-
+            <FormattedMessage
+                id="Step4.fiveStars"
+                defaultMessage="5 Stars"
+            />,
+            <FormattedMessage
+                id="Step4.fromFourStars"
+                defaultMessage="From 4 Stars"
+            />,
+            <FormattedMessage
+                id="Step4.fromThreeStars"
+                defaultMessage="From 3 Stars"
+            />,
+            <FormattedMessage
+                id="Step4.fromTwoStars"
+                defaultMessage="From 2 Stars"
+            />
         ],
-        name: {
-            id: "Step4.accommodationPreference",
-            defaultMessage: "Accommodation Preference"
-        }
+        name:
+            <FormattedMessage
+                id="Step4.accommodationPreference"
+                defaultMessage="Accommodation Preference"
+            />
     },
     typeOfAccommodation: {
-        legenContent: {
-            id: "Step4.typeOfAccommodation",
-            defaultMessage: "Type of accommodation"
-        }
+        legenContent:
+            <FormattedMessage
+                id="Step4.typeOfAccommodation"
+                defaultMessage="Type of accommodation"
+            />
         ,
         options: [
-            {
-                id: "Step4.irrelevant",
-                defaultMessage: "Irrelevant"
-            },
-            {
-                id: "Step4.classic",
-                defaultMessage: "Classic"
-            },
-            {
-                id: "Step4.modern",
-                defaultMessage: "Modern"
-            },
-            {
-                id: "Step4.niche",
-                defaultMessage: "Niche"
-            }],
-        name: {
-            id: "Step4.qualityPreference",
-            defaultMessage: "Quality preference"
-        }
+            <FormattedMessage
+                id="Step4.irrelevant"
+                defaultMessage="Irrelevant"
+            />
+            ,
+            <FormattedMessage
+                id="Step4.classic"
+                defaultMessage="Classic"
+            />
+            ,
+            <FormattedMessage
+                id="Step4.modern"
+                defaultMessage="Modern"
+            />
+            ,
+            <FormattedMessage
+                id="Step4.niche"
+                defaultMessage="Niche"
+            />
+        ],
+        name:
+            <FormattedMessage
+                id="Step4.qualityPreference"
+                defaultMessage="Quality preference"
+            />
+
     }
 }
-const plainPreferences = {
-    window:
-    {
-        id: "Step4.window",
-        defaultMessage: "Window"
-    }
-    ,
-    aisle:
-    {
-        id: "Step4.aisle",
-        defaultMessage: "Aisle"
-    }
 
+
+const plainPreferences = {
+    window: <FormattedMessage
+        id="Step4.window"
+        defaultMessage="Window"
+    />,
+    aisle: <FormattedMessage
+        id="Step4.aisle"
+        defaultMessage="Aisle"
+    />
 }
 
 const trainPreferences = {
-    window:
-    {
-        id: "Step4.trainWindow",
-        defaultMessage: "Window"
-    }
-    ,
-    aisle:
-    {
-        id: "Step4.trainAisle",
-        defaultMessage: "Aisle"
-    }
+    window: <FormattedMessage
+        id="Step4.trainWindow"
+        defaultMessage="Window"
+    />,
+    aisle: <FormattedMessage
+        id="Step4.trainAisle"
+        defaultMessage="Aisle"
+    />
 }
 
 class Step4 extends Component {
@@ -282,7 +281,7 @@ class Step4 extends Component {
                         />
                     </span>
                     <h2>
-                    <FormattedMessage
+                        <FormattedMessage
                             id="Step4.accommodationPreferences"
                             defaultMessage="Accommodation preferences"
                         />

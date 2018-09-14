@@ -24,10 +24,8 @@ class TransportPref extends Component {
                         />
                     </h2>
                     <form >
-                        <span>
-                            <FormattedMessage
-                                id={translationsPlainPreferences.window.defaultMessage}
-                            />
+                        <span>             
+                            {translationsPlainPreferences.window}                 
                         </span>
                         <input
                             type="radio"
@@ -36,9 +34,7 @@ class TransportPref extends Component {
                             onChange={onChangePlainPreferences}
                         />
                         <span>
-                            <FormattedMessage
-                                id={translationsPlainPreferences.aisle.defaultMessage}
-                            />
+                            {translationsPlainPreferences.aisle}
                         </span>
                         <input
                             type="radio"
@@ -93,9 +89,7 @@ class TransportPref extends Component {
                     </h2>
                     <form >
                         <span>
-                            <FormattedMessage
-                                id={translationsTrainPreferences.window.defaultMessage}
-                            />
+                            {translationsTrainPreferences.window}
                         </span>
                         <input
                             type="radio"
@@ -104,9 +98,7 @@ class TransportPref extends Component {
                             onChange={onChangeTrainPreferences}
                         />
                         <span>
-                            <FormattedMessage
-                                id={translationsTrainPreferences.aisle.defaultMessage}
-                            />
+                            {translationsTrainPreferences.aisle}
                         </span>
                         <input
                             type="radio"

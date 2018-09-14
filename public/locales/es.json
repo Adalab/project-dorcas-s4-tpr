@@ -12,7 +12,7 @@
     "Step2.userDocDateIssue": "F.emisión",
     "Step2.userDocExpirationDate": "F.expiración",
     "Step2.userBirthPlace": "Lugar de nacimiento",
-    "Step4.accommodations": "Alojamientos",
+    "Step4.accommodation": "Alojamientos",
     "Step4.accommodationPreferences": "Preferencias de alojamiento",
     "Step4.breakfast": "Desayunos",
     "Step4.always": "Siempre",
@@ -25,10 +25,12 @@
     "Step4.fromThreeStars": "Desde 3 Estrellas",
     "Step4.fromTwoStars": "Desde 2 Estrellas",
     "Step4.typeOfAccommodation": "Tipo de alojamiento",
-    "Step4.irrelevant": "Irrelevante",
     "Step4.classic": "Clásica",
     "Step4.modern": "Moderno",
-    "Step4.niche": "Nicho",
+    "Step4.window": "ventana",
+    "Step4.aisle": "pasillo",
+    "Step4.trainWindow": "ventana",
+    "Step4.trainAisle": "pasillo",
     "Step5.numerousFamily": "Familia Numerosa",
     "Step5.numberMembers": "Número tarjeta de familia numerosa",
     "Step5.residentOutsidePeninsula": "Residente fuera de la península",
@@ -55,6 +57,11 @@
     "App.step4": "Paso 4",
     "App.step5": "Paso 5",
     "Navigation.back": "Anterior",
-    "Navigation.next": "Siguiente"
+    "Navigation.next": "Siguiente",
+    "TransportPref.plainPreferences": "Preferencias en aviones",
+    "TransportPref.front": "Primeras filas",
+    "TransportPref.middle": "Centro",
+    "TransportPref.back": "Últimas filas",
+    "TransportPref.prefTrains": "Preferencias en trenes"
   }
 
