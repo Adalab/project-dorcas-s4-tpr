@@ -137,6 +137,7 @@ class App extends Component {
     this.handleCurrentStep=this.handleCurrentStep.bind(this);
     this.handleStep1=this.handleStep1.bind(this);
     this.handleStep2=this.handleStep2.bind(this);
+    this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
   }
 
