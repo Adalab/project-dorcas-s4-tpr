@@ -83,90 +83,37 @@ a {
   margin-bottom: 30px;
   appearance: none; }
 
-.position-nav {
-  bottom: 0;
-  position: fixed;
-  background-color: #f8f9f8;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14); }
-
 .navigation-container {
   width: 100%;
-  display: flex;
-  align-items: center;
   height: 120px;
-  margin-left: 70px;
-  margin-right: 70px; }
-
-.list-steps {
   display: flex;
-  flex-grow: 1;
-  justify-content: space-around; }
-
-.hidden {
-  display: none; }
-
-.nav-steps {
-  height: 70px;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #5b5b5b;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  bottom: 0;
   justify-content: center;
   align-items: center; }
 
-.nav-label {
+.list-steps {
   display: flex;
-  text-align: center;
+  flex-basis: 50%;
+  justify-content: center; }
+
+.back-button-link {
+  margin: auto; }
+
+.container-nexts {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.nav-steps {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  height: 40px;
-  line-height: 1.5;
-  margin-top: 10px;
-  width: 60px; }
-
-.back-button {
-  padding-left: 52px;
-  padding-right: 52px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-color: #f8f9f8;
-  border: solid 1px #06a790;
-  border-radius: 4px;
-  color: #06a790;
-  font-size: 18px;
-  font-weight: 600; }
-  @media all and (max-width: 1000px) {
-    .back-button {
-      background-color: #f8f9f8;
-      border-radius: 0px;
-      border: none;
-      color: #8d9293; } }
-
-.next-button {
-  padding-left: 52px;
-  padding-right: 52px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-image: linear-gradient(101deg, #77c7ad, #06a790);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600; }
-  @media all and (max-width: 1000px) {
-    .next-button {
-      background-color: #f8f9f8;
-      border-radius: 0px;
-      border: none;
-      color: #06a790;
-      background-image: none;
-      box-shadow: none; } }
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #5b5b5b; }
 
 .nav-label_step {
   color: #5b5b5b;
@@ -174,39 +121,8 @@ a {
   font-size: 12px;
   font-weight: 500; }
 
-.stepActive {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  background-color: #fafbfa;
-  color: #5b5b5b;
-  box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03); }
-
-.stepInactive {
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  background-color: #06a790;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.stepCompleted {
-  color: white;
-  border: 1px solid #56027e;
-  background-color: #56027e; }
-
-.container-nexts {
-  display: flex;
-  flex-direction: column; }
-
 .jumpLink {
   padding-top: 9px;
-  text-decoration: none;
   text-align: center;
   font-size: 12px;
   color: #5b5b5b;
@@ -215,6 +131,9 @@ a {
 .jumpLink-colorText {
   font-weight: 600;
   color: #05b09b; }
+
+* {
+  border: 1px solid black; }
 
 .position-label {
   position: relative; }
@@ -267,29 +186,6 @@ a {
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 20px; }
-
-.back-button {
-  width: 175px;
-  height: 50px;
-  background-color: #f8f9f8;
-  border: solid 1px #06a790;
-  border-radius: 4px;
-  color: #06a790;
-  font-size: 18px;
-  font-weight: 600;
-  margin-right: 130px; }
-
-.next-button {
-  width: 185px;
-  height: 50px;
-  background-image: linear-gradient(101deg, #77c7ad, #06a790);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  margin-left: 120px; }
 
 .visaButton-styles {
   height: 50px;

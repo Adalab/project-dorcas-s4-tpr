@@ -1,94 +1,197 @@
-.position-nav {
-    bottom: 0;
-    position: fixed;
-    background-color: $color-secondary-light;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
-}
+// .position-nav {
+//     bottom: 0;
+//     position: fixed;
+//     background-color: $color-secondary-light;
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+// }
+
+// .navigation-container {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     height: 120px;
+//     margin-left: 70px;
+//     margin-right: 70px;
+// }
+
+// .list-steps {
+//     display: flex;
+//     flex-grow: 1;
+//     justify-content: space-around;
+// }
+// .hidden {
+//     display:none;
+// }
+
+// .nav-steps {
+//     height: 70px;
+//     text-transform: uppercase;
+//     font-size: $font-size-s;
+//     color: $color-secondary-dark;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center; 
+// }
+
+// .nav-label {
+//     display: flex;
+//     text-align: center;
+//     justify-content: center;
+//     align-items: flex-start;
+//     height: 40px;
+//     line-height: 1.5;
+//     margin-top: 10px;
+//     width: 60px;
+// }
+
+// .back-button {
+//     padding-left: 52px;
+//     padding-right: 52px;
+//     padding-top: 12px;
+//     padding-bottom: 12px;
+//     background-color: $color-secondary-light;
+//     border: solid 1px $color-primary-dark;
+//     border-radius: 4px;
+//     color: $color-primary-dark;
+//     font-size: $font-size-l;
+//     font-weight: $bold;
+//     @media all and (max-width:1000px) {
+//         background-color: $color-secondary-light;
+//         border-radius: 0px;
+//         border: none;
+//         color: $color-terciary-dark;
+
+//     }
+// }
+
+// .next-button {
+//     padding-left: 52px;
+//     padding-right: 52px;
+//     padding-top: 12px;
+//     padding-bottom: 12px;
+//     background-image: linear-gradient(101deg, $color-primary-light, $color-primary-dark);
+//     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+//     border: none;
+//     border-radius: 4px;
+//     color: $color-light;
+//     font-size: $font-size-l;
+//     font-weight: $bold;
+//     @media all and (max-width:1000px) {
+//         background-color: $color-secondary-light;
+//         border-radius: 0px;
+//         border: none;
+//         color: $color-primary-dark;
+//         background-image: none;
+//         box-shadow: none;
+//     }
+// }
+
+// .nav-label_step {
+//     color: $color-secondary-dark;
+//     text-transform: uppercase;
+//     font-size: $font-size-s;
+//     font-weight: $normal;
+// }
+
+// .stepActive {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 24px;
+//     height: 24px;
+//     border-radius: 4px;
+//     background-color: $color-navSteps-light;
+//     color: $color-secondary-dark;
+//     box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03);
+// }
+
+// .stepInactive {
+//     width: 24px;
+//     height: 24px;
+//     border-radius: 100%;
+//     background-color: $color-primary-dark;
+//     color: $color-light;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .stepCompleted {
+//     color: white;
+//     border: 1px solid #56027e;
+//     background-color: #56027e; }
+
+// .container-nexts {
+//     display: flex;
+//     flex-direction: column;
+// }   
+
+// .jumpLink {
+//     padding-top: 9px;
+//     text-decoration: none;
+//     text-align: center;
+//     font-size: $font-size-s;
+//     color: $color-secondary-dark;
+//     font-weight: $normal;
+// } 
+
+
+
+// .position-nav {
+//     width: 100%;
+//     position: fixed;
+//     bottom: 0;
+// }
 
 .navigation-container {
     width: 100%;
-    display: flex;
-    align-items: center;
     height: 120px;
-    margin-left: 70px;
-    margin-right: 70px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .list-steps {
     display: flex;
-    flex-grow: 1;
-    justify-content: space-around;
+    flex-basis: 50%;
+    justify-content: center;
 }
-.hidden {
-    display:none;
+
+.back-button-link {
+    margin: auto;
+}
+
+.back-button {
+
+}
+
+.container-nexts {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.next-button {
+    
 }
 
 .nav-steps {
-    height: 70px;
-    text-transform: uppercase;
-    font-size: $font-size-s;
-    color: $color-secondary-dark;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-}
-
-.nav-label {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: flex-start;
-    height: 40px;
-    line-height: 1.5;
-    margin-top: 10px;
-    width: 60px;
-}
-
-.back-button {
-    padding-left: 52px;
-    padding-right: 52px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: $color-secondary-light;
-    border: solid 1px $color-primary-dark;
-    border-radius: 4px;
-    color: $color-primary-dark;
-    font-size: $font-size-l;
-    font-weight: $bold;
-    @media all and (max-width:1000px) {
-        background-color: $color-secondary-light;
-        border-radius: 0px;
-        border: none;
-        color: $color-terciary-dark;
-
-    }
-}
-
-.next-button {
-    padding-left: 52px;
-    padding-right: 52px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-image: linear-gradient(101deg, $color-primary-light, $color-primary-dark);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-    border: none;
-    border-radius: 4px;
-    color: $color-light;
-    font-size: $font-size-l;
-    font-weight: $bold;
-    @media all and (max-width:1000px) {
-        background-color: $color-secondary-light;
-        border-radius: 0px;
-        border: none;
-        color: $color-primary-dark;
-        background-image: none;
-        box-shadow: none;
-    }
+    text-transform: uppercase;
+    font-size: $font-size-s;
+    color: $color-secondary-dark;
 }
 
 .nav-label_step {
@@ -98,49 +201,23 @@
     font-weight: $normal;
 }
 
-.stepActive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    background-color: $color-navSteps-light;
-    color: $color-secondary-dark;
-    box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03);
+.nav-label {
+    
 }
-
-.stepInactive {
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
-    background-color: $color-primary-dark;
-    color: $color-light;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.stepCompleted {
-    color: white;
-    border: 1px solid #56027e;
-    background-color: #56027e; }
-
-.container-nexts {
-    display: flex;
-    flex-direction: column;
-}   
 
 .jumpLink {
     padding-top: 9px;
-    text-decoration: none;
     text-align: center;
     font-size: $font-size-s;
     color: $color-secondary-dark;
     font-weight: $normal;
-} 
+}
 
 .jumpLink-colorText {
     font-weight: $bold;
     color: $color-primary;
+}
+
+* {
+    border: 1px solid black;
 }
