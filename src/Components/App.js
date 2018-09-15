@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      idRoute:'',
+      idRoute: '',
       data: {
         personalInformation: {
           lastName: '',
@@ -153,12 +153,15 @@ class App extends Component {
     this.handleIdRoute=this.handleIdRoute.bind(this);
   }
 
-  componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.state.idRoute}`)
+  componentDidUpdate(prevState) {
+    if(this.state.idRoute !== prevState.idRoute){
+      console.log("Llegan datos")
+      axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.state.idRoute}`)
       .then(res => {
         const person = res.data;
-        console.log('BACKEND',person)
+        console.log('BACKEND',person.id)
         this.setState({
+          idRoute: '',
           data: {
             personalInformation: {
               lastName: person.personalInformation.lastName,
@@ -205,6 +208,10 @@ class App extends Component {
           }
         })
       })
+    } else if(this.state.idRoute === prevState.idRoute){
+      console.log("Loading");
+      return(<Loading/>) 
+  }
   }
 
   handleIdRoute(idRoute){
