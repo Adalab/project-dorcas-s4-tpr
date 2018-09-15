@@ -9,45 +9,45 @@ import MaskedInput from 'react-text-mask';
 //País emisión pas
 const countryIssueInput = {
     labelContent: <FormattedMessage
-        id="Step2.userPassCountryIssue"
-        defaultMessage="Country of issue"
-    />,
+                    id="Step2.userPassCountryIssue"
+                    defaultMessage="Country of issue"
+                />,
     id: 'countryIssue',
     name: 'countryIssue'
 };
 //Lugar nac
 const birthPlaceInput = {
     labelContent: <FormattedMessage
-        id="Step2.userBirthPlace"
-        defaultMessage="Place of birth"
-    />,
+                    id="Step2.userBirthPlace"
+                    defaultMessage="Place of birth"
+                />,
     id: 'birthPlace',
     name: 'birthPlace'
 };
 //Num pas
 const numPassportInput = {
     labelContent: <FormattedMessage
-        id="Step2.userPassportNumber"
-        defaultMessage="Passport number"
-    />,
+                    id="Step2.userPassportNumber"
+                    defaultMessage="Passport number"
+                />,
     id: 'numPassport',
     name: 'numPassport'
 };
 //Num doc
 const documentNumberInput = {
     labelContent: <FormattedMessage
-        id="Step2.userDocumentNumber"
-        defaultMessage="Document number"
-    />,
+                    id="Step2.userDocumentNumber"
+                    defaultMessage="Document number"
+                />,
     id: 'documentNumber',
     name: 'documentNumber'
 };
 //Pasaporte emi
 const passIssueDateCal = {
     labelContent: <FormattedMessage
-        id="Step2.userPassDateIssue"
-        defaultMessage="Date of issue"
-    />,
+                    id="Step2.userPassDateIssue"
+                    defaultMessage="Date of issue"
+                />,
     id: "passIssueDate",
 };
 //Pasaporte exp
@@ -61,45 +61,60 @@ const passExpDateCal = {
 //Id emi
 const idIssueDateCal = {
     labelContent: <FormattedMessage
-        id="Step2.userDocDateIssue"
-        defaultMessage="Date of issue"
-    />,
+                    id="Step2.userDocDateIssue"
+                    defaultMessage="Date of issue"
+                />,
     id: "idIssueDate",
 };
 //Pasaporte o id ?exp
 const idExpDateCal = {
     labelContent: <FormattedMessage
-        id="Step2.userPassExpirationDate"
-        defaultMessage="Expiration date"
-    />,
+                    id="Step2.userPassExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
     id: "expirationDate",
 };
 //Visado
 const visaCountryIssueInput = {
-    labelContent: 'AAA',
-    id: 'vsetStateisaCountryIssue',
+    labelContent: <FormattedMessage
+                    id="Step2.userVisaCountryIssue"
+                    defaultMessage="Country of issue"
+                />,
+    id: 'visaCountryIssue',
     name: 'visaCountryIssue',
 };
 
 const visaCountryDestinationInput = {
-    labelContent: 'AAA',
+    labelContent: <FormattedMessage
+                    id="Step2.userVisaCountryDestination"
+                    defaultMessage="Country of destination"
+                />,
     id: 'visaCountryDestination',
     name: 'visaCountryDestination',
 };
 
 const numVisaInput = {
-    labelContent: 'AAA',
+    labelContent: <FormattedMessage
+                    id="Step2.userVisaNumber"
+                    defaultMessage="Visa number"
+                />,
     id: 'numVisa',
     name: 'numVisa',
 };
 
 const visaIssueDateCal = {
-    labelContent: 'AAA',
+    labelContent: <FormattedMessage
+                    id="Step2.userVisaDateIssue"
+                    defaultMessage="Date of issue"
+                />,
     id: "visaIssueDate",
 };
 
 const visaExpDateCal = {
-    labelContent: 'AAA',
+    labelContent: <FormattedMessage
+                    id="Step2.userVisaExpirationDate"
+                    defaultMessage="Expiration date"
+                />,
     id: "visaExpirationDate",
 };
 
