@@ -209,7 +209,8 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    handlePassIssueDate(date){
+    handlePassIssueDate(e){
+        const date = e.target.value;
         this.setState({
             data:{
                 numberPassport:this.props.travelDocuments.passport[0].passportNumber,
@@ -229,7 +230,8 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    handlePassExpDate(date){
+    handlePassExpDate(e){
+        const date = e.target.value;
         this.setState({
             data:{
                 numberPassport:this.props.travelDocuments.passport[0].passportNumber,
@@ -270,7 +272,8 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
     
-    handleIdIssueDate(date){
+    handleIdIssueDate(e){
+        const date = e.target.value;
         this.setState({
             data:{
                 numberPassport:this.props.travelDocuments.passport[0].passportNumber,
@@ -290,7 +293,8 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
     
-    handleIdExpDate(date){
+    handleIdExpDate(e){
+        const date = e.target.value;
         this.setState({
             data:{
                 numberPassport:this.props.travelDocuments.passport[0].passportNumber,
@@ -410,7 +414,8 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    handleVisaIssueDate (date) {
+    handleVisaIssueDate (e) {
+        const date = e.target.value;
         this.setState({
             data:{
                 numberPassport:this.props.travelDocuments.passport[0].passportNumber,
@@ -430,7 +435,8 @@ class Step2 extends Component {
         }, ()=>(this.props.handleStep2(this.state.data)));
     }
 
-    handleVisaExpDate (date) {
+    handleVisaExpDate (e) {
+        const date = e.target.value;
         this.setState({
             data:{
                 numberPassport:this.props.travelDocuments.passport[0].passportNumber,
@@ -517,17 +523,17 @@ class Step2 extends Component {
                     />
                     <div className='verticalDisplay'>
                         <MaskedInput
-                            handleDate={this.handlePassIssueDate}
-                            inputText={passport[0].issueDate}
                             id={passIssueDateCal.id}
                             mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            value={passport[0].issueDate}
+                            onChange={this.handlePassIssueDate}
                         />
                         <label htmlFor={passIssueDateCal.id}>{passIssueDateCal.labelContent}</label>
                         <MaskedInput
-                            handleDate={this.handlePassExpDate}
-                            inputText={passport[0].expiryDate}
+                            value={passport[0].expiryDate}
                             id={passExpDateCal.id}
                             mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            onChange={this.handlePassExpDate}
                         />
                         <label htmlFor={passExpDateCal.id}>{passExpDateCal.labelContent}</label>
                     </div>
@@ -564,15 +570,17 @@ class Step2 extends Component {
                             
                             <div className='verticalDisplay'>
                                 <MaskedInput
-                                handleDate={this.handleVisaIssueDate}
+                                value={issueDate}
                                 id={visaIssueDateCal.id}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                                onChange={this.handleVisaIssueDate}
                             />
                             <label htmlFor={visaIssueDateCal.id}>{visaIssueDateCal.labelContent}</label>
                             <MaskedInput
-                                handleDate={this.handleVisaExpDate}
                                 id={visaExpDateCal.id}
+                                value={expiryDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                                onChange={this.handleVisaExpDate}
                             />
                             <label htmlFor={visaExpDateCal.id}>{visaExpDateCal.labelContent}</label>
                             </div>
@@ -594,15 +602,18 @@ class Step2 extends Component {
                     </div>
                     <div className='verticalDisplay'>
                         <MaskedInput
-                        handleDate={this.handleIdIssueDate}
+                        value={idCard[0].issueDate}
                         id={idIssueDateCal.id}
                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                        onChange={this.handleIdIssueDate}
                     />
                     <label htmlFor={idIssueDateCal.id}>{idIssueDateCal.labelContent}</label>
                     <MaskedInput
-                        handleDate={this.handleIdExpDate}
                         id={idExpDateCal.id}
+                        value={idCard[0].expiryDate}
                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                        onChange={this.handleIdExpDate}
+                        
                     />
                     <label htmlFor={idExpDateCal.id}>{idExpDateCal.labelContent}</label>
                         <TypeTextInput

@@ -151,6 +151,8 @@ class App extends Component {
     this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
     this.handleIdRoute=this.handleIdRoute.bind(this);
+    this.handleDateFromApi=this.handleDateFromApi.bind(this);
+    this.handleDateToApi=this.handleDateToApi.bind(this);
   }
 
   componentDidUpdate(prevState) {
@@ -159,7 +161,7 @@ class App extends Component {
       axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.state.idRoute}`)
       .then(res => {
         const person = res.data;
-        console.log('BACKEND',person.id)
+        console.log('BACKEND',person)
         this.setState({
           idRoute: '',
           data: {
@@ -175,16 +177,16 @@ class App extends Component {
               idCard: [
                 {
                   placeOfBirth: person.travelDocuments.idCard[0].dniNumber,
-                  issueDate: person.travelDocuments.idCard[0].expiryDate,
-                  expiryDate: person.travelDocuments.idCard[0].issueDate,
+                  issueDate: this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate),
+                  expiryDate: this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate),
                   dniNumber: person.travelDocuments.idCard[0].placeOfBirth,
                 },
               ],
               passport: [
                 {
                   issueCountry: person.travelDocuments.passport[0].issueCountry,
-                  issueDate: person.travelDocuments.passport[0].issueDate,
-                  expiryDate: person.travelDocuments.passport[0].expiryDate,
+                  issueDate: this.handleDateFromApi(person.travelDocuments.passport[0].issueDate),
+                  expiryDate: this.handleDateFromApi(person.travelDocuments.passport[0].expiryDate),
                   passportNumber: person.travelDocuments.passport[0].passportNumber,
                 },
               ],
@@ -206,12 +208,22 @@ class App extends Component {
               }
             ],
           }
-        })
+        }, ()=>(console.log(this.state)))
       })
     } else if(this.state.idRoute === prevState.idRoute){
       console.log("Loading");
       return(<Loading/>) 
   }
+  }
+  handleDateFromApi(date){
+    console.log(date);
+    const newFormatDate = [date.slice(8, 10), "/", date.slice(5, 7), "/", date.slice(0, 4)].join('');
+    return(newFormatDate);
+  }
+  handleDateToApi(date){
+    console.log(date);
+    // const newFormatDateToApi = [date.slice(6, 10), "-", date.slice(3, 5), "-", date.slice(0, 2)].join('');
+    // return(newFormatDateToApi);
   }
 
   handleIdRoute(idRoute){
@@ -265,10 +277,10 @@ class App extends Component {
           numberVisa: data.numberVisa,
           issueCountry: data.visaCountryIssue,
           destinyCountry:data.visaCountryDestination,
-          issueDate:data.visaIssueDate,
-          expiryDate:data.visaExpDate,
+          issueDate:this.handleDateToApi(data.visaIssueDate),
+          expiryDate:this.handleDateToApi(data.visaExpDate),
         },
-    },()=>(console.log(this.state.data)))
+    },()=>(console.log(this.state.dataVisa)))
   } 
 
   handleStep4(data){
