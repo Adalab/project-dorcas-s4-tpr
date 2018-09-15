@@ -59,7 +59,8 @@ class Navigation extends Component {
           </Link>
           <ul className='list-steps'>
             <li className='nav-steps'>
-              <a className='nav-link1' href="" onClick={handleFirstPage}>
+              <a className='nav-link1' href="" 
+              onClick={handleFirstPage}>
                 <Icon
                   title={title1}
                   changingStep={changingStep1}
@@ -69,7 +70,7 @@ class Navigation extends Component {
               </a>
             </li>
             <li className='nav-steps'>
-              <a className='nav-link2' href="" onClick={handleFirstPage}>
+              <a className='nav-link2' href="#/step/2" onClick={handleFirstPage}>
                 <Icon
                   title={title2}
                   changingStep={changingStep2}
@@ -79,7 +80,7 @@ class Navigation extends Component {
                 </a> 
             </li>
               <li className='nav-steps'>
-              <a className='nav-link2' href="" onClick={handleFirstPage}>
+              <a className='nav-link2' href="#/step/3" onClick={handleFirstPage}>
                 <Icon
                   title={title3}
                   changingStep={changingStep3}
@@ -89,7 +90,7 @@ class Navigation extends Component {
                 </a>
               </li>
               <li className='nav-steps'>
-              <a className='nav-link2' href="" onClick={handleFirstPage}>
+              <a className='nav-link2' href="#/step/4" onClick={handleFirstPage}>
                 <Icon
                   title={title4}
                   changingStep={changingStep4}
@@ -99,7 +100,7 @@ class Navigation extends Component {
                 </a>
               </li>
               <li className='nav-steps'>
-              <a className='nav-link2' href="" onClick={handleFirstPage}>
+              <a className='nav-link2' href="#/step/5" onClick={handleFirstPage}>
                 <Icon
                   title={title5}
                   changingStep={changingStep5}
