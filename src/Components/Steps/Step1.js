@@ -6,6 +6,7 @@ import TypeEmailInput from '../Types/TypeEmailInput';
 import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 
+
 let surnameInput = {
     labelContent: <FormattedMessage
         id="Step1.userSurname"
@@ -60,6 +61,7 @@ class Step1 extends Component {
     constructor(props){
         super(props)
         this.state = {
+            idRoute:'',
             currentStep: 1,
             data: {
                 surname: '',
@@ -76,8 +78,12 @@ class Step1 extends Component {
     }
     componentDidMount(){
         const idRoute = this.props.match.params.id;
-        this.props.handleCurrentStep(this.state.currentStep);  
-        this.props.handleRoute(idRoute);
+        console.log(this.props.match.params.id);
+        this.props.handleCurrentStep(this.state.currentStep);
+        this.props.handleIdRoute(idRoute);
+        this.setState({
+            idRoute: idRoute,
+        })
     }
 
     handleNextStepClass(){
@@ -134,6 +140,9 @@ class Step1 extends Component {
                 lineNumber:inputValue
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
+    }
+    handleFirstPage(){
+        console.log('HOLIIIIIIIIIIIIIIIIIII')
     }
 
     render() {
@@ -200,6 +209,7 @@ class Step1 extends Component {
                     changingStep={changingStep}
                     handleNextStepClass={this.handleNextStepClass()}
                     handleFirstPage={handleFirstPage}
+                    idRoute={this.state.idRoute}
                 />
             </div>
         );

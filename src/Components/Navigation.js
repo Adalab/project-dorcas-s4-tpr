@@ -24,7 +24,7 @@ const nextButton = {
 
 class Navigation extends Component {
   render() {
-
+    // console.log('props NAVIGATION', this.props);
     const {
       title1,
       title2,
@@ -35,6 +35,7 @@ class Navigation extends Component {
       changingStep,
       handleUpdateNavigation,
       handleNextStepClass,
+      idRoute,
       handleFirstPage
     } = this.props;
 
@@ -50,7 +51,7 @@ class Navigation extends Component {
     return (
       <div className='position-nav'>
         <nav className='navigation-container'>
-          <Link to={`/step/${currentStep - 1}`}>
+          <Link to={`/step/${currentStep - 1}/${idRoute}`}>
             <Button
               buttonContent={backButton}
               currentStep={currentStep}
@@ -58,7 +59,7 @@ class Navigation extends Component {
           </Link>
           <ul className='list-steps'>
             <li className='nav-steps'>
-              <a className='nav-link1' href="#/step/1"
+              <a className='nav-link1' href="#/step/1/:id"
                 onClick={this.handleFirstPage}>
                 <Icon
                   title={title1}
@@ -69,7 +70,7 @@ class Navigation extends Component {
               </a>
             </li>
             <li className='nav-steps'>
-              <a className='nav-link2' href="#/step/2" onClick={handleFirstPage}>
+              <a className='nav-link2' href="#/step/2/:id" onClick={handleFirstPage}>
                 <Icon
                   title={title2}
                   changingStep={changingStep2}
@@ -79,7 +80,7 @@ class Navigation extends Component {
               </a>
             </li>
             <li className='nav-steps'>
-              <a className='nav-link3' href="#/step/3" onClick={handleFirstPage}>
+              <a className='nav-link3' href="#/step/3/:id" onClick={handleFirstPage}>
                 <Icon
                   title={title3}
                   changingStep={changingStep3}
@@ -89,7 +90,7 @@ class Navigation extends Component {
               </a>
             </li>
             <li className='nav-steps'>
-              <a className='nav-link4' href="#/step/4" onClick={handleFirstPage}>
+              <a className='nav-link4' href="#/step/4/:id" onClick={handleFirstPage}>
                 <Icon
                   title={title4}
                   changingStep={changingStep4}
@@ -99,25 +100,24 @@ class Navigation extends Component {
               </a>
             </li>
             <li className='nav-steps'>
-              {/* <a className='nav-link5' href="#/step/5" onClick={handleFirstPage}> */}
-              <Link className='jumpLink' to={`/step/${currentStep}`}>
+              <Link to={`/step/${currentStep}/${idRoute}`}>
                 <Icon
                   title={title5}
                   changingStep={changingStep5}
                   currentStep={currentStep}
                   handleUpdateNavigation={handleUpdateNavigation}
                 />
-                  </Link>
+              </Link>
               {/* </a> */}
             </li>
           </ul>
           <div className='container-nexts'>
-            <Link to={`/step/${currentStep + 1}`}>
+            <Link to={`/step/${currentStep + 1}/${idRoute}`} onClick={this.handleFirstPage}>
               <Button
                 buttonContent={nextButton}
               />
             </Link>
-            <Link className='jumpLink' to={`/step/${currentStep + 1}`}>
+            <Link className='jumpLink' to={`/step/${currentStep + 1}/${idRoute}`}>
               <div className={handleNextStepClass}>Completar luego,
               <span className='jumpLink-colorText'> saltar paso</span>
               </div>

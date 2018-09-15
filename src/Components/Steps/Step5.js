@@ -96,6 +96,7 @@ class Step5 extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            idRoute:'',
             currentStep: 5,
             checkedFamily: false,
             checkedResidency: false,
@@ -119,7 +120,12 @@ class Step5 extends Component {
         this.handleEmergencyPhone = this.handleEmergencyPhone.bind(this);
     }
     componentDidMount() {
+        const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
+        this.props.handleIdRoute(idRoute);
+        this.setState({
+            idRoute: idRoute,
+        })
     }
     componentWillReceiveProps(nextProps) {
         console.log(nextProps);
@@ -334,6 +340,7 @@ class Step5 extends Component {
                     title5={title5}
                     currentStep={currentStep}
                     changingStep={changingStep}
+                    idRoute={this.state.idRoute}
                 />
             </div>
         );
