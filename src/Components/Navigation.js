@@ -48,7 +48,7 @@ class Navigation extends Component {
       return (
         <div className='position-nav'>
             <nav className='navigation-container'>
-            <Link to={`/step/${currentStep-1}`}>
+            <Link to={`/step/${currentStep-1}`} >
               <Button 
                 buttonContent={backButton}
                 currentStep={currentStep}

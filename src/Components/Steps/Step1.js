@@ -75,8 +75,9 @@ class Step1 extends Component {
         this.handleLineNumber = this.handleLineNumber.bind(this)
     }
     componentDidMount(){
-        this.props.handleCurrentStep(this.state.currentStep);
-        
+        const idRoute = this.props.match.params.id;
+        this.props.handleCurrentStep(this.state.currentStep);  
+        this.props.handleRoute(idRoute);
     }
 
     handleNextStepClass(){
@@ -136,7 +137,6 @@ class Step1 extends Component {
     }
 
     render() {
-        console.log('props STEP1', this.props.contactInformation);
         const {
             title1,
             title2,

@@ -149,11 +149,11 @@ class App extends Component {
     this.handleStep2=this.handleStep2.bind(this);
     this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
+    this.handleRoute=this.handleRoute.bind(this);
   }
 
   componentDidMount() {
-
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/ ${this.props.match.params.id}`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/ ${this.state.idRoute}`)
       .then(res => {
         const person = res.data;
         console.log('BACKEND',person)
@@ -204,6 +204,12 @@ class App extends Component {
           }
         })
       })
+  }
+
+  handleRoute(idRoute){
+    this.setState({
+      idRoute: idRoute
+    })
   }
 
   handleStep1(data){
@@ -363,6 +369,7 @@ class App extends Component {
 
   render() {
     console.log('ESTADO', this.props);
+    console.log('ESTADO', this.state.idRoute);
     return (
       <div className="App">
         <Header />
