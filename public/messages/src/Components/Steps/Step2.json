@@ -28,6 +28,26 @@
     "defaultMessage": "Date of issue"
   },
   {
+    "id": "Step2.userVisaCountryIssue",
+    "defaultMessage": "Country of issue"
+  },
+  {
+    "id": "Step2.userVisaCountryDestination",
+    "defaultMessage": "Country of destination"
+  },
+  {
+    "id": "Step2.userVisaNumber",
+    "defaultMessage": "Visa number"
+  },
+  {
+    "id": "Step2.userVisaDateIssue",
+    "defaultMessage": "Date of issue"
+  },
+  {
+    "id": "Step2.userVisaExpirationDate",
+    "defaultMessage": "Expiration date"
+  },
+  {
     "id": "Step2.addVisaDetails",
     "defaultMessage": "Add visa details"
   },
