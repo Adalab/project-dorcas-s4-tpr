@@ -13,10 +13,7 @@ class AccommodationPref extends Component {
       translationsBreakfast,
       translationsTypeOfAccom
     } = this.props;
-
-    console.log(translationsBreakfast.legenContent.props.id)
-    console.log(translationsBreakfast.options)
-
+    console.log(translationsBreakfast);
     return (
       <div>
         <form >

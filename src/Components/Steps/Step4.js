@@ -128,7 +128,7 @@ const trainPreferences = {
 
 class Step4 extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             idRoute:'',
             responses: {},
@@ -140,7 +140,7 @@ class Step4 extends Component {
                 breakfast: '',
                 qualityAcom:'',
                 typeAcom:'',
-            }
+            },
         }
         this.handlePlainPreference= this.handlePlainPreference.bind(this);this.handlePlainLocation= this.handlePlainLocation.bind(this);
         this.handleTrainPreference = this.handleTrainPreference.bind(this);
@@ -192,7 +192,7 @@ class Step4 extends Component {
     }
 
     handleTrainPreference(e) {
-        console.log('preferencia tren')
+        console.log('preferencia tren');
         const inputValue = e.target.value;
         
         this.setState({
