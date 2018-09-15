@@ -35,6 +35,7 @@ class Navigation extends Component {
           changingStep,
           handleUpdateNavigation,
           handleNextStepClass,
+          idRoute,
         } = this.props;
 
         const {
@@ -48,7 +49,7 @@ class Navigation extends Component {
       return (
         <div className='position-nav'>
             <nav className='navigation-container'>
-            <Link to={`/step/${currentStep-1}`} >
+            <Link to={`/step/${currentStep-1}/${idRoute}`}>
               <Button 
                 buttonContent={backButton}
                 currentStep={currentStep}
@@ -97,12 +98,12 @@ class Navigation extends Component {
             </li>
           </ul>
           <div className='container-nexts'>
-            <Link to={`/step/${currentStep + 1}`}>
+            <Link to={`/step/${currentStep + 1}/${idRoute}`}>
               <Button
                 buttonContent={nextButton}
               />
             </Link>
-            <Link className='jumpLink' to={`/step/${currentStep + 1}`}>
+            <Link className='jumpLink' to={`/step/${currentStep + 1}/${idRoute}`}>
               <div className={handleNextStepClass}>Completar luego,
               <span className='jumpLink-colorText'> saltar paso</span>
               </div>

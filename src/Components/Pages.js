@@ -46,7 +46,7 @@ class Pages extends Component {
       dataVisa,
       stateAccommodationObject,
       handleStep4,
-      handleRoute,
+      handleIdRoute,
     } = this.props;
 
     console.log('PAGES', this.props);
@@ -78,8 +78,7 @@ class Pages extends Component {
                 handleStep1={handleStep1}
                 personalInformation={personalInformation}
                 contactInformation= {contactInformation}
-                handleRoute={handleRoute}
-                
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
@@ -99,7 +98,7 @@ class Pages extends Component {
                 handleStep2={handleStep2}
                 travelDocuments= {travelDocuments}
                 dataVisa={dataVisa}
-                handleRoute={handleRoute}
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
@@ -116,7 +115,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
-                handleRoute={handleRoute}
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
@@ -135,7 +134,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 stateAccommodationObject={stateAccommodationObject}
                 handleStep4={handleStep4}
-                handleRoute={handleRoute}
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
@@ -155,7 +154,7 @@ class Pages extends Component {
                 extras={extras}
                 emergencyContact={emergencyContact}
                 handleStep5={handleStep5}
-                handleRoute={handleRoute}
+                handleIdRoute={handleIdRoute}
               />}
           />
         </Switch>

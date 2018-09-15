@@ -6,12 +6,18 @@ class Step3 extends Component {
     constructor(props){
         super(props)
         this.state = {
-            currentStep: 3
+            currentStep: 3,
+            idRoute:'',
         }
     }
 
     componentDidMount(){
+        const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
+        this.props.handleIdRoute(idRoute);
+        this.setState({
+            idRoute: idRoute,
+        })
     }
     render() {
         console.log('propsSTEP3', this.props);
@@ -39,6 +45,7 @@ class Step3 extends Component {
                     title5={title5}
                     currentStep={currentStep}
                     changingStep={changingStep}
+                    idRoute={this.state.idRoute}
                 />
             </div>
         );

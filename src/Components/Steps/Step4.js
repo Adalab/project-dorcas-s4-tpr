@@ -130,6 +130,7 @@ class Step4 extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            idRoute:'',
             responses: {},
             currentStep: 4,
             dataAccommodation: {
@@ -149,7 +150,12 @@ class Step4 extends Component {
     }
 
     componentDidMount() {
+        const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
+        this.props.handleIdRoute(idRoute);
+        this.setState({
+            idRoute: idRoute,
+        })
     }
 
     handlePlainPreference(e) {
@@ -303,6 +309,7 @@ class Step4 extends Component {
                     title5={title5}
                     currentStep={currentStep}
                     changingStep={changingStep}
+                    idRoute={this.state.idRoute}
                 />
             </div>
         );
