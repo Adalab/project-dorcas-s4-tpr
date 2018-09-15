@@ -46,6 +46,7 @@ class Pages extends Component {
       dataVisa,
       stateAccommodationObject,
       handleStep4,
+      handleIdRoute,
     } = this.props;
 
     console.log('PAGES', this.props);
@@ -55,16 +56,16 @@ class Pages extends Component {
           <Route
             exact
             path='/'
-            render={() => (<Redirect to='/step/1' />)}
+            render={() => (<Redirect to='/step/1/:id' />)}
           />
           <Route
             name='step1'
             handler={step1}
             exact
-            path='/step/1'
+            path='/step/1/:id'
             render={props =>
               <Step1
-                match={props.match}
+                {...props}
                 title1={title1}
                 title2={title2}
                 title3={title3}
@@ -77,13 +78,14 @@ class Pages extends Component {
                 handleStep1={handleStep1}
                 personalInformation={personalInformation}
                 contactInformation= {contactInformation}
-                
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
-            path='/step/2'
+            path='/step/2/:id'
             render={props =>
               <Step2
+                {...props}
                 title1={title1}
                 title2={title2}
                 title3={title3}
@@ -96,12 +98,14 @@ class Pages extends Component {
                 handleStep2={handleStep2}
                 travelDocuments= {travelDocuments}
                 dataVisa={dataVisa}
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
-            path='/step/3'
+            path='/step/3/:id'
             render={props =>
               <Step3
+                {...props}
                 title1={title1}
                 title2={title2}
                 title3={title3}
@@ -111,12 +115,14 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
-            path='/step/4'
+            path='/step/4/:id'
             render={props =>
               <Step4
+                {...props}
                 title1={title1}
                 title2={title2}
                 title3={title3}
@@ -128,12 +134,14 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 stateAccommodationObject={stateAccommodationObject}
                 handleStep4={handleStep4}
+                handleIdRoute={handleIdRoute}
               />}
           />
           <Route
-            path='/step/5'
+            path='/step/5/:id'
             render={props =>
               <Step5
+                {...props}
                 title1={title1}
                 title2={title2}
                 title3={title3}
@@ -146,6 +154,7 @@ class Pages extends Component {
                 extras={extras}
                 emergencyContact={emergencyContact}
                 handleStep5={handleStep5}
+                handleIdRoute={handleIdRoute}
               />}
           />
         </Switch>

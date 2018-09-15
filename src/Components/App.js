@@ -3,11 +3,13 @@ import axios from 'axios';
 import Header from './Header';
 import Pages from './Pages';
 import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      idRoute:'',
       data: {
         personalInformation: {
           lastName: '',
@@ -146,10 +148,11 @@ class App extends Component {
     this.handleStep2=this.handleStep2.bind(this);
     this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
+    this.handleIdRoute=this.handleIdRoute.bind(this);
   }
 
   componentDidMount() {
-    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b8ea8f00ca788ab71c59661`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.state.idRoute}`)
       .then(res => {
         const person = res.data;
         console.log('BACKEND',person)
@@ -200,6 +203,12 @@ class App extends Component {
           }
         })
       })
+  }
+
+  handleIdRoute(idRoute){
+    this.setState({
+      idRoute: idRoute,
+    }, ()=>(console.log(this.state.idRoute)))
   }
 
   handleStep1(data){
@@ -358,7 +367,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('ESTADO', this.state);
+    console.log('ESTADO', this.props);
     return (
       <div className="App">
         <Header />
@@ -373,10 +382,11 @@ class App extends Component {
           stateDataObject={this.state.data}
           dataVisa={this.state.dataVisa}
           stateAccommodationObject={this.state.dataAccommodation}
+          handleIdRoute= {this.handleIdRoute}
         />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

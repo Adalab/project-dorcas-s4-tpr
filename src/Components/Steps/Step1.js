@@ -6,6 +6,7 @@ import TypeEmailInput from '../Types/TypeEmailInput';
 import TypePhoneInput from '../Types/TypePhoneInput';
 import TypeTextInput from '../Types/TypeTextInput';
 
+
 let surnameInput = {
     labelContent: <FormattedMessage
         id="Step1.userSurname"
@@ -60,6 +61,7 @@ class Step1 extends Component {
     constructor(props){
         super(props)
         this.state = {
+            idRoute:'',
             currentStep: 1,
             data: {
                 surname: '',
@@ -75,7 +77,13 @@ class Step1 extends Component {
         this.handleLineNumber = this.handleLineNumber.bind(this)
     }
     componentDidMount(){
+        const idRoute = this.props.match.params.id;
+        console.log(this.props.match.params.id);
         this.props.handleCurrentStep(this.state.currentStep);
+        this.props.handleIdRoute(idRoute);
+        this.setState({
+            idRoute: idRoute,
+        })
     }
 
     handleNextStepClass(){
@@ -135,7 +143,6 @@ class Step1 extends Component {
     }
 
     render() {
-        console.log('props STEP1', this.props.contactInformation);
         const {
             title1,
             title2,
@@ -157,7 +164,7 @@ class Step1 extends Component {
             phoneNumbers
         } = this.props.contactInformation;
 
-        console.log('ALEXxxxxxxxxxxxxxxxxxxxxx', this.props.contactInformation);
+        console.log('ALEXxxxxxxxxxxxxxxxxxxxxx', this.props);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -198,6 +205,7 @@ class Step1 extends Component {
                     currentStep={currentStep}
                     changingStep={changingStep}
                     handleNextStepClass={this.handleNextStepClass()}
+                    idRoute={this.state.idRoute}
                 />
             </div>
         );

@@ -116,6 +116,7 @@ class Step2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            idRoute:'',
             buttonHidden: false,
             currentStep: 2,
             data:{
@@ -151,7 +152,12 @@ class Step2 extends Component {
         this.handleVisaButton = this.handleVisaButton.bind(this);
     }
     componentDidMount() {
+        const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
+        this.props.handleIdRoute(idRoute);
+        this.setState({
+            idRoute: idRoute,
+        })
     }
 
     handleNextStepClass() {
@@ -616,6 +622,7 @@ class Step2 extends Component {
                     currentStep={currentStep}
                     changingStep={changingStep}
                     handleNextStepClass={this.handleNextStepClass()}
+                    idRoute={this.state.idRoute}
                 />
             </div>
         );
