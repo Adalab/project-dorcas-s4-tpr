@@ -46,7 +46,6 @@ class Navigation extends Component {
       changingStep5,
     } = changingStep;
 
-    console.log(this.handleFirstPage)
 
     return (
       <div className='position-nav'>
@@ -59,7 +58,7 @@ class Navigation extends Component {
           </Link>
           <ul className='list-steps'>
             <li className='nav-steps'>
-              <a className='nav-link1' href=""
+              <a className='nav-link1' href="#/step/1"
                 onClick={this.handleFirstPage}>
                 <Icon
                   title={title1}
@@ -100,14 +99,16 @@ class Navigation extends Component {
               </a>
             </li>
             <li className='nav-steps'>
-              <a className='nav-link5' href="#/step/5" onClick={handleFirstPage}>
+              {/* <a className='nav-link5' href="#/step/5" onClick={handleFirstPage}> */}
+              <Link className='jumpLink' to={`/step/${currentStep}`}>
                 <Icon
                   title={title5}
                   changingStep={changingStep5}
                   currentStep={currentStep}
                   handleUpdateNavigation={handleUpdateNavigation}
                 />
-              </a>
+                  </Link>
+              {/* </a> */}
             </li>
           </ul>
           <div className='container-nexts'>

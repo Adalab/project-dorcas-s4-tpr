@@ -13,7 +13,6 @@ class AccommodationPref extends Component {
       translationsBreakfast,
       translationsTypeOfAccom
     } = this.props;
-
     return (
       <div>
         <form >
