@@ -1,18 +1,21 @@
 .back-button {
-    width: 175px;
-    height: 50px;
+    padding-left: 52px;
+    padding-right: 52px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     background-color: $color-secondary-light;
     border: solid 1px $color-primary-dark;
     border-radius: 4px;
     color: $color-primary-dark;
     font-size: $font-size-l;
     font-weight: $bold;
-    margin-right: 130px;
 }
 
 .next-button {
-    width: 185px;
-    height: 50px;
+    padding-left: 52px;
+    padding-right: 52px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     background-image: linear-gradient(101deg, $color-primary-light, $color-primary-dark);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     border: none;
@@ -20,7 +23,6 @@
     color: $color-light;
     font-size: $font-size-l;
     font-weight: $bold;
-    margin-left: 120px;
 }
 
 .visaButton-styles {

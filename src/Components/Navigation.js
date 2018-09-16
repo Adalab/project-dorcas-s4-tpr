@@ -49,9 +49,12 @@ class Navigation extends Component {
 
 
     return (
-      <div className='position-nav'>
+      
         <nav className='navigation-container'>
-          <Link to={`/step/${currentStep - 1}/${idRoute}`}>
+          <Link 
+            className='back-button-link'
+            to={`/step/${currentStep - 1}/${idRoute}`}
+          >
             <Button
               buttonContent={backButton}
               currentStep={currentStep}
@@ -115,14 +118,17 @@ class Navigation extends Component {
                   buttonContent={nextButton}
                 />
               </Link>
-              <Link className='jumpLink' to={`/step/${currentStep + 1}/${idRoute}`}>
+              <Link 
+                className='jumpLink' 
+                to={`/step/${currentStep + 1}/${idRoute}`}
+              >
                 <div className={handleNextStepClass}>Completar luego,
               <span className='jumpLink-colorText'> saltar paso</span>
                 </div>
               </Link>
             </div>
         </nav>
-      </div>
+      
         );
       }
     }
