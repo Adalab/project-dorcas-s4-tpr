@@ -58,9 +58,8 @@ class Navigation extends Component {
             />
           </Link>
           <ul className='list-steps'>
-            <Link to={'#/step/1/:id'}>
+            <Link to={'/step/1/:id'}>
               <li className='nav-steps'>
-                onClick={this.handleFirstPage}>
                 <Icon
                   title={title1}
                   changingStep={changingStep1}
@@ -69,7 +68,7 @@ class Navigation extends Component {
                 />
               </li>
             </Link>
-            <Link to={'#/step/2/:id'}>
+            <Link to={'/step/2/:id'}>
               <li className='nav-steps'>
                 <Icon
                   title={title2}
@@ -79,7 +78,7 @@ class Navigation extends Component {
                 />
               </li>
             </Link>
-            <Link to={'#/step/3/:id'}>
+            <Link to={'/step/3/:id'}>
               <li className='nav-steps'>
                 <Icon
                   title={title3}
@@ -89,7 +88,7 @@ class Navigation extends Component {
                 />
               </li>
             </Link>
-            <Link to={'#/step/4/:id'}>
+            <Link to={'/step/4/:id'}>
               <li className='nav-steps'>
                 <Icon
                   title={title4}
@@ -99,7 +98,7 @@ class Navigation extends Component {
                 />
               </li>
               </Link>
-              <Link to={'#/step/5/:id'}>
+              <Link to={'/step/5/:id'}>
                 <li className='nav-steps'>
                   <Icon
                     title={title5}
@@ -111,7 +110,7 @@ class Navigation extends Component {
               </Link>
           </ul>
             <div className='container-nexts'>
-              <Link to={`/step/${currentStep + 1}/${idRoute}`} onClick={this.handleFirstPage}>
+              <Link to={`/step/${currentStep + 1}/${idRoute}`}>
                 <Button
                   buttonContent={nextButton}
                 />
