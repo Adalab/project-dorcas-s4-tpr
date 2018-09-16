@@ -151,6 +151,7 @@ class App extends Component {
     this.handleStep4=this.handleStep4.bind(this);
     this.handleStep5=this.handleStep5.bind(this);
     this.handleIdRoute=this.handleIdRoute.bind(this);
+    this.handleFirstPage=this.handleFirstPage.bind(this);
   }
 
   componentDidMount() {
@@ -368,6 +369,11 @@ class App extends Component {
     }
   }
 
+  handleFirstPage(){
+    console.log('primer paso')
+   
+  }
+
   render() {
     console.log('ESTADO', this.props);
     return (
@@ -385,6 +391,7 @@ class App extends Component {
           dataVisa={this.state.dataVisa}
           stateAccommodationObject={this.state.dataAccommodation}
           handleIdRoute= {this.handleIdRoute}
+          handleFirstPage={this.handleFirstPage}
         />
       </div>
     );
