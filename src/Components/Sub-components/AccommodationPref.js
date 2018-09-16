@@ -22,12 +22,13 @@ class AccommodationPref extends Component {
           <div className='step4-row'>
             <div className='step4-radio'>
               <input
+                className='radio-button'
                 type="radio"
                 name="breakfast"
                 value="Always"
                 onChange={onChangeBreakfast}
               />
-              <span>
+              <span className='step4-option'>
                 {translationsBreakfast.options[0]}
               </span>
             </div>
@@ -38,7 +39,7 @@ class AccommodationPref extends Component {
                 value="Sometimes"
                 onChange={onChangeBreakfast}
               />
-              <span>
+              <span className='step4-option'>
                 {translationsBreakfast.options[1]}
               </span>
             </div>
@@ -49,7 +50,7 @@ class AccommodationPref extends Component {
                 value="OnlyIfIncluded"
                 onChange={onChangeBreakfast}
               />
-              <span>
+              <span className='step4-option'>
                 {translationsBreakfast.options[2]}
               </span>
             </div>
@@ -60,7 +61,7 @@ class AccommodationPref extends Component {
                 value="Never"
                 onChange={onChangeBreakfast}
               />
-              <span>
+              <span className='step4-option'>
                 {translationsBreakfast.options[3]}
               </span>
             </div>
@@ -70,49 +71,51 @@ class AccommodationPref extends Component {
           <p>
             {translationsAccom.legenContent}
           </p>
-          <div className='step4-radio'>
-            <input
-              type="radio"
-              name="stars"
-              value="5stars"
-              onChange={onChangeHotelStars}
-            />
-            <span>
-              {translationsAccom.options[0]}
-            </span>
-          </div>
-          <div className='step4-radio'>
-            <input
-              type="radio"
-              name="stars"
-              value="4stars"
-              onChange={onChangeHotelStars}
-            />
-            <span>
-              {translationsAccom.options[1]}
-            </span>
-          </div>
-          <div className='step4-radio'>
-            <input
-              type="radio"
-              name="stars"
-              value="3stars"
-              onChange={onChangeHotelStars}
-            />
-            <span>
-              {translationsAccom.options[2]}
-            </span>
-          </div>
-          <div className='step4-radio'>
-            <input
-              type="radio"
-              name="stars"
-              value="2stars"
-              onChange={onChangeHotelStars}
-            />
-            <span>
-              {translationsAccom.options[3]}
-            </span>
+          <div className='step4-row'>
+            <div className='step4-radio'>
+              <input
+                type="radio"
+                name="stars"
+                value="5stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[0]}
+              </span>
+            </div>
+            <div className='step4-radio'>
+              <input
+                type="radio"
+                name="stars"
+                value="4stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[1]}
+              </span>
+            </div>
+            <div className='step4-radio'>
+              <input
+                type="radio"
+                name="stars"
+                value="3stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[2]}
+              </span>
+            </div>
+            <div className='step4-radio'>
+              <input
+                type="radio"
+                name="stars"
+                value="2stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[3]}
+              </span>
+            </div>
           </div>
         </form>
         <form >
@@ -127,7 +130,7 @@ class AccommodationPref extends Component {
                 value="Clásica"
                 onChange={onChangeHotelType}
               />
-              <span>
+              <span className='step4-option'>
                 {translationsTypeOfAccom.options[1]}
               </span>
             </div>
@@ -138,7 +141,7 @@ class AccommodationPref extends Component {
                 value="Moderna"
                 onChange={onChangeHotelType}
               />
-              <span>
+              <span className='step4-option'>
                 {translationsTypeOfAccom.options[2]}
               </span>
             </div>

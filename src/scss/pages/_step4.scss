@@ -1,3 +1,7 @@
+.step-4 {
+    margin-bottom: 120px;
+}
+
 .preference-title {
     color: $color-secondary-dark;
     font-size: $font-size-plus-l;
@@ -16,11 +20,16 @@
     height: 63px;
     width: 162px;
     border-radius: 4px;
-  background-color: $color-terciary-light;
-  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+    background-color: $color-terciary-light;
+    box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .step4-row {
     display: flex;
     flex-direction: row;
+}
+
+.step4-option {
+    color:$color-secondary-dark;
+    font-size: $font-size-s;
 }

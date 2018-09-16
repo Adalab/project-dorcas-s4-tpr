@@ -267,7 +267,7 @@ class Step4 extends Component {
         } = this.props;
 
         return (
-            <div className='stepBox'>
+            <div className='stepBox step-4'>
                 <Title
                     title={title4}
                     step={step4}
