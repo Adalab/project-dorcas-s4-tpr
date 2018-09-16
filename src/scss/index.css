@@ -171,8 +171,28 @@ a {
   border: 1px solid #56027e;
   background-color: #56027e; }
 
-.stepBox {
-  background-color: red; }
+.preference-title {
+  color: #5b5b5b;
+  font-size: 24px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500; }
+
+.section-title {
+  text-transform: uppercase; }
+
+.step4-radio {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 63px;
+  width: 162px;
+  border-radius: 4px;
+  background-color: #fcfcfd;
+  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1); }
+
+.step4-row {
+  display: flex;
+  flex-direction: row; }
 
 .position-label {
   position: relative; }

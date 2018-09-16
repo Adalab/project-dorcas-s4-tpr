@@ -17,7 +17,7 @@ class TransportPref extends Component {
         return (
             <div>
                 <legend>
-                    <h2>
+                    <h2 className='preference-title'>
                         <FormattedMessage
                             id="TransportPref.plainPreferences"
                             defaultMessage="Plain preferences"
@@ -81,7 +81,7 @@ class TransportPref extends Component {
                             onChange={onChangePlainLocation}
                         />
                     </form>
-                    <h2>
+                    <h2 className='preference-title'>
                         <FormattedMessage
                             id="TransportPref.prefTrains"
                             defaultMessage="Preferences in trains"

@@ -280,13 +280,13 @@ class Step4 extends Component {
                         translationsPlainPreferences={plainPreferences}
                         translationsTrainPreferences={trainPreferences}
                     />
-                    <span>
+                    <span className='section-title'>
                         <FormattedMessage
                             id="Step4.accommodation"
                             defaultMessage="Accommodation"
                         />
                     </span>
-                    <h2>
+                    <h2 className='preference-title'>
                         <FormattedMessage
                             id="Step4.accommodationPreferences"
                             defaultMessage="Accommodation preferences"

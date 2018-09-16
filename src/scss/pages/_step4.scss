@@ -1,3 +1,26 @@
-.stepBox {
-    background-color: red;
+.preference-title {
+    color: $color-secondary-dark;
+    font-size: $font-size-plus-l;
+    font-family: $font-family-primary;
+    font-weight: $normal;
+}
+
+.section-title {
+    text-transform: uppercase;
+}
+
+.step4-radio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 63px;
+    width: 162px;
+    border-radius: 4px;
+  background-color: $color-terciary-light;
+  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.step4-row {
+    display: flex;
+    flex-direction: row;
 }
