@@ -59,59 +59,62 @@ class Navigation extends Component {
               />
               </Link>
               <ul className='list-steps'>
+              <Link to={'/step/1/:id'}>
                 <li className='nav-steps'>
                   <Icon
                     title={title1}
                     changingStep={changingStep1}
                     currentStep={currentStep}
                     handleUpdateNavigation={handleUpdateNavigation}
-                  />    
-            </li>
-            <li className='nav-steps'>
-              <Icon
-                title={title2}
-                changingStep={changingStep2}
-                currentStep={currentStep}
-                handleUpdateNavigation={handleUpdateNavigation}
-              />
-            </li>
-            <li className='nav-steps'>
-              <Icon
-                title={title3}
-                changingStep={changingStep3}
-                currentStep={currentStep}
-                handleUpdateNavigation={handleUpdateNavigation}
-              />
-            </li>
-            <li className='nav-steps'>
-              <Icon
-                title={title4}
-                changingStep={changingStep4}
-                currentStep={currentStep}
-                handleUpdateNavigation={handleUpdateNavigation}
-              />
-            </li>
-            <li className='nav-steps'>
-              <Icon
-                title={title5}
-                changingStep={changingStep5}
-                currentStep={currentStep}
-                handleUpdateNavigation={handleUpdateNavigation}
-              />
-            </li>
-          </ul>
-          <div className='container-nexts'>
-            <Link to={`/step/${currentStep + 1}/${idRoute}`}>
-              <Button
-                buttonContent={nextButton}
-              />
-            </Link>
-            <Link 
-              className='jumpLink' 
-              to={`/step/${currentStep + 1}/${idRoute}`}
-            >
-              <div className={handleNextStepClass}>Completar luego,
-              <span className='jumpLink-colorText'> saltar paso</span>
+                />    
+                </li>
+                </Link>
+                
+                <li className='nav-steps'>
+                  <Icon
+                    title={title2}
+                    changingStep={changingStep2}
+                    currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
+                  />
+                </li>
+                <li className='nav-steps'>
+                  <Icon
+                    title={title3}
+                    changingStep={changingStep3}
+                    currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
+                  />
+                </li>
+                <li className='nav-steps'>
+                  <Icon
+                    title={title4}
+                    changingStep={changingStep4}
+                    currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
+                  />
+                </li>
+                <li className='nav-steps'>
+                  <Icon
+                    title={title5}
+                    changingStep={changingStep5}
+                    currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
+                  />
+                </li>
+              </ul>
+              <div className='container-nexts'>
+                <Link to={`/step/${currentStep + 1}/${idRoute}`}>
+                  <Button
+                    buttonContent={nextButton}
+                  />
+                </Link>
+                <Link 
+                  className='jumpLink' 
+                  to={`/step/${currentStep + 1}/${idRoute}`}
+                >
+                <div className={handleNextStepClass}>Completar luego,
+                <span className='jumpLink-colorText'> saltar paso</span>
               </div>
             </Link>
           </div>
