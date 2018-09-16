@@ -142,7 +142,8 @@ class Step4 extends Component {
                 typeAcom:'',
             },
         }
-        this.handlePlainPreference= this.handlePlainPreference.bind(this);this.handlePlainLocation= this.handlePlainLocation.bind(this);
+        this.handlePlainPreference= this.handlePlainPreference.bind(this);
+        this.handlePlainLocation= this.handlePlainLocation.bind(this);
         this.handleTrainPreference = this.handleTrainPreference.bind(this);
         this.handleSelectBreakfast = this.handleSelectBreakfast.bind(this);
         this.handleSelectQuality = this.handleSelectQuality.bind(this);

@@ -141,6 +141,9 @@ class Step1 extends Component {
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
+    handleFirstPage(){
+        console.log('HOLIIIIIIIIIIIIIIIIIII')
+    }
 
     render() {
         const {
@@ -152,7 +155,7 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
-            
+            handleFirstPage
         } = this.props;
         const {
             firstName, 
@@ -164,7 +167,7 @@ class Step1 extends Component {
             phoneNumbers
         } = this.props.contactInformation;
 
-        console.log('ALEXxxxxxxxxxxxxxxxxxxxxx', this.props);
+        console.log('ALEx', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -205,6 +208,7 @@ class Step1 extends Component {
                     currentStep={currentStep}
                     changingStep={changingStep}
                     handleNextStepClass={this.handleNextStepClass()}
+                    handleFirstPage={handleFirstPage}
                     idRoute={this.state.idRoute}
                 />
             </div>
