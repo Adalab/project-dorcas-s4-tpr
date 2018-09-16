@@ -68,8 +68,9 @@ class Navigation extends Component {
                     handleUpdateNavigation={handleUpdateNavigation}
                 />    
                 </li>
-                </Link>
-                
+              </Link>
+              
+              <Link to={'/step/2/:id'}> 
                 <li className='nav-steps'>
                   <Icon
                     title={title2}
@@ -78,6 +79,7 @@ class Navigation extends Component {
                     handleUpdateNavigation={handleUpdateNavigation}
                   />
                 </li>
+              </Link>
                 <li className='nav-steps'>
                   <Icon
                     title={title3}
