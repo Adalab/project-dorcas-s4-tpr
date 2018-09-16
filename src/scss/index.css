@@ -171,6 +171,9 @@ a {
   border: 1px solid #56027e;
   background-color: #56027e; }
 
+.stepBox {
+  background-color: red; }
+
 .position-label {
   position: relative; }
 

@@ -266,7 +266,6 @@ class Step4 extends Component {
             legenContent
         } = this.props;
 
-        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', this.props);
         return (
             <div className='stepBox'>
                 <Title
