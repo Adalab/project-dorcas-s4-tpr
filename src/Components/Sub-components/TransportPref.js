@@ -32,7 +32,7 @@ class TransportPref extends Component {
                                     value="Window"
                                     onChange={onChangePlainPreferences}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     {translationsPlainPreferences.window}
                                 </span>
                             </div>
@@ -43,7 +43,7 @@ class TransportPref extends Component {
                                     value="Aisle"
                                     onChange={onChangePlainPreferences}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     {translationsPlainPreferences.aisle}
                                 </span>
                             </div>
@@ -58,7 +58,7 @@ class TransportPref extends Component {
                                     value="Front"
                                     onChange={onChangePlainLocation}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     <FormattedMessage
                                         id="TransportPref.front"
                                         defaultMessage="Front"
@@ -72,7 +72,7 @@ class TransportPref extends Component {
                                     value="Middle"
                                     onChange={onChangePlainLocation}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     <FormattedMessage
                                         id="TransportPref.middle"
                                         defaultMessage="Middle"
@@ -86,7 +86,7 @@ class TransportPref extends Component {
                                     value="Back"
                                     onChange={onChangePlainLocation}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     <FormattedMessage
                                         id="TransportPref.back"
                                         defaultMessage="Back"
@@ -110,7 +110,7 @@ class TransportPref extends Component {
                                     value="Window"
                                     onChange={onChangeTrainPreferences}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     {translationsTrainPreferences.window}
                                 </span>
                             </div>
@@ -121,7 +121,7 @@ class TransportPref extends Component {
                                     value="Aisle"
                                     onChange={onChangeTrainPreferences}
                                 />
-                                <span>
+                                <span className='step4-option'>
                                     {translationsTrainPreferences.aisle}
                                 </span>
                             </div>

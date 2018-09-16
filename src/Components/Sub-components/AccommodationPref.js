@@ -67,7 +67,7 @@ class AccommodationPref extends Component {
             </div>
           </div>
         </form>
-        <form >
+        <form className='step4-box'>
           <p className='step4-boxtitle'>
             {translationsAccom.legenContent}
           </p>
@@ -118,7 +118,7 @@ class AccommodationPref extends Component {
             </div>
           </div>
         </form>
-        <form >
+        <form className='step4-box'>
           <p className='step4-boxtitle'>
             {translationsTypeOfAccom.legenContent}
           </p>
