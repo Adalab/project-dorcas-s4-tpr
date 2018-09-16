@@ -133,6 +133,9 @@ a {
   height: 40px;
   text-align: center;
   line-height: 1.5; }
+  @media all and (max-width: 800px) {
+    .nav-label {
+      display: none; } }
 
 .jumpLink {
   padding-top: 9px;
@@ -140,6 +143,9 @@ a {
   font-size: 12px;
   color: #5b5b5b;
   font-weight: 500; }
+  @media all and (max-width: 800px) {
+    .jumpLink {
+      display: none; } }
 
 .jumpLink-colorText {
   font-weight: 600;
@@ -155,6 +161,14 @@ a {
   background-color: #fafbfa;
   color: #5b5b5b;
   box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03); }
+  @media all and (max-width: 800px) {
+    .stepActive {
+      width: 8pt;
+      height: 8pt;
+      color: #05b09b;
+      background-color: #05b09b;
+      border-radius: 100%;
+      box-shadow: none; } }
 
 .stepInactive {
   width: 24px;
@@ -165,11 +179,22 @@ a {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media all and (max-width: 800px) {
+    .stepInactive {
+      width: 8pt;
+      height: 8pt;
+      color: #d3d9da;
+      background-color: #d3d9da;
+      border-radius: 100%;
+      box-shadow: none; } }
 
 .stepCompleted {
   color: white;
   border: 1px solid #56027e;
   background-color: #56027e; }
+
+@media all and (max-width: 800px) {
+  /* Reglas CSS que aplicaremos */ }
 
 .step-4 {
   margin-bottom: 120px; }
@@ -277,6 +302,17 @@ a {
   color: #06a790;
   font-size: 18px;
   font-weight: 600; }
+  @media all and (max-width: 800px) {
+    .back-button {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color: none;
+      border: none;
+      border-radius: none;
+      color: #8d9293;
+      text-transform: uppercase; } }
 
 .next-button {
   padding-left: 52px;
@@ -290,6 +326,18 @@ a {
   color: #fff;
   font-size: 18px;
   font-weight: 600; }
+  @media all and (max-width: 800px) {
+    .next-button {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+      background: none;
+      border: none;
+      border-radius: none;
+      box-shadow: none;
+      color: #06a790;
+      text-transform: uppercase; } }
 
 .visaButton-styles {
   height: 50px;

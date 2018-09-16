@@ -55,6 +55,9 @@
     height: 40px;
     text-align: center;
     line-height: 1.5;
+    @media all and (max-width:800px) {
+        display: none;
+    }
 }
 
 .jumpLink {
@@ -63,6 +66,9 @@
     font-size: $font-size-s;
     color: $color-secondary-dark;
     font-weight: $normal;
+    @media all and (max-width:800px) {
+        display: none;
+    }
 }
 
 .jumpLink-colorText {
@@ -80,6 +86,14 @@
     background-color: $color-navSteps-light;
     color: $color-secondary-dark;
     box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03);
+    @media all and (max-width:800px) {
+        width: 8pt;
+        height: 8pt;
+        color: $color-primary;
+        background-color: $color-primary;
+        border-radius: 100%;
+        box-shadow: none;
+    }
 }
 
 .stepInactive {
@@ -91,10 +105,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media all and (max-width:800px) {
+        width: 8pt;
+        height: 8pt;
+        color: $color-navSteps-dark;
+        background-color: $color-navSteps-dark;
+        border-radius: 100%;
+        box-shadow: none;
+    }
 }
 
 .stepCompleted {
     color: white;
     border: 1px solid #56027e;
     background-color: #56027e; 
+}
+
+@media all and (max-width:800px) {
+    /* Reglas CSS que aplicaremos */
 }
