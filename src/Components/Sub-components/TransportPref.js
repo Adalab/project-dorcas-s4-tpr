@@ -23,9 +23,9 @@ class TransportPref extends Component {
                             defaultMessage="Plain preferences"
                         />
                     </h2>
-                    <form className='step4-box'>
+                    <form className='step4-transport-box box2'>
                         <div className='step4-row'>
-                            <div className='step4-radio selected'>
+                            <label className='step4-radio selected'>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -36,7 +36,7 @@ class TransportPref extends Component {
                                 <span className='step4-option'>
                                     {translationsPlainPreferences.window}
                                 </span>
-                            </div>
+                            </label>
                             <div className='step4-radio no-selected'>
                                 <input
                                     className='radio-button'
@@ -51,7 +51,7 @@ class TransportPref extends Component {
                             </div>
                         </div>
                     </form>
-                    <form className='step4-box'>
+                    <form className='step4-transport-box box3'>
                         <div className='step4-row'>
                             <div className='step4-radio selected'>
                                 <input
@@ -106,7 +106,7 @@ class TransportPref extends Component {
                             defaultMessage="Preferences in trains"
                         />
                     </h2>
-                    <form className='step4-box'>
+                    <form className='step4-transport-box box2'>
                         <div className='step4-row'>
                             <div className='step4-radio selected'>
                                 <input

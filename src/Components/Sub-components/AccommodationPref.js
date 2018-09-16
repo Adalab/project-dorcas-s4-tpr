@@ -28,6 +28,7 @@ class AccommodationPref extends Component {
                 value="Always"
                 onChange={onChangeBreakfast}
               />
+              <span class="checkmark"></span>
               <span className='step4-option '>
                 {translationsBreakfast.options[0]}
               </span>
@@ -40,6 +41,7 @@ class AccommodationPref extends Component {
                 value="Sometimes"
                 onChange={onChangeBreakfast}
               />
+              <span class="checkmark"></span>
               <span className='step4-option'>
                 {translationsBreakfast.options[1]}
               </span>
@@ -52,6 +54,7 @@ class AccommodationPref extends Component {
                 value="OnlyIfIncluded"
                 onChange={onChangeBreakfast}
               />
+              <span class="checkmark"></span>
               <span className='step4-option'>
                 {translationsBreakfast.options[2]}
               </span>
@@ -64,6 +67,7 @@ class AccommodationPref extends Component {
                 value="Never"
                 onChange={onChangeBreakfast}
               />
+              <span class="checkmark"></span>
               <span className='step4-option'>
                 {translationsBreakfast.options[3]}
               </span>
@@ -125,7 +129,7 @@ class AccommodationPref extends Component {
             </div>
           </div>
         </form>
-        <form className='step4-box'>
+        <form className='step4-box box2'>
           <p className='step4-boxtitle'>
             {translationsTypeOfAccom.legenContent}
           </p>
