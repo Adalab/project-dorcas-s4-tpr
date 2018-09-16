@@ -9,6 +9,17 @@
     color: $color-primary-dark;
     font-size: $font-size-l;
     font-weight: $bold;
+    @media all and (max-width:800px) {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: none;
+        border: none;
+        border-radius: none;
+        color: $color-terciary-dark;
+        text-transform: uppercase;
+    }
 }
 
 .next-button {
@@ -23,6 +34,18 @@
     color: $color-light;
     font-size: $font-size-l;
     font-weight: $bold;
+    @media all and (max-width:800px) {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background: none;
+        border: none;
+        border-radius: none;
+        box-shadow: none;
+        color: $color-primary-dark;
+        text-transform: uppercase;
+    }
 }
 
 .visaButton-styles {
