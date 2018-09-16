@@ -215,6 +215,7 @@ a {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
   height: 63px;
   width: 162px;
   border-radius: 4px;
@@ -226,10 +227,12 @@ a {
   flex-direction: row; }
 
 .step4-option {
-  color: #5b5b5b;
-  font-size: 12px; }
+  font-size: 12px;
+  font-weight: 600; }
 
 .step4-box {
+  display: flex;
+  flex-direction: column;
   width: 696px;
   height: 116px;
   border-radius: 6px;
@@ -241,10 +244,32 @@ a {
 
 .step4-boxtitle {
   height: 29px;
+  justify-content: center;
+  align-content: center;
   font-family: "Fira Sans", sans-serif;
   font-size: 10px;
   font-weight: 500;
   color: #8d9293; }
+
+.radio-button {
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border: transparent; }
+
+.selected {
+  background-color: #fafbfa;
+  color: #5b5b5b; }
+
+.no-selected {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #06a790; }
+
+.divider {
+  width: 696px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1); }
 
 .position-label {
   position: relative; }

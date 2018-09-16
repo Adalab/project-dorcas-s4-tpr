@@ -20,7 +20,7 @@ class AccommodationPref extends Component {
             {translationsBreakfast.legenContent}
           </p>
           <div className='step4-row'>
-            <div className='step4-radio'>
+            <div className='step4-radio selected'>
               <input
                 className='radio-button'
                 type="radio"
@@ -28,12 +28,13 @@ class AccommodationPref extends Component {
                 value="Always"
                 onChange={onChangeBreakfast}
               />
-              <span className='step4-option'>
+              <span className='step4-option '>
                 {translationsBreakfast.options[0]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="breakfast"
                 value="Sometimes"
@@ -43,8 +44,9 @@ class AccommodationPref extends Component {
                 {translationsBreakfast.options[1]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="breakfast"
                 value="OnlyIfIncluded"
@@ -54,8 +56,9 @@ class AccommodationPref extends Component {
                 {translationsBreakfast.options[2]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="breakfast"
                 value="Never"
@@ -72,8 +75,9 @@ class AccommodationPref extends Component {
             {translationsAccom.legenContent}
           </p>
           <div className='step4-row'>
-            <div className='step4-radio'>
+            <div className='step4-radio selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="stars"
                 value="5stars"
@@ -83,8 +87,9 @@ class AccommodationPref extends Component {
                 {translationsAccom.options[0]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="stars"
                 value="4stars"
@@ -94,8 +99,9 @@ class AccommodationPref extends Component {
                 {translationsAccom.options[1]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="stars"
                 value="3stars"
@@ -105,8 +111,9 @@ class AccommodationPref extends Component {
                 {translationsAccom.options[2]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="stars"
                 value="2stars"
@@ -123,8 +130,9 @@ class AccommodationPref extends Component {
             {translationsTypeOfAccom.legenContent}
           </p>
           <div className='step4-row'>
-            <div className='step4-radio'>
+            <div className='step4-radio selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="type"
                 value="Clásica"
@@ -134,8 +142,9 @@ class AccommodationPref extends Component {
                 {translationsTypeOfAccom.options[1]}
               </span>
             </div>
-            <div className='step4-radio'>
+            <div className='step4-radio no-selected'>
               <input
+                className='radio-button'
                 type="radio"
                 name="type"
                 value="Moderna"

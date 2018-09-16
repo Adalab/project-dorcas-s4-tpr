@@ -10,30 +10,30 @@ const t = {
         legenContent: <FormattedMessage
             id="Step4.breakfast"
             defaultMessage="Breakfast" />
-    ,
-    options: [
-        <FormattedMessage
-            id="Step4.always"
-            defaultMessage="Always" />
         ,
-        <FormattedMessage
-            id="Step4.sometimes"
-            defaultMessage="Sometimes" />
-        ,
-        <FormattedMessage
-            id="Step4.ifIncluded"
-            defaultMessage="Only if included" />
-        ,
-        <FormattedMessage
-            id="Step4.never"
-            defaultMessage="Never" />
+        options: [
+            <FormattedMessage
+                id="Step4.always"
+                defaultMessage="Always" />
+            ,
+            <FormattedMessage
+                id="Step4.sometimes"
+                defaultMessage="Sometimes" />
+            ,
+            <FormattedMessage
+                id="Step4.ifIncluded"
+                defaultMessage="Only if included" />
+            ,
+            <FormattedMessage
+                id="Step4.never"
+                defaultMessage="Never" />
 
-    ],
-    name:
-        <FormattedMessage
-            id="Step4.breakfastPreference"
-            defaultMessage="breakfastPreference"
-        />,
+        ],
+        name:
+            <FormattedMessage
+                id="Step4.breakfastPreference"
+                defaultMessage="breakfastPreference"
+            />,
     },
 
     accommodation: {
@@ -130,7 +130,7 @@ class Step4 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            idRoute:'',
+            idRoute: '',
             responses: {},
             currentStep: 4,
             dataAccommodation: {
@@ -138,12 +138,12 @@ class Step4 extends Component {
                 plain2: '',
                 train1: '',
                 breakfast: '',
-                qualityAcom:'',
-                typeAcom:'',
+                qualityAcom: '',
+                typeAcom: '',
             },
         }
-        this.handlePlainPreference= this.handlePlainPreference.bind(this);
-        this.handlePlainLocation= this.handlePlainLocation.bind(this);
+        this.handlePlainPreference = this.handlePlainPreference.bind(this);
+        this.handlePlainLocation = this.handlePlainLocation.bind(this);
         this.handleTrainPreference = this.handleTrainPreference.bind(this);
         this.handleSelectBreakfast = this.handleSelectBreakfast.bind(this);
         this.handleSelectQuality = this.handleSelectQuality.bind(this);
@@ -161,67 +161,67 @@ class Step4 extends Component {
 
     handlePlainPreference(e) {
         console.log('HhHHHHHHHHHHHHHHHHHHHHHHHH', this.props);
-        console.log('RADIO',e.target.value)
+        console.log('RADIO', e.target.value)
         const inputValue = e.target.value;
-        
+
         this.setState({
             dataAccommodation: {
                 plain1: inputValue,
                 plain2: this.props.stateAccommodationObject.plain2,
                 train1: this.props.stateAccommodationObject.train1,
                 breakfast: this.props.stateAccommodationObject.breakfast,
-                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
-                typeAcom:this.props.stateAccommodationObject.typeAcom,
+                qualityAcom: this.props.stateAccommodationObject.qualityAcom,
+                typeAcom: this.props.stateAccommodationObject.typeAcom,
             }
-        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
+        }, () => (this.props.handleStep4(this.state.dataAccommodation)));
     }
 
     handlePlainLocation(e) {
         console.log('avion adelante,medio o atrás')
         const inputValue = e.target.value;
-        
+
         this.setState({
             dataAccommodation: {
                 plain1: this.props.stateAccommodationObject.plain1,
                 plain2: inputValue,
                 train1: this.props.stateAccommodationObject.train1,
                 breakfast: this.props.stateAccommodationObject.breakfast,
-                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
-                typeAcom:this.props.stateAccommodationObject.typeAcom,
+                qualityAcom: this.props.stateAccommodationObject.qualityAcom,
+                typeAcom: this.props.stateAccommodationObject.typeAcom,
             }
-        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
+        }, () => (this.props.handleStep4(this.state.dataAccommodation)));
     }
 
     handleTrainPreference(e) {
         console.log('preferencia tren');
         const inputValue = e.target.value;
-        
+
         this.setState({
             dataAccommodation: {
                 plain1: this.props.stateAccommodationObject.plain1,
                 plain2: this.props.stateAccommodationObject.plain2,
                 train1: inputValue,
                 breakfast: this.props.stateAccommodationObject.breakfast,
-                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
-                typeAcom:this.props.stateAccommodationObject.typeAcom,
+                qualityAcom: this.props.stateAccommodationObject.qualityAcom,
+                typeAcom: this.props.stateAccommodationObject.typeAcom,
             }
-        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));   
+        }, () => (this.props.handleStep4(this.state.dataAccommodation)));
     }
 
 
     handleSelectBreakfast(e) {
-        console.log('BREAKFAST',e.target.value );
+        console.log('BREAKFAST', e.target.value);
         const inputValue = e.target.value;
         this.setState({
             dataAccommodation: {
                 plain1: this.props.stateAccommodationObject.plain1,
                 plain2: this.props.stateAccommodationObject.plain2,
-                train1: this.props.stateAccommodationObject.train1 ,
+                train1: this.props.stateAccommodationObject.train1,
                 breakfast: inputValue,
-                qualityAcom:this.props.stateAccommodationObject.qualityAcom,
-                typeAcom:this.props.stateAccommodationObject.typeAcom,
+                qualityAcom: this.props.stateAccommodationObject.qualityAcom,
+                typeAcom: this.props.stateAccommodationObject.typeAcom,
             }
-        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));  
+        }, () => (this.props.handleStep4(this.state.dataAccommodation)));
     }
 
     handleSelectQuality(e) {
@@ -230,12 +230,12 @@ class Step4 extends Component {
             dataAccommodation: {
                 plain1: this.props.stateAccommodationObject.plain1,
                 plain2: this.props.stateAccommodationObject.plain2,
-                train1: this.props.stateAccommodationObject.train1 ,
+                train1: this.props.stateAccommodationObject.train1,
                 breakfast: this.props.stateAccommodationObject.breakfast,
-                qualityAcom:inputValue,
-                typeAcom:this.props.stateAccommodationObject.typeAcom,
+                qualityAcom: inputValue,
+                typeAcom: this.props.stateAccommodationObject.typeAcom,
             }
-        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));  
+        }, () => (this.props.handleStep4(this.state.dataAccommodation)));
     }
 
     handleSelectType(e) {
@@ -244,12 +244,12 @@ class Step4 extends Component {
             dataAccommodation: {
                 plain1: this.props.stateAccommodationObject.plain1,
                 plain2: this.props.stateAccommodationObject.plain2,
-                train1: this.props.stateAccommodationObject.train1 ,
+                train1: this.props.stateAccommodationObject.train1,
                 breakfast: this.props.stateAccommodationObject.breakfast,
                 qualityAcom: this.props.stateAccommodationObject.qualityAcom,
-                typeAcom:inputValue,
+                typeAcom: inputValue,
             }
-        }, ()=>(this.props.handleStep4(this.state.dataAccommodation)));  
+        }, () => (this.props.handleStep4(this.state.dataAccommodation)));
     }
 
     render() {
@@ -273,6 +273,12 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
+                    <span className='section-title'>
+                        <FormattedMessage
+                            id="Step4.choosingSeat"
+                            defaultMessage="Choosing seat"
+                        />
+                    </span>
                     <TransportPref
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}

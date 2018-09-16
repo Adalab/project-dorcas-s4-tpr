@@ -25,8 +25,9 @@ class TransportPref extends Component {
                     </h2>
                     <form className='step4-box'>
                         <div className='step4-row'>
-                            <div className='step4-radio'>
+                            <div className='step4-radio selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="place"
                                     value="Window"
@@ -36,8 +37,9 @@ class TransportPref extends Component {
                                     {translationsPlainPreferences.window}
                                 </span>
                             </div>
-                            <div className='step4-radio'>
+                            <div className='step4-radio no-selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="place"
                                     value="Aisle"
@@ -51,8 +53,9 @@ class TransportPref extends Component {
                     </form>
                     <form className='step4-box'>
                         <div className='step4-row'>
-                            <div className='step4-radio'>
+                            <div className='step4-radio selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="ubication"
                                     value="Front"
@@ -65,8 +68,9 @@ class TransportPref extends Component {
                                     />
                                 </span>
                             </div>
-                            <div className='step4-radio'>
+                            <div className='step4-radio no-selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="ubication"
                                     value="Middle"
@@ -79,8 +83,9 @@ class TransportPref extends Component {
                                     />
                                 </span>
                             </div>
-                            <div className='step4-radio'>
+                            <div className='step4-radio no-selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="ubication"
                                     value="Back"
@@ -103,8 +108,9 @@ class TransportPref extends Component {
                     </h2>
                     <form className='step4-box'>
                         <div className='step4-row'>
-                            <div className='step4-radio'>
+                            <div className='step4-radio selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="window"
                                     value="Window"
@@ -114,8 +120,9 @@ class TransportPref extends Component {
                                     {translationsTrainPreferences.window}
                                 </span>
                             </div>
-                            <div className='step4-radio'>
+                            <div className='step4-radio no-selected'>
                                 <input
+                                    className='radio-button'
                                     type="radio"
                                     name="window"
                                     value="Aisle"
