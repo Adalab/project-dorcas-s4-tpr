@@ -58,8 +58,8 @@ class Navigation extends Component {
             />
           </Link>
           <ul className='list-steps'>
-            <li className='nav-steps'>
-              <a className='nav-link1' href="#/step/1/:id"
+            <Link to={'#/step/1/:id'}>
+              <li className='nav-steps'>
                 onClick={this.handleFirstPage}>
                 <Icon
                   title={title1}
@@ -67,66 +67,65 @@ class Navigation extends Component {
                   currentStep={currentStep}
                   handleUpdateNavigation={handleUpdateNavigation}
                 />
-              </a>
-            </li>
-            <li className='nav-steps'>
-              <a className='nav-link2' href="#/step/2/:id" onClick={handleFirstPage}>
+              </li>
+            </Link>
+            <Link to={'#/step/2/:id'}>
+              <li className='nav-steps'>
                 <Icon
                   title={title2}
                   changingStep={changingStep2}
                   currentStep={currentStep}
                   handleUpdateNavigation={handleUpdateNavigation}
                 />
-              </a>
-            </li>
-            <li className='nav-steps'>
-              <a className='nav-link3' href="#/step/3/:id" onClick={handleFirstPage}>
+              </li>
+            </Link>
+            <Link to={'#/step/3/:id'}>
+              <li className='nav-steps'>
                 <Icon
                   title={title3}
                   changingStep={changingStep3}
                   currentStep={currentStep}
                   handleUpdateNavigation={handleUpdateNavigation}
                 />
-              </a>
-            </li>
-            <li className='nav-steps'>
-              <a className='nav-link4' href="#/step/4/:id" onClick={handleFirstPage}>
+              </li>
+            </Link>
+            <Link to={'#/step/4/:id'}>
+              <li className='nav-steps'>
                 <Icon
                   title={title4}
                   changingStep={changingStep4}
                   currentStep={currentStep}
                   handleUpdateNavigation={handleUpdateNavigation}
                 />
-              </a>
-            </li>
-            <li className='nav-steps'>
-              <Link to={`/step/${currentStep}/${idRoute}`}>
-                <Icon
-                  title={title5}
-                  changingStep={changingStep5}
-                  currentStep={currentStep}
-                  handleUpdateNavigation={handleUpdateNavigation}
+              </li>
+              </Link>
+              <Link to={'#/step/5/:id'}>
+                <li className='nav-steps'>
+                  <Icon
+                    title={title5}
+                    changingStep={changingStep5}
+                    currentStep={currentStep}
+                    handleUpdateNavigation={handleUpdateNavigation}
+                  />
+                </li>
+              </Link>
+          </ul>
+            <div className='container-nexts'>
+              <Link to={`/step/${currentStep + 1}/${idRoute}`} onClick={this.handleFirstPage}>
+                <Button
+                  buttonContent={nextButton}
                 />
               </Link>
-              {/* </a> */}
-            </li>
-          </ul>
-          <div className='container-nexts'>
-            <Link to={`/step/${currentStep + 1}/${idRoute}`} onClick={this.handleFirstPage}>
-              <Button
-                buttonContent={nextButton}
-              />
-            </Link>
-            <Link className='jumpLink' to={`/step/${currentStep + 1}/${idRoute}`}>
-              <div className={handleNextStepClass}>Completar luego,
+              <Link className='jumpLink' to={`/step/${currentStep + 1}/${idRoute}`}>
+                <div className={handleNextStepClass}>Completar luego,
               <span className='jumpLink-colorText'> saltar paso</span>
-              </div>
-            </Link>
-          </div>
+                </div>
+              </Link>
+            </div>
         </nav>
       </div>
-    );
-  }
-}
-
+        );
+      }
+    }
+    
 export default Navigation;
