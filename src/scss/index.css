@@ -201,6 +201,19 @@ a {
   color: #5b5b5b;
   font-size: 12px; }
 
+.step4-box {
+  width: 696px;
+  height: 116px;
+  border-radius: 6px;
+  background-color: rgba(252, 252, 253, 0.4);
+  border: solid 1px rgba(0, 0, 0, 0.1); }
+
+.step4-boxtitle {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #8d9293; }
+
 .position-label {
   position: relative; }
 

@@ -15,8 +15,8 @@ class AccommodationPref extends Component {
     } = this.props;
     return (
       <div>
-        <form >
-          <p>
+        <form className='step4-box'>
+          <p className='step4-boxtitle'>
             {translationsBreakfast.legenContent}
           </p>
           <div className='step4-row'>
@@ -68,7 +68,7 @@ class AccommodationPref extends Component {
           </div>
         </form>
         <form >
-          <p>
+          <p className='step4-boxtitle'>
             {translationsAccom.legenContent}
           </p>
           <div className='step4-row'>
@@ -119,7 +119,7 @@ class AccommodationPref extends Component {
           </div>
         </form>
         <form >
-          <p>
+          <p className='step4-boxtitle'>
             {translationsTypeOfAccom.legenContent}
           </p>
           <div className='step4-row'>

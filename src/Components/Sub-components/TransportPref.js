@@ -23,63 +23,76 @@ class TransportPref extends Component {
                             defaultMessage="Plain preferences"
                         />
                     </h2>
-                    <form >
-                        <span>             
-                            {translationsPlainPreferences.window}                 
-                        </span>
-                        <input
-                            type="radio"
-                            name="place"
-                            value="Window"
-                            onChange={onChangePlainPreferences}
-                        />
-                        <span>
-                            {translationsPlainPreferences.aisle}
-                        </span>
-                        <input
-                            type="radio"
-                            name="place"
-                            value="Aisle"
-                            onChange={onChangePlainPreferences}
-                        />
+                    <form className='step4-box'>
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="place"
+                                value="Window"
+                                onChange={onChangePlainPreferences}
+                            />
+                            <span>
+                                {translationsPlainPreferences.window}
+                            </span>
+                        </div>
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="place"
+                                value="Aisle"
+                                onChange={onChangePlainPreferences}
+                            />
+                            <span>
+                                {translationsPlainPreferences.aisle}
+                            </span>
+                        </div>
+
                     </form>
-                    <form >
-                        <span>
-                            <FormattedMessage
-                                id="TransportPref.front"
-                                defaultMessage="Front"
+                    <form className='step4-box'>
+
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="ubication"
+                                value="Front"
+                                onChange={onChangePlainLocation}
                             />
-                        </span>
-                        <input
-                            type="radio"
-                            name="ubication"
-                            value="Front"
-                            onChange={onChangePlainLocation}
-                        />
-                        <span>
-                            <FormattedMessage
-                                id="TransportPref.middle"
-                                defaultMessage="Middle"
+                            <span>
+                                <FormattedMessage
+                                    id="TransportPref.front"
+                                    defaultMessage="Front"
+                                />
+                            </span>
+                        </div>
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="ubication"
+                                value="Middle"
+                                onChange={onChangePlainLocation}
                             />
-                        </span>
-                        <input
-                            type="radio"
-                            name="ubication"
-                            value="Middle"
-                            onChange={onChangePlainLocation}
-                        />
-                        <span>
-                            <FormattedMessage
-                                id="TransportPref.back"
-                                defaultMessage="Back"
+                            <span>
+                                <FormattedMessage
+                                    id="TransportPref.middle"
+                                    defaultMessage="Middle"
+                                />
+                            </span>
+                        </div>
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="ubication"
+                                value="Back"
+                                onChange={onChangePlainLocation}
                             />
-                        </span>
-                        <input
-                            type="radio"
-                            name="ubication"
-                            value="Back"
-                            onChange={onChangePlainLocation}
-                        />
+                            <span>
+                                <FormattedMessage
+                                    id="TransportPref.back"
+                                    defaultMessage="Back"
+                                />
+                            </span>
+                        </div>
+
                     </form>
                     <h2 className='preference-title'>
                         <FormattedMessage
@@ -87,25 +100,29 @@ class TransportPref extends Component {
                             defaultMessage="Preferences in trains"
                         />
                     </h2>
-                    <form >
-                        <span>
-                            {translationsTrainPreferences.window}
-                        </span>
-                        <input
-                            type="radio"
-                            name="window"
-                            value="Window"
-                            onChange={onChangeTrainPreferences}
-                        />
-                        <span>
-                            {translationsTrainPreferences.aisle}
-                        </span>
-                        <input
-                            type="radio"
-                            name="window"
-                            value="Aisle"
-                            onChange={onChangeTrainPreferences}
-                        />
+                    <form className='step4-box'>
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="window"
+                                value="Window"
+                                onChange={onChangeTrainPreferences}
+                            />
+                            <span>
+                                {translationsTrainPreferences.window}
+                            </span>
+                        </div>
+                        <div className='step4-radio'>
+                            <input
+                                type="radio"
+                                name="window"
+                                value="Aisle"
+                                onChange={onChangeTrainPreferences}
+                            />
+                            <span>
+                                {translationsTrainPreferences.aisle}
+                            </span>
+                        </div>
                     </form>
                 </legend>
             </div>
