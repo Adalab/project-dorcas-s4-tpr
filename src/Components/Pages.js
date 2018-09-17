@@ -47,6 +47,7 @@ class Pages extends Component {
       stateAccommodationObject,
       handleStep4,
       handleIdRoute,
+      handleNextStep,
     } = this.props;
 
     console.log('PAGES', this.props);
@@ -79,6 +80,7 @@ class Pages extends Component {
                 personalInformation={personalInformation}
                 contactInformation= {contactInformation}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route

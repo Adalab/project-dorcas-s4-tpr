@@ -36,7 +36,7 @@ class Navigation extends Component {
       handleUpdateNavigation,
       handleNextStepClass,
       idRoute,
-      handleFirstPage
+      handleNextStep,
     } = this.props;
 
     const {
@@ -116,6 +116,7 @@ class Navigation extends Component {
               <Link to={`/step/${currentStep + 1}/${idRoute}`}>
                 <Button
                   buttonContent={nextButton}
+                  onClick={handleNextStep}
                 />
               </Link>
               <Link 

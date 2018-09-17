@@ -155,7 +155,8 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
-            handleFirstPage
+            handleFirstPage,
+            handleNextStep
         } = this.props;
         const {
             firstName, 
@@ -210,6 +211,7 @@ class Step1 extends Component {
                     handleNextStepClass={this.handleNextStepClass()}
                     handleFirstPage={handleFirstPage}
                     idRoute={this.state.idRoute}
+                    handleNextStep={handleNextStep}
                 />
             </div>
         );
