@@ -152,6 +152,7 @@ class App extends Component {
     this.handleStep5=this.handleStep5.bind(this);
     this.handleIdRoute=this.handleIdRoute.bind(this);
     this.handleFirstPage=this.handleFirstPage.bind(this);
+    this.handleNextStep=this.handleNextStep.bind(this);
   }
 
   componentDidMount() {
@@ -206,6 +207,15 @@ class App extends Component {
           }
         })
       })
+  }
+
+  handleNextStep(){
+    const dataForAPI= this.state.data;
+    axios.post(dataForAPI)
+      .then(res => {
+        console.log('holaholaholaholaholaholahola')
+      })
+      
   }
 
   handleIdRoute(idRoute){
@@ -392,6 +402,7 @@ class App extends Component {
           stateAccommodationObject={this.state.dataAccommodation}
           handleIdRoute= {this.handleIdRoute}
           handleFirstPage={this.handleFirstPage}
+          handleNextStep={this.handleNextStep}
         />
       </div>
     );
