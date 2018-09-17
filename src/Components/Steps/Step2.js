@@ -390,11 +390,9 @@ class Step2 extends Component {
                 buttonHidden: true
             });
         }
-        console.log('ESTADOOOO', this.state);
     }
 
     handleVisaInput(e) {
-        console.log("HhHHHHHHHOLOOOOOALLALALLAALL")
         const inputValue = e.target.value;
         this.setState({
             data: {
@@ -535,10 +533,7 @@ class Step2 extends Component {
             visaConteinerContent = 'visaButtonContent-container';
             visaButton.buttonClass = 'hidden';
         }
-
-        console.log('props STEP2', this.props);
-        console.log('visaConteinerContent', visaConteinerContent);
-        console.log('ESTADOOOO2000000000000000000000000000000', this.state);
+        console.log('VALOR DE LA FECHA DE EMISIOOOON', passport[0].issueDate)
         return (
             <div className='stepBox step2'>
                 <Title
@@ -574,7 +569,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passIssueDateCal.id}
-                                className='placeholder-label'
+                                className={passport[0].issueDate ? 'label-located' :'placeholder-label'}
                             >
                                 {passIssueDateCal.labelContent}
                             </label>
@@ -588,7 +583,9 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passExpDateCal.id}
-                                className='placeholder-label'
+                            /* Esta es la lógica necesaria para que esto funcione hay que 
+                            añadirla a los demás labels de fechas cuando se les pase su valor*/
+                                className={passport[0].expiryDate ? 'label-located' :'placeholder-label'}
                             >
                                 {passExpDateCal.labelContent}
                             </label>
@@ -644,6 +641,7 @@ class Step2 extends Component {
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaIssueDateCal.id}
+                                    /* De este className en adelante hay que añadir el ternario cuando se pase un valor al input*/
                                         className='placeholder-label'
                                     >
                                         {visaIssueDateCal.labelContent}

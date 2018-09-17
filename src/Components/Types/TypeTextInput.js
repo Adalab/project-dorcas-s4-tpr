@@ -13,13 +13,18 @@ class TypeTextInput extends Component {
           onChange,
           toggleClass,
           inputText,
+          debug
         } = this.props;
         console.log('adios', this.props.inputText);
         let className;
-        if (!!inputText && inputText === 0) {
+        if (!!inputText || inputText === 0) {
           className ='label-located';
       } else {
           className = '';
+      }
+
+      if (debug === true) {
+          console.log(typeof inputText);
       }
         return (
             <div className={`position-label ${toggleClass}`}>
