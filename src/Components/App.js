@@ -198,13 +198,22 @@ class App extends Component {
             ],
             passport: [
               {
-                issueCountry: person.travelDocuments.passport[0].issueCountry,
-                issueDate: "2017-09-16",
-                // this.handleDateFromApi(person.travelDocuments.passport[0].issueDate),
-                expiryDate: "2017-09-16",
-                // this.handleDateFromApi(person.travelDocuments.passport[0].expiryDate),
+                issueCountry: 
+                  person.travelDocuments.passport !== undefined
+                    ?person.travelDocuments.passport[0].issueCountry
+                    : '',
+                issueDate:
+                  person.travelDocuments.passport !== undefined
+                    ?this.handleDateFromApi(person.travelDocuments.passport[0].issueDate)
+                    : '',
+                expiryDate: 
+                  person.travelDocuments.passport !== undefined
+                    ?this.handleDateFromApi(person.travelDocuments.passport[0].expiryDate)
+                    : '',
                 passportNumber:
-                  person.travelDocuments.passport[0].passportNumber
+                  person.travelDocuments.passport !== undefined
+                    ?person.travelDocuments.passport[0].passportNumber
+                    :'',
               }
             ]
           },
