@@ -153,6 +153,7 @@ class App extends Component {
     this.handleIdRoute=this.handleIdRoute.bind(this);
     this.handleDateFromApi=this.handleDateFromApi.bind(this);
     this.handleDateToApi=this.handleDateToApi.bind(this);
+    this.handleFirstPage=this.handleFirstPage.bind(this);
   }
 
   componentDidUpdate(prevState) {
@@ -387,6 +388,11 @@ class App extends Component {
     }
   }
 
+  handleFirstPage(){
+    console.log('primer paso')
+   
+  }
+
   render() {
     console.log('ESTADO', this.props);
     return (
@@ -404,6 +410,7 @@ class App extends Component {
           dataVisa={this.state.dataVisa}
           stateAccommodationObject={this.state.dataAccommodation}
           handleIdRoute= {this.handleIdRoute}
+          handleFirstPage={this.handleFirstPage}
         />
       </div>
     );

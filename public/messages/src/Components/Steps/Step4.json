@@ -88,6 +88,10 @@
     "defaultMessage": "Aisle"
   },
   {
+    "id": "Step4.choosingSeat",
+    "defaultMessage": "Choosing seat"
+  },
+  {
     "id": "Step4.accommodation",
     "defaultMessage": "Accommodation"
   },

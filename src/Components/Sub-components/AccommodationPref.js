@@ -13,116 +13,152 @@ class AccommodationPref extends Component {
       translationsBreakfast,
       translationsTypeOfAccom
     } = this.props;
-    console.log(translationsBreakfast);
     return (
       <div>
-        <form >
-          <p>
+        <form className='step4-box'>
+          <p className='step4-boxtitle'>
             {translationsBreakfast.legenContent}
           </p>
-          <input
-            type="radio"
-            name="breakfast"
-            value="Always"
-            onChange={onChangeBreakfast}
-          />
-          <span>
-            {translationsBreakfast.options[0]}
-          </span>
-          <input
-            type="radio"
-            name="breakfast"
-            value="Sometimes"
-            onChange={onChangeBreakfast}
-          />
-          <span>
-            {translationsBreakfast.options[1]}
-          </span>
-          <input
-            type="radio"
-            name="breakfast"
-            value="OnlyIfIncluded"
-            onChange={onChangeBreakfast}
-          />
-          <span>
-            {translationsBreakfast.options[2]}
-
-          </span>
-          <input
-            type="radio"
-            name="breakfast"
-            value="Never"
-            onChange={onChangeBreakfast}
-          />
-          <span>
-            {translationsBreakfast.options[3]}
-          </span>
+          <div className='step4-row'>
+            <div className='step4-radio selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="breakfast"
+                value="Always"
+                onChange={onChangeBreakfast}
+              />
+              <span class="checkmark"></span>
+              <span className='step4-option '>
+                {translationsBreakfast.options[0]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="breakfast"
+                value="Sometimes"
+                onChange={onChangeBreakfast}
+              />
+              <span class="checkmark"></span>
+              <span className='step4-option'>
+                {translationsBreakfast.options[1]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="breakfast"
+                value="OnlyIfIncluded"
+                onChange={onChangeBreakfast}
+              />
+              <span class="checkmark"></span>
+              <span className='step4-option'>
+                {translationsBreakfast.options[2]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="breakfast"
+                value="Never"
+                onChange={onChangeBreakfast}
+              />
+              <span class="checkmark"></span>
+              <span className='step4-option'>
+                {translationsBreakfast.options[3]}
+              </span>
+            </div>
+          </div>
         </form>
-        <form >
-          <p>
+        <form className='step4-box'>
+          <p className='step4-boxtitle'>
             {translationsAccom.legenContent}
           </p>
-          <input
-            type="radio"
-            name="stars"
-            value="5stars"
-            onChange={onChangeHotelStars}
-          />
-          <span>
-            {translationsAccom.options[0]}
-          </span>
-          <input
-            type="radio"
-            name="stars"
-            value="4stars"
-            onChange={onChangeHotelStars}
-          />
-          <span>
-            {translationsAccom.options[1]}
-          </span>
-          <input
-            type="radio"
-            name="stars"
-            value="3stars"
-            onChange={onChangeHotelStars}
-          />
-          <span>
-            {translationsAccom.options[2]}
-          </span>
-          <input
-            type="radio"
-            name="stars"
-            value="2stars"
-            onChange={onChangeHotelStars}
-          />
-          <span>
-            {translationsAccom.options[3]}
-          </span>
+          <div className='step4-row'>
+            <div className='step4-radio selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="stars"
+                value="5stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[0]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="stars"
+                value="4stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[1]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="stars"
+                value="3stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[2]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="stars"
+                value="2stars"
+                onChange={onChangeHotelStars}
+              />
+              <span className='step4-option'>
+                {translationsAccom.options[3]}
+              </span>
+            </div>
+          </div>
         </form>
-        <form >
-          <p>
+        <form className='step4-box box2'>
+          <p className='step4-boxtitle'>
             {translationsTypeOfAccom.legenContent}
           </p>
-
-          <input
-            type="radio"
-            name="type"
-            value="Clásica"
-            onChange={onChangeHotelType}
-          />
-          <span>
-            {translationsTypeOfAccom.options[1]}
-          </span>
-          <input
-            type="radio"
-            name="type"
-            value="Moderna"
-            onChange={onChangeHotelType}
-          />
-          <span>
-            {translationsTypeOfAccom.options[2]}
-          </span>
-
+          <div className='step4-row'>
+            <div className='step4-radio selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="type"
+                value="Clásica"
+                onChange={onChangeHotelType}
+              />
+              <span className='step4-option'>
+                {translationsTypeOfAccom.options[1]}
+              </span>
+            </div>
+            <div className='step4-radio no-selected'>
+              <input
+                className='radio-button'
+                type="radio"
+                name="type"
+                value="Moderna"
+                onChange={onChangeHotelType}
+              />
+              <span className='step4-option'>
+                {translationsTypeOfAccom.options[2]}
+              </span>
+            </div>
+          </div>
         </form>
 
       </div>
