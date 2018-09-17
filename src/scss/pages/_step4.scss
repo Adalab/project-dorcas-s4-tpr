@@ -3,6 +3,8 @@
 }
 
 .preference-title {
+    margin-top: 20px;
+    margin-bottom: 6px;
     color: $color-secondary-dark;
     font-size: $font-size-plus-l;
     font-family: $font-family-primary;
@@ -10,10 +12,15 @@
 }
 
 .section-title {
+    display: block;
+    width: 150px;
+    margin: auto;
     text-transform: uppercase;
     text-align: center;
     color:$color-terciary-dark;
     font-size: $font-size-s;
+    z-index: $to-front;
+    background-color:$color-secondary-light;
 }
 
 .step4-radio {
@@ -83,6 +90,12 @@
     font-size: $font-size-xs;
     font-weight: $normal;
     color: $color-terciary-dark;
+}
+
+.section-line{
+    transform: translateY(9px);
+    background-color: rgba(0, 0, 0, 0.1);
+  
 }
 
 .radio-button {

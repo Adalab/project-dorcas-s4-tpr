@@ -200,16 +200,23 @@ a {
   margin-bottom: 120px; }
 
 .preference-title {
+  margin-top: 20px;
+  margin-bottom: 6px;
   color: #5b5b5b;
   font-size: 24px;
   font-family: "Fira Sans", sans-serif;
   font-weight: 500; }
 
 .section-title {
+  display: block;
+  width: 150px;
+  margin: auto;
   text-transform: uppercase;
   text-align: center;
   color: #8d9293;
-  font-size: 12px; }
+  font-size: 12px;
+  z-index: 5;
+  background-color: #f8f9f8; }
 
 .step4-radio {
   display: flex;
@@ -267,6 +274,10 @@ a {
   font-size: 10px;
   font-weight: 500;
   color: #8d9293; }
+
+.section-line {
+  transform: translateY(9px);
+  background-color: rgba(0, 0, 0, 0.1); }
 
 .radio-button {
   align-self: center;
