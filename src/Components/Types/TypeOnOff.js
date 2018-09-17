@@ -13,13 +13,14 @@ class TypeOnOff extends Component {
 
         console.log('props TYpe ON OFF', this.props);
         return  (<div>
-                    <label htmlFor={labelContent}>
+                    <label htmlFor={labelContent} className="switch">
                         <input
                         id= {id}
                         type="checkbox"
-                        onClick={handleTypeOnOff}
+                        onChange={handleTypeOnOff}
                         checked={checked}
                         />
+                        <span className="slider round"></span>
                         {labelContent}
                     </label>
                 </div>)
