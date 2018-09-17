@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/index.css';
-import App from './Components/App';
+import Base from './Components/Base';
 import { HashRouter } from "react-router-dom";
 import { IntlProvider, addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
@@ -29,7 +29,7 @@ const messages =
 ReactDOM.render(
     <IntlProvider locale={language} messages={messages}>
         <HashRouter>
-            <App />
+            <Base />
         </HashRouter>
     </IntlProvider>,
     document.getElementById("root")
