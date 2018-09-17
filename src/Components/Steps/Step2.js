@@ -539,7 +539,6 @@ class Step2 extends Component {
             visaConteinerContent = 'visaButtonContent-container';
             visaButton.buttonClass = 'hidden';
         }
-        console.log('VALOR DE LA FECHA DE EMISIOOOON', passport[0].issueDate)
         return (
             <div className='stepBox step2'>
                 <Title
@@ -589,8 +588,6 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passExpDateCal.id}
-                            /* Esta es la lógica necesaria para que esto funcione hay que 
-                            añadirla a los demás labels de fechas cuando se les pase su valor*/
                                 className={passport[0].expiryDate ? 'label-located' :'placeholder-label'}
                             >
                                 {passExpDateCal.labelContent}
@@ -648,8 +645,7 @@ class Step2 extends Component {
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaIssueDateCal.id}
-                                    /* De este className en adelante hay que añadir el ternario cuando se pase un valor al input*/
-                                        className='placeholder-label'
+                                    className={issueDate ? 'label-located' :'placeholder-label'}
                                     >
                                         {visaIssueDateCal.labelContent}
                                     </label>
@@ -663,7 +659,7 @@ class Step2 extends Component {
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaExpDateCal.id}
-                                        className='placeholder-label'
+                                    className={expiryDate ? 'label-located' :'placeholder-label'}
                                     >
                                         {visaExpDateCal.labelContent}
                                     </label>
@@ -693,7 +689,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idIssueDateCal.id}
-                                className='placeholder-label'
+                            className={idCard[0].issueDate ? 'label-located' :'placeholder-label'}                          
                             >
                                 {idIssueDateCal.labelContent}
                             </label>
@@ -707,8 +703,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idExpDateCal.id}
-                                className='placeholder-label'
-                            >
+                            className={idCard[0].expiryDate ? 'label-located' :'placeholder-label'}                              >
                                 {idExpDateCal.labelContent}
                             </label>
                         </div>
