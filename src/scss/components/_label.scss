@@ -34,10 +34,13 @@
  .label-located {
     font-size: $font-size-m;
     padding: 3px 0 0 12px;
+    color: $color-terciary-dark;
+    font-weight: $normal;
+    position: absolute;
+    top: 0;
+    left: 0; 
  }
 
- .position-calendar {
-     position: relative;
-     height: 85px;
-     display: inline-block;
- }
+ .half-input {
+    width: 335px;
+}

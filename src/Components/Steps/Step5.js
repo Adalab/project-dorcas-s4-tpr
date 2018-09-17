@@ -164,6 +164,7 @@ class Step5 extends Component {
                 }
         }, ()=>(this.props.handleStep5(this.state.data))); 
     }
+    
 
     handleRegion(e){
         console.log(e.target.value)
@@ -287,6 +288,7 @@ class Step5 extends Component {
                         handleTypeOnOff={this.handleTypeOnOff}
                         checked={this.state.checkedFamily ? true : false}/>
                     <TypeTextInput
+                        debug={true}
                         onChange={this.handleFamilyNumber}
                         inputData={familyNumberInput}
                         inputText={familyNumber}
