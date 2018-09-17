@@ -219,20 +219,39 @@ class App extends Component {
           },
 
           extras: {
-            familyNumber: person.extras !== undefined
-            ?person.extras.familyNumber
-            :'',
+            familyNumber: 
+              person.extras !== undefined
+                ?person.extras.familyNumber
+                : '',
             islandResident: {
-              region: person.extras.islandResident.region,
-              locality: person.extras.islandResident.locality
-            }
+              region: 
+                person.extras.islandResident !== undefined
+                  ?person.extras.islandResident.region
+                  : '',
+              locality: 
+                person.extras.islandResident !== undefined
+                  ?person.extras.islandResident.locality
+                  : '',
+            },
           },
           emergencyContact: [
             {
-              firstName: person.extras.emergencyContact[0].firstName,
-              lastName: person.extras.emergencyContact[0].lastName,
-              email: person.extras.emergencyContact[0].email,
-              phoneNumber: person.extras.emergencyContact[0].phoneNumber
+              firstName: 
+                person.extras.emergencyContact !== undefined
+                  ?person.extras.emergencyContact[0].firstName
+                  : '',
+              lastName: 
+                person.extras.emergencyContact !== undefined
+                  ?person.extras.emergencyContact[0].lastName
+                  :'',
+              email: 
+              person.extras.emergencyContact !== undefined
+                  ?person.extras.emergencyContact[0].email
+                  :'',
+              phoneNumber: 
+                person.extras.emergencyContact !== undefined
+                  ?person.extras.emergencyContact[0].phoneNumber
+                  :'',
             }
           ]
         }
