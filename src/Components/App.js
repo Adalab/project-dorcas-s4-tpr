@@ -156,12 +156,24 @@ class App extends Component {
       {
         data: {
           personalInformation: {
-            lastName: person.personalInformation.lastName,
-            firstName: person.personalInformation.firstName
+            lastName: 
+            person.personalInformation !== undefined
+              ? person.personalInformation.lastName
+              : '',
+            firstName:
+            person.personalInformation !== undefined
+            ? person.personalInformation.firstName
+            : '',
           },
           contactInformation: {
-            phoneNumbers: person.contactInformation.phoneNumbers,
-            emails: person.contactInformation.emails
+            phoneNumbers: 
+            person.contactInformation !== undefined
+              ? person.contactInformation.phoneNumbers
+              : '',
+            emails: 
+            person.contactInformation !== undefined
+            ? person.contactInformation.emails
+            : '',
           },
           travelDocuments: {
             idCard: [
@@ -170,14 +182,18 @@ class App extends Component {
                   person.travelDocuments.idCard !== undefined
                     ? person.travelDocuments.idCard[0].placeOfBirth
                     : "",
-                issueDate: "2017-09-16",
-                // this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate),
-                expiryDate: "2017-09-16",
-                // this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate),
+                issueDate:
+                  person.travelDocuments.idCard !== undefined
+                    ?this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate)
+                    : '',
+                expiryDate:
+                  person.travelDocuments.idCard !== undefined
+                  ?this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate)
+                  :'',
                 dniNumber:
                   person.travelDocuments.idCard !== undefined
                     ? person.travelDocuments.idCard[0].dniNumber
-                    : ""
+                    : '',
               }
             ],
             passport: [
