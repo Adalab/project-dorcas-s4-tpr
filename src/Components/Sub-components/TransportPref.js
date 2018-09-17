@@ -11,9 +11,19 @@ class TransportPref extends Component {
             onChangePlainPreferences,
             onChangePlainLocation,
             onChangeTrainPreferences,
+            transportStateSelections
         } = this.props;
-        console.log(translationsPlainPreferences)
-        console.log(translationsPlainPreferences.window)
+        
+        const {   
+            windowSel,
+            aisleSel,
+            firstSel,
+            centerSel,
+            lastSel,
+            trainWindowSel,
+            trainAisleSel,
+        } = this.props.transportStateSelections;
+        console.log(windowSel);
         return (
             <div>
                 <legend>
@@ -25,7 +35,7 @@ class TransportPref extends Component {
                     </h2>
                     <form className='step4-transport-box box2'>
                         <div className='step4-row'>
-                            <label className='step4-radio selected'>
+                            <div className={`step4-radio ${windowSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -36,8 +46,8 @@ class TransportPref extends Component {
                                 <span className='step4-option'>
                                     {translationsPlainPreferences.window}
                                 </span>
-                            </label>
-                            <div className='step4-radio no-selected'>
+                            </div>
+                            <div className={`step4-radio ${aisleSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -53,7 +63,7 @@ class TransportPref extends Component {
                     </form>
                     <form className='step4-transport-box box3'>
                         <div className='step4-row'>
-                            <div className='step4-radio selected'>
+                            <div className={`step4-radio ${firstSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -68,7 +78,7 @@ class TransportPref extends Component {
                                     />
                                 </span>
                             </div>
-                            <div className='step4-radio no-selected'>
+                            <div className={`step4-radio ${centerSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -83,7 +93,7 @@ class TransportPref extends Component {
                                     />
                                 </span>
                             </div>
-                            <div className='step4-radio no-selected'>
+                            <div className={`step4-radio ${lastSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -108,7 +118,7 @@ class TransportPref extends Component {
                     </h2>
                     <form className='step4-transport-box box2'>
                         <div className='step4-row'>
-                            <div className='step4-radio selected'>
+                            <div className={`step4-radio ${trainWindowSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
@@ -120,7 +130,7 @@ class TransportPref extends Component {
                                     {translationsTrainPreferences.window}
                                 </span>
                             </div>
-                            <div className='step4-radio no-selected'>
+                            <div className={`step4-radio ${trainAisleSel}`}>
                                 <input
                                     className='radio-button'
                                     type="radio"
