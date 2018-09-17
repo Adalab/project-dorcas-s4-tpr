@@ -273,7 +273,9 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
+                <hr className='section-line'></hr>
                     <span className='section-title'>
+      
                         <FormattedMessage
                             id="Step4.choosingSeat"
                             defaultMessage="Choosing seat"
@@ -286,6 +288,7 @@ class Step4 extends Component {
                         translationsPlainPreferences={plainPreferences}
                         translationsTrainPreferences={trainPreferences}
                     />
+                    <hr className='section-line'></hr>
                     <span className='section-title'>
                         <FormattedMessage
                             id="Step4.accommodation"
