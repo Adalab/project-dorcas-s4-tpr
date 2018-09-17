@@ -15,7 +15,6 @@ class Button extends Component {
       textButton,
       buttonClassHidden
     } = buttonContent;
-    console.log('propsButton', this.props);
     return (
       <button 
         type="submit"

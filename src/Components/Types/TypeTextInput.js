@@ -13,7 +13,6 @@ class TypeTextInput extends Component {
           toggleClass,
           inputText,
         } = this.props;
-        console.log('adios', this.props.inputText);
         let className;
         if (inputText !== undefined && inputText.length > 0) {
           className ='label-located';

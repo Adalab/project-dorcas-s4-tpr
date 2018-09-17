@@ -2,7 +2,6 @@ import React, { Component,Fragment } from 'react';
 
 class Icon extends Component {
     render() {
-        console.log('props ICON',this.props);
         const {
             title,
             changingStep,

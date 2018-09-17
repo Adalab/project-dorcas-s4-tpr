@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class TypeEmailInput extends Component {
   render() {
-    console.log('inputMAIL', this.props);
     const {
       labelContent,
       id,

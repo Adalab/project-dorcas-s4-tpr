@@ -8,7 +8,6 @@ import Step5 from './Steps/Step5';
 
 class Pages extends Component {
   render() {
-    console.log('PAGES', this.props);
     const {
       currentStep,
       steps,
@@ -50,7 +49,6 @@ class Pages extends Component {
       handleNextStep,
     } = this.props;
 
-    console.log('PAGES', this.props);
     return (
       <Fragment>
         <Switch>

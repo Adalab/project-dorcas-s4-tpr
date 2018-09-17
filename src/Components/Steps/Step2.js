@@ -472,7 +472,7 @@ class Step2 extends Component {
     }
 
     render() {
-        console.log(this.props)
+        console.log('STEEEEEEEEP',this.props)
         const {
             title1,
             title2,

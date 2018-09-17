@@ -77,13 +77,14 @@ class Step1 extends Component {
         this.handleLineNumber = this.handleLineNumber.bind(this)
     }
     componentDidMount(){
+        console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',this.props.match.params.id);
         const idRoute = this.props.match.params.id;
-        console.log(this.props.match.params.id);
-        this.props.handleCurrentStep(this.state.currentStep);
         this.props.handleIdRoute(idRoute);
         this.setState({
             idRoute: idRoute,
         })
+        this.props.handleCurrentStep(this.state.currentStep);
+       
     }
 
     handleNextStepClass(){
@@ -93,7 +94,6 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        console.log('chula', this.props);
         const inputValue = e.target.value;
         
         this.setState({
@@ -168,7 +168,6 @@ class Step1 extends Component {
             phoneNumbers
         } = this.props.contactInformation;
 
-        console.log('ALEx', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title

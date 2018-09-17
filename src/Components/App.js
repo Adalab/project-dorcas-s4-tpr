@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      idRoute: '',
+      idRoute: undefined,
       data: {
         personalInformation: {
           lastName: '',
@@ -153,20 +153,22 @@ class App extends Component {
     this.handleIdRoute=this.handleIdRoute.bind(this);
     this.handleDateFromApi=this.handleDateFromApi.bind(this);
     this.handleDateToApi=this.handleDateToApi.bind(this);
-    this.handleFirstPage=this.handleFirstPage.bind(this);
     this.handleNextStep=this.handleNextStep.bind(this);
   }
 
   componentDidUpdate(prevState) {
-    if(this.state.idRoute !== prevState.idRoute){
-      console.log("Llegan datos")
+    if(this.state.idRoute !== prevState.idRoute && this.state.idRoute !== undefined){
+
+      console.log('LLAMADAAAAAAAAAA');
+      
       axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.state.idRoute}`)
       .then(res => {
+        
         const person = res.data;
-        console.log('BACKEND',person)
+        console.log(' RESPUESTA BACKEND',person)
         
         this.setState({
-          idRoute: '',
+          
           data: {
             personalInformation: {
               lastName: person.personalInformation.lastName,
@@ -179,12 +181,12 @@ class App extends Component {
             travelDocuments: {
               idCard: [
                 { 
-                  placeOfBirth: person.travelDocuments.idCard[0].dniNumber === undefined ?this.state.data.travelDocuments.idCard.placeOfBirth : person.travelDocuments.idCard[0].dniNumber ,
+                  placeOfBirth: person.travelDocuments.idCard !== undefined ?person.travelDocuments.idCard[0].placeOfBirth : '',
                   issueDate: '2017-09-16',
                   // this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate),
                   expiryDate: '2017-09-16',
                   // this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate),
-                  dniNumber: person.travelDocuments.idCard[0].placeOfBirth,
+                  dniNumber: person.travelDocuments.idCard !== undefined ?person.travelDocuments.idCard[0].dniNumber : '',
                 },
               ],
               passport: [
@@ -223,7 +225,6 @@ class App extends Component {
   }
   }
   handleDateFromApi(date){
-    console.log(date);
     const newFormatDate = [date.slice(8, 10), "/", date.slice(5, 7), "/", date.slice(0, 4)].join('');
     return(newFormatDate);
   }
@@ -234,12 +235,10 @@ class App extends Component {
   }
 
   handleNextStep(){
-    console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
-
     const dataForAPI= this.state.data;
     axios.post(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`, dataForAPI)
       .then(res => {
-        console.log('holaholaholaholaholaholahola')
+        console.log('RESPUESTA')
       })
       
   }
@@ -251,7 +250,6 @@ class App extends Component {
   }
 
   handleStep1(data){
-    console.log('aaaaaaaaajjjjjjjjjjjj',data);
     this.setState({
       data: {
         ...this.state.data,
@@ -264,7 +262,7 @@ class App extends Component {
           phoneNumbers: [data.phoneNumber, data.lineNumber],
         },
     }
-  },()=>(console.log('estoy aqui',this.state.data)))
+  })
 } 
 
   handleStep2(data){
@@ -298,18 +296,16 @@ class App extends Component {
           issueDate:this.handleDateToApi(data.visaIssueDate),
           expiryDate:this.handleDateToApi(data.visaExpDate),
         },
-    },()=>(console.log(this.state.dataVisa)))
+    })
   } 
 
   handleStep4(data){
-    console.log(data);
     this.setState({
       dataAccommodation: data
     },()=>(console.log(this.state.data)))
   } 
 
   handleStep5(data){
-    console.log(data);
     this.setState({
       data: {
         ...this.state.data,
@@ -333,7 +329,6 @@ class App extends Component {
   } 
 
   handleCurrentStep(step) {
-    console.log('step', step);
     this.setState({
       currentStep: step,
      }, ()=> (this.handleUpdateNavigation(step))
@@ -351,7 +346,6 @@ class App extends Component {
       changingStep4,
       changingStep5
     } = changingStep;
-    // console.log('changingStep, step', changingStep, step);
     if (changingStep1.stepNumber === step) {
       this.setState({
         changingStep: {
@@ -405,11 +399,6 @@ class App extends Component {
     }
   }
 
-  handleFirstPage(){
-    console.log('primer paso')
-   
-  }
-
   render() {
     console.log('ESTADOOOOOOOOOOOOOOOOOOOOO', this.state);
     return (
@@ -427,7 +416,6 @@ class App extends Component {
           dataVisa={this.state.dataVisa}
           stateAccommodationObject={this.state.dataAccommodation}
           handleIdRoute= {this.handleIdRoute}
-          handleFirstPage={this.handleFirstPage}
           handleNextStep={this.handleNextStep}
         />
       </div>
