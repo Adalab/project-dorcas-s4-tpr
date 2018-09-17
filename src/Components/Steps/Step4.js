@@ -141,6 +141,28 @@ class Step4 extends Component {
                 qualityAcom: '',
                 typeAcom: '',
             },
+            transportSelections: {
+            windowSel: 'selected',
+            aisleSel:'no-selected',
+            firstSel: 'selected',
+            centerSel: 'no-selected',
+            lastSel: 'no-selected',
+            trainWindowSel:'selected',
+            trainAisleSel: 'no-selected'
+            },
+
+            accommodationSelections:{
+            bfAlwaysSel:'selected',
+            bfSometimesSel:'no-selected',
+            bfOnlyIfIncludedSel: 'no-selected',
+            bfNeverSel: 'no-selected',
+            fiveStarsSel:'selected',
+            fourStarsSel:'no-selected',
+            threeStarsSel:'no-selected',
+            twoStarsSel:'no-selected',
+            classicSel:'selected',
+            modernSel:'no-selected',
+            }
         }
         this.handlePlainPreference = this.handlePlainPreference.bind(this);
         this.handlePlainLocation = this.handlePlainLocation.bind(this);
@@ -254,6 +276,7 @@ class Step4 extends Component {
 
     render() {
         console.log('propsSTEP4', this.props);
+        console.log('propsSTEP4', this.state);
         const {
             title1,
             title2,
@@ -273,7 +296,9 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
+                <hr className='section-line'></hr>
                     <span className='section-title'>
+      
                         <FormattedMessage
                             id="Step4.choosingSeat"
                             defaultMessage="Choosing seat"
@@ -285,7 +310,9 @@ class Step4 extends Component {
                         onChangeTrainPreferences={this.handleTrainPreference}
                         translationsPlainPreferences={plainPreferences}
                         translationsTrainPreferences={trainPreferences}
+                        transportStateSelections = {this.state.transportSelections}
                     />
+                    <hr className='section-line'></hr>
                     <span className='section-title'>
                         <FormattedMessage
                             id="Step4.accommodation"
@@ -305,6 +332,7 @@ class Step4 extends Component {
                         onChangeBreakfast={this.handleSelectBreakfast}
                         onChangeHotelStars={this.handleSelectQuality}
                         onChangeHotelType={this.handleSelectType}
+                        accommodationStateSelections = {this.state.accommodationSelections}
                     />
                 </form>
                 <Navigation

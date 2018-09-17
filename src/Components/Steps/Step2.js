@@ -258,7 +258,8 @@ class Step2 extends Component {
         }, () => (this.props.handleStep2(this.state.data)));
     }
 
-    handlePassIssueDate(date) {
+    handlePassIssueDate(e){
+        const date = e.target.value;
         this.setState({
             data: {
                 numberPassport: this.props.travelDocuments.passport[0].passportNumber,
@@ -278,7 +279,8 @@ class Step2 extends Component {
         }, () => (this.props.handleStep2(this.state.data)));
     }
 
-    handlePassExpDate(date) {
+    handlePassExpDate(e){
+        const date = e.target.value;
         this.setState({
             data: {
                 numberPassport: this.props.travelDocuments.passport[0].passportNumber,
@@ -318,8 +320,9 @@ class Step2 extends Component {
             }
         }, () => (this.props.handleStep2(this.state.data)));
     }
-
-    handleIdIssueDate(date) {
+    
+    handleIdIssueDate(e){
+        const date = e.target.value;
         this.setState({
             data: {
                 numberPassport: this.props.travelDocuments.passport[0].passportNumber,
@@ -338,8 +341,9 @@ class Step2 extends Component {
             }
         }, () => (this.props.handleStep2(this.state.data)));
     }
-
-    handleIdExpDate(date) {
+    
+    handleIdExpDate(e){
+        const date = e.target.value;
         this.setState({
             data: {
                 numberPassport: this.props.travelDocuments.passport[0].passportNumber,
@@ -457,7 +461,8 @@ class Step2 extends Component {
         }, () => (this.props.handleStep2(this.state.data)));
     }
 
-    handleVisaIssueDate(date) {
+    handleVisaIssueDate (e) {
+        const date = e.target.value;
         this.setState({
             data: {
                 numberPassport: this.props.travelDocuments.passport[0].passportNumber,
@@ -477,7 +482,8 @@ class Step2 extends Component {
         }, () => (this.props.handleStep2(this.state.data)));
     }
 
-    handleVisaExpDate(date) {
+    handleVisaExpDate (e) {
+        const date = e.target.value;
         this.setState({
             data: {
                 numberPassport: this.props.travelDocuments.passport[0].passportNumber,
@@ -563,9 +569,9 @@ class Step2 extends Component {
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input issueDate'
-                                handleDate={this.handlePassIssueDate}
-                                inputText={passport[0].issueDate}
                                 id={passIssueDateCal.id}
+                                value={passport[0].issueDate}
+                                onChange={this.handlePassIssueDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passIssueDateCal.id}
@@ -577,8 +583,8 @@ class Step2 extends Component {
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input'
-                                handleDate={this.handlePassExpDate}
-                                inputText={passport[0].expiryDate}
+                                value={passport[0].expiryDate}
+                                onChange={this.handlePassExpDate}
                                 id={passExpDateCal.id}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
@@ -636,8 +642,9 @@ class Step2 extends Component {
                                 <div className='position-label'>
                                     <MaskedInput
                                         className='control-label half-input issueDate'
-                                        handleDate={this.handleVisaIssueDate}
                                         id={visaIssueDateCal.id}
+                                        value={issueDate}
+                                        onChange={this.handleVisaIssueDate}
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaIssueDateCal.id}
@@ -650,8 +657,9 @@ class Step2 extends Component {
                                 <div className='position-label'>
                                     <MaskedInput
                                         className='control-label half-input'
-                                        handleDate={this.handleVisaExpDate}
                                         id={visaExpDateCal.id}
+                                        value={expiryDate}
+                                        onChange={this.handleVisaExpDate}
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaExpDateCal.id}
@@ -679,8 +687,9 @@ class Step2 extends Component {
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input issueDate'
-                                handleDate={this.handleIdIssueDate}
                                 id={idIssueDateCal.id}
+                                value={idCard[0].issueDate}
+                                onChange={this.handleIdIssueDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idIssueDateCal.id}
@@ -692,8 +701,9 @@ class Step2 extends Component {
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input'
-                                handleDate={this.handleIdExpDate}
                                 id={idExpDateCal.id}
+                                value={idCard[0].expiryDate}
+                                onChange={this.handleIdExpDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idExpDateCal.id}
