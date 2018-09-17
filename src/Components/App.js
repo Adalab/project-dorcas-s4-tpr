@@ -164,6 +164,7 @@ class App extends Component {
       .then(res => {
         const person = res.data;
         console.log('BACKEND',person)
+        
         this.setState({
           idRoute: '',
           data: {
@@ -177,18 +178,22 @@ class App extends Component {
             },
             travelDocuments: {
               idCard: [
-                {
-                  placeOfBirth: person.travelDocuments.idCard[0].dniNumber,
-                  issueDate: this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate),
-                  expiryDate: this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate),
+                { 
+                  placeOfBirth: person.travelDocuments.idCard[0].dniNumber === undefined ?this.state.data.travelDocuments.idCard.placeOfBirth : person.travelDocuments.idCard[0].dniNumber ,
+                  issueDate: '2017-09-16',
+                  // this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate),
+                  expiryDate: '2017-09-16',
+                  // this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate),
                   dniNumber: person.travelDocuments.idCard[0].placeOfBirth,
                 },
               ],
               passport: [
                 {
                   issueCountry: person.travelDocuments.passport[0].issueCountry,
-                  issueDate: this.handleDateFromApi(person.travelDocuments.passport[0].issueDate),
-                  expiryDate: this.handleDateFromApi(person.travelDocuments.passport[0].expiryDate),
+                  issueDate: '2017-09-16',
+                  // this.handleDateFromApi(person.travelDocuments.passport[0].issueDate),
+                  expiryDate: '2017-09-16',
+                  // this.handleDateFromApi(person.travelDocuments.passport[0].expiryDate),
                   passportNumber: person.travelDocuments.passport[0].passportNumber,
                 },
               ],
@@ -229,6 +234,8 @@ class App extends Component {
   }
 
   handleNextStep(){
+    console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+
     const dataForAPI= this.state.data;
     axios.post(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`, dataForAPI)
       .then(res => {
@@ -404,7 +411,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('ESTADO', this.props);
+    console.log('ESTADOOOOOOOOOOOOOOOOOOOOO', this.state);
     return (
       <div className="App">
         <Header />
