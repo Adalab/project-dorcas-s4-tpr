@@ -219,7 +219,9 @@ class App extends Component {
           },
 
           extras: {
-            familyNumber: person.extras.familyNumber,
+            familyNumber: person.extras !== undefined
+            ?person.extras.familyNumber
+            :'',
             islandResident: {
               region: person.extras.islandResident.region,
               locality: person.extras.islandResident.locality
