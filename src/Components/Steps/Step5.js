@@ -164,6 +164,7 @@ class Step5 extends Component {
                 }
         }, ()=>(this.props.handleStep5(this.state.data))); 
     }
+    
 
     handleRegion(e){
         console.log(e.target.value)
