@@ -22,6 +22,17 @@ const nextButton = {
   buttonClassHidden: '',
 };
 
+const sendButton = {
+  textButton: <FormattedMessage
+    id="Navigation.send"
+    defaultMessage="Send"
+  />,
+  buttonClass: 'next-button',
+  buttonClassHidden: '',
+};
+
+ 
+
 class Navigation extends Component {
   render() {
     const {
@@ -111,10 +122,10 @@ class Navigation extends Component {
                 </li>
               </Link>
           </ul>
-            <div className='container-nexts'>
+            <div className={`container-nexts`}>
               <Link to={`/step/${currentStep + 1}/${idRoute}`}>
                 <Button
-                  buttonContent={nextButton}
+                  buttonContent={currentStep===5?sendButton:nextButton}
                   onClick={handleNextStep}
                 />
               </Link>
@@ -122,8 +133,17 @@ class Navigation extends Component {
                 className='jumpLink' 
                 to={`/step/${currentStep + 1}/${idRoute}`}
               >
-                <div className={handleNextStepClass}>Completar luego,
-              <span className='jumpLink-colorText'> saltar paso</span>
+                <div className={currentStep===5?'hidden':handleNextStepClass}>
+                  <FormattedMessage
+                      id="Navigation.complete"
+                      defaultMessage="Complete Later, "
+                  />
+              <span className='jumpLink-colorText'>
+                <FormattedMessage
+                  id="Navigation.jumpStep"
+                  defaultMessage=" Jump step"
+                />
+                  </span>
                 </div>
               </Link>
             </div>
