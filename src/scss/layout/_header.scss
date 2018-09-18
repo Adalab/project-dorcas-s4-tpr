@@ -6,10 +6,18 @@
     top: 0;
     z-index: $to-front;
     //border-bottom: 20px solid $color-secondary-light opacity($color: #fff);
+    @media all and (max-width: 420px) {
+        display: inline-block;
+        height: 60px;
+        max-width: 100vh;
+    }
 }
 
 .logoTRP {
     width: 50px;
     height: 35px;
     margin: 30px 30px;
+    @media all and (max-width: 420px) {
+        margin: 10px 10px;
+    }
 }
