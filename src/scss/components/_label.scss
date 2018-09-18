@@ -1,5 +1,9 @@
 .position-label {
     position: relative;
+    @media all and (max-width: 700px) {
+        font-size: $font-size-m;
+        width: 200px;
+    }
 }
 
 .placeholder-label {
