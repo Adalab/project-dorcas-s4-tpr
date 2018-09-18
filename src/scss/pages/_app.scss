@@ -3,8 +3,8 @@
     background-color: $color-secondary-light;
 
     @media all and (max-width: 420px) {
-       max-width: 100vh;
-      }
+        max-width: 100vh;
+    }
 }
 
 .stepBox {
@@ -132,13 +132,38 @@
     text-align: end;
 }
 
+.step5-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    @media all and (max-width: 600px) {
+        width: 80%; 
+    }
+}
+
+.emergencyContact-container input {
+    @media all and (max-width: 600px) {
+        width: 100%; 
+    }
+}
+
+.step5-container .position-label {
+    @media all and (max-width: 700px) {
+        width: 100%; 
+    }
+}
+
 .emergencyContact-step5 {
     display: flex;
+    font-size: $font-size-m;
 }
 
 .emergencyContact-container {
     display: flex;
     flex-direction: column;
+    @media all and (max-width: 700px) {
+        width: 100%;
+        align-items: center;
+    }
 }
 
 .select-step5 {
@@ -155,7 +180,11 @@
     padding: 15px 35px 15px 15px;
     margin-bottom: 30px;
     appearance: none;
+    @media all and (max-width: 445px) {
+        width: 100%; 
+    }
 }
+
 .slider-container {
     display: flex;
     align-items: center;
@@ -171,6 +200,17 @@
 
 .input-numerous-family {
     margin-top: 18px;
+}
+
+.input-numerous-family .placeholder-label {
+    @media all and (max-width: 600px) {
+        font-size: $font-size-m;
+        padding: 18px 0px 0px 15px;
+    }
+    @media all and (max-width: 360px) {
+        font-size: $font-size-s;
+        padding: 18px 0px 0px 15px;
+    }
 }
 
 .input-numerous-family .marginSomeInputs{

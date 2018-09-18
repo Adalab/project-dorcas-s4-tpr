@@ -14,7 +14,7 @@ const familyNumberInput = {
         defaultMessage="Large family card number"
     />,
     id: 'familyNumber',
-    name: 'familyNumber'
+    name: 'familyNumber',
 };
 
 const emergencyContactInput = {
@@ -23,7 +23,7 @@ const emergencyContactInput = {
         defaultMessage="Name and Surname"
     />,
     id: 'emergencyContactName',
-    name: 'emergencyContactName'
+    name: 'emergencyContactName',
 };
 
 const emailAddress = {
@@ -33,7 +33,7 @@ const emailAddress = {
     />,
     id: 'emergencyContactEmail',
     name: 'emergencyContactEmail',
-    disabled: false
+    disabled: false,
 };
 
 const emergencyContactPhone = {
@@ -43,7 +43,7 @@ const emergencyContactPhone = {
     />,
     id: 'emergencyContactPhone',
     name: 'emergencyContactPhone',
-    required: true
+    required: true,
 };
 const localityOptions = {
     labelContent: <FormattedMessage
@@ -52,7 +52,7 @@ const localityOptions = {
     />,
     id: 'Locality',
     name: 'Locality',
-    required: true
+    required: true,
 };
 
 const regionOptions = [
@@ -65,11 +65,11 @@ const regionOptions = [
         defaultMessage="Balearic Islands"
     />,
     'Ceuta',
-    'Melilla'
+    'Melilla',
 ];
 
 const classOfSelect = {
-    className: 'select-step5'
+    className: 'select-step5',
 }
 
 const largeFamily = {
@@ -79,7 +79,7 @@ const largeFamily = {
     />,
     id: 'largeFamily',
     name: 'largeFamily',
-    required: true
+    required: true,
 };
 
 const residentOutside = {
@@ -89,7 +89,7 @@ const residentOutside = {
     />,
     id: 'residentOutside',
     name: 'residentOutside',
-    required: true
+    required: true,
 };
 
 class Step5 extends Component {
@@ -110,11 +110,11 @@ class Step5 extends Component {
                 }
             }
 
-        this.handleLocality = this.handleLocality.bind(this)
-        this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
-        this.handleEmailAddress = this.handleEmailAddress.bind(this)
-        this.handleTypeOnOff = this.handleTypeOnOff.bind(this)
-        this.handleFamilyNumber = this.handleFamilyNumber.bind(this)
+        this.handleLocality = this.handleLocality.bind(this);
+        this.handleEmergencyContact = this.handleEmergencyContact.bind(this);
+        this.handleEmailAddress = this.handleEmailAddress.bind(this);
+        this.handleTypeOnOff = this.handleTypeOnOff.bind(this);
+        this.handleFamilyNumber = this.handleFamilyNumber.bind(this);
         this.handleRegion = this.handleRegion.bind(this);
         this.handleEmergencyPhone = this.handleEmergencyPhone.bind(this);
     }
@@ -150,7 +150,7 @@ class Step5 extends Component {
     }  
 
     handleFamilyNumber(e){
-        const inputValue = e.target.value
+        const inputValue = e.target.value;
         this.setState({
             data: {
                 familyNumber: inputValue,
@@ -165,7 +165,7 @@ class Step5 extends Component {
     
 
     handleRegion(e){
-        const inputValue = e.target.value
+        const inputValue = e.target.value;
         this.setState({
             data: {
                 familyNumber: this.props.extras.familyNumber,
@@ -179,7 +179,7 @@ class Step5 extends Component {
     }
 
     handleLocality(e) {
-        const inputValue = e.target.value
+        const inputValue = e.target.value;
         this.setState({
             data: {
                 familyNumber: this.props.extras.familyNumber,
@@ -193,7 +193,7 @@ class Step5 extends Component {
     }
 
     handleEmergencyContact(e){
-        const inputValue = e.target.value
+        const inputValue = e.target.value;
         this.setState({
             data: {
                 familyNumber: this.props.extras.familyNumber,
@@ -207,7 +207,7 @@ class Step5 extends Component {
     }
 
     handleEmailAddress(e){
-        const inputValue = e.target.value
+        const inputValue = e.target.value;
         this.setState({
             data: {
                 familyNumber: this.props.extras.familyNumber,
@@ -221,7 +221,7 @@ class Step5 extends Component {
     }
 
     handleEmergencyPhone(e){
-        const inputValue = e.target.value
+        const inputValue = e.target.value;
         this.setState({
             data: {
                 familyNumber: this.props.extras.familyNumber,
@@ -238,11 +238,11 @@ class Step5 extends Component {
         if (e.currentTarget.id=== 'largeFamily' ){
             this.setState({
                 checkedFamily:  !this.state.checkedFamily,
-            })
+            });
         } else if (e.currentTarget.id==='residentOutside'){
             this.setState({
                 checkedResidency: !this.state.checkedResidency,
-            } )
+            } );
         }
     }
     
@@ -279,7 +279,7 @@ class Step5 extends Component {
                     title={title5}
                     step={step5}
                 />
-                <form className='form'>
+                <form className='form step5-container'>
                     <div className="slider-container">
                         <TypeOnOff 
                             labelTypeOnOff={largeFamily} 
