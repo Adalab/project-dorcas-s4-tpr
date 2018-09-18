@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 import Step3 from './Steps/Step3';
@@ -48,15 +48,9 @@ class Pages extends Component {
       handleIdRoute,
       handleNextStep, 
     } = this.props;
-
     return (
       <Fragment>
         <Switch>
-          <Route
-            exact
-            path='/'
-            render={() => (<Redirect to='/step/1/:id' />)}
-          />
           <Route
             name='step1'
             handler={step1}
@@ -99,6 +93,7 @@ class Pages extends Component {
                 travelDocuments= {travelDocuments}
                 dataVisa={dataVisa}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -116,6 +111,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -135,6 +131,7 @@ class Pages extends Component {
                 stateAccommodationObject={stateAccommodationObject}
                 handleStep4={handleStep4}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -154,6 +151,7 @@ class Pages extends Component {
                 extras={extras}
                 handleStep5={handleStep5}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
         </Switch>
@@ -161,5 +159,4 @@ class Pages extends Component {
     );
   }
 }
-
 export default Pages;

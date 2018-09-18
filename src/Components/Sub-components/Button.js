@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fontAwesome from '@fortawesome/fontawesome-free/css/all.css';
 
 
 class Button extends Component {
@@ -7,7 +8,6 @@ class Button extends Component {
       buttonContent,
       onClick,
       currentStep,
-      buttonHidden,
     } = this.props;
 
     const{
@@ -24,7 +24,13 @@ class Button extends Component {
                   }
         onClick={onClick}
       >
+        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-angle-left"></i>
         {textButton}
+        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-angle-right"></i>
+        
+
       </button>
     );
   }

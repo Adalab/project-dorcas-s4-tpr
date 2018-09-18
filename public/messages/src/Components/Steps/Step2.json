@@ -52,6 +52,26 @@
     "defaultMessage": "Add visa details"
   },
   {
+    "id": "Step2.Spain",
+    "defaultMessage": "Spain"
+  },
+  {
+    "id": "Step2.USA",
+    "defaultMessage": "USA"
+  },
+  {
+    "id": "Step2.Germany",
+    "defaultMessage": "Germany"
+  },
+  {
+    "id": "Step2.Mexico",
+    "defaultMessage": "Mexico"
+  },
+  {
+    "id": "Step2.visaType",
+    "defaultMessage": "VisaType"
+  },
+  {
     "id": "Step2.passport",
     "defaultMessage": "Passport"
   },
