@@ -25,44 +25,33 @@ class TransportPref extends Component {
         } = this.props.transportStateSelections;
         console.log(windowSel);
         return (
-            <div>
-                <legend>
-                    <h2 className='preference-title'>
-                        <FormattedMessage
-                            id="TransportPref.plainPreferences"
-                            defaultMessage="Plain preferences"
-                        />
-                    </h2>
-                    <form className='step4-transport-box box2'>
-                        <div className='step4-row'>
-                            <div className={`step4-radio ${windowSel}`}>
-                                <input
-                                    className='radio-button'
-                                    type="radio"
-                                    name="place"
-                                    value="Window"
-                                    onChange={onChangePlainPreferences}
-                                />
-                                <span className='step4-option'>
-                                    {translationsPlainPreferences.window}
-                                </span>
-                            </div>
-                            <div className={`step4-radio ${aisleSel}`}>
-                                <input
-                                    className='radio-button'
-                                    type="radio"
-                                    name="place"
-                                    value="Aisle"
-                                    onChange={onChangePlainPreferences}
-                                />
-                                <span className='step4-option'>
-                                    {translationsPlainPreferences.aisle}
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                    <form className='step4-transport-box box3'>
-                        <div className='step4-row'>
+            
+            <div className={`step4-radio ${windowSel}`}>
+                <input
+                    className='radio-button'
+                    type="radio"
+                    name="place"
+                    value="Window"
+                    onChange={onChangePlainPreferences}
+                />
+                <span className='step4-option'>
+                    {translationsPlainPreferences.window}
+                </span>
+            </div>
+                            // <div className={`step4-radio ${aisleSel}`}>
+                            //     <input
+                            //         className='radio-button'
+                            //         type="radio"
+                            //         name="place"
+                            //         value="Aisle"
+                            //         onChange={onChangePlainPreferences}
+                            //     />
+                            //     <span className='step4-option'>
+                            //         {translationsPlainPreferences.aisle}
+                            //     </span>
+                            // </div>
+                        
+                    
                             <div className={`step4-radio ${firstSel}`}>
                                 <input
                                     className='radio-button'
@@ -108,16 +97,10 @@ class TransportPref extends Component {
                                     />
                                 </span>
                             </div>
-                        </div>
-                    </form>
-                    <h2 className='preference-title'>
-                        <FormattedMessage
-                            id="TransportPref.prefTrains"
-                            defaultMessage="Preferences in trains"
-                        />
-                    </h2>
-                    <form className='step4-transport-box box2'>
-                        <div className='step4-row'>
+                        
+
+
+                    
                             <div className={`step4-radio ${trainWindowSel}`}>
                                 <input
                                     className='radio-button'
@@ -142,10 +125,7 @@ class TransportPref extends Component {
                                     {translationsTrainPreferences.aisle}
                                 </span>
                             </div>
-                        </div>
-                    </form>
-                </legend>
-            </div>
+                        
         );
     }
 }

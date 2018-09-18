@@ -3,8 +3,29 @@ import Title from '../Sub-components/Title';
 import RadioGroup from '../Sub-components/RadioGroup';
 import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
+const values = [
+        {
+            plainPreferences: [
+                {
+                    value: "Window",
+                    label: <FormattedMessage
+                                id="Step4.window"
+                                defaultMessage="Window"
+                            />,
+                },
+                {
+                    value:"Aisle",
+                    label: <FormattedMessage
+                                id="Step4.aisle"
+                                defaultMessage="Aisle"
+                            />,
+                },
+            ] 
+            // OTRO
+        }
+    ] 
 
-const t = {
+const translations = {
     breakfast: {
         legenContent: <FormattedMessage
             id="Step4.breakfast"
@@ -99,30 +120,18 @@ const t = {
                 defaultMessage="Quality preference"
             />
 
+    },
+
+    trainPreferences: {
+        window: <FormattedMessage
+            id="Step4.trainWindow"
+            defaultMessage="Window"
+        />,
+        aisle: <FormattedMessage
+            id="Step4.trainAisle"
+            defaultMessage="Aisle"
+        />
     }
-}
-
-
-const plainPreferences = {
-    window: <FormattedMessage
-        id="Step4.window"
-        defaultMessage="Window"
-    />,
-    aisle: <FormattedMessage
-        id="Step4.aisle"
-        defaultMessage="Aisle"
-    />
-}
-
-const trainPreferences = {
-    window: <FormattedMessage
-        id="Step4.trainWindow"
-        defaultMessage="Window"
-    />,
-    aisle: <FormattedMessage
-        id="Step4.trainAisle"
-        defaultMessage="Aisle"
-    />
 }
 
 class Step4 extends Component {
@@ -285,6 +294,7 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
+            stateAccommodationObject,
         } = this.props;
 
         return (
@@ -300,27 +310,102 @@ class Step4 extends Component {
                             defaultMessage="Choosing seat"
                         />
                     </span>
-                    {/*<TransportPref
+                    <div>
+                        <legend>
+                            <h2 className='preference-title'>
+                                <FormattedMessage
+                                    id="TransportPref.plainPreferences"
+                                    defaultMessage="Plain preferences"
+                                />
+                            </h2>
+                            <form className='step4-transport-box box2'>
+                                <div className='step4-row'>
+                                    
+                                    <RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        values={values[0].plainPreferences}
+                                        selected="Window"
+                                    />
+
+                                    {/*<RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        translations={translations.plainPreferences}
+                                        values={values.plainPreferences}
+                                        selected={stateAccommodationObject.plain1}
+                                    />*/}
+                                </div>
+                            </form>
+                            <form className='step4-transport-box box3'>
+                                <div className='step4-row'>
+                                    {/*<RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        translations={translations.plainPreferences}
+                                        values={values.plainPreferences}
+                                        selected={stateAccommodationObject.plain1}
+                                    />
+                                    <RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        translations={translations.plainPreferences}
+                                        values={values.plainPreferences}
+                                        selected={stateAccommodationObject.plain1}
+                                    />
+                                    <RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        translations={translations.plainPreferences}
+                                        values={values.plainPreferences}
+                                        selected={stateAccommodationObject.plain1}
+                                    />*/}
+                                </div>
+                            </form>
+                            <h2 className='preference-title'>
+                                <FormattedMessage
+                                    id="TransportPref.prefTrains"
+                                    defaultMessage="Preferences in trains"
+                                />
+                            </h2>
+                            <form className='step4-transport-box box2'>
+                                <div className='step4-row'>
+                                    {/*<RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        translations={translations.plainPreferences}
+                                        values={values.plainPreferences}
+                                        selected={stateAccommodationObject.plain1}
+                                    />
+                                    <RadioGroup
+                                        onChange={this.handlePlainPreference}
+                                        translations={translations.plainPreferences}
+                                        values={values.plainPreferences}
+                                        selected={stateAccommodationObject.plain1}
+                                    />*/}
+                                </div>
+                            </form>
+                        </legend>
+                    </div>
+
+
+
+
+                                    {/*<TransportPref
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}
                         onChangeTrainPreferences={this.handleTrainPreference}
                         translationsPlainPreferences={plainPreferences}
                         translationsTrainPreferences={trainPreferences}
                     transportStateSelections = {this.state.transportSelections}*/}
-                    />
-                    <span className='section-title'>
-                        <FormattedMessage
-                            id="Step4.accommodation"
-                            defaultMessage="Accommodation"
-                        />
-                    </span>
-                    <h2 className='preference-title'>
-                        <FormattedMessage
-                            id="Step4.accommodationPreferences"
-                            defaultMessage="Accommodation preferences"
-                        />
-                    </h2>
-                    {/*<AccommodationPref
+                            
+                    {/*<span className='section-title'>
+                                        <FormattedMessage
+                                            id="Step4.accommodation"
+                                            defaultMessage="Accommodation"
+                                        />
+                                    </span>
+                                    <h2 className='preference-title'>
+                                        <FormattedMessage
+                                            id="Step4.accommodationPreferences"
+                                            defaultMessage="Accommodation preferences"
+                                        />
+                                    </h2>
+                                    <AccommodationPref
                         translationsAccom={t.accommodation}
                         translationsBreakfast={t.breakfast}
                         translationsTypeOfAccom={t.typeOfAccommodation}
@@ -330,19 +415,19 @@ class Step4 extends Component {
                     accommodationStateSelections = {this.state.accommodationSelections}
                     />*/}
                 </form>
-                <Navigation
-                    title1={title1}
-                    title2={title2}
-                    title3={title3}
-                    title4={title4}
-                    title5={title5}
-                    currentStep={currentStep}
-                    changingStep={changingStep}
-                    idRoute={this.state.idRoute}
-                />
+                                <Navigation
+                                    title1={title1}
+                                    title2={title2}
+                                    title3={title3}
+                                    title4={title4}
+                                    title5={title5}
+                                    currentStep={currentStep}
+                                    changingStep={changingStep}
+                                    idRoute={this.state.idRoute}
+                                />
             </div>
-        );
-    }
-}
-
+                            );
+                        }
+                    }
+                    
 export default Step4;

@@ -62,7 +62,7 @@ class App extends Component {
       },
       dataAccommodation: {
         // data step4
-        plain1: "",
+        plain1: "Window",
         plain2: "",
         train1: "",
         breakfast: "",

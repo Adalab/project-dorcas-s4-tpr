@@ -1,5 +1,13 @@
 [
   {
+    "id": "Step4.window",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "Step4.aisle",
+    "defaultMessage": "Aisle"
+  },
+  {
     "id": "Step4.breakfast",
     "defaultMessage": "Breakfast"
   },
@@ -72,14 +80,6 @@
     "defaultMessage": "Quality preference"
   },
   {
-    "id": "Step4.window",
-    "defaultMessage": "Window"
-  },
-  {
-    "id": "Step4.aisle",
-    "defaultMessage": "Aisle"
-  },
-  {
     "id": "Step4.trainWindow",
     "defaultMessage": "Window"
   },
@@ -92,11 +92,11 @@
     "defaultMessage": "Choosing seat"
   },
   {
-    "id": "Step4.accommodation",
-    "defaultMessage": "Accommodation"
+    "id": "TransportPref.plainPreferences",
+    "defaultMessage": "Plain preferences"
   },
   {
-    "id": "Step4.accommodationPreferences",
-    "defaultMessage": "Accommodation preferences"
+    "id": "TransportPref.prefTrains",
+    "defaultMessage": "Preferences in trains"
   }
 ]
