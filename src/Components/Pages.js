@@ -51,11 +51,7 @@ class Pages extends Component {
     return (
       <Fragment>
         <Switch>
-          <Route
-            exact
-            path='/'
-            render={() => (<Redirect to='/step/1/:id' />)}
-          />
+          
           <Route
             name='step1'
             handler={step1}
