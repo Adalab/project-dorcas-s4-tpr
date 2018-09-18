@@ -4,7 +4,7 @@
     background-color: $color-secondary-light;
     position: fixed;
     top: 0;
-    z-index: $to-front;
+    z-index: $first-layer;
     @media all and (max-width: 420px) {
         display: inline-block;
         height: 60px;

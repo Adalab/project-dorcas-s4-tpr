@@ -67,12 +67,12 @@ class App extends Component {
       },
       dataAccommodation: {
         // data step4
-        plain1: "",
-        plain2: "",
-        train1: "",
-        breakfast: "",
-        qualityAcom: "",
-        typeAcom: ""
+        plain1: "Window",
+        plain2: "Front",
+        train1: "Window",
+        breakfast: "Always",
+        qualityAcom: "5stars",
+        typeAcom: "Classic"
       },
       titles: {
         title1: (
@@ -151,7 +151,6 @@ class App extends Component {
     this.handleStep5 = this.handleStep5.bind(this);
     this.handleIdRoute = this.handleIdRoute.bind(this);
     this.handleDateFromApi = this.handleDateFromApi.bind(this);
-    this.handleDateToApi = this.handleDateToApi.bind(this);
     this.handleNextStep = this.handleNextStep.bind(this);
     this.handleStateFromAPI = this.handleStateFromAPI.bind(this);
   }
@@ -265,8 +264,7 @@ class App extends Component {
   }
 
   componentDidMount(prevState) {
-    console.log('APP MOUNT', this.props.id)
-      console.log('LLAMADAAAAAAAAAA');
+
       axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`)
       .then(res => {
         const person = res.data;
@@ -285,18 +283,14 @@ class App extends Component {
     ].join("");
     return newFormatDate;
   }
-  handleDateToApi(date) {
-    console.log(date);
-    // const newFormatDateToApi = [date.slice(6, 10), "-", date.slice(3, 5), "-", date.slice(0, 2)].join('');
-    // return(newFormatDateToApi);
-  }
 
   handleNextStep() {
-    axios.post(
-        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`,this.state.data
+    axios.put(
+        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`,
+        this.state.data
       )
       .then(res => {
-        console.log("RESPUESTA");
+        console.log("RESPUESTA", res);
       });
   }
 
@@ -353,8 +347,8 @@ class App extends Component {
         numberVisa: data.numberVisa,
         issueCountry: data.visaCountryIssue,
         destinyCountry: data.visaCountryDestination,
-        issueDate: this.handleDateToApi(data.visaIssueDate),
-        expiryDate: this.handleDateToApi(data.visaExpDate)
+        issueDate: data.visaIssueDate,
+        expiryDate: data.visaExpDate,
       }
     });
   }
@@ -364,7 +358,7 @@ class App extends Component {
       {
         dataAccommodation: data
       },
-      () => console.log(this.state.data)
+      () => console.log(this.state.dataAccommodation)
     );
   }
 
@@ -491,7 +485,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("ESTADOOOOOOOOOOOOOOOOOOOOO", this.state);
+    console.log("ESTADO", this.state);
     return (
       <div className="App">
         <Header />

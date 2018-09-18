@@ -235,7 +235,6 @@ class Step5 extends Component {
     }
 
     handleTypeOnOff(e){
-        console.log('HOLAAAAAAAAAAAAAAAAAA', this.state);
         if (e.currentTarget.id=== 'largeFamily' ){
             this.setState({
                 checkedFamily:  !this.state.checkedFamily,
@@ -272,6 +271,7 @@ class Step5 extends Component {
             step5,
             currentStep,
             changingStep,
+            handleNextStep
         } = this.props;
         return (
             <div className='stepBox step5'>
@@ -313,7 +313,8 @@ class Step5 extends Component {
                             inputText={locality}
                         />
                     </div>
-                    <h2><FormattedMessage
+                    <h2 className='subtitle-step5'>
+                    <FormattedMessage
                         id="Step5.emergencyContact"
                         defaultMessage="Emergency contact"
                     />
@@ -345,6 +346,7 @@ class Step5 extends Component {
                     currentStep={currentStep}
                     changingStep={changingStep}
                     idRoute={this.state.idRoute}
+                    handleNextStep={handleNextStep}
                 />
             </div>
         );

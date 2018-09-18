@@ -130,23 +130,50 @@ const visaButton = {
 };
 
 const visaIssueSelect = [
-    'España',
-    'EEUU',
-    'Alemania',
-    'México',
-    'China'
+    <FormattedMessage
+        id="Step2.Spain"
+        defaultMessage="Spain"
+    />,
+    <FormattedMessage
+        id="Step2.USA"
+        defaultMessage="USA"
+    />,
+    <FormattedMessage
+        id="Step2.Germany"
+        defaultMessage="Germany"
+    />,
+    <FormattedMessage
+        id="Step2.Mexico"
+        defaultMessage="Mexico"
+    />,
+    "China",
 ];
 
 const visaDestinationSelect = [
-    'España',
-    'EEUU',
-    'Alemania',
-    'México',
-    'China'
+    <FormattedMessage
+        id="Step2.Spain"
+        defaultMessage="Spain"
+    />,
+    <FormattedMessage
+        id="Step2.USA"
+        defaultMessage="USA"
+    />,
+    <FormattedMessage
+        id="Step2.Germany"
+        defaultMessage="Germany"
+    />,
+    <FormattedMessage
+        id="Step2.Mexico"
+        defaultMessage="Mexico"
+    />,
+    "China",
 ];
 
 const visaTypes = [
-    'Tipo de visado',
+    <FormattedMessage
+        id="Step2.visaType"
+        defaultMessage="VisaType"
+    />,
 ];
 
 const classOfSelect = {
@@ -511,7 +538,7 @@ class Step2 extends Component {
             step2,
             currentStep,
             changingStep,
-
+            handleNextStep,
         } = this.props;
 
         const {
@@ -543,8 +570,8 @@ class Step2 extends Component {
                     step={step2}
                 />
                 <form className='form'>
-
-                    <h2 className='subtitles-step2'>
+                    <hr className='section-line'></hr>
+                    <h2 id='passport' className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.passport"
                             defaultMessage="Passport"
@@ -591,7 +618,8 @@ class Step2 extends Component {
                             </label>
                         </div>
                     </div>
-                    <h2 className='subtitles-step2'>
+                    <hr className='section-line'></hr>
+                    <h2 id='visa' className='subtitles-step2'>
                         {/* Pasaporte hasta aquí */}
                         {/* Visado desde aqui */}
                         <FormattedMessage
@@ -665,7 +693,8 @@ class Step2 extends Component {
                         </div>
                     </div>
                     {/* Visado hasta aquí */}
-                    <h2 className='subtitles-step2'>
+                    <hr className='section-line'></hr>
+                    <h2 id='Id' className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.dniNie"
                             defaultMessage="Id"
@@ -722,6 +751,7 @@ class Step2 extends Component {
                     changingStep={changingStep}
                     handleNextStepClass={this.handleNextStepClass()}
                     idRoute={this.state.idRoute}
+                    handleNextStep={handleNextStep}
                 />
             </div>
         );

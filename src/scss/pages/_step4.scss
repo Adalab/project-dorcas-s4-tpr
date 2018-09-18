@@ -17,9 +17,9 @@
     margin: auto;
     text-transform: uppercase;
     text-align: center;
-    color:$color-terciary-dark;
+    color:$color-secondary-dark;
     font-size: $font-size-s;
-    z-index: $to-front;
+    z-index: $second-layer;
     background-color:$color-secondary-light;
 }
 
@@ -92,7 +92,7 @@
     color: $color-terciary-dark;
 }
 
-.section-line{
+.section-line {
     transform: translateY(9px);
     background-color: rgba(0, 0, 0, 0.1);
   

@@ -19,7 +19,7 @@ a {
   background-color: #f8f9f8;
   position: fixed;
   top: 0;
-  z-index: 5;
+  z-index: 10;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+67,ffffff+100&1+67,0+100 */
   background: -moz-linear-gradient(top, #f8f9f8 50%, rgba(255, 255, 255, 0) 100%);
   /* FF3.6-15 */
@@ -67,7 +67,11 @@ a {
       padding-bottom: 120px; } }
 
 .verticalDisplay {
-  display: flex; }
+  display: flex;
+  margin-bottom: 25px; }
+  @media all and (max-width: 700px) {
+    .verticalDisplay {
+      flex-direction: column; } }
 
 .step2,
 .step5 {
@@ -85,7 +89,8 @@ a {
   color: #5b5b5b; }
   @media all and (max-width: 420px) {
     .subtitles-step2 {
-      font-size: 12px; } }
+      margin-top: 10px;
+      font-size: 10px; } }
 
 .form {
   display: flex;
@@ -96,7 +101,8 @@ a {
 
 .visaButtonContent-container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-top: 20px; }
 
 .typeNumberVisa {
   display: flex; }
@@ -179,6 +185,9 @@ a {
 .select-residency {
   margin-top: 18px; }
 
+.select-residency .position-label #Locality.marginSomeInputs {
+  margin-bottom: 0px; }
+
 .hidden {
   display: none; }
 
@@ -187,6 +196,7 @@ a {
   height: 120px;
   display: flex;
   position: fixed;
+  z-index: 10;
   bottom: 0;
   background-color: #f8f9f8;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
@@ -215,12 +225,6 @@ a {
   text-transform: uppercase;
   font-size: 12px;
   color: #5b5b5b;
-  font-weight: 500; }
-
-.nav-label_step {
-  color: #5b5b5b;
-  text-transform: uppercase;
-  font-size: 12px;
   font-weight: 500; }
 
 .nav-label {
@@ -309,7 +313,7 @@ a {
   margin: auto;
   text-transform: uppercase;
   text-align: center;
-  color: #8d9293;
+  color: #5b5b5b;
   font-size: 12px;
   z-index: 5;
   background-color: #f8f9f8; }
@@ -454,6 +458,10 @@ a {
 .control-label:focus + .placeholder-label {
   font-size: 15px;
   padding: 3px 0 0 12px; }
+  @media all and (max-width: 700px) {
+    .control-label:focus + .placeholder-label {
+      font-size: 12px;
+      padding: 5px 0; } }
 
 .label-located {
   font-size: 15px;
@@ -469,6 +477,9 @@ a {
 
 .half-input {
   width: 335px; }
+  @media all and (max-width: 600px) {
+    .half-input {
+      width: 200px; } }
 
 .titles-container {
   width: 695px; }
@@ -492,6 +503,33 @@ a {
   @media all and (max-width: 600px) {
     .title-step {
       font-size: 15px; } }
+
+.subtitles-step2 {
+  display: block;
+  width: 150px;
+  margin: auto;
+  color: #5b5b5b;
+  font-size: 12px;
+  z-index: 5;
+  background-color: #f8f9f8;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.subtitle-step5 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #5b5b5b;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+#passport {
+  margin-bottom: 30px; }
+
+#Id {
+  margin-bottom: 20px; }
 
 .back-button {
   padding-left: 12px;
@@ -566,7 +604,14 @@ a {
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 40px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-bottom: 40px; }
+  @media all and (max-width: 600px) {
+    .visaButton-styles {
+      height: 40px;
+      width: 200px;
+      font-size: 15px;
+      margin-bottom: 20px; }  }
 
 .next-button .fa-angle-left,
 .next-button .fa-arrow-left,
