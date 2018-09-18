@@ -7,7 +7,8 @@ class RadioGroup extends Component {
         const {
             onChange,
             values,
-            selected
+            selected, 
+            type,
         } = this.props;
         return (
             <ul className='step4-row'>
@@ -17,7 +18,7 @@ class RadioGroup extends Component {
                             <input
                                 className='radio-button'
                                 type="radio"
-                                name="place"
+                                name={type}
                                 value={radioButton.value}
                                 onChange={onChange}
                                 checked={selected === radioButton.value}

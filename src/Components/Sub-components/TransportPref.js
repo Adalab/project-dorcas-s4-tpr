@@ -26,81 +26,10 @@ class TransportPref extends Component {
         console.log(windowSel);
         return (
             
-            <div className={`step4-radio ${windowSel}`}>
-                <input
-                    className='radio-button'
-                    type="radio"
-                    name="place"
-                    value="Window"
-                    onChange={onChangePlainPreferences}
-                />
-                <span className='step4-option'>
-                    {translationsPlainPreferences.window}
-                </span>
-            </div>
-                            // <div className={`step4-radio ${aisleSel}`}>
-                            //     <input
-                            //         className='radio-button'
-                            //         type="radio"
-                            //         name="place"
-                            //         value="Aisle"
-                            //         onChange={onChangePlainPreferences}
-                            //     />
-                            //     <span className='step4-option'>
-                            //         {translationsPlainPreferences.aisle}
-                            //     </span>
-                            // </div>
-                        
+            
                     
-                            <div className={`step4-radio ${firstSel}`}>
-                                <input
-                                    className='radio-button'
-                                    type="radio"
-                                    name="ubication"
-                                    value="Front"
-                                    onChange={onChangePlainLocation}
-                                />
-                                <span className='step4-option'>
-                                    <FormattedMessage
-                                        id="TransportPref.front"
-                                        defaultMessage="Front"
-                                    />
-                                </span>
-                            </div>
-                            <div className={`step4-radio ${centerSel}`}>
-                                <input
-                                    className='radio-button'
-                                    type="radio"
-                                    name="ubication"
-                                    value="Middle"
-                                    onChange={onChangePlainLocation}
-                                />
-                                <span className='step4-option'>
-                                    <FormattedMessage
-                                        id="TransportPref.middle"
-                                        defaultMessage="Middle"
-                                    />
-                                </span>
-                            </div>
-                            <div className={`step4-radio ${lastSel}`}>
-                                <input
-                                    className='radio-button'
-                                    type="radio"
-                                    name="ubication"
-                                    value="Back"
-                                    onChange={onChangePlainLocation}
-                                />
-                                <span className='step4-option'>
-                                    <FormattedMessage
-                                        id="TransportPref.back"
-                                        defaultMessage="Back"
-                                    />
-                                </span>
-                            </div>
                         
 
-
-                    
                             <div className={`step4-radio ${trainWindowSel}`}>
                                 <input
                                     className='radio-button'

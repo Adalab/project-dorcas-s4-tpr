@@ -4,134 +4,156 @@ import RadioGroup from '../Sub-components/RadioGroup';
 import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
 const values = [
-        {
-            plainPreferences: [
-                {
-                    value: "Window",
-                    label: <FormattedMessage
-                                id="Step4.window"
-                                defaultMessage="Window"
-                            />,
-                },
-                {
-                    value:"Aisle",
-                    label: <FormattedMessage
-                                id="Step4.aisle"
-                                defaultMessage="Aisle"
-                            />,
-                },
-            ] 
-            // OTRO
-        }
-    ] 
+    {
+        plainPreferences: [
+            {
+                value: "Window",
+                label: <FormattedMessage
+                    id="Step4.window"
+                    defaultMessage="Window"
+                />,
+            },
+            {
+                value: "Aisle",
+                label: <FormattedMessage
+                    id="Step4.aisle"
+                    defaultMessage="Aisle"
+                />,
+            },
+        ],
+        plainPlacePreferences: [
+            {
+                value: "Front",
+                label: <FormattedMessage
+                    id="Step4.front"
+                    defaultMessage="Front"
+                />,
+            },
+            {
+                value: "Middle",
+                label: <FormattedMessage
+                    id="Step4.middle"
+                    defaultMessage="Middle"
+                />,
+            },
+            {
+                value: "Back",
+                label: <FormattedMessage
+                    id="Step4.back"
+                    defaultMessage="Back"
+                />,
+            },
+        ],
+        trainPreferences: [
+            {
+                value: "Window",
+                label: <FormattedMessage
+                    id="Step4.trainWindow"
+                    defaultMessage="Window"
+                />,
+            },
+            {
+                value: "Aisle",
+                label: <FormattedMessage
+                    id="Step4.trainAisle"
+                    defaultMessage="Aisle"
+                />,
+            },
+        ],
+        breakfastPreferences: [
+            {
+                value: "Always",
+                label: <FormattedMessage
+                    id="Step4.always"
+                    defaultMessage="Always"
+                />
+            },
+            {
+                value: "Sometimes",
+                label: <FormattedMessage
+                    id="Step4.sometimes"
+                    defaultMessage="Sometimes"
+                />
+            },
+            {
+                value: "Only if included",
+                label: <FormattedMessage
+                    id="Step4.ifIncluded"
+                    defaultMessage="Only if included"
+                />
+            },
+            {
+                value: "Never",
+                label: <FormattedMessage
+                    id="Step4.never"
+                    defaultMessage="Never"
+                />
+            }
+        ],
+
+        accommodationPreferences: [
+            {
+                value: "5stars",
+                label: <FormattedMessage
+                            id="Step4.fiveStars"
+                            defaultMessage="5 Stars"
+                        />
+            },
+            {
+                value: "4stars",
+                label: <FormattedMessage
+                            id="Step4.fromFourStars"
+                            defaultMessage="From 4 Stars"
+                        />
+            },
+            {
+                value: "3stars",
+                label: <FormattedMessage
+                            id="Step4.fromThreeStars"
+                            defaultMessage="From 3 Stars"
+                        />
+            },
+            {
+                value: "2stars",
+                label: <FormattedMessage
+                            id="Step4.fromTwoStars"
+                            defaultMessage="From 2 Stars"
+                        />
+            }
+        ],
+        typeAccommodationPreferences: [
+            {
+                value: "Classic",
+                label: <FormattedMessage
+                            id="Step4.classic"
+                            defaultMessage="Classic"
+                        />
+            },
+            {
+                value: "Modern",
+                label: <FormattedMessage
+                            id="Step4.modern"
+                            defaultMessage="Modern"
+                        />
+            },
+        ]
+    }
+]
 
 const translations = {
     breakfast: {
-        legenContent: <FormattedMessage
-            id="Step4.breakfast"
-            defaultMessage="Breakfast" />
-        ,
-        options: [
-            <FormattedMessage
-                id="Step4.always"
-                defaultMessage="Always" />
-            ,
-            <FormattedMessage
-                id="Step4.sometimes"
-                defaultMessage="Sometimes" />
-            ,
-            <FormattedMessage
-                id="Step4.ifIncluded"
-                defaultMessage="Only if included" />
-            ,
-            <FormattedMessage
-                id="Step4.never"
-                defaultMessage="Never" />
 
-        ],
         name:
             <FormattedMessage
                 id="Step4.breakfastPreference"
                 defaultMessage="breakfastPreference"
             />,
-    },
-
-    accommodation: {
-        legenContent:
-            <FormattedMessage
-                id="Step4.accommodationQuality"
-                defaultMessage="Accommodation quality"
-            />,
-        options: [
-            <FormattedMessage
-                id="Step4.fiveStars"
-                defaultMessage="5 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromFourStars"
-                defaultMessage="From 4 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromThreeStars"
-                defaultMessage="From 3 Stars"
-            />,
-            <FormattedMessage
-                id="Step4.fromTwoStars"
-                defaultMessage="From 2 Stars"
-            />
-        ],
         name:
             <FormattedMessage
                 id="Step4.accommodationPreference"
                 defaultMessage="Accommodation Preference"
             />
     },
-    typeOfAccommodation: {
-        legenContent:
-            <FormattedMessage
-                id="Step4.typeOfAccommodation"
-                defaultMessage="Type of accommodation"
-            />
-        ,
-        options: [
-            <FormattedMessage
-                id="Step4.irrelevant"
-                defaultMessage="Irrelevant"
-            />
-            ,
-            <FormattedMessage
-                id="Step4.classic"
-                defaultMessage="Classic"
-            />
-            ,
-            <FormattedMessage
-                id="Step4.modern"
-                defaultMessage="Modern"
-            />
-            ,
-            <FormattedMessage
-                id="Step4.niche"
-                defaultMessage="Niche"
-            />
-        ],
-        name:
-            <FormattedMessage
-                id="Step4.qualityPreference"
-                defaultMessage="Quality preference"
-            />
-
-    },
-
-    trainPreferences: {
-        window: <FormattedMessage
-            id="Step4.trainWindow"
-            defaultMessage="Window"
-        />,
-        aisle: <FormattedMessage
-            id="Step4.trainAisle"
-            defaultMessage="Aisle"
-        />
-    }
 }
 
 class Step4 extends Component {
@@ -304,6 +326,7 @@ class Step4 extends Component {
                     step={step4}
                 />
                 <form className='form'>
+                    <hr className='section-line'></hr>
                     <span className='section-title'>
                         <FormattedMessage
                             id="Step4.choosingSeat"
@@ -318,116 +341,124 @@ class Step4 extends Component {
                                     defaultMessage="Plain preferences"
                                 />
                             </h2>
-                            <form className='step4-transport-box box2'>
+                            <div className='step4-transport-box box2'>
                                 <div className='step4-row'>
-                                    
                                     <RadioGroup
                                         onChange={this.handlePlainPreference}
                                         values={values[0].plainPreferences}
-                                        selected="Window"
+                                        type="plain"
+                                        selected="Aisle"
                                     />
-
-                                    {/*<RadioGroup
-                                        onChange={this.handlePlainPreference}
-                                        translations={translations.plainPreferences}
-                                        values={values.plainPreferences}
-                                        selected={stateAccommodationObject.plain1}
-                                    />*/}
                                 </div>
-                            </form>
-                            <form className='step4-transport-box box3'>
+                            </div>
+                            <div className='step4-transport-box box3'>
                                 <div className='step4-row'>
-                                    {/*<RadioGroup
-                                        onChange={this.handlePlainPreference}
-                                        translations={translations.plainPreferences}
-                                        values={values.plainPreferences}
-                                        selected={stateAccommodationObject.plain1}
-                                    />
                                     <RadioGroup
-                                        onChange={this.handlePlainPreference}
-                                        translations={translations.plainPreferences}
-                                        values={values.plainPreferences}
-                                        selected={stateAccommodationObject.plain1}
+                                        onChange={this.handlePlainLocation}
+                                        values={values[0].plainPlacePreferences}
+                                        type="planePlace"
+                                        selected="Back"
                                     />
-                                    <RadioGroup
-                                        onChange={this.handlePlainPreference}
-                                        translations={translations.plainPreferences}
-                                        values={values.plainPreferences}
-                                        selected={stateAccommodationObject.plain1}
-                                    />*/}
                                 </div>
-                            </form>
+                            </div>
                             <h2 className='preference-title'>
                                 <FormattedMessage
                                     id="TransportPref.prefTrains"
                                     defaultMessage="Preferences in trains"
                                 />
                             </h2>
-                            <form className='step4-transport-box box2'>
+                            <div className='step4-transport-box box2'>
                                 <div className='step4-row'>
-                                    {/*<RadioGroup
-                                        onChange={this.handlePlainPreference}
-                                        translations={translations.plainPreferences}
-                                        values={values.plainPreferences}
-                                        selected={stateAccommodationObject.plain1}
-                                    />
                                     <RadioGroup
-                                        onChange={this.handlePlainPreference}
-                                        translations={translations.plainPreferences}
-                                        values={values.plainPreferences}
-                                        selected={stateAccommodationObject.plain1}
-                                    />*/}
+                                        onChange={this.handleTrainPreference}
+                                        values={values[0].trainPreferences}
+                                        type="train"
+                                        selected="Window"
+                                    />
                                 </div>
-                            </form>
+                            </div>
                         </legend>
                     </div>
 
-
-
-
-                                    {/*<TransportPref
-                        onChangePlainPreferences={this.handlePlainPreference}
-                        onChangePlainLocation={this.handlePlainLocation}
-                        onChangeTrainPreferences={this.handleTrainPreference}
-                        translationsPlainPreferences={plainPreferences}
-                        translationsTrainPreferences={trainPreferences}
-                    transportStateSelections = {this.state.transportSelections}*/}
-                            
-                    {/*<span className='section-title'>
-                                        <FormattedMessage
-                                            id="Step4.accommodation"
-                                            defaultMessage="Accommodation"
-                                        />
-                                    </span>
-                                    <h2 className='preference-title'>
-                                        <FormattedMessage
-                                            id="Step4.accommodationPreferences"
-                                            defaultMessage="Accommodation preferences"
-                                        />
-                                    </h2>
-                                    <AccommodationPref
-                        translationsAccom={t.accommodation}
-                        translationsBreakfast={t.breakfast}
-                        translationsTypeOfAccom={t.typeOfAccommodation}
-                        onChangeBreakfast={this.handleSelectBreakfast}
-                        onChangeHotelStars={this.handleSelectQuality}
-                        onChangeHotelType={this.handleSelectType}
-                    accommodationStateSelections = {this.state.accommodationSelections}
-                    />*/}
-                </form>
-                                <Navigation
-                                    title1={title1}
-                                    title2={title2}
-                                    title3={title3}
-                                    title4={title4}
-                                    title5={title5}
-                                    currentStep={currentStep}
-                                    changingStep={changingStep}
-                                    idRoute={this.state.idRoute}
+                    {/*Accommodation*/}
+                    <hr className='section-line'></hr>
+                    <span className='section-title'>
+                        <FormattedMessage
+                            id="Step4.accommodation"
+                            defaultMessage="Accommodation"
+                        />
+                    </span>
+                    <h2 className='preference-title'>
+                        <FormattedMessage
+                            id="Step4.accommodationPreferences"
+                            defaultMessage="Accommodation preferences"
+                        />
+                    </h2>
+                    <div>
+                        <div className='step4-box'>
+                            <p className='step4-boxtitle'>
+                                <FormattedMessage
+                                    id="Step4.breakfast"
+                                    defaultMessage="Breakfast" />
+                            </p>
+                            <div className='step4-row'>
+                                <RadioGroup
+                                    onChange={this.handleSelectBreakfast}
+                                    values={values[0].breakfastPreferences}
+                                    type="breakfast"
+                                    selected="Sometimes"
                                 />
+                            </div>
+                        </div>
+                        <div className='step4-box'>
+                                <p className='step4-boxtitle'>
+                                    <FormattedMessage
+                                        id="Step4.accommodationQuality"
+                                        defaultMessage="Accommodation quality"
+                                    />
+                                </p>
+                            <div className='step4-row'>
+                                <RadioGroup
+                                    onChange={this.handleSelectQuality}
+                                    values={values[0].accommodationPreferences}
+                                    type="accommodationQuality"
+                                    selected="3stars"
+                                />
+
+                            </div>
+                        </div>
+                        <div className='step4-box box2'>
+                                <p className='step4-boxtitle'>
+                                    <FormattedMessage
+                                        id="Step4.typeOfAccommodation"
+                                        defaultMessage="Type of accommodation"
+                                    />
+                                </p>
+                            <div className='step4-row'>
+                                <RadioGroup
+                                    onChange={this.handleSelectType}
+                                    values={values[0].typeAccommodationPreferences}
+                                    type="accommodationType"
+                                    selected="Modern"
+                                />
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <Navigation
+                    title1={title1}
+                    title2={title2}
+                    title3={title3}
+                    title4={title4}
+                    title5={title5}
+                    currentStep={currentStep}
+                    changingStep={changingStep}
+                    idRoute={this.state.idRoute}
+                />
             </div>
-                            );
-                        }
-                    }
-                    
+        );
+    }
+}
+
 export default Step4;
