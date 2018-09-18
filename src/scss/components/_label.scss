@@ -11,6 +11,9 @@
     font-size: $font-size-xl;
     font-weight: $normal;
     padding: 24px 0 18px 24px;
+    @media all and (max-width: 600px) {
+        font-size: $font-size-m;
+    }
 }
 
 .control-label {
@@ -24,6 +27,11 @@
     box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
     border: solid 1px $color-secondary-light;
     outline: none;
+    @media all and (max-width: 700px) {
+        font-size: $font-size-m;
+        width: 200px;
+        height: 50px;
+    }
 }
 
 .control-label:focus + .placeholder-label {
@@ -33,12 +41,15 @@
 
  .label-located {
     font-size: $font-size-m;
-    padding: 3px 0 0 12px;
+    padding: 3px 0 0 12px;   
     color: $color-terciary-dark;
     font-weight: $normal;
     position: absolute;
     top: 0;
     left: 0; 
+    @media all and (max-width: 600px) {
+        font-size: $font-size-s;
+    }
  }
 
  .half-input {

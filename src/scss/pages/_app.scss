@@ -1,6 +1,10 @@
 .App {
     min-height: 100vh;
     background-color: $color-secondary-light;
+
+    @media all and (max-width: 420px) {
+        max-width: 100vh;
+      }
 }
 
 .stepBox {
@@ -9,10 +13,16 @@
     align-items: center;
     padding-top: 145px;
     background-color: $color-secondary-light;
+    @media all and (max-width: 420px) {
+        padding-top: 80px;
+    }
 }
 
 .step1 {
     padding-bottom: 270px;
+    @media all and (max-width: 420px) {
+        padding-bottom: 120px;
+    }
 }
 
 .verticalDisplay {
@@ -22,6 +32,9 @@
 .step2, 
 .step5 {
     padding-bottom: 175px;
+    @media all and (max-width: 420px) {
+        padding-bottom: 120px;
+    }
 }
 
 .subtitles-step2 {
@@ -30,6 +43,9 @@
     font-weight: $regular;
     text-transform: uppercase;
     color: $color-secondary-dark;
+    @media all and (max-width: 420px) {
+        font-size: $font-size-s;
+    }
 }
 
 .form {

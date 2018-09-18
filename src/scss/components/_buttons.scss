@@ -46,6 +46,9 @@
         color: $color-primary-dark;
         text-transform: uppercase;
     }
+    @media all and (max-width: 420px) {
+      font-size: $font-size-s;
+  }
 }
 
 .visaButton-styles {
