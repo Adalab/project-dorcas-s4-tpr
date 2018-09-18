@@ -3,7 +3,7 @@
     background-color: $color-secondary-light;
 
     @media all and (max-width: 420px) {
-        max-width: 100vh;
+       max-width: 100vh;
       }
 }
 
@@ -28,6 +28,9 @@
 .verticalDisplay {
     display: flex;
     margin-bottom: 25px;
+    @media all and (max-width: 700px) {
+        flex-direction: column;
+    }
 }
 
 .step2, 
@@ -35,6 +38,18 @@
     padding-bottom: 175px;
     @media all and (max-width: 420px) {
         padding-bottom: 120px;
+    }
+}
+
+.subtitles-step2 {
+    text-align: center;
+    font-size: $font-size-m;
+    font-weight: $regular;
+    text-transform: uppercase;
+    color: $color-secondary-dark;
+    @media all and (max-width: 420px) {
+        margin-top: 10px;
+        font-size: $font-size-xs;
     }
 }
 
