@@ -237,7 +237,6 @@ class Step2 extends Component {
     }
 
     handleCountryInput(e) {
-        console.log(this.state.data)
         const inputValue = e.target.value;
         this.setState({
             data: {
@@ -387,7 +386,6 @@ class Step2 extends Component {
     //Visa handles
     handleVisaButton(e) {
         e.preventDefault();
-        console.log('clickando', visaButton.buttonClassHidden);
         if (this.state.buttonHidden === false) {
             visaButton.buttonClassHidden = 'hidden';
             this.setState({
@@ -504,7 +502,6 @@ class Step2 extends Component {
     }
 
     render() {
-        console.log('STEEEEEEEEP',this.props)
         const {
             title1,
             title2,

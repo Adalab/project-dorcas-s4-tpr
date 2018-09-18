@@ -3,7 +3,6 @@ import React, { Component, Fragment } from 'react';
 
 class TypeOnOff extends Component {
     render() {
-        console.log(this.props);
         const {
             labelTypeOnOff,
             handleTypeOnOff,
@@ -11,7 +10,6 @@ class TypeOnOff extends Component {
         } = this.props;
         const {labelContent,id} = labelTypeOnOff;
 
-        console.log('props TYpe ON OFF', this.props);
         return  (
                 <Fragment>
                     <label htmlFor={id} className="switch">

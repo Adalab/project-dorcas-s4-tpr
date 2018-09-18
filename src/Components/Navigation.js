@@ -24,7 +24,6 @@ const nextButton = {
 
 class Navigation extends Component {
   render() {
-    // console.log('props NAVIGATION', this.props);
     const {
       title1,
       title2,
