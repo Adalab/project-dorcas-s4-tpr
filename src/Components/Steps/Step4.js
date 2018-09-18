@@ -321,6 +321,7 @@ class Step4 extends Component {
                 <form className='form'>
                     <hr className='section-line'></hr>
                     <span className='section-title'>
+      
                         <FormattedMessage
                             id="Step4.choosingSeat"
                             defaultMessage="Choosing seat"
