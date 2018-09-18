@@ -647,14 +647,13 @@ a {
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 40px;
-  cursor: pointer;
-  margin-bottom: 40px; }
+  cursor: pointer; }
   @media all and (max-width: 600px) {
     .visaButton-styles {
       height: 40px;
       width: 200px;
       font-size: 15px;
-      margin-bottom: 20px; }  }
+      margin-bottom: 20px; } }
 
 .next-button .fa-angle-left,
 .next-button .fa-arrow-left,

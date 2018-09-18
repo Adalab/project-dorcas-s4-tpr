@@ -149,7 +149,6 @@ class App extends Component {
     this.handleStep4 = this.handleStep4.bind(this);
     this.handleStep5 = this.handleStep5.bind(this);
     this.handleIdRoute = this.handleIdRoute.bind(this);
-    this.handleDateFromApi = this.handleDateFromApi.bind(this);
     this.handleNextStep = this.handleNextStep.bind(this);
     this.handleStateFromAPI = this.handleStateFromAPI.bind(this);
   }
@@ -160,21 +159,22 @@ class App extends Component {
         data: {
           personalInformation: {
             lastName: 
-            person.personalInformation !== undefined
+            person.personalInformation !== undefined && person.personalInformation.lastName !== undefined
               ? person.personalInformation.lastName
               : '',
             firstName:
-            person.personalInformation !== undefined
+            person.personalInformation !== undefined &&
+            person.personalInformation.firstname !== undefined
             ? person.personalInformation.firstName
             : '',
           },
           contactInformation: {
             phoneNumbers: 
-            person.contactInformation !== undefined
+            person.contactInformation !== undefined && person.contactInformation.phoneNumbers !== undefined
               ? person.contactInformation.phoneNumbers
               :'',
             emails: 
-            person.contactInformation !== undefined
+            person.contactInformation !== undefined && person.contactInformation.emails !== undefined
             ? person.contactInformation.emails[0]
             :'',
           },
@@ -182,19 +182,19 @@ class App extends Component {
             idCard: [
               {
                 placeOfBirth:
-                  person.travelDocuments.idCard !== undefined
+                  person.travelDocuments !== undefined && person.travelDocuments.idCard !== undefined
                     ? person.travelDocuments.idCard[0].placeOfBirth
                     : "",
                 issueDate:
-                  person.travelDocuments.idCard !== undefined
-                    ?this.handleDateFromApi(person.travelDocuments.idCard[0].expiryDate)
+                  person.travelDocuments !== undefined && person.travelDocuments.idCard !== undefined
+                    ? person.travelDocuments.idCard[0].expiryDate
                     : '',
                 expiryDate:
-                  person.travelDocuments.idCard !== undefined
-                  ?this.handleDateFromApi(person.travelDocuments.idCard[0].issueDate)
+                  person.travelDocuments !== undefined && person.travelDocuments.idCard !== undefined
+                  ?person.travelDocuments.idCard[0].issueDate
                   :'',
                 dniNumber:
-                  person.travelDocuments.idCard !== undefined
+                  person.travelDocuments !== undefined && person.travelDocuments.idCard !== undefined
                     ? person.travelDocuments.idCard[0].dniNumber
                     : '',
               }
@@ -202,19 +202,19 @@ class App extends Component {
             passport: [
               {
                 issueCountry: 
-                  person.travelDocuments.passport !== undefined
+                  person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
                     ?person.travelDocuments.passport[0].issueCountry
                     : '',
                 issueDate:
-                  person.travelDocuments.passport !== undefined
-                    ?this.handleDateFromApi(person.travelDocuments.passport[0].issueDate)
+                  person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
+                    ?person.travelDocuments.passport[0].issueDate
                     : '',
                 expiryDate: 
-                  person.travelDocuments.passport !== undefined
-                    ?this.handleDateFromApi(person.travelDocuments.passport[0].expiryDate)
+                  person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
+                    ?person.travelDocuments.passport[0].expiryDate
                     : '',
                 passportNumber:
-                  person.travelDocuments.passport !== undefined
+                  person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
                     ?person.travelDocuments.passport[0].passportNumber
                     :'',
               }
@@ -223,16 +223,18 @@ class App extends Component {
 
           extras: {
             familyNumber: 
-              person.extras !== undefined
+              person.extras !== undefined && person.extras.familyNumber !== undefined
                 ?person.extras.familyNumber
                 : '',
             islandResident: {
               region: 
-                person.extras.islandResident !== undefined
+                person.extras.islandResident !== undefined &&
+                person.extras.islandResident.region !== undefined
                   ?person.extras.islandResident.region
                   : '',
               locality: 
-                person.extras.islandResident !== undefined
+                person.extras.islandResident !== undefined &&
+                person.extras.islandResident.locality !== undefined
                   ?person.extras.islandResident.locality
                   : '',
             },
@@ -240,20 +242,21 @@ class App extends Component {
           emergencyContact: [
             {
               firstName: 
-                person.extras.emergencyContact !== undefined
+                person.extras.emergencyContact !== undefined &&
+                person.extras.emergencyContact[0].firstName !== undefined
                   ?person.extras.emergencyContact[0].firstName
                   : '',
               lastName: 
-                person.extras.emergencyContact !== undefined
-                  ?person.extras.emergencyContact[0].lastName
+                person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].lastName !== undefined
+                  ? person.extras.emergencyContact[0].lastName
                   :'',
               email: 
-              person.extras.emergencyContact !== undefined
-                  ?person.extras.emergencyContact[0].email
+              person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].email !== undefined
+                  ? person.extras.emergencyContact[0].email
                   :'',
               phoneNumber: 
-                person.extras.emergencyContact !== undefined
-                  ?person.extras.emergencyContact[0].phoneNumber
+                person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].phoneNumber !== undefined
+                  ? person.extras.emergencyContact[0].phoneNumber
                   :'',
             }
           ]
@@ -270,17 +273,6 @@ class App extends Component {
         this.handleStateFromAPI(person, this.props.id);
         console.log(' RESPUESTA BACK',person)
         });
-  }
-
-  handleDateFromApi(date) {
-    const newFormatDate = [
-      date.slice(8, 10),
-      "/",
-      date.slice(5, 7),
-      "/",
-      date.slice(0, 4)
-    ].join("");
-    return newFormatDate;
   }
 
   handleNextStep() {
