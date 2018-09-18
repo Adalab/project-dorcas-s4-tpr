@@ -12,9 +12,6 @@
     "App.step5": "Step 5",
     "Navigation.back": "Back",
     "Navigation.next": "Next",
-    "Navigation.send": "Send",
-    "Navigation.complete": "Complete Later,",
-    "Navigation.jumpStep": "Jump step",
     "Step1.userSurname": "Surname",
     "Step1.userName": "Name",
     "Step1.email": "Email",
@@ -109,7 +106,7 @@
     "Step4.fromThreeStars": "Desde 3 Estrellas",
     "Step4.fromTwoStars": "Desde 2 Estrellas",
     "Step4.typeOfAccommodation": "Tipo de alojamiento",
-    "Step4.classic": "Clásico",
+    "Step4.classic": "Clásica",
     "Step4.modern": "Moderno",
     "Step4.window": "ventana",
     "Step4.aisle": "pasillo",
@@ -147,9 +144,6 @@
     "Step4.front": "Primeras filas",
     "Step4.middle": "Centro",
     "Step4.back": "Últimas filas",
-    "Step4.prefTrains": "Preferencias en trenes",
-    "Navigation.send": "Enviar",
-    "Navigation.complete": "Completar después,",
-    "Navigation.jumpStep": "saltar paso"
+    "Step4.prefTrains": "Preferencias en trenes"
   }
 }

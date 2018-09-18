@@ -67,12 +67,12 @@ class App extends Component {
       },
       dataAccommodation: {
         // data step4
-        plain1: "",
-        plain2: "",
-        train1: "",
-        breakfast: "",
-        qualityAcom: "",
-        typeAcom: ""
+        plain1: "Window",
+        plain2: "Front",
+        train1: "Window",
+        breakfast: "Always",
+        qualityAcom: "5stars",
+        typeAcom: "Classic"
       },
       titles: {
         title1: (
@@ -364,7 +364,7 @@ class App extends Component {
       {
         dataAccommodation: data
       },
-      () => console.log(this.state.data)
+      () => console.log(this.state.dataAccommodation)
     );
   }
 
