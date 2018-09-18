@@ -3,7 +3,6 @@ import { FormattedMessage } from 'react-intl';
 
 class TypeSelect extends Component {
     render() {
-        console.log ('typeselect', this.props)
         const {
             options, 
             onChange

@@ -292,16 +292,8 @@ class App extends Component {
   }
 
   handleNextStep() {
-    const post= {
-      personalInformation :{
-        lastName: 'molto',
-        firstName: 'alex'
-      },
-    }
-    axios
-      .post(
-        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`,
-        post
+    axios.post(
+        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`,this.state.data
       )
       .then(res => {
         console.log("RESPUESTA");
