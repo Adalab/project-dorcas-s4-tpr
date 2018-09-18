@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 
 class TypeOnOff extends Component {
@@ -13,7 +13,7 @@ class TypeOnOff extends Component {
 
         console.log('props TYpe ON OFF', this.props);
         return  (
-                <div className="slider-container">
+                <Fragment>
                     <label htmlFor={id} className="switch">
                         <input
                         id= {id}
@@ -24,7 +24,7 @@ class TypeOnOff extends Component {
                         <span className="slider round"></span>
                     </label>
                     <span className="label-switch">{labelContent}</span>
-                </div>
+                </Fragment>
                 )
             }
 }

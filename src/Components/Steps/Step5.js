@@ -109,7 +109,7 @@ class Step5 extends Component {
                 phoneNumberEmergency: '',
                 }
             }
-           
+
         this.handleLocality = this.handleLocality.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleEmailAddress = this.handleEmailAddress.bind(this)
@@ -282,22 +282,27 @@ class Step5 extends Component {
                     step={step5}
                 />
                 <form className='form'>
-                    <TypeOnOff 
-                        labelTypeOnOff={largeFamily} 
-                        handleTypeOnOff={this.handleTypeOnOff}
-                        checked={this.state.checkedFamily ? true : false}/>
+                    <div className="slider-container">
+                        <TypeOnOff 
+                            labelTypeOnOff={largeFamily} 
+                            handleTypeOnOff={this.handleTypeOnOff}
+                            checked={this.state.checkedFamily ? true : false}
+                        />
+                    </div>
                     <TypeTextInput
                         onChange={this.handleFamilyNumber}
                         inputData={familyNumberInput}
                         inputText={familyNumber}
-                        toggleClass={this.state.checkedFamily ? '' : 'hidden'}
+                        toggleClass={this.state.checkedFamily ? 'input-numerous-family' : 'hidden'}
                     />
-                    <TypeOnOff 
-                    labelTypeOnOff={residentOutside} 
-                    handleTypeOnOff={this.handleTypeOnOff}
-                    checked={this.state.checkedResidency ? true : false} 
-                    />
-                    <div className={this.state.checkedResidency ? '' : 'hidden'}>
+                    <div className="slider-container slider-residency">
+                        <TypeOnOff 
+                        labelTypeOnOff={residentOutside} 
+                        handleTypeOnOff={this.handleTypeOnOff}
+                        checked={this.state.checkedResidency ? true : false} 
+                        />
+                    </div>                    
+                    <div className={this.state.checkedResidency ? 'select-residency' : 'hidden'}>
                         <TypeSelect 
                             options={regionOptions}
                             classOfSelect={classOfSelect}
