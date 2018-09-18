@@ -37,7 +37,11 @@
 .control-label:focus + .placeholder-label {
     font-size: $font-size-m;
     padding: 3px 0 0 12px;
-    } 
+    @media all and (max-width: 700px) {
+        font-size: $font-size-s;
+        padding: 5px 0;
+    }
+} 
 
  .label-located {
     font-size: $font-size-m;
@@ -54,4 +58,7 @@
 
  .half-input {
     width: 335px;
+    @media all and (max-width: 600px) {
+        width: 200px;
+    }
 }

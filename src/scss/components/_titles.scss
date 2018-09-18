@@ -23,3 +23,34 @@
         font-size: $font-size-m;
     }
 }
+
+.subtitles-step2 {
+    display: block;
+    width: 150px;
+    margin: auto;
+    color:$color-secondary-dark;
+    font-size: $font-size-s;
+    z-index: $second-layer;
+    background-color:$color-secondary-light;
+    text-align: center;
+    font-weight: $regular;
+    text-transform: uppercase;
+}
+
+.subtitle-step5 {
+    font-size: $font-size-plus-l;
+    font-weight: $regular;
+    color: $color-secondary-dark;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px; 
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#passport {
+    margin-bottom: 30px;
+}
+
+#Id {
+    margin-bottom: 20px;
+}

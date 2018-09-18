@@ -46,7 +46,7 @@ class Pages extends Component {
       stateAccommodationObject,
       handleStep4,
       handleIdRoute,
-      handleNextStep,
+      handleNextStep, 
     } = this.props;
 
     return (
