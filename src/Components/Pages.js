@@ -152,7 +152,6 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 extras={extras}
-                emergencyContact={emergencyContact}
                 handleStep5={handleStep5}
                 handleIdRoute={handleIdRoute}
               />}

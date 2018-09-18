@@ -12,20 +12,24 @@ class App extends Component {
       idRoute: undefined,
       data: {
         personalInformation: {
-          lastName: "",
-          firstName: ""
+          lastName: '',
+          firstName: '',
+          dateOfBirth: '',
+          nationality:'',
+          gender: '',
         },
         contactInformation: {
           phoneNumbers: [],
-          emails: []
+          emails: [],
+          addresses: [],
         },
         extras: {
           familyNumber: 0,
+          handicapped: '',
           islandResident: {
-            region: "",
-            locality: ""
-          }
-        },
+            region: '',
+            locality: '',
+          },
         emergencyContact: [
           {
             firstName: "",
@@ -33,7 +37,8 @@ class App extends Component {
             email: "",
             phoneNumber: ""
           }
-        ],
+        ], 
+      },
         travelDocuments: {
           idCard: [
             {
@@ -233,7 +238,7 @@ class App extends Component {
                   ?person.extras.islandResident.locality
                   : '',
             },
-          },
+          
           emergencyContact: [
             {
               firstName: 
@@ -254,6 +259,7 @@ class App extends Component {
                   :'',
             }
           ]
+        },
         }
       },()=> console.log(this.state));
   }
@@ -286,11 +292,16 @@ class App extends Component {
   }
 
   handleNextStep() {
-    const dataForAPI = this.state.data;
+    const post= {
+      personalInformation :{
+        lastName: 'molto',
+        firstName: 'alex'
+      },
+    }
     axios
       .post(
         `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`,
-        dataForAPI
+        post
       )
       .then(res => {
         console.log("RESPUESTA");
@@ -375,8 +386,7 @@ class App extends Component {
             islandResident: {
               region: data.region,
               locality: data.locality
-            }
-          },
+            },
           emergencyContact: [
             {
               firstName: data.firstNameEmergency,
@@ -385,6 +395,7 @@ class App extends Component {
               phoneNumber: data.phoneNumberEmergency
             }
           ]
+        },
         }
       },
       () => console.log(this.state.dataVisa)
