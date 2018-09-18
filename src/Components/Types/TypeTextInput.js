@@ -6,23 +6,29 @@ class TypeTextInput extends Component {
           labelContent,  
           id,
           name,
+          classHalfInput
         } = this.props.inputData;  
 
         const {
           onChange,
           toggleClass,
           inputText,
+          debug
         } = this.props;
         let className;
-        if (inputText !== undefined && inputText.length > 0) {
+        if (!!inputText || inputText === 0) {
           className ='label-located';
       } else {
           className = '';
       }
+
+      if (debug === true) {
+          console.log(typeof inputText);
+      }
         return (
             <div className={`position-label ${toggleClass}`}>
               <input onChange={onChange}
-                className='control-label marginSomeInputs'
+                className={`control-label marginSomeInputs ${classHalfInput}`}
                 id={id} 
                 type="text" 
                 name={name}

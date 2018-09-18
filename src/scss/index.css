@@ -19,16 +19,36 @@ a {
   background-color: #f8f9f8;
   position: fixed;
   top: 0;
-  z-index: 5; }
+  z-index: 5;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+67,ffffff+100&1+67,0+100 */
+  background: -moz-linear-gradient(top, #f8f9f8 50%, rgba(255, 255, 255, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f8f9f8 50%, rgba(255, 255, 255, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f8f9f8 50%, rgba(255, 255, 255, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f9f8', endColorstr='#00ffffff',GradientType=0 );
+  /* IE6-9 */ }
+  @media all and (max-width: 420px) {
+    .header {
+      display: inline-block;
+      height: 60px;
+      max-width: 100vh; } }
 
 .logoTRP {
   width: 50px;
   height: 35px;
   margin: 30px 30px; }
+  @media all and (max-width: 420px) {
+    .logoTRP {
+      margin: 10px 10px; } }
 
 .App {
   min-height: 100vh;
   background-color: #f8f9f8; }
+  @media all and (max-width: 420px) {
+    .App {
+      max-width: 100vh; } }
 
 .stepBox {
   display: flex;
@@ -36,13 +56,26 @@ a {
   align-items: center;
   padding-top: 145px;
   background-color: #f8f9f8; }
+  @media all and (max-width: 420px) {
+    .stepBox {
+      padding-top: 80px; } }
 
 .step1 {
   padding-bottom: 270px; }
+  @media all and (max-width: 420px) {
+    .step1 {
+      padding-bottom: 120px; } }
+
+.verticalDisplay {
+  display: flex; }
 
 .step2,
 .step5 {
   padding-bottom: 175px; }
+  @media all and (max-width: 420px) {
+    .step2,
+    .step5 {
+      padding-bottom: 120px; } }
 
 .subtitles-step2 {
   text-align: center;
@@ -50,10 +83,54 @@ a {
   font-weight: 400;
   text-transform: uppercase;
   color: #5b5b5b; }
+  @media all and (max-width: 420px) {
+    .subtitles-step2 {
+      font-size: 12px; } }
 
 .form {
   display: flex;
   flex-direction: column; }
+
+.issueDate {
+  margin-right: 25px; }
+
+.visaButtonContent-container {
+  display: flex;
+  flex-direction: column; }
+
+.typeNumberVisa {
+  display: flex; }
+
+.select-step2-visaType {
+  height: 85px;
+  width: 335px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+  color: #06a790;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 35px 15px 15px;
+  margin-bottom: 30px;
+  margin-right: 25px;
+  appearance: none; }
+
+.select-step2-visaCountries {
+  height: 85px;
+  width: 695px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+  color: #06a790;
+  font-size: 36px;
+  font-weight: 500;
+  padding: 15px 35px 15px 15px;
+  margin-bottom: 30px;
+  appearance: none; }
 
 .marginSomeInputs {
   margin-bottom: 25px; }
@@ -82,6 +159,25 @@ a {
   padding: 15px 35px 15px 15px;
   margin-bottom: 30px;
   appearance: none; }
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.slider-residency {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+.input-numerous-family {
+  margin-top: 18px; }
+
+.input-numerous-family .marginSomeInputs {
+  margin-bottom: 0px; }
+
+.select-residency {
+  margin-top: 18px; }
 
 .hidden {
   display: none; }
@@ -200,16 +296,23 @@ a {
   margin-bottom: 120px; }
 
 .preference-title {
+  margin-top: 20px;
+  margin-bottom: 6px;
   color: #5b5b5b;
   font-size: 24px;
   font-family: "Fira Sans", sans-serif;
   font-weight: 500; }
 
 .section-title {
+  display: block;
+  width: 150px;
+  margin: auto;
   text-transform: uppercase;
   text-align: center;
   color: #8d9293;
-  font-size: 12px; }
+  font-size: 12px;
+  z-index: 5;
+  background-color: #f8f9f8; }
 
 .step4-radio {
   display: flex;
@@ -268,6 +371,10 @@ a {
   font-weight: 500;
   color: #8d9293; }
 
+.section-line {
+  transform: translateY(9px);
+  background-color: rgba(0, 0, 0, 0.1); }
+
 .radio-button {
   align-self: center;
   width: 24px;
@@ -323,6 +430,9 @@ a {
   font-size: 36px;
   font-weight: 500;
   padding: 24px 0 18px 24px; }
+  @media all and (max-width: 600px) {
+    .placeholder-label {
+      font-size: 15px; } }
 
 .control-label {
   width: 695px;
@@ -335,6 +445,11 @@ a {
   box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px #f8f9f8;
   outline: none; }
+  @media all and (max-width: 700px) {
+    .control-label {
+      font-size: 15px;
+      width: 200px;
+      height: 50px; } }
 
 .control-label:focus + .placeholder-label {
   font-size: 15px;
@@ -342,26 +457,41 @@ a {
 
 .label-located {
   font-size: 15px;
-  padding: 3px 0 0 12px; }
+  padding: 3px 0 0 12px;
+  color: #8d9293;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  @media all and (max-width: 600px) {
+    .label-located {
+      font-size: 12px; } }
 
-.position-calendar {
-  position: relative;
-  height: 85px;
-  display: inline-block; }
+.half-input {
+  width: 335px; }
 
 .titles-container {
   width: 695px; }
+  @media all and (max-width: 700px) {
+    .titles-container {
+      width: 200px; } }
 
 .number-step {
   color: #5b5b5b;
   font-size: 12px;
   font-weight: 500; }
+  @media all and (max-width: 600px) {
+    .number-step {
+      font-size: 10px; } }
 
 .title-step {
   color: #222222;
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 20px; }
+  @media all and (max-width: 600px) {
+    .title-step {
+      font-size: 15px; } }
 
 .back-button {
   padding-left: 52px;
@@ -410,6 +540,9 @@ a {
       box-shadow: none;
       color: #06a790;
       text-transform: uppercase; } }
+  @media all and (max-width: 420px) {
+    .next-button {
+      font-size: 12px; } }
 
 .visaButton-styles {
   height: 50px;
@@ -419,17 +552,24 @@ a {
   border: 1px solid #06a790;
   border-radius: 4px;
   font-size: 18px;
-  font-weight: 600; }
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 40px; }
+
+.label-switch {
+  margin-left: 18px;
+  color: #5b5b5b;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400; }
 
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 14px;
-  top: 30px; }
-
-body {
-  background-color: grey; }
+  border-radius: 100px;
+  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1); }
 
 .switch input {
   display: none; }
@@ -441,19 +581,18 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.05);
   -webkit-transition: .4s;
   transition: .4s; }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  top: -5px;
-  left: 0;
-  bottom: 4px;
-  background-color: #ffffff;
+  height: 30px;
+  width: 30px;
+  transform: translateY(-8px);
+  background-color: #f8f9f8;
+  box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03);
   -webkit-transition: .4s;
   transition: .4s; }
 
@@ -461,12 +600,12 @@ input:checked + .slider {
   background-color: #06a790; }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
+  box-shadow: 0 0 1px #06a790; }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px); }
+  -webkit-transform: translate(26px, -8px);
+  -ms-transform: translate(26px, -8px);
+  transform: translate(26px, -8px); }
 
 /* Rounded sliders */
 .slider.round {
