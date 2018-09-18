@@ -25,6 +25,10 @@
     }
 }
 
+.verticalDisplay {
+    display: flex;
+}
+
 .step2, 
 .step5 {
     padding-bottom: 175px;
@@ -47,6 +51,52 @@
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.issueDate {
+    margin-right: 25px;
+}
+
+.visaButtonContent-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.typeNumberVisa {
+    display: flex;
+}
+
+.select-step2-visaType {
+    height: 85px;
+    width: 335px;
+    border-radius: 3px;
+    background-color: $color-light;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: $color-primary-dark;
+    font-size: $font-size-l;
+    font-weight: $normal;
+    padding: 15px 35px 15px 15px;
+    margin-bottom: 30px;
+    margin-right: 25px;
+    appearance: none;
+}
+
+.select-step2-visaCountries {
+    height: 85px;
+    width: 695px;
+    border-radius: 6px;
+    background-color: $color-light;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: $color-primary-dark;
+    font-size: $font-size-xl;
+    font-weight: $normal;
+    padding: 15px 35px 15px 15px;
+    margin-bottom: 30px;
+    appearance: none;
 }
 
 .marginSomeInputs {
@@ -80,4 +130,28 @@
     padding: 15px 35px 15px 15px;
     margin-bottom: 30px;
     appearance: none;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.slider-residency {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+.input-numerous-family {
+    margin-top: 18px;
+}
+
+.input-numerous-family .marginSomeInputs{
+    margin-bottom: 0px;
+}
+
+.select-residency {
+    margin-top: 18px;
 }

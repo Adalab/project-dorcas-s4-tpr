@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 
 class TypeOnOff extends Component {
@@ -12,8 +12,9 @@ class TypeOnOff extends Component {
         const {labelContent,id} = labelTypeOnOff;
 
         console.log('props TYpe ON OFF', this.props);
-        return  (<div>
-                    <label htmlFor={labelContent} className="switch">
+        return  (
+                <Fragment>
+                    <label htmlFor={id} className="switch">
                         <input
                         id= {id}
                         type="checkbox"
@@ -21,10 +22,11 @@ class TypeOnOff extends Component {
                         checked={checked}
                         />
                         <span className="slider round"></span>
-                        {labelContent}
                     </label>
-                </div>)
+                    <span className="label-switch">{labelContent}</span>
+                </Fragment>
+                )
             }
 }
 
-  export default TypeOnOff;
+export default TypeOnOff;

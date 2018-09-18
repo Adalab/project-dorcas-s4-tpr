@@ -41,14 +41,17 @@
 
  .label-located {
     font-size: $font-size-m;
-    padding: 3px 0 0 12px;
+    padding: 3px 0 0 12px;   
+    color: $color-terciary-dark;
+    font-weight: $normal;
+    position: absolute;
+    top: 0;
+    left: 0; 
     @media all and (max-width: 600px) {
         font-size: $font-size-s;
     }
  }
 
- .position-calendar {
-     position: relative;
-     height: 85px;
-     display: inline-block;
- }
+ .half-input {
+    width: 335px;
+}
