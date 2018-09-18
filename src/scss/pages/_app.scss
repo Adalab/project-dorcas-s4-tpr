@@ -27,6 +27,7 @@
 
 .verticalDisplay {
     display: flex;
+    margin-bottom: 25px;
 }
 
 .step2, 
@@ -34,17 +35,6 @@
     padding-bottom: 175px;
     @media all and (max-width: 420px) {
         padding-bottom: 120px;
-    }
-}
-
-.subtitles-step2 {
-    text-align: center;
-    font-size: $font-size-m;
-    font-weight: $regular;
-    text-transform: uppercase;
-    color: $color-secondary-dark;
-    @media all and (max-width: 420px) {
-        font-size: $font-size-s;
     }
 }
 
@@ -60,6 +50,7 @@
 .visaButtonContent-container {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .typeNumberVisa {
@@ -154,4 +145,8 @@
 
 .select-residency {
     margin-top: 18px;
+}
+
+.select-residency .position-label #Locality.marginSomeInputs {
+    margin-bottom: 0px;
 }

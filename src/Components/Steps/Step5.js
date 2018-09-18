@@ -313,7 +313,8 @@ class Step5 extends Component {
                             inputText={locality}
                         />
                     </div>
-                    <h2><FormattedMessage
+                    <h2 className='subtitle-step5'>
+                    <FormattedMessage
                         id="Step5.emergencyContact"
                         defaultMessage="Emergency contact"
                     />
