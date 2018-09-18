@@ -20,7 +20,6 @@ class Step3 extends Component {
         })
     }
     render() {
-        console.log('propsSTEP3', this.props);
         const {
             title1, 
             title2, 

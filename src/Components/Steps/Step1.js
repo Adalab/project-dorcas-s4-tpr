@@ -77,7 +77,6 @@ class Step1 extends Component {
         this.handleLineNumber = this.handleLineNumber.bind(this)
     }
     componentDidMount(){
-        console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',this.props.match.params.id);
         const idRoute = this.props.match.params.id;
         this.props.handleIdRoute(idRoute);
         this.setState({
@@ -142,7 +141,6 @@ class Step1 extends Component {
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
     handleFirstPage(){
-        console.log('HOLIIIIIIIIIIIIIIIIIII')
     }
 
     render() {
@@ -167,7 +165,6 @@ class Step1 extends Component {
             emails,
             phoneNumbers
         } = this.props.contactInformation;
-        console.log('EMAILSSSS', emails);
         return (
             <div className='stepBox step1'>
                 <Title
