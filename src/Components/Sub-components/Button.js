@@ -7,7 +7,6 @@ class Button extends Component {
       buttonContent,
       onClick,
       currentStep,
-      buttonHidden,
     } = this.props;
 
     const{

@@ -286,7 +286,8 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
-            legenContent
+            legenContent,
+            handleNextStep,
         } = this.props;
 
         return (
@@ -344,6 +345,7 @@ class Step4 extends Component {
                     currentStep={currentStep}
                     changingStep={changingStep}
                     idRoute={this.state.idRoute}
+                    handleNextStep={handleNextStep}
                 />
             </div>
         );

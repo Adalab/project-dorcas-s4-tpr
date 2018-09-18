@@ -48,7 +48,7 @@ class Pages extends Component {
       handleIdRoute,
       handleNextStep,
     } = this.props;
-
+    console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',this.props);
     return (
       <Fragment>
         <Switch>
@@ -99,6 +99,7 @@ class Pages extends Component {
                 travelDocuments= {travelDocuments}
                 dataVisa={dataVisa}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -116,6 +117,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 currentStep={currentStep}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -135,6 +137,7 @@ class Pages extends Component {
                 stateAccommodationObject={stateAccommodationObject}
                 handleStep4={handleStep4}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -154,6 +157,7 @@ class Pages extends Component {
                 extras={extras}
                 handleStep5={handleStep5}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
         </Switch>

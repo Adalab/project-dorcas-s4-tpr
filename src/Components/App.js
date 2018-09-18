@@ -292,11 +292,13 @@ class App extends Component {
   }
 
   handleNextStep() {
-    axios.post(
-        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/5b91388ec129ed0010a41b87`,this.state.data
+    console.log('PUTTTTTTTTTTT');
+    axios.put(
+        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`,
+        this.state.data
       )
       .then(res => {
-        console.log("RESPUESTA");
+        console.log("RESPUESTA", res);
       });
   }
 

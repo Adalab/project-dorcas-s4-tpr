@@ -272,6 +272,7 @@ class Step5 extends Component {
             step5,
             currentStep,
             changingStep,
+            handleNextStep
         } = this.props;
         return (
             <div className='stepBox step5'>
@@ -345,6 +346,7 @@ class Step5 extends Component {
                     currentStep={currentStep}
                     changingStep={changingStep}
                     idRoute={this.state.idRoute}
+                    handleNextStep={handleNextStep}
                 />
             </div>
         );

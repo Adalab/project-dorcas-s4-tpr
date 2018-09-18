@@ -56,10 +56,8 @@ class Navigation extends Component {
       changingStep4,
       changingStep5,
     } = changingStep;
-
-
+    console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',this.props);
     return (
-      
         <nav className='navigation-container'>
           <Link 
             className='back-button-link'
