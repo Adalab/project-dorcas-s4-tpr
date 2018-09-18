@@ -27,6 +27,7 @@
 
 .verticalDisplay {
     display: flex;
+    margin-bottom: 25px;
     @media all and (max-width: 700px) {
         flex-direction: column;
     }
@@ -64,6 +65,7 @@
 .visaButtonContent-container {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .typeNumberVisa {
@@ -158,4 +160,8 @@
 
 .select-residency {
     margin-top: 18px;
+}
+
+.select-residency .position-label #Locality.marginSomeInputs {
+    margin-bottom: 0px;
 }

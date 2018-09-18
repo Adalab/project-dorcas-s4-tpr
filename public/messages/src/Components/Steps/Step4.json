@@ -1,7 +1,31 @@
 [
   {
-    "id": "Step4.breakfast",
-    "defaultMessage": "Breakfast"
+    "id": "Step4.window",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "Step4.aisle",
+    "defaultMessage": "Aisle"
+  },
+  {
+    "id": "Step4.front",
+    "defaultMessage": "Front"
+  },
+  {
+    "id": "Step4.middle",
+    "defaultMessage": "Middle"
+  },
+  {
+    "id": "Step4.back",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "Step4.trainWindow",
+    "defaultMessage": "Window"
+  },
+  {
+    "id": "Step4.trainAisle",
+    "defaultMessage": "Aisle"
   },
   {
     "id": "Step4.always",
@@ -20,14 +44,6 @@
     "defaultMessage": "Never"
   },
   {
-    "id": "Step4.breakfastPreference",
-    "defaultMessage": "breakfastPreference"
-  },
-  {
-    "id": "Step4.accommodationQuality",
-    "defaultMessage": "Accommodation quality"
-  },
-  {
     "id": "Step4.fiveStars",
     "defaultMessage": "5 Stars"
   },
@@ -44,18 +60,6 @@
     "defaultMessage": "From 2 Stars"
   },
   {
-    "id": "Step4.accommodationPreference",
-    "defaultMessage": "Accommodation Preference"
-  },
-  {
-    "id": "Step4.typeOfAccommodation",
-    "defaultMessage": "Type of accommodation"
-  },
-  {
-    "id": "Step4.irrelevant",
-    "defaultMessage": "Irrelevant"
-  },
-  {
     "id": "Step4.classic",
     "defaultMessage": "Classic"
   },
@@ -64,32 +68,16 @@
     "defaultMessage": "Modern"
   },
   {
-    "id": "Step4.niche",
-    "defaultMessage": "Niche"
-  },
-  {
-    "id": "Step4.qualityPreference",
-    "defaultMessage": "Quality preference"
-  },
-  {
-    "id": "Step4.window",
-    "defaultMessage": "Window"
-  },
-  {
-    "id": "Step4.aisle",
-    "defaultMessage": "Aisle"
-  },
-  {
-    "id": "Step4.trainWindow",
-    "defaultMessage": "Window"
-  },
-  {
-    "id": "Step4.trainAisle",
-    "defaultMessage": "Aisle"
-  },
-  {
     "id": "Step4.choosingSeat",
     "defaultMessage": "Choosing seat"
+  },
+  {
+    "id": "Step4.plainPreferences",
+    "defaultMessage": "Plain preferences"
+  },
+  {
+    "id": "Step4.prefTrains",
+    "defaultMessage": "Preferences in trains"
   },
   {
     "id": "Step4.accommodation",
@@ -98,5 +86,17 @@
   {
     "id": "Step4.accommodationPreferences",
     "defaultMessage": "Accommodation preferences"
+  },
+  {
+    "id": "Step4.breakfast",
+    "defaultMessage": "Breakfast"
+  },
+  {
+    "id": "Step4.accommodationQuality",
+    "defaultMessage": "Accommodation quality"
+  },
+  {
+    "id": "Step4.typeOfAccommodation",
+    "defaultMessage": "Type of accommodation"
   }
 ]
