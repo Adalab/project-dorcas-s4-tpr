@@ -28,8 +28,48 @@
     "defaultMessage": "Date of issue"
   },
   {
+    "id": "Step2.userVisaCountryIssue",
+    "defaultMessage": "Country of issue"
+  },
+  {
+    "id": "Step2.userVisaCountryDestination",
+    "defaultMessage": "Country of destination"
+  },
+  {
+    "id": "Step2.userVisaNumber",
+    "defaultMessage": "Visa number"
+  },
+  {
+    "id": "Step2.userVisaDateIssue",
+    "defaultMessage": "Date of issue"
+  },
+  {
+    "id": "Step2.userVisaExpirationDate",
+    "defaultMessage": "Expiration date"
+  },
+  {
     "id": "Step2.addVisaDetails",
     "defaultMessage": "Add visa details"
+  },
+  {
+    "id": "Step2.Spain",
+    "defaultMessage": "Spain"
+  },
+  {
+    "id": "Step2.USA",
+    "defaultMessage": "USA"
+  },
+  {
+    "id": "Step2.Germany",
+    "defaultMessage": "Germany"
+  },
+  {
+    "id": "Step2.Mexico",
+    "defaultMessage": "Mexico"
+  },
+  {
+    "id": "Step2.visaType",
+    "defaultMessage": "VisaType"
   },
   {
     "id": "Step2.passport",
