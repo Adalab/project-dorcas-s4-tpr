@@ -136,6 +136,25 @@ a {
   margin-bottom: 30px;
   appearance: none; }
 
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.slider-residency {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+.input-numerous-family {
+  margin-top: 18px; }
+
+.input-numerous-family .marginSomeInputs {
+  margin-bottom: 0px; }
+
+.select-residency {
+  margin-top: 18px; }
+
 .hidden {
   display: none; }
 
@@ -490,15 +509,20 @@ a {
   margin-top: 20px;
   margin-bottom: 40px; }
 
+.label-switch {
+  margin-left: 18px;
+  color: #5b5b5b;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400; }
+
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 14px;
-  top: 30px; }
-
-body {
-  background-color: grey; }
+  border-radius: 100px;
+  box-shadow: inset 1px 1px 3px 0 rgba(0, 0, 0, 0.1); }
 
 .switch input {
   display: none; }
@@ -510,19 +534,18 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.05);
   -webkit-transition: .4s;
   transition: .4s; }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  top: -5px;
-  left: 0;
-  bottom: 4px;
-  background-color: #ffffff;
+  height: 30px;
+  width: 30px;
+  transform: translateY(-8px);
+  background-color: #f8f9f8;
+  box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03);
   -webkit-transition: .4s;
   transition: .4s; }
 
@@ -530,12 +553,12 @@ input:checked + .slider {
   background-color: #06a790; }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
+  box-shadow: 0 0 1px #06a790; }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px); }
+  -webkit-transform: translate(26px, -8px);
+  -ms-transform: translate(26px, -8px);
+  transform: translate(26px, -8px); }
 
 /* Rounded sliders */
 .slider.round {
