@@ -140,8 +140,7 @@ class Step1 extends Component {
             }
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
-    handleFirstPage(){
-    }
+
 
     render() {
         const {
@@ -165,6 +164,9 @@ class Step1 extends Component {
             emails,
             phoneNumbers
         } = this.props.contactInformation;
+
+
+        console.log('firstname', phoneNumbers);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -194,7 +196,9 @@ class Step1 extends Component {
                             inputText={phoneNumbers[1]} //errata con la API, comentar con Triporate
                         />
                     </div>
-                    <TypeEmailInput emailAddress={emailAddress} inputText={emails[0]}/>
+                    <TypeEmailInput 
+                    emailAddress={emailAddress} 
+                    inputText={emails}/>
                 </form>
                 <Navigation
                     title1={title1}
