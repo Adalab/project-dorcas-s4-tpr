@@ -56,10 +56,7 @@ class Navigation extends Component {
       changingStep4,
       changingStep5,
     } = changingStep;
-
-
     return (
-      
         <nav className='navigation-container'>
           <Link 
             className='back-button-link'
