@@ -543,8 +543,8 @@ class Step2 extends Component {
                     step={step2}
                 />
                 <form className='form'>
-
-                    <h2 className='subtitles-step2'>
+                    <hr className='section-line'></hr>
+                    <h2 id='passport' className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.passport"
                             defaultMessage="Passport"
@@ -591,7 +591,8 @@ class Step2 extends Component {
                             </label>
                         </div>
                     </div>
-                    <h2 className='subtitles-step2'>
+                    <hr className='section-line'></hr>
+                    <h2 id='visa' className='subtitles-step2'>
                         {/* Pasaporte hasta aquí */}
                         {/* Visado desde aqui */}
                         <FormattedMessage
@@ -665,7 +666,8 @@ class Step2 extends Component {
                         </div>
                     </div>
                     {/* Visado hasta aquí */}
-                    <h2 className='subtitles-step2'>
+                    <hr className='section-line'></hr>
+                    <h2 id='Id' className='subtitles-step2'>
                         <FormattedMessage
                             id="Step2.dniNie"
                             defaultMessage="Id"
