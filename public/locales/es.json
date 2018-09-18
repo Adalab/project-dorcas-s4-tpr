@@ -6,6 +6,11 @@
     "Step2.userPassExpirationDate": "F.expiración",
     "Step2.visa": "Visado (opcional)",
     "Step2.addVisaDetails": "Agregar detalles del visado",
+    "Step2.Spain": "España",
+    "Step2.USA": "EEUU",
+    "Step2.Germany": "Alemania",
+    "Step2.Mexico": "México",
+    "Step2.visaType": "Tipo de visado",
     "Step2.userVisaCountryIssue": "País de emisión",
     "Step2.userVisaCountryDestination": "País de destino",
     "Step2.userVisaNumber": "Número de Visa",
@@ -67,10 +72,10 @@
     "Navigation.send": "Enviar",
     "Navigation.complete": "Completar después,",
     "Navigation.jumpStep": "saltar paso",
-    "TransportPref.plainPreferences": "Preferencias en aviones",
-    "TransportPref.front": "Primeras filas",
-    "TransportPref.middle": "Centro",
-    "TransportPref.back": "Últimas filas",
-    "TransportPref.prefTrains": "Preferencias en trenes"
+    "Step4.plainPreferences": "Preferencias en aviones",
+    "Step4.front": "Primeras filas",
+    "Step4.middle": "Centro",
+    "Step4.back": "Últimas filas",
+    "Step4.prefTrains": "Preferencias en trenes"
   }
 

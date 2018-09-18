@@ -130,23 +130,50 @@ const visaButton = {
 };
 
 const visaIssueSelect = [
-    'España',
-    'EEUU',
-    'Alemania',
-    'México',
-    'China'
+    <FormattedMessage
+        id="Step2.Spain"
+        defaultMessage="Spain"
+    />,
+    <FormattedMessage
+        id="Step2.USA"
+        defaultMessage="USA"
+    />,
+    <FormattedMessage
+        id="Step2.Germany"
+        defaultMessage="Germany"
+    />,
+    <FormattedMessage
+        id="Step2.Mexico"
+        defaultMessage="Mexico"
+    />,
+    "China",
 ];
 
 const visaDestinationSelect = [
-    'España',
-    'EEUU',
-    'Alemania',
-    'México',
-    'China'
+    <FormattedMessage
+        id="Step2.Spain"
+        defaultMessage="Spain"
+    />,
+    <FormattedMessage
+        id="Step2.USA"
+        defaultMessage="USA"
+    />,
+    <FormattedMessage
+        id="Step2.Germany"
+        defaultMessage="Germany"
+    />,
+    <FormattedMessage
+        id="Step2.Mexico"
+        defaultMessage="Mexico"
+    />,
+    "China",
 ];
 
 const visaTypes = [
-    'Tipo de visado',
+    <FormattedMessage
+        id="Step2.visaType"
+        defaultMessage="VisaType"
+    />,
 ];
 
 const classOfSelect = {
