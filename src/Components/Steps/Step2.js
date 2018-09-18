@@ -536,7 +536,6 @@ class Step2 extends Component {
             visaConteinerContent = 'visaButtonContent-container';
             visaButton.buttonClass = 'hidden';
         }
-        console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',this.props);
         return (
             <div className='stepBox step2'>
                 <Title

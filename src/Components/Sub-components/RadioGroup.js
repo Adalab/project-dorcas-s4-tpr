@@ -3,7 +3,6 @@ import { FormattedMessage } from 'react-intl';
 
 class RadioGroup extends Component {
     render() {
-        console.log(this.props.selected);
         const {
             onChange,
             values,
