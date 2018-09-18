@@ -45,6 +45,9 @@
     padding-top: 30px;
     padding-bottom: 20px; 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    @media all and (max-width: 600px) {
+        font-size: $font-size-l;
+    }
 }
 
 #passport {

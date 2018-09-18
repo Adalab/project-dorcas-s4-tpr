@@ -164,16 +164,31 @@ a {
   text-align: end; }
 
 .step5-container {
-  width: 100%;
   padding-left: 10px;
   padding-right: 10px; }
+  @media all and (max-width: 600px) {
+    .step5-container {
+      width: 80%; } }
+
+@media all and (max-width: 600px) {
+  .emergencyContact-container input {
+    width: 100%; } }
+
+@media all and (max-width: 700px) {
+  .step5-container .position-label {
+    width: 100%; } }
 
 .emergencyContact-step5 {
-  display: flex; }
+  display: flex;
+  font-size: 15px; }
 
 .emergencyContact-container {
   display: flex;
   flex-direction: column; }
+  @media all and (max-width: 700px) {
+    .emergencyContact-container {
+      width: 100%;
+      align-items: center; } }
 
 .select-step5 {
   height: 60px;
@@ -189,6 +204,9 @@ a {
   padding: 15px 35px 15px 15px;
   margin-bottom: 30px;
   appearance: none; }
+  @media all and (max-width: 445px) {
+    .select-step5 {
+      width: 100%; } }
 
 .slider-container {
   display: flex;
@@ -202,6 +220,16 @@ a {
 
 .input-numerous-family {
   margin-top: 18px; }
+
+@media all and (max-width: 600px) {
+  .input-numerous-family .placeholder-label {
+    font-size: 15px;
+    padding: 18px 0px 0px 15px; } }
+
+@media all and (max-width: 360px) {
+  .input-numerous-family .placeholder-label {
+    font-size: 12px;
+    padding: 18px 0px 0px 15px; } }
 
 .input-numerous-family .marginSomeInputs {
   margin-bottom: 0px; }
@@ -505,6 +533,10 @@ a {
   font-size: 36px;
   font-weight: 500;
   padding: 24px 0 18px 24px; }
+  @media all and (max-width: 700px) {
+    .placeholder-label {
+      font-size: 18px;
+      padding: 18px 0px 0px 15px; } }
   @media all and (max-width: 600px) {
     .placeholder-label {
       font-size: 15px;
@@ -596,6 +628,9 @@ a {
   padding-top: 30px;
   padding-bottom: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  @media all and (max-width: 600px) {
+    .subtitle-step5 {
+      font-size: 18px; } }
 
 #passport {
   margin-bottom: 30px; }
@@ -724,11 +759,14 @@ a {
       padding-right: 10px; } }
 
 .label-switch {
-  margin-left: 18px;
+  padding-left: 18px;
   color: #5b5b5b;
   font-family: "Fira Sans", sans-serif;
   font-size: 24px;
   font-weight: 400; }
+  @media all and (max-width: 600px) {
+    .label-switch {
+      font-size: 18px; } }
 
 @media all and (max-width: 450px) {
   .label-switch span {

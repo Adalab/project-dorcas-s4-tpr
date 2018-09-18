@@ -1,10 +1,12 @@
 .label-switch {
-  margin-left: 18px;
+  padding-left: 18px;
   color: $color-secondary-dark;
   font-family: $font-family-primary;
   font-size: $font-size-plus-l;
   font-weight: $regular;
-  
+  @media all and (max-width: 600px) {
+    font-size: $font-size-l;
+  } 
 }
 @media all and (max-width: 450px) {
   .label-switch span {
