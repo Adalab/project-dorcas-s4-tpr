@@ -63,11 +63,11 @@ class App extends Component {
       dataAccommodation: {
         // data step4
         plain1: "Window",
-        plain2: "",
-        train1: "",
-        breakfast: "",
-        qualityAcom: "",
-        typeAcom: ""
+        plain2: "Back",
+        train1: "Aisle",
+        breakfast: "Sometimes",
+        qualityAcom: "2stars",
+        typeAcom: "Classic"
       },
       titles: {
         title1: (
@@ -317,7 +317,7 @@ class App extends Component {
       {
         dataAccommodation: data
       },
-      () => console.log(this.state.data)
+      () => console.log(this.state.dataAccommodation)
     );
   }
 

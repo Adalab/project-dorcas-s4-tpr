@@ -319,6 +319,15 @@ class Step4 extends Component {
             stateAccommodationObject,
         } = this.props;
 
+        const {
+            plain1, 
+            plain2,
+            train1,
+            breakfast,
+            qualityAcom,
+            typeAcom,
+        } = stateAccommodationObject;
+
         return (
             <div className='stepBox step-4'>
                 <Title
@@ -347,7 +356,7 @@ class Step4 extends Component {
                                         onChange={this.handlePlainPreference}
                                         values={values[0].plainPreferences}
                                         type="plain"
-                                        selected="Aisle"
+                                        selected={plain1}
                                     />
                                 </div>
                             </div>
@@ -357,7 +366,7 @@ class Step4 extends Component {
                                         onChange={this.handlePlainLocation}
                                         values={values[0].plainPlacePreferences}
                                         type="planePlace"
-                                        selected="Back"
+                                        selected={plain2}
                                     />
                                 </div>
                             </div>
@@ -373,7 +382,7 @@ class Step4 extends Component {
                                         onChange={this.handleTrainPreference}
                                         values={values[0].trainPreferences}
                                         type="train"
-                                        selected="Window"
+                                        selected={train1}
                                     />
                                 </div>
                             </div>
@@ -406,7 +415,7 @@ class Step4 extends Component {
                                     onChange={this.handleSelectBreakfast}
                                     values={values[0].breakfastPreferences}
                                     type="breakfast"
-                                    selected="Sometimes"
+                                    selected={breakfast}
                                 />
                             </div>
                         </div>
@@ -422,7 +431,7 @@ class Step4 extends Component {
                                     onChange={this.handleSelectQuality}
                                     values={values[0].accommodationPreferences}
                                     type="accommodationQuality"
-                                    selected="3stars"
+                                    selected={qualityAcom}
                                 />
 
                             </div>
@@ -439,7 +448,7 @@ class Step4 extends Component {
                                     onChange={this.handleSelectType}
                                     values={values[0].typeAccommodationPreferences}
                                     type="accommodationType"
-                                    selected="Modern"
+                                    selected={typeAcom}
                                 />
 
                             </div>
