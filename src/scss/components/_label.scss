@@ -1,5 +1,9 @@
 .position-label {
     position: relative;
+    @media all and (max-width: 700px) {
+        font-size: $font-size-m;
+        width: 200px;
+    }
 }
 
 .placeholder-label {
@@ -13,6 +17,7 @@
     padding: 24px 0 18px 24px;
     @media all and (max-width: 600px) {
         font-size: $font-size-m;
+        padding: 18px 0px 0px 15px;
     }
 }
 
@@ -39,7 +44,7 @@
     padding: 3px 0 0 12px;
     @media all and (max-width: 700px) {
         font-size: $font-size-s;
-        padding: 5px 0;
+        padding: 5px 5px;
     }
 } 
 
