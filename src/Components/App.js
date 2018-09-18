@@ -169,11 +169,11 @@ class App extends Component {
             phoneNumbers: 
             person.contactInformation !== undefined
               ? person.contactInformation.phoneNumbers
-              : '',
+              :'',
             emails: 
             person.contactInformation !== undefined
-            ? person.contactInformation.emails
-            : '',
+            ? person.contactInformation.emails[0]
+            :'',
           },
           travelDocuments: {
             idCard: [
@@ -255,9 +255,7 @@ class App extends Component {
             }
           ]
         }
-      },
-      () => console.log(this.state)
-    );
+      },()=> console.log(this.state));
   }
 
   componentDidMount(prevState) {
@@ -267,7 +265,7 @@ class App extends Component {
       .then(res => {
         const person = res.data;
         this.handleStateFromAPI(person, this.props.id);
-        console.log(' RESPUESTA BACKEND',person)
+        console.log(' RESPUESTA BACK',person)
         });
   }
 
