@@ -4,6 +4,12 @@
   font-family: $font-family-primary;
   font-size: $font-size-plus-l;
   font-weight: $regular;
+  
+}
+@media all and (max-width: 450px) {
+  .label-switch span {
+    flex-wrap: wrap;
+  }
 }
 
 .switch {
@@ -34,8 +40,6 @@
   content: "";
   height: 30px;
   width: 30px;
-  // top: -5px;
-  // bottom: 4px;
   transform: translateY(-8px);
   background-color:#f8f9f8;
   box-shadow: -3px 2px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 3px 2px 3px 0 rgba(0, 0, 0, 0.03);

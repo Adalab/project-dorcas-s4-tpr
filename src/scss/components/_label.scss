@@ -17,7 +17,7 @@
 }
 
 .control-label {
-    width: 695px;
+    width: 659px;
     height: 85px;
     padding: 24px 0 18px 24px;
     color: $color-primary-dark;
@@ -29,7 +29,7 @@
     outline: none;
     @media all and (max-width: 700px) {
         font-size: $font-size-m;
-        width: 200px;
+        width: 100%;
         height: 50px;
     }
 }

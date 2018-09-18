@@ -439,7 +439,7 @@ a {
       font-size: 15px; } }
 
 .control-label {
-  width: 695px;
+  width: 659px;
   height: 85px;
   padding: 24px 0 18px 24px;
   color: #06a790;
@@ -452,7 +452,7 @@ a {
   @media all and (max-width: 700px) {
     .control-label {
       font-size: 15px;
-      width: 200px;
+      width: 100%;
       height: 50px; } }
 
 .control-label:focus + .placeholder-label {
@@ -604,14 +604,13 @@ a {
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 40px;
-  cursor: pointer;
-  margin-bottom: 40px; }
+  cursor: pointer; }
   @media all and (max-width: 600px) {
     .visaButton-styles {
       height: 40px;
       width: 200px;
       font-size: 15px;
-      margin-bottom: 20px; }  }
+      margin-bottom: 20px; } }
 
 .next-button .fa-angle-left,
 .next-button .fa-arrow-left,
@@ -657,6 +656,10 @@ a {
   font-family: "Fira Sans", sans-serif;
   font-size: 24px;
   font-weight: 400; }
+
+@media all and (max-width: 450px) {
+  .label-switch span {
+    flex-wrap: wrap; } }
 
 .switch {
   position: relative;
