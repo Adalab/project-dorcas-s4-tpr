@@ -62,5 +62,11 @@
     font-weight: $bold;
     margin-top: 20px;
     margin-bottom: 40px;
+    @media all and (max-width: 600px) {
+        height: 40px;
+        width: 200px;
+        font-size: $font-size-m;
+        margin-bottom: 20px;
+    }
 }
 
