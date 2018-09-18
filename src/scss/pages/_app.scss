@@ -3,7 +3,7 @@
     background-color: $color-secondary-light;
 
     @media all and (max-width: 420px) {
-        max-width: 100vh;
+       max-width: 100vh;
       }
 }
 
@@ -27,6 +27,9 @@
 
 .verticalDisplay {
     display: flex;
+    @media all and (max-width: 700px) {
+        flex-direction: column;
+    }
 }
 
 .step2, 
@@ -44,7 +47,8 @@
     text-transform: uppercase;
     color: $color-secondary-dark;
     @media all and (max-width: 420px) {
-        font-size: $font-size-s;
+        margin-top: 10px;
+        font-size: $font-size-xs;
     }
 }
 

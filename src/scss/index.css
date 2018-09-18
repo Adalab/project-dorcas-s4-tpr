@@ -68,6 +68,9 @@ a {
 
 .verticalDisplay {
   display: flex; }
+  @media all and (max-width: 700px) {
+    .verticalDisplay {
+      flex-direction: column; } }
 
 .step2,
 .step5 {
@@ -85,7 +88,8 @@ a {
   color: #5b5b5b; }
   @media all and (max-width: 420px) {
     .subtitles-step2 {
-      font-size: 12px; } }
+      margin-top: 10px;
+      font-size: 10px; } }
 
 .form {
   display: flex;
@@ -454,6 +458,10 @@ a {
 .control-label:focus + .placeholder-label {
   font-size: 15px;
   padding: 3px 0 0 12px; }
+  @media all and (max-width: 700px) {
+    .control-label:focus + .placeholder-label {
+      font-size: 12px;
+      padding: 5px 0; } }
 
 .label-located {
   font-size: 15px;
@@ -469,6 +477,9 @@ a {
 
 .half-input {
   width: 335px; }
+  @media all and (max-width: 600px) {
+    .half-input {
+      width: 200px; } }
 
 .titles-container {
   width: 695px; }
@@ -555,6 +566,12 @@ a {
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 40px; }
+  @media all and (max-width: 600px) {
+    .visaButton-styles {
+      height: 40px;
+      width: 200px;
+      font-size: 15px;
+      margin-bottom: 20px; } }
 
 .label-switch {
   margin-left: 18px;
