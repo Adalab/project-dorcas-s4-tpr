@@ -330,7 +330,7 @@ class Step4 extends Component {
                         <legend>
                             <h2 className='preference-title'>
                                 <FormattedMessage
-                                    id="TransportPref.plainPreferences"
+                                    id="Step4.plainPreferences"
                                     defaultMessage="Plain preferences"
                                 />
                             </h2>
@@ -356,7 +356,7 @@ class Step4 extends Component {
                             </div>
                             <h2 className='preference-title'>
                                 <FormattedMessage
-                                    id="TransportPref.prefTrains"
+                                    id="Step4.prefTrains"
                                     defaultMessage="Preferences in trains"
                                 />
                             </h2>

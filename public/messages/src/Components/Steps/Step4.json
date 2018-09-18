@@ -72,11 +72,11 @@
     "defaultMessage": "Choosing seat"
   },
   {
-    "id": "TransportPref.plainPreferences",
+    "id": "Step4.plainPreferences",
     "defaultMessage": "Plain preferences"
   },
   {
-    "id": "TransportPref.prefTrains",
+    "id": "Step4.prefTrains",
     "defaultMessage": "Preferences in trains"
   },
   {
