@@ -516,6 +516,12 @@ a {
       color: #8d9293;
       text-transform: uppercase;
       cursor: pointer; } }
+  @media all and (max-width: 488px) {
+    .back-button {
+      font-size: 12px; } }
+  @media all and (max-width: 365px) {
+    .back-button {
+      font-size: 8px; } }
 
 .next-button {
   padding-left: 36px;
@@ -542,9 +548,12 @@ a {
       box-shadow: none;
       color: #06a790;
       text-transform: uppercase; } }
-  @media all and (max-width: 420px) {
+  @media all and (max-width: 488px) {
     .next-button {
       font-size: 12px; } }
+  @media all and (max-width: 365px) {
+    .next-button {
+      font-size: 8px; } }
 
 .visaButton-styles {
   height: 50px;
@@ -592,6 +601,10 @@ a {
 .fas {
   padding-left: 15px;
   padding-right: 15px; }
+  @media all and (max-width: 800px) {
+    .fas {
+      padding-left: 10px;
+      padding-right: 10px; } }
 
 .label-switch {
   margin-left: 18px;
