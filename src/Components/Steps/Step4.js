@@ -140,22 +140,6 @@ const values = [
     }
 ]
 
-const translations = {
-    breakfast: {
-
-        name:
-            <FormattedMessage
-                id="Step4.breakfastPreference"
-                defaultMessage="breakfastPreference"
-            />,
-        name:
-            <FormattedMessage
-                id="Step4.accommodationPreference"
-                defaultMessage="Accommodation Preference"
-            />
-    },
-}
-
 class Step4 extends Component {
     constructor(props) {
         super(props);

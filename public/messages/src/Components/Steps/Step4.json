@@ -68,14 +68,6 @@
     "defaultMessage": "Modern"
   },
   {
-    "id": "Step4.breakfastPreference",
-    "defaultMessage": "breakfastPreference"
-  },
-  {
-    "id": "Step4.accommodationPreference",
-    "defaultMessage": "Accommodation Preference"
-  },
-  {
     "id": "Step4.choosingSeat",
     "defaultMessage": "Choosing seat"
   },

@@ -14,7 +14,7 @@ class RadioGroup extends Component {
             <ul className='step4-row'>
                 {values.map(radioButton => {
                     return (
-                        <div className='step4-radio'>
+                        <div className={`step4-radio ${selected === radioButton.value ? 'selected' : 'no-selected'}`}>
                             <input
                                 className='radio-button'
                                 type="radio"
