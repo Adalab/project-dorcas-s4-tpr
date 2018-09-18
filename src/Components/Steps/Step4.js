@@ -196,8 +196,6 @@ class Step4 extends Component {
     }
 
     handlePlainPreference(e) {
-        console.log('HhHHHHHHHHHHHHHHHHHHHHHHHH', this.props);
-        console.log('RADIO', e.target.value)
         const inputValue = e.target.value;
 
         this.setState({
@@ -213,7 +211,6 @@ class Step4 extends Component {
     }
 
     handlePlainLocation(e) {
-        console.log('avion adelante,medio o atrás')
         const inputValue = e.target.value;
 
         this.setState({
@@ -229,7 +226,6 @@ class Step4 extends Component {
     }
 
     handleTrainPreference(e) {
-        console.log('preferencia tren');
         const inputValue = e.target.value;
 
         this.setState({
@@ -246,7 +242,6 @@ class Step4 extends Component {
 
 
     handleSelectBreakfast(e) {
-        console.log('BREAKFAST', e.target.value);
         const inputValue = e.target.value;
         this.setState({
             dataAccommodation: {
@@ -289,8 +284,6 @@ class Step4 extends Component {
     }
 
     render() {
-        console.log('propsSTEP4', this.props);
-        console.log('propsSTEP4', this.state);
         const {
             title1,
             title2,
