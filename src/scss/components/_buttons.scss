@@ -78,6 +78,7 @@
         height: 40px;
         width: 200px;
         font-size: $font-size-m;
+        font-weight: $normal;
         margin-bottom: 20px;
     }
 }
@@ -96,7 +97,7 @@
             display: none;
             font-size: $font-size-l;
         }
-    
+    }
 }
 
 .back-button {
