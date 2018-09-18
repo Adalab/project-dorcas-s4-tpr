@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../Sub-components/Title';
-import AccommodationPref from '../Sub-components/AccommodationPref';
-import TransportPref from '../Sub-components/TransportPref';
+import RadioGroup from '../Sub-components/RadioGroup';
 import Navigation from '../Navigation';
 import { FormattedMessage } from 'react-intl';
 
@@ -141,28 +140,28 @@ class Step4 extends Component {
                 qualityAcom: '',
                 typeAcom: '',
             },
-            transportSelections: {
-            windowSel: 'selected',
-            aisleSel:'no-selected',
-            firstSel: 'selected',
-            centerSel: 'no-selected',
-            lastSel: 'no-selected',
-            trainWindowSel:'selected',
-            trainAisleSel: 'no-selected'
-            },
+            // transportSelections: {
+            // windowSel: 'selected',
+            // aisleSel:'no-selected',
+            // firstSel: 'selected',
+            // centerSel: 'no-selected',
+            // lastSel: 'no-selected',
+            // trainWindowSel:'selected',
+            // trainAisleSel: 'no-selected'
+            // },
 
-            accommodationSelections:{
-            bfAlwaysSel:'selected',
-            bfSometimesSel:'no-selected',
-            bfOnlyIfIncludedSel: 'no-selected',
-            bfNeverSel: 'no-selected',
-            fiveStarsSel:'selected',
-            fourStarsSel:'no-selected',
-            threeStarsSel:'no-selected',
-            twoStarsSel:'no-selected',
-            classicSel:'selected',
-            modernSel:'no-selected',
-            }
+            // accommodationSelections:{
+            // bfAlwaysSel:'selected',
+            // bfSometimesSel:'no-selected',
+            // bfOnlyIfIncludedSel: 'no-selected',
+            // bfNeverSel: 'no-selected',
+            // fiveStarsSel:'selected',
+            // fourStarsSel:'no-selected',
+            // threeStarsSel:'no-selected',
+            // twoStarsSel:'no-selected',
+            // classicSel:'selected',
+            // modernSel:'no-selected',
+            // }
         }
         this.handlePlainPreference = this.handlePlainPreference.bind(this);
         this.handlePlainLocation = this.handlePlainLocation.bind(this);
@@ -286,7 +285,6 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
-            legenContent
         } = this.props;
 
         return (
@@ -302,13 +300,13 @@ class Step4 extends Component {
                             defaultMessage="Choosing seat"
                         />
                     </span>
-                    <TransportPref
+                    {/*<TransportPref
                         onChangePlainPreferences={this.handlePlainPreference}
                         onChangePlainLocation={this.handlePlainLocation}
                         onChangeTrainPreferences={this.handleTrainPreference}
                         translationsPlainPreferences={plainPreferences}
                         translationsTrainPreferences={trainPreferences}
-                        transportStateSelections = {this.state.transportSelections}
+                    transportStateSelections = {this.state.transportSelections}*/}
                     />
                     <span className='section-title'>
                         <FormattedMessage
@@ -322,15 +320,15 @@ class Step4 extends Component {
                             defaultMessage="Accommodation preferences"
                         />
                     </h2>
-                    <AccommodationPref
+                    {/*<AccommodationPref
                         translationsAccom={t.accommodation}
                         translationsBreakfast={t.breakfast}
                         translationsTypeOfAccom={t.typeOfAccommodation}
                         onChangeBreakfast={this.handleSelectBreakfast}
                         onChangeHotelStars={this.handleSelectQuality}
                         onChangeHotelType={this.handleSelectType}
-                        accommodationStateSelections = {this.state.accommodationSelections}
-                    />
+                    accommodationStateSelections = {this.state.accommodationSelections}
+                    />*/}
                 </form>
                 <Navigation
                     title1={title1}
