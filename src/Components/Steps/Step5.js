@@ -113,7 +113,6 @@ class Step5 extends Component {
         this.handleLocality = this.handleLocality.bind(this)
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleEmailAddress = this.handleEmailAddress.bind(this)
-        this.handleEmergencyContact = this.handleEmergencyContact.bind(this)
         this.handleTypeOnOff = this.handleTypeOnOff.bind(this)
         this.handleFamilyNumber = this.handleFamilyNumber.bind(this)
         this.handleRegion = this.handleRegion.bind(this);
@@ -128,7 +127,6 @@ class Step5 extends Component {
         })
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         if(nextProps.extras.familyNumber !== 0){
             this.setState({
                 checkedFamily: true,
@@ -158,25 +156,24 @@ class Step5 extends Component {
                 familyNumber: inputValue,
                 region: this.props.extras.islandResident.region,
                 locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.emergencyContact[0].firstName,
-                emailEmergency: this.props.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
+                emailEmergency: this.props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
                 }
         }, ()=>(this.props.handleStep5(this.state.data))); 
     }
     
 
     handleRegion(e){
-        console.log(e.target.value)
         const inputValue = e.target.value
         this.setState({
             data: {
                 familyNumber: this.props.extras.familyNumber,
                 region: inputValue,
                 locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.emergencyContact[0].firstName,
-                emailEmergency: this.props.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
+                emailEmergency: this.props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));
     }
@@ -188,9 +185,9 @@ class Step5 extends Component {
                 familyNumber: this.props.extras.familyNumber,
                 region: this.props.extras.islandResident.region, 
                 locality: inputValue, 
-                firstNameEmergency: this.props.emergencyContact[0].firstName,
-                emailEmergency: this.props.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
+                emailEmergency: this.props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));
     }
@@ -203,8 +200,8 @@ class Step5 extends Component {
                 region: this.props.extras.islandResident.region,
                 locality: this.props.extras.islandResident.locality,
                 firstNameEmergency: inputValue,
-                emailEmergency: this.props.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                emailEmergency: this.props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));
     }
@@ -216,9 +213,9 @@ class Step5 extends Component {
                 familyNumber: this.props.extras.familyNumber,
                 region: this.props.extras.islandResident.region,
                 locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.emergencyContact[0].firstName,
+                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
                 emailEmergency: inputValue,
-                phoneNumberEmergency: this.props.emergencyContact[0].phoneNumber,
+                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));  
     }
@@ -230,14 +227,15 @@ class Step5 extends Component {
                 familyNumber: this.props.extras.familyNumber,
                 region: this.props.extras.islandResident.region,
                 locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.emergencyContact[0].firstName,
-                emailEmergency: this.props.emergencyContact[0].email, 
+                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
+                emailEmergency: this.props.extras.emergencyContact[0].email, 
                 phoneNumberEmergency: inputValue,
                 }
         }, ()=>(this.props.handleStep5(this.state.data)));  
     }
 
     handleTypeOnOff(e){
+        console.log('HOLAAAAAAAAAAAAAAAAAA', this.state);
         if (e.currentTarget.id=== 'largeFamily' ){
             this.setState({
                 checkedFamily:  !this.state.checkedFamily,
@@ -263,9 +261,8 @@ class Step5 extends Component {
             firstName,
             email,
             phoneNumber
-        } = this.props.emergencyContact[0];
+        } = this.props.extras.emergencyContact[0];
 
-        console.log('STEP5', this.props);
         const {
             title1,
             title2,

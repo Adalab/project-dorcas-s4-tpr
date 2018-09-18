@@ -78,12 +78,12 @@ class Step1 extends Component {
     }
     componentDidMount(){
         const idRoute = this.props.match.params.id;
-        console.log(this.props.match.params.id);
-        this.props.handleCurrentStep(this.state.currentStep);
         this.props.handleIdRoute(idRoute);
         this.setState({
             idRoute: idRoute,
         })
+        this.props.handleCurrentStep(this.state.currentStep);
+       
     }
 
     handleNextStepClass(){
@@ -93,7 +93,6 @@ class Step1 extends Component {
     }
 
     handleSurnameInput(e){
-        console.log('chula', this.props);
         const inputValue = e.target.value;
         
         this.setState({
@@ -142,7 +141,6 @@ class Step1 extends Component {
         }, ()=>(this.props.handleStep1(this.state.data))); 
     }
     handleFirstPage(){
-        console.log('HOLIIIIIIIIIIIIIIIIIII')
     }
 
     render() {
@@ -155,7 +153,8 @@ class Step1 extends Component {
             step1,
             currentStep,
             changingStep,
-            handleFirstPage
+            handleFirstPage,
+            handleNextStep
         } = this.props;
         const {
             firstName, 
@@ -166,8 +165,6 @@ class Step1 extends Component {
             emails,
             phoneNumbers
         } = this.props.contactInformation;
-
-        console.log('ALEx', this.props.contactInformation);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -210,6 +207,7 @@ class Step1 extends Component {
                     handleNextStepClass={this.handleNextStepClass()}
                     handleFirstPage={handleFirstPage}
                     idRoute={this.state.idRoute}
+                    handleNextStep={handleNextStep}
                 />
             </div>
         );

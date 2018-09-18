@@ -15,7 +15,6 @@ class TypePhoneInput extends Component {
           inputText,
           phoneNumber
         } = this.props;
-        console.log('phoneeeee', this.props);
         let className;
         if (inputText !== undefined && inputText.length > 0) {
           className ='label-located';

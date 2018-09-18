@@ -8,7 +8,6 @@ import Step5 from './Steps/Step5';
 
 class Pages extends Component {
   render() {
-    console.log('PAGES', this.props);
     const {
       currentStep,
       steps,
@@ -47,9 +46,9 @@ class Pages extends Component {
       stateAccommodationObject,
       handleStep4,
       handleIdRoute,
+      handleNextStep,
     } = this.props;
 
-    console.log('PAGES', this.props);
     return (
       <Fragment>
         <Switch>
@@ -79,6 +78,7 @@ class Pages extends Component {
                 personalInformation={personalInformation}
                 contactInformation= {contactInformation}
                 handleIdRoute={handleIdRoute}
+                handleNextStep={handleNextStep}
               />}
           />
           <Route
@@ -152,7 +152,6 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 extras={extras}
-                emergencyContact={emergencyContact}
                 handleStep5={handleStep5}
                 handleIdRoute={handleIdRoute}
               />}

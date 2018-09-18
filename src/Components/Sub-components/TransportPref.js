@@ -23,7 +23,6 @@ class TransportPref extends Component {
             trainWindowSel,
             trainAisleSel,
         } = this.props.transportStateSelections;
-        console.log(windowSel);
         return (
             <div>
                 <legend>
