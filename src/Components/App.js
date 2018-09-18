@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Pages from './Pages';
-import Loading from './Loading';
 import { FormattedMessage } from 'react-intl';
 
 class App extends Component {
