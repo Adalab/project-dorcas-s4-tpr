@@ -48,6 +48,7 @@ class Pages extends Component {
       handleIdRoute,
       handleNextStep, 
     } = this.props;
+    console.log('STEP1', this.props);
     return (
       <Fragment>
         <Switch>

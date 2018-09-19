@@ -3,6 +3,8 @@ import axios from 'axios';
 import Header from './Header';
 import Pages from './Pages';
 import { FormattedMessage } from 'react-intl';
+import {Route, Redirect} from 'react-router';
+
 
 class App extends Component {
   constructor(props) {
@@ -169,14 +171,15 @@ class App extends Component {
             : '',
           },
           contactInformation: {
-            phoneNumbers: 
+            phoneNumbers: [
             person.contactInformation !== undefined && person.contactInformation.phoneNumbers !== undefined
               ? person.contactInformation.phoneNumbers
               :'',
-            emails: 
+            ],
+            emails: [
             person.contactInformation !== undefined && person.contactInformation.emails !== undefined
             ? person.contactInformation.emails[0]
-            :'',
+            :''],
           },
           travelDocuments: {
             idCard: [
@@ -220,7 +223,6 @@ class App extends Component {
               }
             ]
           },
-
           extras: {
             familyNumber: 
               person.extras !== undefined && person.extras.familyNumber !== undefined
@@ -238,7 +240,6 @@ class App extends Component {
                   ?person.extras.islandResident.locality
                   : '',
             },
-          
           emergencyContact: [
             {
               firstName: 
@@ -266,24 +267,24 @@ class App extends Component {
   }
 
   componentDidMount(prevState) {
-
       axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`)
       .then(res => {
         const person = res.data;
         this.handleStateFromAPI(person, this.props.id);
-        console.log(' RESPUESTA BACK',person)
+        console.log(' RESPUESTA GET',res)
         });
   }
 
   handleNextStep() {
+    console.log("PUUUUUUUUUUUUUT", this.state.data);
     axios.put(
         `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`,
         this.state.data
-      )
-      .then(res => {
-        console.log("RESPUESTA", res);
+        )
+        .then(res => {
+        console.log("RESPUESTA PUT", res); 
       });
-  }
+      }
 
   handleIdRoute(idRoute) {
     this.setState(
@@ -295,12 +296,13 @@ class App extends Component {
   }
 
   handleStep1(data) {
+    console.log('hamdlestep1', data);
     this.setState({
       data: {
         ...this.state.data,
         personalInformation: {
           lastName: data.surname,
-          firstName: data.name
+          firstName: data.name,
         },
         contactInformation: {
           ...this.state.data.contactInformation,
