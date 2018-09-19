@@ -144,6 +144,7 @@ class Step1 extends Component {
 
 
     render() {
+        console.log(this.props);
         const {
             title1,
             title2,

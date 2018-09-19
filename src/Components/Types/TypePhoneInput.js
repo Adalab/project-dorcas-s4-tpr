@@ -13,7 +13,6 @@ class TypePhoneInput extends Component {
         const {
           onChange,
           inputText,
-          phoneNumber
         } = this.props;
         let className;
         if (inputText !== undefined && inputText.length > 0) {
@@ -30,8 +29,6 @@ class TypePhoneInput extends Component {
                 id={id}
                 type="tel" 
                 name={name} 
-                pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"
-                maxLength="15"
                 required={required}
               />
               <label className={`placeholder-label ${className}`} htmlFor={id}>
