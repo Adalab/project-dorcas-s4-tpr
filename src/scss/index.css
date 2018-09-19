@@ -269,6 +269,16 @@ a {
   align-items: center; }
 
 .list-steps {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  -webkit-flex-basis: 50%;
+  -ms-flex-basis: 50%;
+  -webkit-flex-basis: 50%;
   display: flex;
   flex-basis: 50%;
   justify-content: space-evenly; }

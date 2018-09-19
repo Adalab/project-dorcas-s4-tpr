@@ -483,6 +483,7 @@ class App extends Component {
   }
 
   render() {
+    
     console.log("ESTADO", this.state);
     return (
       <div className="App">
