@@ -140,28 +140,28 @@ class Step5 extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.extras.familyNumber !== 0){
-            this.setState({
-                checkedFamily: true,
-                checked: true,
-            })
-        } else if((nextProps.extras.familyNumber === 0)) {
-            this.setState({
-                checkedFamily: false,
-                checked: false,
-            })
-        }
-        if(nextProps.extras.islandResident.region !== ""){
-            this.setState({
-                checkedResidency: true,
-            })
-        } else {
-            this.setState({
-                checkedResidency: false,
-            }) 
-        }
-    }  
+    // componentWillReceiveProps(nextProps) {
+    //     if(nextProps.extras.familyNumber !== 0){
+    //         this.setState({
+    //             checkedFamily: true,
+    //             checked: true,
+    //         })
+    //     } else if((nextProps.extras.familyNumber === 0)) {
+    //         this.setState({
+    //             checkedFamily: false,
+    //             checked: false,
+    //         })
+    //     }
+    //     if(nextProps.extras.islandResident.region !== ""){
+    //         this.setState({
+    //             checkedResidency: true,
+    //         })
+    //     } else {
+    //         this.setState({
+    //             checkedResidency: false,
+    //         }) 
+    //     }
+    // }  
 
     
 
