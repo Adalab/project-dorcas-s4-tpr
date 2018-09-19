@@ -165,8 +165,7 @@ class App extends Component {
               ? person.personalInformation.lastName
               : '',
             firstName:
-            person.personalInformation !== undefined &&
-            person.personalInformation.firstname !== undefined
+            person.personalInformation !== undefined
             ? person.personalInformation.firstName
             : '',
           },
