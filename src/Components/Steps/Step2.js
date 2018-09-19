@@ -236,6 +236,27 @@ class Step2 extends Component {
         })
     }
 
+    static getDerivedStateFromProps(props) {
+        console.log('IRENEE', props);
+        return {
+            data: {
+                numberPassport: props.travelDocuments.passport[0].passportNumber,
+                passCountryIssue: props.travelDocuments.passport[0].issueCountry,
+                passIssueDate: props.travelDocuments.passport[0].issueDate,
+                passExpDate: props.travelDocuments.passport[0].expiryDate,
+                numberVisa: props.dataVisa.numberVisa,
+                visaCountryIssue: props.dataVisa.issueCountry,
+                visaCountryDestination: props.dataVisa.destinyCountry,
+                visaIssueDate: props.dataVisa.issueDate,
+                visaExpDate: props.dataVisa.expiryDate,
+                numberId: props.travelDocuments.idCard[0].dniNumber,
+                idIssueDate: props.travelDocuments.idCard[0].issueDate,
+                idExpDate: props.travelDocuments.idCard[0].expiryDate,
+                placeBirth: props.travelDocuments.idCard[0].placeOfBirth,
+            }
+        }
+    }
+
     handleNextStepClass() {
         if (this.props.currentStep === 2) {
             return 'hidden'
@@ -244,170 +265,74 @@ class Step2 extends Component {
 
     handlePassportInput(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: inputValue,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            numberPassport: inputValue,
+        }
+        this.props.handleStep2(data);
     }
 
     handleCountryInput(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: inputValue,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            passCountryIssue: inputValue,
+        }
+        this.props.handleStep2(data);
     }
 
     handlePassIssueDate(e){
-        const date = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: date,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            passIssueDate: inputValue,
+        }
+        this.props.handleStep2(data);
     }
 
     handlePassExpDate(e){
-        const date = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: date,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            passExpDate: inputValue,
+        }
+        this.props.handleStep2(data);
     }
 
     handleNumberInput(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: inputValue,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            numberId: inputValue,
+        }
+        this.props.handleStep2(data);
     }
     
     handleIdIssueDate(e){
-        const date = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: date,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            idIssueDate: inputValue,
+        }
+        this.props.handleStep2(data);
     }
     
     handleIdExpDate(e){
-        const date = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: date,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            idExpDate: inputValue,
+        }
+        this.props.handleStep2(data);
     }
 
     handleBirthPlace(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: inputValue,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            placeBirth: inputValue,
+        }
+        this.props.handleStep2(data)
     }
 
     //Visa handles
@@ -423,109 +348,47 @@ class Step2 extends Component {
 
     handleVisaInput(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: inputValue,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            numberVisa: inputValue,
+        }
+        this.props.handleStep2(data)
     }
 
     handleVisaCountryInput(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: inputValue,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            visaCountryIssue: inputValue,
+        }
+        this.props.handleStep2(data)
     }
 
     handleVisaCountryDestination(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: inputValue,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const data = {
+            ...this.state.data,
+            visaCountryDestination: inputValue,
+        }
+        this.props.handleStep2(data)
     }
 
     handleVisaIssueDate (e) {
-        const date = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: date,
-                visaExpDate: this.props.dataVisa.expiryDate,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            visaIssueDate: inputValue,
+        }
+        this.props.handleStep2(data)
     }
 
     handleVisaExpDate (e) {
-        const date = e.target.value;
-        this.setState({
-            data: {
-                numberPassport: this.props.travelDocuments.passport[0].passportNumber,
-                passCountryIssue: this.props.travelDocuments.passport[0].issueCountry,
-                passIssueDate: this.props.travelDocuments.passport[0].issueDate,
-                passExpDate: this.props.travelDocuments.passport[0].expiryDate,
-                numberVisa: this.props.dataVisa.numberVisa,
-                visaCountryIssue: this.props.dataVisa.issueCountry,
-                visaCountryDestination: this.props.dataVisa.destinyCountry,
-                visaIssueDate: this.props.dataVisa.issueDate,
-                visaExpDate: date,
-                numberId: this.props.travelDocuments.idCard[0].dniNumber,
-                idIssueDate: this.props.travelDocuments.idCard[0].issueDate,
-                idExpDate: this.props.travelDocuments.idCard[0].expiryDate,
-                placeBirth: this.props.travelDocuments.idCard[0].placeOfBirth,
-            }
-        }, () => (this.props.handleStep2(this.state.data)));
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            visaExpDate: inputValue,
+        }
+        this.props.handleStep2(data)
     }
 
     render() {
@@ -542,18 +405,31 @@ class Step2 extends Component {
         } = this.props;
 
         const {
+        numberPassport,
+        passCountryIssue,
+        passIssueDate,
+        passExpDate,
+        numberVisa,
+        visaCountryIssue,
+        visaCountryDestination,
+        visaIssueDate,
+        visaExpDate,
+        numberId,
+        idIssueDate,
+        idExpDate,
+        placeBirth
+        }=this.state.data;
+
+        const {
             buttonHidden,
         } = this.state;
-
-        const { passport } = this.props.travelDocuments;
-        const { idCard } = this.props.travelDocuments;
-        const {
-            destinyCountry,
-            issueCountry,
-            numberVisa,
-            issueDate,
-            expiryDate,
-        } = this.props.dataVisa;
+        // const {
+        //     destinyCountry,
+        //     issueCountry,
+        //     numberVisa,
+        //     issueDate,
+        //     expiryDate,
+        // } = this.props.dataVisa;
 
         let visaConteinerContent;
         if (buttonHidden === false) {
@@ -581,24 +457,24 @@ class Step2 extends Component {
                     <TypeTextInput
                         onChange={this.handlePassportInput}
                         inputData={numPassportInput}
-                        inputText={passport[0].passportNumber}
+                        inputText={numberPassport}
                     />
                     <TypeTextInput
                         onChange={this.handleCountryInput}
                         inputData={countryIssueInput}
-                        inputText={passport[0].issueCountry}
+                        inputText={passCountryIssue}
                     />
                     <div className='verticalDisplay'>
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input issueDate'
                                 id={passIssueDateCal.id}
-                                value={passport[0].issueDate}
+                                value={passIssueDate}
                                 onChange={this.handlePassIssueDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passIssueDateCal.id}
-                                className={passport[0].issueDate ? 'label-located' :'placeholder-label'}
+                                className={passIssueDate ? 'label-located' :'placeholder-label'}
                             >
                                 {passIssueDateCal.labelContent}
                             </label>
@@ -606,13 +482,13 @@ class Step2 extends Component {
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input'
-                                value={passport[0].expiryDate}
+                                value={passExpDate}
                                 onChange={this.handlePassExpDate}
                                 id={passExpDateCal.id}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passExpDateCal.id}
-                                className={passport[0].expiryDate ? 'label-located' :'placeholder-label'}
+                                className={passExpDate ? 'label-located' :'placeholder-label'}
                             >
                                 {passExpDateCal.labelContent}
                             </label>
@@ -650,7 +526,7 @@ class Step2 extends Component {
                                 classOfSelect={classOfSelectVisaIssue}
                                 onChange={this.handleVisaCountryInput}
                                 inputData={visaCountryIssueInput}
-                                inputText={issueCountry}
+                                inputText={visaCountryIssue}
                             />
                            
                             <TypeSelect
@@ -658,19 +534,19 @@ class Step2 extends Component {
                                 classOfSelect={classOfSelectVisaDestination}
                                 onChange={this.handleVisaCountryDestination}
                                 inputData={visaCountryDestinationInput}
-                                inputText={destinyCountry}
+                                inputText={visaCountryDestination}
                             />
                             <div className='verticalDisplay'>
                                 <div className='position-label'>
                                     <MaskedInput
                                         className='control-label half-input issueDate'
                                         id={visaIssueDateCal.id}
-                                        value={issueDate}
+                                        value={visaIssueDate}
                                         onChange={this.handleVisaIssueDate}
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaIssueDateCal.id}
-                                    className={issueDate ? 'label-located' :'placeholder-label'}
+                                    className={visaIssueDate ? 'label-located' :'placeholder-label'}
                                     >
                                         {visaIssueDateCal.labelContent}
                                     </label>
@@ -679,12 +555,12 @@ class Step2 extends Component {
                                     <MaskedInput
                                         className='control-label half-input'
                                         id={visaExpDateCal.id}
-                                        value={expiryDate}
+                                        value={visaExpDate}
                                         onChange={this.handleVisaExpDate}
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaExpDateCal.id}
-                                    className={expiryDate ? 'label-located' :'placeholder-label'}
+                                    className={visaExpDate ? 'label-located' :'placeholder-label'}
                                     >
                                         {visaExpDateCal.labelContent}
                                     </label>
@@ -703,19 +579,19 @@ class Step2 extends Component {
                     <TypeTextInput
                         onChange={this.handleNumberInput}
                         inputData={documentNumberInput}
-                        inputText={idCard[0].dniNumber}
+                        inputText={numberId}
                     />
                     <div className='verticalDisplay'>
                         <div className='position-label'>
                             <MaskedInput
                                 className='control-label half-input issueDate'
                                 id={idIssueDateCal.id}
-                                value={idCard[0].issueDate}
+                                value={idIssueDate}
                                 onChange={this.handleIdIssueDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idIssueDateCal.id}
-                            className={idCard[0].issueDate ? 'label-located' :'placeholder-label'}                          
+                            className={idIssueDate ? 'label-located' :'placeholder-label'}                          
                             >
                                 {idIssueDateCal.labelContent}
                             </label>
@@ -724,12 +600,12 @@ class Step2 extends Component {
                             <MaskedInput
                                 className='control-label half-input'
                                 id={idExpDateCal.id}
-                                value={idCard[0].expiryDate}
+                                value={idExpDate}
                                 onChange={this.handleIdExpDate}
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idExpDateCal.id}
-                            className={idCard[0].expiryDate ? 'label-located' :'placeholder-label'}                              >
+                            className={idExpDate ? 'label-located' :'placeholder-label'}                              >
                                 {idExpDateCal.labelContent}
                             </label>
                         </div>
@@ -737,7 +613,7 @@ class Step2 extends Component {
                     <TypeTextInput
                         onChange={this.handleBirthPlace}
                         inputData={birthPlaceInput}
-                        inputText={idCard[0].placeOfBirth}
+                        inputText={placeBirth}
                     />
                 </form>
 

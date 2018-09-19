@@ -120,7 +120,7 @@ class Navigation extends Component {
               </Link>
           </ul>
             <div className={`container-nexts`}>
-              <Link to={`/step/${currentStep + 1}/${idRoute}`}>
+              <Link to={`/step/${currentStep===5?currentStep:currentStep+1}/${idRoute}`}>
                 <Button
                   buttonContent={currentStep===5?sendButton:nextButton}
                   onClick={handleNextStep}

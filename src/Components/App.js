@@ -176,10 +176,10 @@ class App extends Component {
               ? person.contactInformation.phoneNumbers
               :'',
             ],
-            emails: [
+            emails: 
             person.contactInformation !== undefined && person.contactInformation.emails !== undefined
             ? person.contactInformation.emails[0]
-            :''],
+            :'',
           },
           travelDocuments: {
             idCard: [
@@ -284,6 +284,11 @@ class App extends Component {
         .then(res => {
         console.log("RESPUESTA PUT", res); 
       });
+      if (this.state.currentStep===5){
+        alert('Gracias por completar el formulario');
+      }
+      
+
       }
 
   handleIdRoute(idRoute) {
