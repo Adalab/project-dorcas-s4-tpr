@@ -127,6 +127,20 @@ class Step5 extends Component {
             idRoute: idRoute,
         })
     }
+    static getDerivedStateFromProps(props) {
+        console.log ('ampaaaaa', props);
+        return {
+            data: {
+                familyNumber:props.extras.familyNumber ,
+                region: props.extras.islandResident.region,
+                locality: props.extras.islandResident.locality,
+                firstNameEmergency: props.extras.emergencyContact[0].firstName,
+                emailEmergency: props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: props.extras.emergencyContact[0].phoneNumber,
+                }
+        }
+    }
+
     componentWillReceiveProps(nextProps) {
         if(nextProps.extras.familyNumber !== 0){
             this.setState({
@@ -150,19 +164,7 @@ class Step5 extends Component {
         }
     }  
 
-    static getDerivedStateFromProps(props) {
-        console.log ('ampaaaaa', props);
-        return {
-            data: {
-                familyNumber:props.extras.familyNumber ,
-                region: props.extras.islandResident.region,
-                locality: props.extras.islandResident.locality,
-                firstNameEmergency: props.extras.emergencyContact[0].firstName,
-                emailEmergency: props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: props.extras.emergencyContact[0].phoneNumber,
-                }
-        }
-    }
+    
 
     handleFamilyNumber(e){
         const inputValue = e.target.value;
@@ -176,72 +178,47 @@ class Step5 extends Component {
 
     handleRegion(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: inputValue,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));
+        const data = {
+            ...this.state.data,
+            region: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleLocality(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region, 
-                locality: inputValue, 
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));
+        const data = {
+            ...this.state.data,
+            locality: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleEmergencyContact(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: inputValue,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));
+        const data = {
+            ...this.state.data,
+            firstNameEmergency: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleEmailAddress(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: inputValue,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));  
+        const data = {
+            ...this.state.data,
+            emailEmergency: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleEmergencyPhone(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email, 
-                phoneNumberEmergency: inputValue,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));  
+        const data = {
+            ...this.state.data,
+            phoneNumberEmergency: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleTypeOnOff(e){
@@ -262,19 +239,14 @@ class Step5 extends Component {
         console.log('renderrrrstep5', this.state);
         const {
             familyNumber,
-        } = this.state.data.extras;
-
-      
-
-        const {
+            region,
             locality,
-        } = this.props.extras.islandResident;
-        
-        const {
-            firstName,
-            email,
-            phoneNumber
-        } = this.props.extras.emergencyContact[0];
+            firstNameEmergency,
+            emailEmergency,
+            phoneNumberEmergency,
+        } = this.state.data;
+
+
         const {
             title1,
             title2,
@@ -336,17 +308,17 @@ class Step5 extends Component {
                         <TypeTextInput
                             onChange={this.handleEmergencyContact}
                             inputData={emergencyContactInput}
-                            inputText={firstName}
+                            inputText={firstNameEmergency}
                         />
                         <TypeEmailInput
                             onChange={this.handleEmailAddress}
                             emailAddress={emailAddress}
-                            inputText={email}
+                            inputText={emailEmergency}
                         />
                         <TypePhoneInput
                             onChange={this.handleEmergencyPhone}
                             phoneNumber={emergencyContactPhone}
-                            inputText={phoneNumber}
+                            inputText={phoneNumberEmergency}
                         />
                     </div>
                 </form>
