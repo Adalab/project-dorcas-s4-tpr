@@ -3,15 +3,15 @@ import Title from '../Sub-components/Title';
 import Navigation from '../Navigation';
 
 class Step3 extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             currentStep: 3,
-            idRoute:'',
+            idRoute: '',
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
         this.props.handleIdRoute(idRoute);
@@ -21,11 +21,11 @@ class Step3 extends Component {
     }
     render() {
         const {
-            title1, 
-            title2, 
-            title3, 
-            title4, 
-            title5, 
+            title1,
+            title2,
+            title3,
+            title4,
+            title5,
             step3,
             currentStep,
             changingStep,
@@ -33,11 +33,11 @@ class Step3 extends Component {
         } = this.props;
         return (
             <div className='stepBox'>
-                <Title title={title3} step={step3}/>
+                <Title title={title3} step={step3} />
                 <form className='form'>
                     <p>Paso 3</p>
                 </form>
-                <Navigation 
+                <Navigation
                     title1={title1}
                     title2={title2}
                     title3={title3}

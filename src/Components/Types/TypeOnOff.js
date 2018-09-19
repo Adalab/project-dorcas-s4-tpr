@@ -8,25 +8,25 @@ class TypeOnOff extends Component {
             handleTypeOnOff,
             checked,
         } = this.props;
-        const {labelContent,id} = labelTypeOnOff;
+        const { labelContent, id } = labelTypeOnOff;
 
-        return  (
-                <div className='position-switch'>
-                    <div className='lonely-switch'>
+        return (
+            <div className='position-switch'>
+                <div className='lonely-switch'>
                     <label htmlFor={id} className="switch">
                         <input
-                        id= {id}
-                        type="checkbox"
-                        onChange={handleTypeOnOff}
-                        checked={checked}
+                            id={id}
+                            type="checkbox"
+                            onChange={handleTypeOnOff}
+                            checked={checked}
                         />
                         <span className="slider round"></span>
                     </label>
-                    </div>
-                    <span className="label-switch">{labelContent}</span>
                 </div>
-                )
-            }
+                <span className="label-switch">{labelContent}</span>
+            </div>
+        )
+    }
 }
 
 export default TypeOnOff;

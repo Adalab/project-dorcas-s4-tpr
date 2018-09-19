@@ -95,46 +95,46 @@ const values = [
             {
                 value: "5stars",
                 label: <FormattedMessage
-                            id="Step4.fiveStars"
-                            defaultMessage="5 Stars"
-                        />
+                    id="Step4.fiveStars"
+                    defaultMessage="5 Stars"
+                />
             },
             {
                 value: "4stars",
                 label: <FormattedMessage
-                            id="Step4.fromFourStars"
-                            defaultMessage="From 4 Stars"
-                        />
+                    id="Step4.fromFourStars"
+                    defaultMessage="From 4 Stars"
+                />
             },
             {
                 value: "3stars",
                 label: <FormattedMessage
-                            id="Step4.fromThreeStars"
-                            defaultMessage="From 3 Stars"
-                        />
+                    id="Step4.fromThreeStars"
+                    defaultMessage="From 3 Stars"
+                />
             },
             {
                 value: "2stars",
                 label: <FormattedMessage
-                            id="Step4.fromTwoStars"
-                            defaultMessage="From 2 Stars"
-                        />
+                    id="Step4.fromTwoStars"
+                    defaultMessage="From 2 Stars"
+                />
             }
         ],
         typeAccommodationPreferences: [
             {
                 value: "Classic",
                 label: <FormattedMessage
-                            id="Step4.classic"
-                            defaultMessage="Classic"
-                        />
+                    id="Step4.classic"
+                    defaultMessage="Classic"
+                />
             },
             {
                 value: "Modern",
                 label: <FormattedMessage
-                            id="Step4.modern"
-                            defaultMessage="Modern"
-                        />
+                    id="Step4.modern"
+                    defaultMessage="Modern"
+                />
             },
         ]
     }
@@ -155,28 +155,6 @@ class Step4 extends Component {
                 qualityAcom: '',
                 typeAcom: '',
             },
-            // transportSelections: {
-            // windowSel: 'selected',
-            // aisleSel:'no-selected',
-            // firstSel: 'selected',
-            // centerSel: 'no-selected',
-            // lastSel: 'no-selected',
-            // trainWindowSel:'selected',
-            // trainAisleSel: 'no-selected'
-            // },
-
-            // accommodationSelections:{
-            // bfAlwaysSel:'selected',
-            // bfSometimesSel:'no-selected',
-            // bfOnlyIfIncludedSel: 'no-selected',
-            // bfNeverSel: 'no-selected',
-            // fiveStarsSel:'selected',
-            // fourStarsSel:'no-selected',
-            // threeStarsSel:'no-selected',
-            // twoStarsSel:'no-selected',
-            // classicSel:'selected',
-            // modernSel:'no-selected',
-            // }
         }
         this.handlePlainPreference = this.handlePlainPreference.bind(this);
         this.handlePlainLocation = this.handlePlainLocation.bind(this);
@@ -293,13 +271,12 @@ class Step4 extends Component {
             step4,
             currentStep,
             changingStep,
-            legenContent,
             handleNextStep,
             stateAccommodationObject,
         } = this.props;
 
         const {
-            plain1, 
+            plain1,
             plain2,
             train1,
             breakfast,
@@ -316,7 +293,7 @@ class Step4 extends Component {
                 <form className='form'>
                     <hr className='section-line'></hr>
                     <span className='section-title'>
-      
+
                         <FormattedMessage
                             id="Step4.choosingSeat"
                             defaultMessage="Choosing seat"
@@ -400,12 +377,12 @@ class Step4 extends Component {
                             </div>
                         </div>
                         <div className='step4-box'>
-                                <p className='step4-boxtitle'>
-                                    <FormattedMessage
-                                        id="Step4.accommodationQuality"
-                                        defaultMessage="Accommodation quality"
-                                    />
-                                </p>
+                            <p className='step4-boxtitle'>
+                                <FormattedMessage
+                                    id="Step4.accommodationQuality"
+                                    defaultMessage="Accommodation quality"
+                                />
+                            </p>
                             <div className='step4-row'>
                                 <RadioGroup
                                     onChange={this.handleSelectQuality}
@@ -417,12 +394,12 @@ class Step4 extends Component {
                             </div>
                         </div>
                         <div className='step4-box box2'>
-                                <p className='step4-boxtitle'>
-                                    <FormattedMessage
-                                        id="Step4.typeOfAccommodation"
-                                        defaultMessage="Type of accommodation"
-                                    />
-                                </p>
+                            <p className='step4-boxtitle'>
+                                <FormattedMessage
+                                    id="Step4.typeOfAccommodation"
+                                    defaultMessage="Type of accommodation"
+                                />
+                            </p>
                             <div className='step4-row'>
                                 <RadioGroup
                                     onChange={this.handleSelectType}

@@ -93,8 +93,6 @@ class Step1 extends Component {
     }
 
     static getDerivedStateFromProps(props) {
-
-        console.log('ampaaaaa', props);
         return {
             data: {
                 surname: props.personalInformation.lastName,
@@ -144,7 +142,6 @@ class Step1 extends Component {
 
 
     render() {
-        console.log(this.props);
         const {
             title1,
             title2,
@@ -168,7 +165,6 @@ class Step1 extends Component {
             emails,
         } = this.props.contactInformation;
 
-        console.log('firstname', this.state);
         return (
             <div className='stepBox step1'>
                 <Title

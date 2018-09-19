@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 
 class TypeSelect extends Component {
     render() {
         const {
-            options, 
+            options,
             onChange
-        } = this.props; 
+        } = this.props;
         const {
             className
         } = this.props.classOfSelect;
         return (
-             <select onChange={onChange} className={className}>
+            <select onChange={onChange} className={className}>
                 {
-                    options.map((option, index) =>
-                {return(
-                     <option>{option}</option>
-                        )  
-                   })
+                    options.map((option, index) => {
+                        return (
+                            <option>{option}</option>
+                        )
+                    })
                 }
             </select>
         );
     }
 }
- 
+
 export default TypeSelect;

@@ -96,7 +96,7 @@ class Step5 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            idRoute:'',
+            idRoute: '',
             currentStep: 5,
             checkedFamily: false,
             checkedResidency: false,
@@ -107,8 +107,8 @@ class Step5 extends Component {
                 firstNameEmergency: '',
                 emailEmergency: '',
                 phoneNumberEmergency: '',
-                }
             }
+        }
 
         this.handleLocality = this.handleLocality.bind(this);
         this.handleEmergencyContact = this.handleEmergencyContact.bind(this);
@@ -119,7 +119,6 @@ class Step5 extends Component {
         this.handleEmergencyPhone = this.handleEmergencyPhone.bind(this);
     }
     componentDidMount() {
-        console.log('STEP5',this.props);
         const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
         this.props.handleIdRoute(idRoute);
@@ -130,42 +129,17 @@ class Step5 extends Component {
     static getDerivedStateFromProps(props) {
         return {
             data: {
-                familyNumber:props.extras.familyNumber ,
+                familyNumber: props.extras.familyNumber,
                 region: props.extras.islandResident.region,
                 locality: props.extras.islandResident.locality,
                 firstNameEmergency: props.extras.emergencyContact[0].firstName,
                 emailEmergency: props.extras.emergencyContact[0].email,
                 phoneNumberEmergency: props.extras.emergencyContact[0].phoneNumber,
-                }
+            }
         }
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if(nextProps.extras.familyNumber !== 0){
-    //         this.setState({
-    //             checkedFamily: true,
-    //             checked: true,
-    //         })
-    //     } else if((nextProps.extras.familyNumber === 0)) {
-    //         this.setState({
-    //             checkedFamily: false,
-    //             checked: false,
-    //         })
-    //     }
-    //     if(nextProps.extras.islandResident.region !== ""){
-    //         this.setState({
-    //             checkedResidency: true,
-    //         })
-    //     } else {
-    //         this.setState({
-    //             checkedResidency: false,
-    //         }) 
-    //     }
-    // }  
-
-    
-
-    handleFamilyNumber(e){
+    handleFamilyNumber(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -173,9 +147,8 @@ class Step5 extends Component {
         }
         this.props.handleStep5(data);
     }
-    
 
-    handleRegion(e){
+    handleRegion(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -193,7 +166,7 @@ class Step5 extends Component {
         this.props.handleStep5(data);
     }
 
-    handleEmergencyContact(e){
+    handleEmergencyContact(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -202,7 +175,7 @@ class Step5 extends Component {
         this.props.handleStep5(data);
     }
 
-    handleEmailAddress(e){
+    handleEmailAddress(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -211,7 +184,7 @@ class Step5 extends Component {
         this.props.handleStep5(data);
     }
 
-    handleEmergencyPhone(e){
+    handleEmergencyPhone(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -220,25 +193,22 @@ class Step5 extends Component {
         this.props.handleStep5(data);
     }
 
-    handleTypeOnOff(e){
-        if (e.currentTarget.id=== 'largeFamily' ){
+    handleTypeOnOff(e) {
+        if (e.currentTarget.id === 'largeFamily') {
             this.setState({
-                checkedFamily:  !this.state.checkedFamily,
+                checkedFamily: !this.state.checkedFamily,
             });
-        } else if (e.currentTarget.id==='residentOutside'){
+        } else if (e.currentTarget.id === 'residentOutside') {
             this.setState({
                 checkedResidency: !this.state.checkedResidency,
-            } );
+            });
         }
     }
-    
-    
+
+
     render() {
-       
-        console.log('renderrrrstep5', this.state);
         const {
             familyNumber,
-            region,
             locality,
             firstNameEmergency,
             emailEmergency,
@@ -265,8 +235,8 @@ class Step5 extends Component {
                 />
                 <form className='form step5-container'>
                     <div className="slider-container">
-                        <TypeOnOff 
-                            labelTypeOnOff={largeFamily} 
+                        <TypeOnOff
+                            labelTypeOnOff={largeFamily}
                             handleTypeOnOff={this.handleTypeOnOff}
                             checked={this.state.checkedFamily ? true : false}
                         />
@@ -278,14 +248,14 @@ class Step5 extends Component {
                         toggleClass={this.state.checkedFamily ? 'input-numerous-family' : 'hidden'}
                     />
                     <div className="slider-container slider-residency">
-                        <TypeOnOff 
-                        labelTypeOnOff={residentOutside} 
-                        handleTypeOnOff={this.handleTypeOnOff}
-                        checked={this.state.checkedResidency ? true : false} 
+                        <TypeOnOff
+                            labelTypeOnOff={residentOutside}
+                            handleTypeOnOff={this.handleTypeOnOff}
+                            checked={this.state.checkedResidency ? true : false}
                         />
-                    </div>                    
+                    </div>
                     <div className={this.state.checkedResidency ? 'select-residency' : 'hidden'}>
-                        <TypeSelect 
+                        <TypeSelect
                             options={regionOptions}
                             classOfSelect={classOfSelect}
                             onChange={this.handleRegion}
@@ -297,10 +267,10 @@ class Step5 extends Component {
                         />
                     </div>
                     <h2 className='subtitle-step5'>
-                    <FormattedMessage
-                        id="Step5.emergencyContact"
-                        defaultMessage="Emergency contact"
-                    />
+                        <FormattedMessage
+                            id="Step5.emergencyContact"
+                            defaultMessage="Emergency contact"
+                        />
                     </h2>
                     <div className='emergencyContact-container'>
                         <TypeTextInput
