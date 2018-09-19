@@ -128,7 +128,6 @@ class Step5 extends Component {
         })
     }
     static getDerivedStateFromProps(props) {
-        console.log ('ampaaaaa', props);
         return {
             data: {
                 familyNumber:props.extras.familyNumber ,
