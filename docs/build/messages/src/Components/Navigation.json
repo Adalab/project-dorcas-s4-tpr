@@ -1,0 +1,22 @@
+[
+  {
+    "id": "Navigation.back",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "Navigation.next",
+    "defaultMessage": "Next"
+  },
+  {
+    "id": "Navigation.send",
+    "defaultMessage": "Send"
+  },
+  {
+    "id": "Navigation.complete",
+    "defaultMessage": "Complete Later,"
+  },
+  {
+    "id": "Navigation.jumpStep",
+    "defaultMessage": "Jump step"
+  }
+]
