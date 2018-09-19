@@ -129,7 +129,7 @@ a {
 
 .select-step2-visaType {
   height: 85px;
-  width: 335px;
+  width: 318px;
   border-radius: 3px;
   background-color: #fff;
   background-image: url("../images/angle-down-solid.svg");
@@ -154,7 +154,7 @@ a {
 
 .select-step2-visaCountries {
   height: 85px;
-  width: 695px;
+  width: 660px;
   border-radius: 6px;
   background-color: #fff;
   background-image: url("../images/angle-down-solid.svg");
@@ -596,10 +596,13 @@ a {
       width: 200px; } }
 
 .titles-container {
-  width: 695px; }
+  width: 660px; }
   @media all and (max-width: 700px) {
     .titles-container {
       width: 200px; } }
+
+.step-4 .titles-container {
+  width: 695px; }
 
 .number-step {
   color: #5b5b5b;
@@ -715,7 +718,7 @@ a {
 
 .visaButton-styles {
   height: 50px;
-  width: 695px;
+  width: 660px;
   background-color: #f8f9f8;
   color: #06a790;
   border: 1px solid #06a790;
