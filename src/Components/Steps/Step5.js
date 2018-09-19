@@ -119,6 +119,7 @@ class Step5 extends Component {
         this.handleEmergencyPhone = this.handleEmergencyPhone.bind(this);
     }
     componentDidMount() {
+        console.log('STEP5',this.props);
         const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
         this.props.handleIdRoute(idRoute);
@@ -126,112 +127,97 @@ class Step5 extends Component {
             idRoute: idRoute,
         })
     }
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.extras.familyNumber !== 0){
-            this.setState({
-                checkedFamily: true,
-                checked: true,
-            })
-        } else if((nextProps.extras.familyNumber === 0)) {
-            this.setState({
-                checkedFamily: false,
-                checked: false,
-            })
+    static getDerivedStateFromProps(props) {
+        return {
+            data: {
+                familyNumber:props.extras.familyNumber ,
+                region: props.extras.islandResident.region,
+                locality: props.extras.islandResident.locality,
+                firstNameEmergency: props.extras.emergencyContact[0].firstName,
+                emailEmergency: props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: props.extras.emergencyContact[0].phoneNumber,
+                }
         }
-        if(nextProps.extras.islandResident.region !== ""){
-            this.setState({
-                checkedResidency: true,
-            })
-        } else {
-            this.setState({
-                checkedResidency: false,
-            }) 
-        }
-    }  
+    }
+
+    // componentWillReceiveProps(nextProps) {
+    //     if(nextProps.extras.familyNumber !== 0){
+    //         this.setState({
+    //             checkedFamily: true,
+    //             checked: true,
+    //         })
+    //     } else if((nextProps.extras.familyNumber === 0)) {
+    //         this.setState({
+    //             checkedFamily: false,
+    //             checked: false,
+    //         })
+    //     }
+    //     if(nextProps.extras.islandResident.region !== ""){
+    //         this.setState({
+    //             checkedResidency: true,
+    //         })
+    //     } else {
+    //         this.setState({
+    //             checkedResidency: false,
+    //         }) 
+    //     }
+    // }  
+
+    
 
     handleFamilyNumber(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: inputValue,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data))); 
+        const data = {
+            ...this.state.data,
+            familyNumber: inputValue,
+        }
+        this.props.handleStep5(data);
     }
     
 
     handleRegion(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: inputValue,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));
+        const data = {
+            ...this.state.data,
+            region: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleLocality(e) {
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region, 
-                locality: inputValue, 
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));
+        const data = {
+            ...this.state.data,
+            locality: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleEmergencyContact(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: inputValue,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));
+        const data = {
+            ...this.state.data,
+            firstNameEmergency: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleEmailAddress(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: inputValue,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));  
+        const data = {
+            ...this.state.data,
+            emailEmergency: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleEmergencyPhone(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: this.props.extras.familyNumber,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email, 
-                phoneNumberEmergency: inputValue,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data)));  
+        const data = {
+            ...this.state.data,
+            phoneNumberEmergency: inputValue,
+        }
+        this.props.handleStep5(data);
     }
 
     handleTypeOnOff(e){
@@ -246,21 +232,19 @@ class Step5 extends Component {
         }
     }
     
-
+    
     render() {
+       
+        console.log('renderrrrstep5', this.state);
         const {
             familyNumber,
-        } = this.props.extras;
-
-        const {
+            region,
             locality,
-        } = this.props.extras.islandResident;
-        
-        const {
-            firstName,
-            email,
-            phoneNumber
-        } = this.props.extras.emergencyContact[0];
+            firstNameEmergency,
+            emailEmergency,
+            phoneNumberEmergency,
+        } = this.state.data;
+
 
         const {
             title1,
@@ -271,7 +255,7 @@ class Step5 extends Component {
             step5,
             currentStep,
             changingStep,
-            handleNextStep
+            handleNextStep,
         } = this.props;
         return (
             <div className='stepBox step5'>
@@ -322,17 +306,17 @@ class Step5 extends Component {
                         <TypeTextInput
                             onChange={this.handleEmergencyContact}
                             inputData={emergencyContactInput}
-                            inputText={firstName}
+                            inputText={firstNameEmergency}
                         />
                         <TypeEmailInput
                             onChange={this.handleEmailAddress}
                             emailAddress={emailAddress}
-                            inputText={email}
+                            inputText={emailEmergency}
                         />
                         <TypePhoneInput
                             onChange={this.handleEmergencyPhone}
                             phoneNumber={emergencyContactPhone}
-                            inputText={phoneNumber}
+                            inputText={phoneNumberEmergency}
                         />
                     </div>
                 </form>
