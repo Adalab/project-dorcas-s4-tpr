@@ -288,7 +288,6 @@ class Step5 extends Component {
                         />
                     </div>
                     <TypeTextInput
-                        debug={true}
                         onChange={this.handleFamilyNumber}
                         inputData={familyNumberInput}
                         inputText={familyNumber}
