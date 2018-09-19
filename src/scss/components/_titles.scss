@@ -9,7 +9,7 @@
     color: $color-secondary-dark;
     font-size: $font-size-s;
     font-weight: $normal;
-    @media all and (max-width: 600px) {
+    @media all and (max-width: 700px) {
         font-size: $font-size-xs;
     }
 }
@@ -19,7 +19,7 @@
     font-size: $font-size-xl;
     font-weight: $normal;
     margin-bottom: 20px;
-    @media all and (max-width: 600px) {
+    @media all and (max-width: 700px) {
         font-size: $font-size-m;
     }
 }
@@ -45,8 +45,11 @@
     padding-top: 30px;
     padding-bottom: 20px; 
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    @media all and (max-width: 600px) {
+    @media all and (max-width: 700px) {
         font-size: $font-size-l;
+    }
+    @media all and (max-width: 420px) {
+        font-size: $font-size-m;
     }
 }
 

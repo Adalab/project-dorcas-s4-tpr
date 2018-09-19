@@ -13,7 +13,6 @@ class TypeTextInput extends Component {
           onChange,
           toggleClass,
           inputText,
-          debug
         } = this.props;
         let className;
         if (!!inputText || inputText === 0) {
@@ -22,9 +21,6 @@ class TypeTextInput extends Component {
           className = '';
       }
 
-      if (debug === true) {
-      }
-      console.log('text input nombre', this.props.inputText);
         return (
             <div className={`position-label ${toggleClass}`}>
               <input onChange={onChange}

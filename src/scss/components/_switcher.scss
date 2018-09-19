@@ -4,8 +4,11 @@
   font-family: $font-family-primary;
   font-size: $font-size-plus-l;
   font-weight: $regular;
-  @media all and (max-width: 600px) {
+  @media all and (max-width: 700px) {
     font-size: $font-size-l;
+  } 
+  @media all and (max-width: 420px) {
+    font-size: $font-size-m;
   } 
 }
 @media all and (max-width: 450px) {
