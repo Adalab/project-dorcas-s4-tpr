@@ -165,17 +165,15 @@ class App extends Component {
               ? person.personalInformation.lastName
               : '',
             firstName:
-            person.personalInformation !== undefined &&
-            person.personalInformation.firstname !== undefined
+            person.personalInformation !== undefined
             ? person.personalInformation.firstName
             : '',
           },
           contactInformation: {
-            phoneNumbers: [
+            phoneNumbers:
             person.contactInformation !== undefined && person.contactInformation.phoneNumbers !== undefined
               ? person.contactInformation.phoneNumbers
               :'',
-            ],
             emails: 
             person.contactInformation !== undefined && person.contactInformation.emails !== undefined
             ? person.contactInformation.emails[0]
@@ -280,6 +278,10 @@ class App extends Component {
     axios.put(
         `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`,
         this.state.data
+        // {contactInformation: {
+        //   ...this.state.data.contactInformation,
+        //   emails: ["irene@mateo.com"],
+        // }}
         )
         .then(res => {
         console.log("RESPUESTA PUT", res); 

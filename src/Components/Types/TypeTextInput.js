@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class TypeTextInput extends Component {
     render() {
+      console.log('holi',this.props)
         const {
           labelContent,  
           id,
