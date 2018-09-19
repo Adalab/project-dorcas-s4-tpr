@@ -231,16 +231,6 @@ a {
     .select-step5 {
       width: 100%; } }
 
-.slider-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; }
-
-.slider-residency {
-  margin-top: 30px;
-  padding-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
 .input-numerous-family {
   margin-top: 18px; }
 
@@ -462,7 +452,7 @@ a {
     .step4-transport-box {
       margin: 24px auto;
       border: solid 1px rgba(0, 0, 0, 0.1);
-      width: 300px;
+      width: 200px;
       height: auto;
       margin: 12px 0; } }
 
@@ -516,24 +506,6 @@ a {
 .no-selected {
   background-color: rgba(0, 0, 0, 0.05);
   color: #06a790; }
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none; }
-
-/* Show the indicator (dot/circle) when checked */
-.checkmark input:checked .checkmark:after {
-  display: block; }
-
-/* Style the indicator (dot/circle) */
-.step4-radio .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #06a790; }
 
 .divider {
   width: 696px;
@@ -848,3 +820,20 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%; }
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.slider-residency {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+.position-switch {
+  display: flex; }
+
+.lonely-switch {
+  display: flex;
+  align-self: center; }
