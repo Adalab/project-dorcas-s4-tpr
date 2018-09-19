@@ -1,0 +1,42 @@
+[
+  {
+    "id": "Step5.numberMembers",
+    "defaultMessage": "Large family card number"
+  },
+  {
+    "id": "Step5.nameAndSurname",
+    "defaultMessage": "Name and Surname"
+  },
+  {
+    "id": "Step5.email",
+    "defaultMessage": "Email"
+  },
+  {
+    "id": "Step5.phoneNumber",
+    "defaultMessage": "Phone number"
+  },
+  {
+    "id": "Step5.locality",
+    "defaultMessage": "Locality"
+  },
+  {
+    "id": "Step5.canaryIslands",
+    "defaultMessage": "Canary Islands"
+  },
+  {
+    "id": "Step5.balearicIslands",
+    "defaultMessage": "Balearic Islands"
+  },
+  {
+    "id": "Step5.numerousFamily",
+    "defaultMessage": "Numerous Family"
+  },
+  {
+    "id": "Step5.residentOutsidePeninsula",
+    "defaultMessage": "Resident outside Iberian Peninsula"
+  },
+  {
+    "id": "Step5.emergencyContact",
+    "defaultMessage": "Emergency contact"
+  }
+]
