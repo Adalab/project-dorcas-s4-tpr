@@ -191,18 +191,22 @@ a {
       align-items: center; } }
 
 .select-step5 {
+  margin-bottom: 30px;
+  padding: 15px 35px 15px 15px;
   height: 60px;
   width: 335px;
   border-radius: 3px;
   background-color: #fff;
+  background-image: url("../images/angle-down-solid.svg");
+  background-size: 24px 24px;
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
   border: none;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   outline: none;
   color: #06a790;
   font-size: 18px;
   font-weight: 500;
-  padding: 15px 35px 15px 15px;
-  margin-bottom: 30px;
   appearance: none; }
   @media all and (max-width: 445px) {
     .select-step5 {
