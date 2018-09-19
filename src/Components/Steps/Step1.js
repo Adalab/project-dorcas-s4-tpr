@@ -165,7 +165,7 @@ class Step1 extends Component {
             phoneNumbers
         } = this.props.contactInformation;
 
-
+        console.log('nombreeee',  firstName)
         console.log('firstname', phoneNumbers);
         return (
             <div className='stepBox step1'>
