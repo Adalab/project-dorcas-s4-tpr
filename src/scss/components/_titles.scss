@@ -1,12 +1,15 @@
 .titles-container {
-    width: 660px;
-    @media all and (max-width: 700px) {
-        width: 200px;
-    }
+    width: 80%;
 }
 
-.step-4 .titles-container {
-    width: 695px;
+.step1 .titles-container {
+    width: 80%;
+    margin-left: 5px;
+}
+
+.step5 .titles-container {
+    width: 80%;
+    margin-left: 10px;
 }
 
 .number-step {
