@@ -284,6 +284,11 @@ class App extends Component {
         .then(res => {
         console.log("RESPUESTA PUT", res); 
       });
+      if (this.state.currentStep===5){
+        alert('Gracias por completar el formulario');
+      }
+      
+
       }
 
   handleIdRoute(idRoute) {

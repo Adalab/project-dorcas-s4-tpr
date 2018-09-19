@@ -92,53 +92,52 @@ class Step1 extends Component {
         }
     }
 
+    static getDerivedStateFromProps(props) {
+        return {
+            data: {
+                surname: props.personalInformation.lastName,
+                name: props.personalInformation.firstName,
+                phoneNumber: props.contactInformation.phoneNumbers[0],
+                lineNumber: props.contactInformation.phoneNumbers[1]
+            }
+        }
+    }
+
     handleSurnameInput(e){
         const inputValue = e.target.value;
-        
-        this.setState({
-            data: {
-                surname: inputValue,
-                name:this.props.personalInformation.firstName,
-                phoneNumber:this.props.contactInformation.phoneNumbers[0],
-                lineNumber:this.props.contactInformation.phoneNumbers[1]
-            }
-        }, ()=>(this.props.handleStep1(this.state.data)));   
+        const data = {
+            ...this.state.data,
+            surname: inputValue,
+        }
+        this.props.handleStep1(data);
     }
 
     handleNameInput(e){
-        const inputValue = e.target.value
-        this.setState({
-            data: {
-                surname: this.props.personalInformation.lastName,
-                name:inputValue,
-                phoneNumber:this.props.contactInformation.phoneNumbers[0],
-                lineNumber:this.props.contactInformation.phoneNumbers[1]
-            }
-        }, ()=>(this.props.handleStep1(this.state.data)));  
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            name: inputValue,
+        }
+        this.props.handleStep1(data);
     }
 
     handlePhoneNumber(e){
-        const inputValue = e.target.value
-        this.setState({
-            data: {
-                surname: this.props.personalInformation.lastName,
-                name: this.props.personalInformation.firstName,
-                phoneNumber:inputValue,
-                lineNumber:this.props.contactInformation.phoneNumbers[1]
-            }
-        }, ()=>(this.props.handleStep1(this.state.data))); 
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            phoneNumber: inputValue,
+        }
+        
+        this.props.handleStep1(data);
     }
 
     handleLineNumber(e){
-        const inputValue = e.target.value
-        this.setState({
-            data: {
-                surname: this.props.personalInformation.lastName,
-                name: this.props.personalInformation.firstName,
-                phoneNumber:this.props.contactInformation.phoneNumbers[0],
-                lineNumber:inputValue
-            }
-        }, ()=>(this.props.handleStep1(this.state.data))); 
+        const inputValue = e.target.value;
+        const data = {
+            ...this.state.data,
+            lineNumber: inputValue,
+        }
+        this.props.handleStep1(data);
     }
 
 
@@ -156,17 +155,20 @@ class Step1 extends Component {
             handleNextStep
         } = this.props;
         const {
-            firstName, 
-            lastName,
-        } = this.props.personalInformation;
+            name, 
+            surname,
+            phoneNumber,
+            lineNumber,
+        } = this.state.data;
 
         const {
             emails,
-            phoneNumbers
         } = this.props.contactInformation;
 
+        
 
-        console.log('firstname', phoneNumbers);
+
+        console.log('firstname', phoneNumber);
         return (
             <div className='stepBox step1'>
                 <Title
@@ -176,24 +178,24 @@ class Step1 extends Component {
                 <form className='form'>
                     <TypeTextInput
                         inputData={surnameInput}
-                        inputText={lastName} 
+                        inputText={surname} 
                         onChange={this.handleSurnameInput} 
                     />
                     <TypeTextInput 
                         inputData={nameInput}
-                        inputText={firstName} 
+                        inputText={name} 
                         onChange={this.handleNameInput}
                     />
                     <div className='phones'>
                         <TypePhoneInput 
                             onChange={this.handlePhoneNumber} 
                             phoneNumber={mobilePhoneNumber}
-                            inputText={phoneNumbers[0]}
+                            inputText={phoneNumber}
                         />
                         <TypePhoneInput 
                             onChange={this.handleLineNumber} 
                             phoneNumber={landLineNumber} 
-                            inputText={phoneNumbers[1]} //errata con la API, comentar con Triporate
+                            inputText={lineNumber} //errata con la API, comentar con Triporate
                         />
                     </div>
                     <TypeEmailInput 
