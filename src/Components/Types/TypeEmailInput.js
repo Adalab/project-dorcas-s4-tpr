@@ -16,15 +16,15 @@ class TypeEmailInput extends Component {
 
     let className;
     if (inputText !== undefined && inputText.length > 0) {
-      className ='label-located';
-  } else {
+      className = 'label-located';
+    } else {
       className = '';
-  }
-    
+    }
+
     return (
       <div className='position-label'>
         <input
-          value= {inputText}
+          value={inputText}
           onChange={onChange}
           className='control-label marginSomeInputs'
           id={id}

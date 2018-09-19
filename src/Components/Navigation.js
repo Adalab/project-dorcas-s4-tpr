@@ -31,7 +31,7 @@ const sendButton = {
   buttonClassHidden: '',
 };
 
- 
+
 
 class Navigation extends Component {
   render() {
@@ -57,97 +57,97 @@ class Navigation extends Component {
       changingStep5,
     } = changingStep;
     return (
-        <nav className='navigation-container'>
-          <Link 
-            className='back-button-link'
-            to={`/step/${currentStep - 1}/${idRoute}`}
-          >
+      <nav className='navigation-container'>
+        <Link
+          className='back-button-link'
+          to={`/step/${currentStep - 1}/${idRoute}`}
+        >
+          <Button
+            buttonContent={backButton}
+            currentStep={currentStep}
+          />
+        </Link>
+        <ul className='list-steps'>
+          <Link to={'/step/1/:id'}>
+            <li className='nav-steps'>
+              <Icon
+                title={title1}
+                changingStep={changingStep1}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+          </Link>
+          <Link to={'/step/2/:id'}>
+            <li className='nav-steps'>
+              <Icon
+                title={title2}
+                changingStep={changingStep2}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+          </Link>
+          <Link to={'/step/3/:id'}>
+            <li className='nav-steps'>
+              <Icon
+                title={title3}
+                changingStep={changingStep3}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+          </Link>
+          <Link to={'/step/4/:id'}>
+            <li className='nav-steps'>
+              <Icon
+                title={title4}
+                changingStep={changingStep4}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+          </Link>
+          <Link to={'/step/5/:id'}>
+            <li className='nav-steps'>
+              <Icon
+                title={title5}
+                changingStep={changingStep5}
+                currentStep={currentStep}
+                handleUpdateNavigation={handleUpdateNavigation}
+              />
+            </li>
+          </Link>
+        </ul>
+        <div className={`container-nexts`}>
+          <Link to={`/step/${currentStep === 5 ? currentStep : currentStep + 1}/${idRoute}`}>
             <Button
-              buttonContent={backButton}
-              currentStep={currentStep}
+              buttonContent={currentStep === 5 ? sendButton : nextButton}
+              onClick={handleNextStep}
             />
           </Link>
-          <ul className='list-steps'>
-            <Link to={'/step/1/:id'}>
-              <li className='nav-steps'>
-                <Icon
-                  title={title1}
-                  changingStep={changingStep1}
-                  currentStep={currentStep}
-                  handleUpdateNavigation={handleUpdateNavigation}
-                />
-              </li>
-            </Link>
-            <Link to={'/step/2/:id'}>
-              <li className='nav-steps'>
-                <Icon
-                  title={title2}
-                  changingStep={changingStep2}
-                  currentStep={currentStep}
-                  handleUpdateNavigation={handleUpdateNavigation}
-                />
-              </li>
-            </Link>
-            <Link to={'/step/3/:id'}>
-              <li className='nav-steps'>
-                <Icon
-                  title={title3}
-                  changingStep={changingStep3}
-                  currentStep={currentStep}
-                  handleUpdateNavigation={handleUpdateNavigation}
-                />
-              </li>
-            </Link>
-            <Link to={'/step/4/:id'}>
-              <li className='nav-steps'>
-                <Icon
-                  title={title4}
-                  changingStep={changingStep4}
-                  currentStep={currentStep}
-                  handleUpdateNavigation={handleUpdateNavigation}
-                />
-              </li>
-              </Link>
-              <Link to={'/step/5/:id'}>
-                <li className='nav-steps'>
-                  <Icon
-                    title={title5}
-                    changingStep={changingStep5}
-                    currentStep={currentStep}
-                    handleUpdateNavigation={handleUpdateNavigation}
-                  />
-                </li>
-              </Link>
-          </ul>
-            <div className={`container-nexts`}>
-              <Link to={`/step/${currentStep===5?currentStep:currentStep+1}/${idRoute}`}>
-                <Button
-                  buttonContent={currentStep===5?sendButton:nextButton}
-                  onClick={handleNextStep}
-                />
-              </Link>
-              <Link 
-                className='jumpLink' 
-                to={`/step/${currentStep + 1}/${idRoute}`}
-              >
-                <div className={currentStep===5?'hidden':handleNextStepClass}>
-                  <FormattedMessage
-                      id="Navigation.complete"
-                      defaultMessage="Complete Later, "
-                  />
+          <Link
+            className='jumpLink'
+            to={`/step/${currentStep + 1}/${idRoute}`}
+          >
+            <div className={currentStep === 5 ? 'hidden' : handleNextStepClass}>
+              <FormattedMessage
+                id="Navigation.complete"
+                defaultMessage="Complete Later, "
+              />
               <span className='jumpLink-colorText'>
                 <FormattedMessage
                   id="Navigation.jumpStep"
                   defaultMessage=" Jump step"
                 />
-                  </span>
-                </div>
-              </Link>
+              </span>
             </div>
-        </nav>
-      
-        );
-      }
-    }
-    
+          </Link>
+        </div>
+      </nav>
+
+    );
+  }
+}
+
 export default Navigation;

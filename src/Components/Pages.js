@@ -15,11 +15,10 @@ class Pages extends Component {
       titles,
     } = this.props.stateObject;
 
-    const{
+    const {
       personalInformation,
       contactInformation,
       extras,
-      emergencyContact,
       travelDocuments
     } = this.props.stateDataObject;
 
@@ -37,10 +36,10 @@ class Pages extends Component {
       step4,
       step5
     } = steps;
-    const { 
+    const {
       handleCurrentStep,
       handleStep1,
-      handleStep2, 
+      handleStep2,
       handleStep5,
       dataVisa,
       stateAccommodationObject,
@@ -49,7 +48,7 @@ class Pages extends Component {
       handleNextStep,
       stateDataObject,
     } = this.props;
-    console.log('STEP1', extras);
+
     return (
       <Fragment>
         <Switch>
@@ -72,7 +71,7 @@ class Pages extends Component {
                 handleCurrentStep={handleCurrentStep}
                 handleStep1={handleStep1}
                 personalInformation={personalInformation}
-                contactInformation= {contactInformation}
+                contactInformation={contactInformation}
                 handleIdRoute={handleIdRoute}
                 handleNextStep={handleNextStep}
               />}
@@ -92,7 +91,7 @@ class Pages extends Component {
                 changingStep={changingStep}
                 handleCurrentStep={handleCurrentStep}
                 handleStep2={handleStep2}
-                travelDocuments= {travelDocuments}
+                travelDocuments={travelDocuments}
                 dataVisa={dataVisa}
                 handleIdRoute={handleIdRoute}
                 handleNextStep={handleNextStep}

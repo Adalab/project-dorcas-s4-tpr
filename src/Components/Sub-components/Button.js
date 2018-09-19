@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
-import fontAwesome from '@fortawesome/fontawesome-free/css/all.css';
-
 
 class Button extends Component {
   render() {
-    const{
+    const {
       buttonContent,
       onClick,
       currentStep,
     } = this.props;
 
-    const{
+    const {
       buttonClass,
       textButton,
       buttonClassHidden
     } = buttonContent;
     return (
-      <button 
+      <button
         type="submit"
-        className={currentStep===1
-                    ?buttonClassHidden
-                    :buttonClass
-                  }
+        className={currentStep === 1
+          ? buttonClassHidden
+          : buttonClass
+        }
         onClick={onClick}
       >
         <i class="fas fa-arrow-left"></i>
@@ -29,7 +27,7 @@ class Button extends Component {
         {textButton}
         <i class="fas fa-arrow-right"></i>
         <i class="fas fa-angle-right"></i>
-        
+
 
       </button>
     );

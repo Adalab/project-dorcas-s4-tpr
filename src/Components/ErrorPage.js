@@ -1,8 +1,7 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class ErrorPage extends Component {
   render() {
-    console.log('propsNOTFOUND',this.props);
     return (
       <Fragment>
         <h3>404 page not found</h3>

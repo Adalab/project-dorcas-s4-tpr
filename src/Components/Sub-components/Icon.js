@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class Icon extends Component {
     render() {
@@ -8,24 +8,24 @@ class Icon extends Component {
             currentStep,
         } = this.props;
 
-        const{
+        const {
             stepNumber
         } = changingStep;
 
         let stepState;
-        if (stepNumber === currentStep){
+        if (stepNumber === currentStep) {
             stepState = 'stepActive';
         } else {
             stepState = 'stepInactive';
         }
-            return(
-                <Fragment>
-                    <span className={stepState}>
-                        {changingStep.stepNumber}
-                    </span>
-                    <p className='nav-label'>{title}</p>
-                </Fragment>       
-            )
+        return (
+            <Fragment>
+                <span className={stepState}>
+                    {changingStep.stepNumber}
+                </span>
+                <p className='nav-label'>{title}</p>
+            </Fragment>
+        )
     }
 }
 

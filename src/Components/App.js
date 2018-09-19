@@ -3,7 +3,6 @@ import axios from 'axios';
 import Header from './Header';
 import Pages from './Pages';
 import { FormattedMessage } from 'react-intl';
-import {Route, Redirect} from 'react-router';
 
 
 class App extends Component {
@@ -16,7 +15,7 @@ class App extends Component {
           lastName: '',
           firstName: '',
           dateOfBirth: '',
-          nationality:'',
+          nationality: '',
           gender: '',
         },
         contactInformation: {
@@ -31,15 +30,15 @@ class App extends Component {
             region: '',
             locality: '',
           },
-        emergencyContact: [
-          {
-            firstName: "",
-            lastName: "",
-            email: "",
-            phoneNumber: ""
-          }
-        ], 
-      },
+          emergencyContact: [
+            {
+              firstName: "",
+              lastName: "",
+              email: "",
+              phoneNumber: ""
+            }
+          ],
+        },
         travelDocuments: {
           idCard: [
             {
@@ -160,24 +159,24 @@ class App extends Component {
       {
         data: {
           personalInformation: {
-            lastName: 
-            person.personalInformation !== undefined && person.personalInformation.lastName !== undefined
-              ? person.personalInformation.lastName
-              : '',
+            lastName:
+              person.personalInformation !== undefined && person.personalInformation.lastName !== undefined
+                ? person.personalInformation.lastName
+                : '',
             firstName:
-            person.personalInformation !== undefined
-            ? person.personalInformation.firstName
-            : '',
+              person.personalInformation !== undefined
+                ? person.personalInformation.firstName
+                : '',
           },
           contactInformation: {
             phoneNumbers:
-            person.contactInformation !== undefined && person.contactInformation.phoneNumbers !== undefined
-              ? person.contactInformation.phoneNumbers
-              :'',
-            emails: 
-            person.contactInformation !== undefined && person.contactInformation.emails !== undefined
-            ? person.contactInformation.emails[0]
-            :'',
+              person.contactInformation !== undefined && person.contactInformation.phoneNumbers !== undefined
+                ? person.contactInformation.phoneNumbers
+                : '',
+            emails:
+              person.contactInformation !== undefined && person.contactInformation.emails !== undefined
+                ? person.contactInformation.emails[0]
+                : '',
           },
           travelDocuments: {
             idCard: [
@@ -192,8 +191,8 @@ class App extends Component {
                     : '',
                 expiryDate:
                   person.travelDocuments !== undefined && person.travelDocuments.idCard !== undefined
-                  ?person.travelDocuments.idCard[0].issueDate
-                  :'',
+                    ? person.travelDocuments.idCard[0].issueDate
+                    : '',
                 dniNumber:
                   person.travelDocuments !== undefined && person.travelDocuments.idCard !== undefined
                     ? person.travelDocuments.idCard[0].dniNumber
@@ -202,108 +201,103 @@ class App extends Component {
             ],
             passport: [
               {
-                issueCountry: 
+                issueCountry:
                   person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
-                    ?person.travelDocuments.passport[0].issueCountry
+                    ? person.travelDocuments.passport[0].issueCountry
                     : '',
                 issueDate:
                   person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
-                    ?person.travelDocuments.passport[0].issueDate
+                    ? person.travelDocuments.passport[0].issueDate
                     : '',
-                expiryDate: 
+                expiryDate:
                   person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
-                    ?person.travelDocuments.passport[0].expiryDate
+                    ? person.travelDocuments.passport[0].expiryDate
                     : '',
                 passportNumber:
                   person.travelDocuments !== undefined && person.travelDocuments.passport !== undefined
-                    ?person.travelDocuments.passport[0].passportNumber
-                    :'',
+                    ? person.travelDocuments.passport[0].passportNumber
+                    : '',
               }
             ]
           },
           extras: {
-            familyNumber: 
+            familyNumber:
               person.extras !== undefined && person.extras.familyNumber !== undefined
-                ?person.extras.familyNumber
+                ? person.extras.familyNumber
                 : '',
             islandResident: {
-              region: 
+              region:
                 person.extras.islandResident !== undefined &&
-                person.extras.islandResident.region !== undefined
-                  ?person.extras.islandResident.region
+                  person.extras.islandResident.region !== undefined
+                  ? person.extras.islandResident.region
                   : '',
-              locality: 
+              locality:
                 person.extras.islandResident !== undefined &&
-                person.extras.islandResident.locality !== undefined
-                  ?person.extras.islandResident.locality
+                  person.extras.islandResident.locality !== undefined
+                  ? person.extras.islandResident.locality
                   : '',
             },
-          emergencyContact: [
-            {
-              firstName: 
-                person.extras.emergencyContact !== undefined &&
-                person.extras.emergencyContact[0].firstName !== undefined
-                  ?person.extras.emergencyContact[0].firstName
-                  : '',
-              lastName: 
-                person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].lastName !== undefined
-                  ? person.extras.emergencyContact[0].lastName
-                  :'',
-              email: 
-              person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].email !== undefined
-                  ? person.extras.emergencyContact[0].email
-                  :'',
-              phoneNumber: 
-                person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].phoneNumber !== undefined
-                  ? person.extras.emergencyContact[0].phoneNumber
-                  :'',
-            }
-          ]
-        },
+            emergencyContact: [
+              {
+                firstName:
+                  person.extras.emergencyContact !== undefined &&
+                    person.extras.emergencyContact[0].firstName !== undefined
+                    ? person.extras.emergencyContact[0].firstName
+                    : '',
+                lastName:
+                  person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].lastName !== undefined
+                    ? person.extras.emergencyContact[0].lastName
+                    : '',
+                email:
+                  person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].email !== undefined
+                    ? person.extras.emergencyContact[0].email
+                    : '',
+                phoneNumber:
+                  person.extras.emergencyContact !== undefined && person.extras.emergencyContact[0].phoneNumber !== undefined
+                    ? person.extras.emergencyContact[0].phoneNumber
+                    : '',
+              }
+            ]
+          },
         }
-      },()=> console.log(this.state));
+      });
   }
 
   componentDidMount(prevState) {
-      axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`)
+    axios.get(`https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`)
       .then(res => {
         const person = res.data;
         this.handleStateFromAPI(person, this.props.id);
-        console.log(' RESPUESTA GET',res)
-        });
+      })
   }
 
   handleNextStep() {
-    console.log("PUUUUUUUUUUUUUT", this.state.data);
     axios.put(
-        `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`,
-        this.state.data
-        // {contactInformation: {
-        //   ...this.state.data.contactInformation,
-        //   emails: ["irene@mateo.com"],
-        // }}
-        )
-        .then(res => {
-        console.log("RESPUESTA PUT", res); 
-      });
-      if (this.state.currentStep===5){
-        alert('Gracias por completar el formulario');
-      }
-      
+      `https://triporate-travel-api-dot-triporate-micro-services.appspot.com/travelers/${this.props.id}`,
+      this.state.data
+      // {contactInformation: {
+      //   ...this.state.data.contactInformation,
+      //   emails: ["irene@mateo.com"],
+      // }}
+    )
+      .then(res => {
+      })
+    if (this.state.currentStep === 5) {
+      alert('Gracias por completar el formulario');
+    }
 
-      }
+
+  }
 
   handleIdRoute(idRoute) {
     this.setState(
       {
         idRoute: idRoute
-      },
-      () => console.log(this.state.idRoute)
+      }
     );
   }
 
   handleStep1(data) {
-    console.log('hamdlestep1', data);
     this.setState({
       data: {
         ...this.state.data,
@@ -320,7 +314,6 @@ class App extends Component {
   }
 
   handleStep2(data) {
-    console.log(data);
     this.setState({
       data: {
         ...this.state.data,
@@ -358,8 +351,7 @@ class App extends Component {
       {
         dataAccommodation: data
       },
-      () => console.log(this.state.dataAccommodation)
-    );
+    )
   }
 
   handleStep5(data) {
@@ -373,19 +365,18 @@ class App extends Component {
               region: data.region,
               locality: data.locality
             },
-          emergencyContact: [
-            {
-              firstName: data.firstNameEmergency,
-              lastName: "",
-              email: data.emailEmergency,
-              phoneNumber: data.phoneNumberEmergency
-            }
-          ]
-        },
+            emergencyContact: [
+              {
+                firstName: data.firstNameEmergency,
+                lastName: "",
+                email: data.emailEmergency,
+                phoneNumber: data.phoneNumberEmergency
+              }
+            ]
+          },
         }
       },
-      () => console.log(this.state.dataVisa)
-    );
+    )
   }
 
   handleCurrentStep(step) {
@@ -393,8 +384,7 @@ class App extends Component {
       {
         currentStep: step
       },
-      () => this.handleUpdateNavigation(step)
-    );
+    )
   }
 
   handleUpdateNavigation(step) {
@@ -417,10 +407,7 @@ class App extends Component {
             changingStep5: { ...changingStep5, active: false }
           }
         },
-        () => {
-          console.log(this.state.currentStep);
-        }
-      );
+      )
     } else if (changingStep2.stepNumber === step) {
       this.setState(
         {
@@ -432,10 +419,7 @@ class App extends Component {
             changingStep5: { ...changingStep5, active: false }
           }
         },
-        () => {
-          console.log(this.state.currentStep);
-        }
-      );
+      )
     } else if (changingStep3.stepNumber === step) {
       this.setState(
         {
@@ -447,10 +431,7 @@ class App extends Component {
             changingStep5: { ...changingStep5, active: false }
           }
         },
-        () => {
-          console.log(this.state.currentStep);
-        }
-      );
+      )
     } else if (changingStep4.stepNumber === step) {
       this.setState(
         {
@@ -462,10 +443,7 @@ class App extends Component {
             changingStep5: { ...changingStep5, active: false }
           }
         },
-        () => {
-          console.log(this.state.currentStep);
-        }
-      );
+      )
     } else if (changingStep5.stepNumber === step) {
       this.setState(
         {
@@ -477,16 +455,11 @@ class App extends Component {
             changingStep5: { ...changingStep5, active: true }
           }
         },
-        () => {
-          console.log(this.state.currentStep);
-        }
-      );
+      )
     }
   }
 
   render() {
-    
-    console.log("ESTADO", this.state);
     return (
       <div className="App">
         <Header />

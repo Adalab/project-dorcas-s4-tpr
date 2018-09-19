@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 
 class RadioGroup extends Component {
     render() {
         const {
             onChange,
             values,
-            selected, 
+            selected,
             type,
         } = this.props;
         return (

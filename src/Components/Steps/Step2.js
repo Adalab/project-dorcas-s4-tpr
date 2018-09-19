@@ -237,7 +237,6 @@ class Step2 extends Component {
     }
 
     static getDerivedStateFromProps(props) {
-        console.log('IRENEE', props);
         return {
             data: {
                 numberPassport: props.travelDocuments.passport[0].passportNumber,
@@ -281,7 +280,7 @@ class Step2 extends Component {
         this.props.handleStep2(data);
     }
 
-    handlePassIssueDate(e){
+    handlePassIssueDate(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -290,7 +289,7 @@ class Step2 extends Component {
         this.props.handleStep2(data);
     }
 
-    handlePassExpDate(e){
+    handlePassExpDate(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -307,8 +306,8 @@ class Step2 extends Component {
         }
         this.props.handleStep2(data);
     }
-    
-    handleIdIssueDate(e){
+
+    handleIdIssueDate(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -316,8 +315,8 @@ class Step2 extends Component {
         }
         this.props.handleStep2(data);
     }
-    
-    handleIdExpDate(e){
+
+    handleIdExpDate(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -373,7 +372,7 @@ class Step2 extends Component {
         this.props.handleStep2(data)
     }
 
-    handleVisaIssueDate (e) {
+    handleVisaIssueDate(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -382,7 +381,7 @@ class Step2 extends Component {
         this.props.handleStep2(data)
     }
 
-    handleVisaExpDate (e) {
+    handleVisaExpDate(e) {
         const inputValue = e.target.value;
         const data = {
             ...this.state.data,
@@ -405,20 +404,20 @@ class Step2 extends Component {
         } = this.props;
 
         const {
-        numberPassport,
-        passCountryIssue,
-        passIssueDate,
-        passExpDate,
-        numberVisa,
-        visaCountryIssue,
-        visaCountryDestination,
-        visaIssueDate,
-        visaExpDate,
-        numberId,
-        idIssueDate,
-        idExpDate,
-        placeBirth
-        }=this.state.data;
+            numberPassport,
+            passCountryIssue,
+            passIssueDate,
+            passExpDate,
+            numberVisa,
+            visaCountryIssue,
+            visaCountryDestination,
+            visaIssueDate,
+            visaExpDate,
+            numberId,
+            idIssueDate,
+            idExpDate,
+            placeBirth
+        } = this.state.data;
 
         const {
             buttonHidden,
@@ -474,7 +473,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passIssueDateCal.id}
-                                className={passIssueDate ? 'label-located' :'placeholder-label'}
+                                className={passIssueDate ? 'label-located' : 'placeholder-label'}
                             >
                                 {passIssueDateCal.labelContent}
                             </label>
@@ -488,7 +487,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={passExpDateCal.id}
-                                className={passExpDate ? 'label-located' :'placeholder-label'}
+                                className={passExpDate ? 'label-located' : 'placeholder-label'}
                             >
                                 {passExpDateCal.labelContent}
                             </label>
@@ -528,7 +527,7 @@ class Step2 extends Component {
                                 inputData={visaCountryIssueInput}
                                 inputText={visaCountryIssue}
                             />
-                           
+
                             <TypeSelect
                                 options={visaDestinationSelect}
                                 classOfSelect={classOfSelectVisaDestination}
@@ -546,7 +545,7 @@ class Step2 extends Component {
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaIssueDateCal.id}
-                                    className={visaIssueDate ? 'label-located' :'placeholder-label'}
+                                        className={visaIssueDate ? 'label-located' : 'placeholder-label'}
                                     >
                                         {visaIssueDateCal.labelContent}
                                     </label>
@@ -560,7 +559,7 @@ class Step2 extends Component {
                                         mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                                     />
                                     <label htmlFor={visaExpDateCal.id}
-                                    className={visaExpDate ? 'label-located' :'placeholder-label'}
+                                        className={visaExpDate ? 'label-located' : 'placeholder-label'}
                                     >
                                         {visaExpDateCal.labelContent}
                                     </label>
@@ -591,7 +590,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idIssueDateCal.id}
-                            className={idIssueDate ? 'label-located' :'placeholder-label'}                          
+                                className={idIssueDate ? 'label-located' : 'placeholder-label'}
                             >
                                 {idIssueDateCal.labelContent}
                             </label>
@@ -605,7 +604,7 @@ class Step2 extends Component {
                                 mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
                             />
                             <label htmlFor={idExpDateCal.id}
-                            className={idExpDate ? 'label-located' :'placeholder-label'}                              >
+                                className={idExpDate ? 'label-located' : 'placeholder-label'}                              >
                                 {idExpDateCal.labelContent}
                             </label>
                         </div>
