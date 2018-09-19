@@ -119,6 +119,7 @@ class Step5 extends Component {
         this.handleEmergencyPhone = this.handleEmergencyPhone.bind(this);
     }
     componentDidMount() {
+        console.log('STEP5',this.props);
         const idRoute = this.props.match.params.id;
         this.props.handleCurrentStep(this.state.currentStep);
         this.props.handleIdRoute(idRoute);
@@ -149,18 +150,27 @@ class Step5 extends Component {
         }
     }  
 
+    static getDerivedStateFromProps(props) {
+        console.log ('ampaaaaa', props);
+        return {
+            data: {
+                familyNumber:props.extras.familyNumber ,
+                region: props.extras.islandResident.region,
+                locality: props.extras.islandResident.locality,
+                firstNameEmergency: props.extras.emergencyContact[0].firstName,
+                emailEmergency: props.extras.emergencyContact[0].email,
+                phoneNumberEmergency: props.extras.emergencyContact[0].phoneNumber,
+                }
+        }
+    }
+
     handleFamilyNumber(e){
         const inputValue = e.target.value;
-        this.setState({
-            data: {
-                familyNumber: inputValue,
-                region: this.props.extras.islandResident.region,
-                locality: this.props.extras.islandResident.locality,
-                firstNameEmergency: this.props.extras.emergencyContact[0].firstName,
-                emailEmergency: this.props.extras.emergencyContact[0].email,
-                phoneNumberEmergency: this.props.extras.emergencyContact[0].phoneNumber,
-                }
-        }, ()=>(this.props.handleStep5(this.state.data))); 
+        const data = {
+            ...this.state.data,
+            familyNumber: inputValue,
+        }
+        this.props.handleStep5(data);
     }
     
 
@@ -246,11 +256,15 @@ class Step5 extends Component {
         }
     }
     
-
+    
     render() {
+       
+        console.log('renderrrrstep5', this.state);
         const {
             familyNumber,
-        } = this.props.extras;
+        } = this.state.data.extras;
+
+      
 
         const {
             locality,
@@ -261,7 +275,6 @@ class Step5 extends Component {
             email,
             phoneNumber
         } = this.props.extras.emergencyContact[0];
-
         const {
             title1,
             title2,
@@ -271,7 +284,7 @@ class Step5 extends Component {
             step5,
             currentStep,
             changingStep,
-            handleNextStep
+            handleNextStep,
         } = this.props;
         return (
             <div className='stepBox step5'>

@@ -168,7 +168,7 @@ class Step1 extends Component {
         
 
 
-        console.log('firstname', phoneNumber);
+        console.log('firstname', this.state);
         return (
             <div className='stepBox step1'>
                 <Title
